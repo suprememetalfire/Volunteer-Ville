@@ -177,9 +177,43 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 				map_persist:PERSIST_DISABLED,
 			});
 
+			this.engine.maps.create({
+				map_id:'testMap2',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
 			// Create main camera
 			this.engine.cameras.create({
 				camera_id:'mainCam',
+				camera_name: 'mainCamera',	
 				camera_x:0,
 				camera_y:250,
 				camera_z:0,
@@ -195,6 +229,7 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 				camera_id:'sCam',
 				camera_x:1000,
 				camera_y:250,
+				camera_name: 'sCamera',
 				camera_z:0,
 				camera_scale:1,
 				camera_zClipping:{
@@ -219,6 +254,7 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 			// Create viewport
 			this.engine.viewports.create({
 				viewport_id:'mainVp',
+				viewport_name: 'viewP',
 				viewport_tile_ratio:0.5,
 				viewport_background_color:'#000',
 				viewport_anchor_point:[0, 0],
@@ -405,7 +441,7 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 			// Entity stuff
 			entity_id: 'woman' + sessionId,
 			entity_x:17,
-			entity_y:12,
+			entity_y:26,
 			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 			entity_persist:PERSIST_DISABLED,
 			session_id: sessionId,
@@ -422,9 +458,14 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 
-		if( entity.entity_x == 1 && entity.entity_y == 11 )
+		if( entity.entity_x == 14 && entity.entity_y == 19 )
 		{
-			this.engine.entities.moveToTile( entity, 11, -15, false );			
+			this.engine.entities.moveToTile( entity, 20, 20, true );			
+			//this.log(client.sessionId + ' True');
+		}
+		else if( entity.entity_x == 4 && entity.entity_y == 23 )
+		{
+			this.engine.entities.moveToTile( entity, 106, 46, true );			
 			//this.log(client.sessionId + ' True');
 		}
 		else

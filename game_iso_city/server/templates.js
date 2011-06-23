@@ -49,7 +49,7 @@ templates = new IgeClass({
 				entity_z:-1,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
 				asset_id: 'grassSheet2',
-				map_id: 'testMap1',
+				//map_id: 'testMap1',
 				//path_class: ['walk'],
 			},
 		});
@@ -64,7 +64,7 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
 				asset_id: 'grassSheet2',
-				map_id: 'testMap1',
+				//map_id: 'testMap1',
 				path_class: ['walk'],
 			},
 		});
@@ -79,7 +79,7 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
 				asset_id: 'doorSheet',
-				map_id: 'testMap1',
+				//map_id: 'testMap1',
 				path_class: ['walk'],
 			},
 		});
@@ -94,7 +94,7 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
 				asset_id: 'doorSheet',
-				map_id: 'testMap1',
+				//map_id: 'testMap1',
 				path_class: ['walk'],
 			},
 		});		
@@ -117,9 +117,9 @@ templates = new IgeClass({
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
 				entity_layer:LAYER_OBJECTS,
-				entity_tile_width:5,
-				entity_tile_height:4,
-				entity_z:-11000,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-110000,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'schoolInterior',
 			},

@@ -150,10 +150,21 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 			},
 
 			updateWorld: function (entity) {
+//var camera = this.engine.cameras.byId['mainCam'];
 				if( this.clicked ) 
 				{
 					//this.score++;
 					$('#igeStatsDiv').html('<center>' + ' COMMUNITY LEVEL ' + 0  + '<br> </br>' + ' BADGES ' + this.score  + '<br> </br>' + 'Current Task'  + '<br> </br>' +  'Go to the Town Hall');
+
+
+					//this.engine.cameras.lookAt(camera,250,300,100);
+this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap1');	
+//this.engine.entities.
+				}
+				else
+				{
+					//this.engine.cameras.lookAt(camera,100,1300,100);
+this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap2');	
 				}
 
 				if( !this.musicOff )
@@ -229,7 +240,7 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 				
 				if (event.viewport.$local.mouseDownButton == 2) {
 					this.engine.viewports.panTo(event.viewport, clientX, clientY);
-				}				
+				}		
 			},
 			
 			viewportMouseUp: function (event) {				
@@ -248,7 +259,7 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 				if (event.button == 2) {
 					this.engine.viewports.panEnd(event.viewport, clientX, clientY);
 					event.viewport.$local.mouseDownButton = null;
-				}			
+				}		
 			},
 			
 			viewportMouseWheel: function (event) {

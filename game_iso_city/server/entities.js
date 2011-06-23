@@ -53,16 +53,7 @@ entities = new IgeClass({
 			entity_id: 'school123',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'testMap1',
-		});	
-
-		this.engine.entities.create({
-			template_id: 'schoolInterior',
-			entity_x:9,
-			entity_y:-20,
-			entity_id: 'schoolInterior17-3',
-			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
-			map_id: 'testMap1',
-		});	
+		});				
 
 		this.engine.entities.create({
 			template_id: 'lake',
@@ -230,33 +221,34 @@ entities = new IgeClass({
 					entity_id: 'grass' + (x + '_' + y),
 					entity_locale: LOCALE_EVERYWHERE,
 					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'testMap1',
 				});
 			}
 		}
 
-		for (var y = -3; y > -11; y-=1) {
+		// School Interior
+		for (var x = 38; x < 89; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tileBase',
-				entity_x:11,
-				entity_y:y,
-				entity_id: 'base' + (11 + '_' + y),
+				entity_x:x,
+				entity_y:29,
+				entity_id: 'base' + (x + '_' + 29),
 				entity_locale: LOCALE_EVERYWHERE,
 				asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-				map_id: 'testMap1',
+				map_id: 'testMap2',
 			});
 		}
-		this.engine.entities.create({
+		/*this.engine.entities.create({
 			template_id: 'tileDoor',
 			entity_x:11,
 			entity_y:-11,
 			entity_id: 'base' + (11 + '_' + -11),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:1,
-			map_id: 'testMap1',
-		});
-
-		for (var x = 6; x < 13; x+=1) {
-			for (var y = -12; y > -22; y-=1) {
+			map_id: 'testMap2',
+		});*/
+		for (var x = 0; x < 23; x+=1) {
+			for (var y = 6; y < 17; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -264,17 +256,39 @@ entities = new IgeClass({
 					entity_id: 'base' + (x + '_' + y),
 					entity_locale: LOCALE_EVERYWHERE,
 					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'testMap2',
 				});
 			}
-		}		
-			
+		}
+		for (var x = 12; x < 23; x+=1) {
+			for (var y = 17; y < 28; y+=1) {
+				this.engine.entities.create({
+					template_id: 'tileBase',
+					entity_x:x,
+					entity_y:y,
+					entity_id: 'base' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'testMap2',
+				});
+			}
+		}
+		this.engine.entities.create({
+			template_id: 'schoolInterior',
+			entity_x:11,
+			entity_y:10,
+			entity_id: 'schoolInterior10040',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'testMap2',
+		});			
 		this.engine.entities.create({
 			template_id: 'tileBase',
-			entity_x:1,
-			entity_y:11,
-			entity_id: 'quest' + (1 + '_' + 11),
+			entity_x:4,
+			entity_y:23,
+			entity_id: 'quest' + (4 + '_' + 23),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:1,
+			map_id: 'testMap2',
 		});			
 		
 

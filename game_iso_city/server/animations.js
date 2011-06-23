@@ -91,7 +91,7 @@ animations = new IgeClass({
 				asset_sheet_frame:1,
 				asset_id: 'woman_sheet2',
 				// Map stuff
-				map_id: 'testMap1',
+				map_id: 'testMap2',
 			},
 		});
 
