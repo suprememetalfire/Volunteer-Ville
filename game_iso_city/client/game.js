@@ -60,6 +60,7 @@ function onBoot () {
 				this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));
 this.engine.network.registerCommand('moveq', this.bind(this.moveq));
 this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuilding));
+this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 				
 				// Setup the network to the server
 				this.engine.network.setHostAndPort(null, 8080);
@@ -165,11 +166,17 @@ this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap1');
 				{
 					//this.engine.cameras.lookAt(camera,100,1300,100);
 this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap2');	
+//this.engine.network.send('removeWoman', this.score);
 				}
 
 				if( !this.musicOff )
 				{
 					
+				}
+
+				if( this.score > 90 && this.score < 95 )
+				{
+					this.engine.network.send('removeWoman', this.score);
 				}
 
 				this.engine.network.send('enterBuilding', this.score);	

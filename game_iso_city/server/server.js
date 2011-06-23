@@ -54,6 +54,7 @@ this.engine.entities.events.on('vanDirectionChange', this.bind(this.vanDirection
 		this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));	
 this.engine.network.registerCommand('moveq', this.bind(this.moveq));
 this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuilding));
+this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 
 		this.update = setInterval(this.bind(this.updateWorld), 1000); 
 		
@@ -454,6 +455,26 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 		});
 	},
 
+	createAvatar2: function (sessionId) {
+		var entity = this.engine.entities.create({
+			template_id: 'womanWalk2',
+			// Entity stuff
+			entity_id: 'woman' + sessionId,
+			entity_x:16,
+			entity_y:20,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			session_id: sessionId,
+		}, function (entity) {
+			if (entity != null) {
+				this.log('New avatar created for client: ' + sessionId);
+			} else {
+				this.log('Could not create new avatar for client: ' + sessionId);
+
+			}
+		});
+	},
+
 	enterBuilding: function( data, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
@@ -472,6 +493,19 @@ this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuildin
 		{
 			//this.log(client.sessionId + ' False');
 		}
+	},
+
+	removeWoman: function( data, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+		var num = client.sessionId;
+
+		this.engine.entities.remove( entity, this.callMe(num) );
+	},
+
+	callMe: function(sessionId)
+	{	
+		this.createAvatar2(sessionId);
 	},
 	
 	moveAvatar: function (cords, client) {

@@ -95,6 +95,26 @@ animations = new IgeClass({
 			},
 		});
 
+		this.engine.templates.create({
+			template_id: 'womanWalk2',
+			template_contents: {
+				// Entity stuff
+				entity_type:ENTITY_TYPE_SPRITE,
+				entity_layer:LAYER_SPRITES,
+				entity_tile_width:1,
+				entity_tile_height:1,
+				entity_z:0,
+				// Animation stuff
+				animation_id: 'womanWalkSE',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame:1,
+				asset_id: 'woman_sheet2',
+				// Map stuff
+				map_id: 'testMap1',
+			},
+		});
+
 		this.engine.animations.create({
 			animation_id: 'swing',
 			animation_frame_from: 1,
