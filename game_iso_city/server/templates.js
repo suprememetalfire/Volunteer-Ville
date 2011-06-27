@@ -165,6 +165,19 @@ templates = new IgeClass({
 		});
 
 		this.engine.templates.create({
+			template_id: 'charityInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:0,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'charityInterior',
+			},
+		});
+
+		this.engine.templates.create({
 			template_id: 'library',
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
@@ -226,6 +239,19 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'oldfolkshome',
+			},
+		});
+	
+		this.engine.templates.create({
+			template_id: 'oldFolksHomeInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:0,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'oldFolksHomeInterior',
 			},
 		});
 
@@ -304,6 +330,19 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'restaurant',
+			},
+		});
+
+		this.engine.templates.create({
+			template_id: 'resturantInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-1100000,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'resturantInterior',
 			},
 		});	
 			

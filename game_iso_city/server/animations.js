@@ -91,12 +91,12 @@ animations = new IgeClass({
 				asset_sheet_frame:1,
 				asset_id: 'woman_sheet2',
 				// Map stuff
-				map_id: 'testMap2',
+				//map_id: 'testMap3',
 			},
 		});
 
 		this.engine.templates.create({
-			template_id: 'womanWalk2',
+			template_id: 'womanWalkBig',
 			template_contents: {
 				// Entity stuff
 				entity_type:ENTITY_TYPE_SPRITE,
@@ -109,9 +109,7 @@ animations = new IgeClass({
 				animation_dirty: true,
 				// Asset stuff
 				asset_sheet_frame:1,
-				asset_id: 'woman_sheet2',
-				// Map stuff
-				map_id: 'testMap1',
+				asset_id: 'woman_sheetBig',
 			},
 		});
 

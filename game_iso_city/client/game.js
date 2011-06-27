@@ -154,18 +154,14 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 //var camera = this.engine.cameras.byId['mainCam'];
 				if( this.clicked ) 
 				{
-					//this.score++;
 					$('#igeStatsDiv').html('<center>' + ' COMMUNITY LEVEL ' + 0  + '<br> </br>' + ' BADGES ' + this.score  + '<br> </br>' + 'Current Task'  + '<br> </br>' +  'Go to the Town Hall');
 
 
-					//this.engine.cameras.lookAt(camera,250,300,100);
-this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap1');	
-//this.engine.entities.
+this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap2');	
 				}
 				else
 				{
-					//this.engine.cameras.lookAt(camera,100,1300,100);
-this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap2');	
+this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap3');	
 //this.engine.network.send('removeWoman', this.score);
 				}
 
@@ -173,18 +169,13 @@ this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap2');
 				{
 					
 				}
-
-				if( this.score > 90 && this.score < 95 )
-				{
-					this.engine.network.send('removeWoman', this.score);
-				}
-
-				this.engine.network.send('enterBuilding', this.score);	
+				
+				this.engine.network.send('removeWoman', this.score);	
 			},
 
 			directionChange: function (entity) {
 				switch (entity.template_id) {
-					case 'womanWalk':
+					case 'womanWalkBig':
 						// Entity is a person sprite
 						switch (entity.entity_direction) {
 							case DIRECTION_N:
@@ -260,7 +251,7 @@ this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap2');
 					this.log('Sending new avatar move command...');
 					this.engine.network.send('moveAvatar', [tileCords[0], tileCords[1]]);
 				}
-	this.engine.network.send('moveq');				
+	//this.engine.network.send('moveq');				
 
 				
 				if (event.button == 2) {

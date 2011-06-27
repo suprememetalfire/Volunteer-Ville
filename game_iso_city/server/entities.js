@@ -10,7 +10,7 @@ entities = new IgeClass({
 	
 	// Create entities
 	load: function () {	
-		this.engine.entities.create({
+		/*this.engine.entities.create({
 			template_id: 'oldfolkshome',
 			entity_x:1,
 			entity_y:9,
@@ -91,7 +91,7 @@ entities = new IgeClass({
 			map_id: 'testMap1',
 		});*/
 		
-		this.engine.entities.create({
+		/*this.engine.entities.create({
 			template_id: 'hospital',
 			entity_x:30,
 			entity_y:23,
@@ -134,7 +134,7 @@ entities = new IgeClass({
 			entity_id: 'restaurant211',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'testMap1',
-		});
+		});*/
 
 		/*this.engine.entities.create({
 			template_id: 'houseC',
@@ -145,7 +145,7 @@ entities = new IgeClass({
 			map_id: 'testMap1',
 		});*/
 
-		this.engine.entities.create({
+		/*this.engine.entities.create({
 			template_id: 'shop',
 			entity_x:23,
 			entity_y:9,
@@ -189,15 +189,6 @@ entities = new IgeClass({
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'testMap1',
 		});
-		
-		/*this.engine.entities.create({
-			template_id: 'van',
-			entity_x:0,
-			entity_y:13,
-			entity_id: 'van013',
-			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
-			map_id: 'testMap1',
-		});*/
 
 		this.engine.entities.create({
 			template_id: 'van',
@@ -224,36 +215,16 @@ entities = new IgeClass({
 					map_id: 'testMap1',
 				});
 			}
-		}
+		}*/
 
 		// School Interior
-		for (var x = 38; x < 89; x+=1) {
-			this.engine.entities.create({
-				template_id: 'tileBase',
-				entity_x:x,
-				entity_y:29,
-				entity_id: 'base' + (x + '_' + 29),
-				entity_locale: LOCALE_EVERYWHERE,
-				asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-				map_id: 'testMap2',
-			});
-		}
-		/*this.engine.entities.create({
-			template_id: 'tileDoor',
-			entity_x:11,
-			entity_y:-11,
-			entity_id: 'base' + (11 + '_' + -11),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:1,
-			map_id: 'testMap2',
-		});*/
 		for (var x = 0; x < 23; x+=1) {
 			for (var y = 6; y < 17; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
 					entity_y:y,
-					entity_id: 'base' + (x + '_' + y),
+					entity_id: 'schoolBase' + (x + '_' + y),
 					entity_locale: LOCALE_EVERYWHERE,
 					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 					map_id: 'testMap2',
@@ -266,7 +237,7 @@ entities = new IgeClass({
 					template_id: 'tileBase',
 					entity_x:x,
 					entity_y:y,
-					entity_id: 'base' + (x + '_' + y),
+					entity_id: 'schoolBase' + (x + '_' + y),
 					entity_locale: LOCALE_EVERYWHERE,
 					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 					map_id: 'testMap2',
@@ -277,23 +248,37 @@ entities = new IgeClass({
 			template_id: 'schoolInterior',
 			entity_x:11,
 			entity_y:10,
-			entity_id: 'schoolInterior10040',
+			entity_id: 'schoolInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'testMap2',
-		});			
+		});	
+
+		// Restaurant Interior
+		for (var x = -1; x < 22; x+=1) {
+			for (var y = 7; y < 19; y+=1) {
+				this.engine.entities.create({
+					template_id: 'tileBase',
+					entity_x:x,
+					entity_y:y,
+					entity_id: 'resturantBase' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'testMap3',
+				});
+			}
+		}
 		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:4,
-			entity_y:23,
-			entity_id: 'quest' + (4 + '_' + 23),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:1,
-			map_id: 'testMap2',
+			template_id: 'resturantInterior',
+			entity_x:8,
+			entity_y:10,
+			entity_id: 'resturantInterior',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'testMap3',
 		});			
 		
 
 		// Create some pavement
-		for (var x = 0; x < 36; x+=1) {
+		/*for (var x = 0; x < 36; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tilePavement',
 				entity_x:x,
@@ -802,7 +787,7 @@ entities = new IgeClass({
 			entity_id: 'road' + (-3+ '_' + 10),
 			asset_sheet_frame:4,
 			map_id: 'testMap1',
-		});		
+		});*/		
 	},	
 });
 }

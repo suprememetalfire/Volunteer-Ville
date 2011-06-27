@@ -41,11 +41,11 @@ assets = new IgeClass({
 
 		this.engine.assets.create({
 			"asset_id" : "schoolInterior",
-			"asset_image_url" : "/game_iso_city/assets/buildings/schoolInterior.png",
+			"asset_image_url" : "/game_iso_city/assets/interiors/schoolInterior.png",
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			255, 
+			260, 
 			195 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
@@ -75,6 +75,20 @@ assets = new IgeClass({
 			[ 
 			176, 
 			126 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "resturantInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/resturantInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			247, 
+			163 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -131,6 +145,20 @@ assets = new IgeClass({
 			[ 
 			185, 
 			110 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+	
+		this.engine.assets.create({
+			"asset_id" : "charityInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/charityInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			212, 
+			152 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -205,6 +233,20 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 1.1				
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "oldFolksHomeInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/oldFolksHomeInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			250, 
+			200 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
 		});
 
 		this.engine.assets.create({
@@ -349,6 +391,22 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.3
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "woman_sheetBig",
+			"asset_image_url" : "/game_iso_city/assets/people/woman_sheet2.png",
+			"asset_sheet_enabled" : true,
+			"asset_sheet_width" : 9,
+			"asset_sheet_height" : 8,
+			"asset_anchor_points" : [ 
+			[ 
+			24, 
+			80 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1
 		});
 
 		this.engine.assets.create({

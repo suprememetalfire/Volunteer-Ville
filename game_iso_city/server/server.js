@@ -211,6 +211,39 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 				map_persist:PERSIST_DISABLED,
 			});
 
+			this.engine.maps.create({
+				map_id:'testMap3',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
 			// Create main camera
 			this.engine.cameras.create({
 				camera_id:'mainCam',
@@ -268,7 +301,7 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 					padding:0,
 				},
 				screen_id:'mapView',
-				map_id:'testMap1',
+				map_id:'testMap3',
 				camera_id:this.cameraName,
 			});
 
@@ -438,14 +471,15 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 	// Game related methods
 	createAvatar: function (sessionId) {
 		var entity = this.engine.entities.create({
-			template_id: 'womanWalk',
+			template_id: 'womanWalkBig',
 			// Entity stuff
 			entity_id: 'woman' + sessionId,
 			entity_x:17,
-			entity_y:26,
+			entity_y:24,
 			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 			entity_persist:PERSIST_DISABLED,
 			session_id: sessionId,
+			map_id: 'testMap2',
 		}, function (entity) {
 			if (entity != null) {
 				this.log('New avatar created for client: ' + sessionId);
@@ -455,16 +489,17 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 		});
 	},
 
-	createAvatar2: function (sessionId) {
+	createAvatar2: function (sessionId , x, y, mapname) {
 		var entity = this.engine.entities.create({
-			template_id: 'womanWalk2',
+			template_id: 'womanWalkBig',
 			// Entity stuff
 			entity_id: 'woman' + sessionId,
-			entity_x:16,
-			entity_y:20,
+			entity_x:x,
+			entity_y:y,
 			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 			entity_persist:PERSIST_DISABLED,
 			session_id: sessionId,
+			map_id: mapname,
 		}, function (entity) {
 			if (entity != null) {
 				this.log('New avatar created for client: ' + sessionId);
@@ -473,39 +508,26 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 
 			}
 		});
-	},
-
-	enterBuilding: function( data, client )
-	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-
-		if( entity.entity_x == 14 && entity.entity_y == 19 )
-		{
-			this.engine.entities.moveToTile( entity, 20, 20, true );			
-			//this.log(client.sessionId + ' True');
-		}
-		else if( entity.entity_x == 4 && entity.entity_y == 23 )
-		{
-			this.engine.entities.moveToTile( entity, 106, 46, true );			
-			//this.log(client.sessionId + ' True');
-		}
-		else
-		{
-			//this.log(client.sessionId + ' False');
-		}
 	},
 
 	removeWoman: function( data, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
+		var mapname = entity.map_id;
 
-		this.engine.entities.remove( entity, this.callMe(num) );
-	},
-
-	callMe: function(sessionId)
-	{	
-		this.createAvatar2(sessionId);
+		if(entity.entity_x == 17 && entity.entity_y == 26 && entity.map_id =='testMap2' )
+		{
+			mapname = 'testMap3';
+			this.engine.entities.remove( entity);
+			this.createAvatar2(num, 0, 16, mapname);
+		}
+		if(entity.entity_x == -1 && entity.entity_y == 16 && entity.map_id =='testMap3' )
+		{
+			mapname = 'testMap2';
+			this.engine.entities.remove( entity);
+			this.createAvatar2(num, 17, 24, mapname);
+		}
 	},
 	
 	moveAvatar: function (cords, client) {
@@ -537,7 +559,7 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 
 	moveq: function()
 	{
-		var entity = this.engine.entities.read('van');
+		/*var entity = this.engine.entities.read('van');
 
 		if (entity != null) {		
 			var map = entity.$local.$map;
@@ -585,7 +607,7 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 		else 
 		{
 			this.log('Could not find the avatar for session: ' + client.sessionId);
-		}
+		}*/
 	},
 
 	vanDirectionChange: function () 
