@@ -1,0 +1,23 @@
+Mon May  2 20:55:09 MongoDB starting : pid=5914 port=27017 dbpath=/ige/mongo/data 32-bit 
+
+** NOTE: when using MongoDB 32 bit, you are limited to about 2 gigabytes of data
+**       see http://blog.mongodb.org/post/137788967/32-bit-limitations
+
+Mon May  2 20:55:09 db version v1.6.5, pdfile version 4.5
+Mon May  2 20:55:09 git version: 0eb017e9b2828155a67c5612183337b89e12e291
+Mon May  2 20:55:09 sys info: Linux domU-12-31-39-01-70-B4 2.6.21.7-2.fc8xen #1 SMP Fri Feb 15 12:39:36 EST 2008 i686 BOOST_LIB_VERSION=1_37
+Mon May  2 20:55:09 [initandlisten] waiting for connections on port 27017
+Mon May  2 20:55:09 [initandlisten] listen(): bind() failed errno:98 Address already in use for socket: 0.0.0.0:27017
+Mon May  2 20:55:09 [initandlisten]   addr already in use
+Mon May  2 20:55:09 [initandlisten] now exiting
+Mon May  2 20:55:09 dbexit: 
+
+Mon May  2 20:55:09 [initandlisten] shutdown: going to close listening sockets...
+Mon May  2 20:55:09 [initandlisten] shutdown: going to flush oplog...
+Mon May  2 20:55:09 [initandlisten] shutdown: going to close sockets...
+Mon May  2 20:55:09 [initandlisten] shutdown: waiting for fs preallocator...
+Mon May  2 20:55:09 [initandlisten] shutdown: closing all files...
+Mon May  2 20:55:09     closeAllFiles() finished
+
+Mon May  2 20:55:09 [initandlisten] shutdown: removing fs lock...
+Mon May  2 20:55:09 dbexit: really exiting now

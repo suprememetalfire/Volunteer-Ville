@@ -1,0 +1,434 @@
+body
+{
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	//height:100%;
+}
+
+canvas
+{
+	image-rendering:optimizeSpeed;
+}
+
+#contain {
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+#floating_logo
+{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	width:200px;
+	height:125px;
+	background-image:url(../assets/ui/logo.png);
+	z-index:1000;
+	display:none;
+}
+
+canvas
+{
+	image-rendering:optimizeSpeed;
+}
+
+#mainViewport
+{
+	background-color:#333;
+	cursor:pointer;
+	/*border:1px #666 dashed;*/
+}
+
+#mainViewport div, mainViewport canvas
+{
+	cursor:pointer;
+}
+
+#viewport1
+{
+	background-color:#efefef;
+	cursor:pointer;
+	/*border:1px #666 dashed;*/
+}
+/*
+#viewport2
+{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	background-color:#efefef;
+	border:1px #ccc dashed;
+	cursor:pointer;
+}
+*/
+#viewport2
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-325px;
+	margin-top:-175px;
+	background-color:#efefef;
+	border:1px #ccc dashed;
+	cursor:pointer;
+}
+
+#viewport3
+{
+	position:absolute;
+	left:10px;
+	bottom:280px;
+	background-color:#000;
+	border:1px #fff dashed;
+	cursor:pointer;
+}
+
+#viewport4
+{
+	position:absolute;
+	left:10px;
+	bottom:540px;
+	background-color:#000;
+	border:1px #fff dashed;
+	cursor:pointer;
+}	
+
+#igeFpsGraph
+{
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	border:1px #666 dashed;
+	padding-top:10px;
+	background-color:#FFF;
+}
+
+#cords
+{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	width:550px;
+	height:15px;
+	background-image:url(../assets/ui/panelBack.jpg);
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	padding:5px 5px 5px 10px;
+	color:#000;
+	text-shadow:#555 0px 0px 1px;
+	border:1px #999 solid;
+	z-index:10;
+	border-radius:10px;
+	display:none;
+}
+
+#fpsText
+{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	width:210px;
+	height:30px;
+	background-image:url(../assets/ui/panelBack.jpg);
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	padding:5px 5px 5px 10px;
+	color:#000;
+	border:1px #999 solid;
+	z-index:10;
+	display:none;
+	text-shadow:#555 0px 0px 1px;
+	border-radius:15px;
+}
+
+#controls
+{
+	position:absolute;
+	right:10px;
+	top:10px;
+	width:100px;
+	z-index:10;
+	text-align:right;
+	display:none;
+}
+
+#viewport1_temp
+{
+	position:absolute;
+	left:100px;
+	top:100px;
+}
+
+#chatWindow
+{
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:352px;
+	height:245px;
+	border:1px #666 dashed;
+	z-index:100;
+	background-color:#333;
+	display:none;
+}
+
+#chatWindow_log
+{
+	position:relative;
+	left:5px;
+	top:5px;
+	width:340px;
+	height:200px;
+	overflow:auto;
+	border:1px #666 solid;
+	background-color:#FFF;
+}
+
+#chatWindow_log p
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	margin-left:5px;
+	margin-top:2px;
+	margin-bottom:2px;
+	margin-right:5px;
+}
+
+#chatWindow_controls
+{
+	position:relative;
+	top:10px;
+	left:4px;
+}
+
+#loginBox
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:400px;
+	height:400px;
+	margin-left:-200px;
+	margin-top:-200px;
+	background-image:url(../assets/ui/login.png);
+	z-index:200;
+}
+
+#loginBox_form
+{
+	position:relative;
+	top:150px;
+	left:10px;
+}
+
+#loginBox_usernameLabel
+{
+	position:relative;
+	left:35px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#FFF;
+	margin-bottom:2px;
+}
+
+#loginBox_username
+{
+	position:relative;
+	left:35px;
+	width:308px;
+	height:30px;
+	margin-bottom:10px;
+	font-size:20px;
+}
+
+#loginBox_passwordLabel
+{
+	position:relative;
+	left:35px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#FFF;
+	margin-bottom:2px;
+}
+
+#loginBox_password
+{
+	position:relative;
+	left:35px;
+	width:308px;
+	height:30px;
+	font-size:20px;
+	clear:both;
+}
+
+#loginBox_login
+{
+	position:relative;
+	top:44px;
+	right:44px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	height:30px;
+	color:#000;
+	clear:both;
+}
+
+#loginBox_status
+{
+	position:relative;
+	top:150px;
+	left:10px;
+	display:none;
+}
+
+#loginBox_statusLabel
+{
+	top:10px;
+	position:relative;
+	left:35px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	margin-bottom:2px;
+	text-align:center;
+	width:310px;
+}
+
+#uiBar {
+	width:100%;
+	height:74px;
+	background:url(/game_iso_city/assets/backgrounds/uiBar.png) repeat-x;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:11000;
+}
+
+#uiLogo {
+	background-image:url(/game_iso_city/assets/ui/logo.png);
+    display:block;
+    width:117px;
+    height:45px;
+	z-index:11000;
+	margin-top:10px;
+	margin-left:10px;
+	float:left;
+}
+
+.uiMenu {
+	background:url(/game_iso_city/assets/backgrounds/uiMenu.png) repeat-x;
+	position:absolute;
+	max-width:700px;
+	z-index:29000;
+	display:block;
+	top:-200px;
+	left:350px;
+}
+
+.uiMenu img {
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	cursor:pointer;
+	float:left;
+	height:30px;
+}
+
+.uiMenu img:hover {
+	background:#FFC;
+}
+
+.uiMenuButton {
+	width:64px;
+	height:64px;
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float:left;
+}
+
+.uiMenu_sep {
+	width:30px;
+}
+
+#uiMenuButton_select {
+
+	background-image:url(/game_iso_city/assets/ui/uiButton_select.png);
+}
+
+#uiMenuButton_move {
+	background-image:url(/game_iso_city/assets/ui/uiButton_move.png);
+}
+
+#uiMenuButton_delete {
+	background-image:url(/game_iso_city/assets/ui/uiButton_delete.png);
+}
+
+#uiMenuButton_land {
+	background-image:url(/game_iso_city/assets/ui/uiButton_dollar.png);
+}
+
+#uiMenuButton_pavement {
+	background-image:url(/game_iso_city/assets/ui/uiButton_square.png);
+}
+
+#uiMenuButton_roads {
+	background-image:url(/game_iso_city/assets/ui/uiButton_roads.png);
+}
+
+#uiMenuButton_buildings {
+	background-image:url(/game_iso_city/assets/ui/uiButton_house.png);
+}
+
+#uiMenu_buildings img {
+	height:50px;
+}
+
+#igeLogDiv {
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	width:400px;
+	z-index:110000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	color:#FFF;
+	background-color:#333;
+	border:1px solid #666;
+	padding:10px;
+}
+
+#igeCordDiv {
+	position:absolute;
+	right:465px;
+	bottom:10px;
+	width:300px;
+	z-index:110000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	color:#FFF;
+	background-color:#333;
+	border:1px solid #666;
+	padding:10px;
+}
+
+#igeStatsDiv {
+	position:absolute;
+	background-image:url(/game_iso_city/assets/backgrounds/uiBar.png); repeat-y;
+	left:0px;
+	top:65px;
+	width:300px;
+	height:300px;
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	color:#000000;
+	border:5px solid #666;
+	padding:10px;
+}
