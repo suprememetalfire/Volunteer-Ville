@@ -1,4 +1,4 @@
-// Define the resources class -- all your assets, templates, animations and entities should be in here.
+// Define the resources class -- all your exterior assets should be in here.
 function onBoot() {
 assets = new IgeClass({
 
@@ -106,7 +106,21 @@ assets = new IgeClass({
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 1.05
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "bankInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/bankInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			241, 
+			153 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
 		});
 
 		this.engine.assets.create({
@@ -124,6 +138,20 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "pound",
+			"asset_image_url" : "/game_iso_city/assets/buildings/pound.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			200, 
+			141 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "library",
 			"asset_image_url" : "/game_iso_city/assets/buildings/library.png",
 			"asset_sheet_enabled" : false,
@@ -131,6 +159,20 @@ assets = new IgeClass({
 			[ 
 			161, 
 			111 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "libraryInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/libraryInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			250, 
+			200 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -180,6 +222,20 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "shopInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/shopInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			476, 
+			380 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "lake",
 			"asset_image_url" : "/game_iso_city/assets/objects/lake.png",
 			"asset_sheet_enabled" : false,
@@ -222,6 +278,34 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "stationInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/stationInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			250, 
+			200 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "fireStation",
+			"asset_image_url" : "/game_iso_city/assets/buildings/fireStation.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			200, 
+			127 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.85
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "oldfolkshome",
 			"asset_image_url" : "/game_iso_city/assets/buildings/oldfolkshome.png",
 			"asset_sheet_enabled" : false,
@@ -241,8 +325,8 @@ assets = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			250, 
-			200 ] ],
+			260, 
+			195 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -260,7 +344,22 @@ assets = new IgeClass({
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 1 });
+			"asset_scale" : 1 
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "crecheInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/crecheInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			316, 
+			172 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1 
+		});
 
 		this.engine.assets.create({
 			"asset_id" : "townHall",
@@ -305,6 +404,20 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "hospitalInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/hospitalInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			250, 
+			200 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "meals",
 			"asset_image_url" : "/game_iso_city/assets/buildings/mealsOnWheels.png",
 			"asset_sheet_enabled" : false,
@@ -330,6 +443,20 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.55
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "museumInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/museumInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			250, 
+			200 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
 		});
 			
 		this.engine.assets.create({
@@ -390,7 +517,7 @@ assets = new IgeClass({
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.3
+			"asset_scale" : 0.4
 		});
 
 		this.engine.assets.create({

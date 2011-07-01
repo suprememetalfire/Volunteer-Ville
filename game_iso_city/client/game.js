@@ -32,6 +32,7 @@ function onBoot () {
 			update: null,
 			clicked: true,
 			musicOn: true,
+			player: null,
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -58,9 +59,10 @@ function onBoot () {
 				
 				// Create some game specific network commands
 				this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));
-this.engine.network.registerCommand('moveq', this.bind(this.moveq));
-this.engine.network.registerCommand('enterBuilding', this.bind(this.enterBuilding));
-this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
+this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
+
+this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
+this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
 				
 				// Setup the network to the server
 				this.engine.network.setHostAndPort(null, 8080);
@@ -85,7 +87,7 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 						sound_volume: 100, // Set sound to full volume
 						sound_auto_load: true, // Automatically load the sound data
 						sound_auto_play: true, // Don't automatically start playing the sound
-						sound_buffer: 0, // Buffer 5 seconds of audio before playing
+						sound_buffer: 5, // Buffer 5 seconds of audio before playing
 						sound_multi_play: false, // We don't want to play multiple copies over the top of each other
 						sound_type: SOUND_TYPE_TRACK, // It's a track
 					},
@@ -117,9 +119,6 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 			
 			clientDisconnect: function (sessionId) {
 				console.log('Player disconnected with session: ' + sessionId);
-				
-				// Remove all associated non-persistent entities from the engine - THIS IS HANDLED BY NET CALLS FROM THE SERVER NOW
-				//this.engine.entities.removeBySearch({session_id:sessionId, entity_persist:PERSIST_DISABLED});
 			},
 
 			switchButton: function () 
@@ -150,19 +149,10 @@ this.engine.network.registerCommand('removeWoman', this.bind(this.removeWoman));
 				this.score = data;
 			},
 
-			updateWorld: function (entity) {
-//var camera = this.engine.cameras.byId['mainCam'];
+			updateWorld: function () {
 				if( this.clicked ) 
 				{
-					$('#igeStatsDiv').html('<center>' + ' COMMUNITY LEVEL ' + 0  + '<br> </br>' + ' BADGES ' + this.score  + '<br> </br>' + 'Current Task'  + '<br> </br>' +  'Go to the Town Hall');
-
-
-this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap2');	
-				}
-				else
-				{
-this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap3');	
-//this.engine.network.send('removeWoman', this.score);
+					$('#igeStatsDiv').html('<center>' + ' COMMUNITY LEVEL ' + 0  + '<br> </br>' + ' BADGES ' + this.score  + '<br> </br>' + 'Current Task'  + '<br> </br>' +  'Go to the Town Hall');	
 				}
 
 				if( !this.musicOff )
@@ -170,43 +160,54 @@ this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap3');
 					
 				}
 				
-				this.engine.network.send('removeWoman', this.score);	
+				this.engine.network.send('switchMap', this.score);	
+			},
+
+			changeViewMap: function(mapname, num)
+			{
+				if( this.player.sessionId == num )
+				{
+					this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], mapname);	
+					var cameraP = this.engine.cameras.byId['mainCam'];
+					//this.engine.cameras.lookAt(this.cameraP, this.player.entity_x, this.player.entity_y);
+					//this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], this.player.sessionId);
+				}
 			},
 
 			directionChange: function (entity) {
+				this.player = entity;
 				switch (entity.template_id) {
-					case 'womanWalkBig':
+					case 'womanWalk':
 						// Entity is a person sprite
-						switch (entity.entity_direction) {
-							case DIRECTION_N:
-								this.engine.entities.setAnimation(entity, 'womanWalkN');
-							break;
-							
-							case DIRECTION_E:
-								this.engine.entities.setAnimation(entity, 'womanWalkE');
-							break;
-							
+						switch (entity.entity_direction)
+						{					
 							case DIRECTION_NE:
 								this.engine.entities.setAnimation(entity, 'womanWalkNE');
-
-							break;					
-							
-							case DIRECTION_S:
-								this.engine.entities.setAnimation(entity, 'womanWalkS');
-							break;
-							
+							break;								
 							case DIRECTION_SE:
 								this.engine.entities.setAnimation(entity, 'womanWalkSE');
 							break;
-							
-							case DIRECTION_W:
-								this.engine.entities.setAnimation(entity, 'womanWalkW');
-							break;		
-							
 							case DIRECTION_NW:
 								this.engine.entities.setAnimation(entity, 'womanWalkNW');
 							break;						
-							
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'womanWalkSW');
+							break;			
+						}
+					break;	
+					case 'womanWalkBig':
+						// Entity is a person sprite
+						switch (entity.entity_direction) 
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'womanWalkNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'womanWalkSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'womanWalkNW');
+							break;						
 							case DIRECTION_SW:
 								this.engine.entities.setAnimation(entity, 'womanWalkSW');
 							break;		
@@ -233,7 +234,7 @@ this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap3');
 				var clientY = event.pageY - elementOffset.top;
 				
 				var tileCords = this.engine.renderer.screenToMap[event.map.map_render_mode](clientX, clientY, event.viewport);
-				//this.engine.entities.moveToTile(this.testSprite, tileCords[0], tileCords[1]);
+
 				$('#igeCordDiv').html(tileCords[0] + ', ' + tileCords[1]);			
 				
 				if (event.viewport.$local.mouseDownButton == 2) {
@@ -251,7 +252,7 @@ this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap3');
 					this.log('Sending new avatar move command...');
 					this.engine.network.send('moveAvatar', [tileCords[0], tileCords[1]]);
 				}
-	//this.engine.network.send('moveq');				
+	//this.engine.network.send('moveVan');				
 
 				
 				if (event.button == 2) {
@@ -292,20 +293,16 @@ this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], 'testMap3');
 				this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], avatarId);
 			},
 				
-			viewportAfterCreate: function (viewport) {
-				
+			viewportAfterCreate: function (viewport) {				
 			},
 			
 			viewportAfterPanEnd: function (viewport) {
 				// A viewport pan has just ended so lets ask the server to update its copy of the viewport
-				// and send us back any new entities that we need to be able to see
-				
+				// and send us back any new entities that we need to be able to see				
 			},
 			
 			bindGameNetworkEvents: function () {
 				console.log('Binding Game Network events');
-				// AvatarCreated event
-				//this.engine.network.registerCommand('avatarCreated', this.bind(this.avatarCreated));
 			},
 			
 		});
