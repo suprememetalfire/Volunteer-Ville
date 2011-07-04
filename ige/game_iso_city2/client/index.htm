@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Isogenic Game Engine - Version 0.1.0</title>
+
+<!-- STYLES -->
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+<!-- Isogenic -->
+<script type="text/javascript" language="javascript" src="libraries/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/engine/IgeBootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="game.js"></script>
+</head>
+
+<body id="body">
+<div id="uiBar">
+		<div id="uiLogo"></div>
+		<div id="uiMenuButton_select" class="uiMenuButton" onclick="igeGame.switchButton(); igeGame.closeAll('uiMenuGroup1');"></div>
+		<div id="uiMenuButton_move" class="uiMenuButton" onclick="changeVisibility();"></div>
+		<div id="uiMenuButton_delete" class="uiMenuButton" onclick="resetElement()"></div>
+	
+		<div id="uiMenuButton_land" class="uiMenuButton" onclick="igeGame.toggleMenu('land', 'uiMenuGroup1');"></div>
+		<div id="uiMenuButton_pavement" class="uiMenuButton" onclick="igeGame.toggleMenu('pavement', 'uiMenuGroup1');"></div>
+		<div id="uiMenuButton_roads" class="uiMenuButton" onclick="igeGame.toggleMenu('roads', 'uiMenuGroup1');"></div>
+		<div id="uiMenuButton_buildings" class="uiMenuButton" onclick="igeGame.toggleMenu('buildings', 'uiMenuGroup1');"></div>
+</div>
+
+<div id="igeLogDiv"></div>
+<div id="igeCordDiv"></div>
+<div id="igeStatsDiv"></div>
+<div id="contain"></div>
+
+<script type="text/javascript">
+	function changeVisibility()
+	{
+		document.getElementById("igeStatsDiv").style.visibility="hidden";
+	}
+	function resetElement()
+	{
+		document.getElementById("igeStatsDiv").style.visibility="visible";
+	}
+</script>
+</body>
+
+</html>

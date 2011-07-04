@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<title>Iso City - An Irrelon Software Game Demo - Isogenic Engine</title>
+
+<!-- STYLES -->
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+<style>
+
+	.mainMenu_div {
+		background-image:url(/iso_city/assets/ui/splash.jpg);
+		width:900px;
+		height:525px;
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-left:-450px;
+		margin-top:-263px;
+		border:1px #666 solid;
+	}
+
+	.mainMenu_menuItem {
+		position:relative;
+		left:50%;
+		margin-left:-100px;
+		width:200px;
+		text-align:center;
+		color:#FFF;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:12px;
+		padding:10px;
+		border:1px #666 solid;
+		background-color:#333;
+	}
+	
+	.mainMenu_textBox {
+		position:absolute;
+		left:50%;
+		width:200px;
+		height:30px;
+		margin-left:-100px;
+		top:310px;
+		text-align:center;
+		background-color:#333;
+		border:1px #666 solid;
+		color:#FFF;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:12px;
+	}
+	
+	.mainMenu_button {
+		position:absolute;
+		left:50%;
+		width:214px;
+		height:39px;
+		margin-left:-107px;
+		top:380px;
+		background: none;
+		border: none;
+		display:block;
+	}
+	
+	.mainMenu_error {
+		position:absolute;
+		left:50%;
+		width:327px;
+		height:22px;
+		margin-left:-163px;
+		top:350px;
+		display:none;
+		background-image:url(/iso_city/assets/ui/splashError1.png);
+	}
+</style>
+
+<!-- Isogenic -->
+<script>
+	startSim = function () {
+		// Check that the user has entered a name before continuing!
+		if (!document.getElementById('mainMenu_userName').value) {
+			document.getElementById('mainMenu_error').style.display = 'block';
+			return false;
+		} else {
+			// The start simulation button was clicked on the main menu so switch to the mapView screen
+			return true;
+		}
+	}
+</script>
+</head>
+
+<body id="body">
+	
+	<div class="mainMenu_div">
+		<form id="loginForm" method="post" action="main.htm" onsubmit="return startSim();">
+		<input id="mainMenu_userName" class="mainMenu_textBox" onkeyup="document.getElementById('mainMenu_error').style.display = 'none';" type="text" value="" />
+		<div id="mainMenu_error" class="mainMenu_error"></div>
+		<input type="submit" id="startGame" value="" class="mainMenu_button" />
+		</form>
+	</div>
+	
+</body>
+
+</html>

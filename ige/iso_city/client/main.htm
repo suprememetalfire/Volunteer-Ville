@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<title>Iso City - An Irrelon Software Game Demo - Isogenic Engine</title>
+
+<!-- STYLES -->
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+<!-- Isogenic -->
+<script type="text/javascript" language="javascript" src="libraries/ga.js"></script>
+<script type="text/javascript" language="javascript" src="libraries/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/engine/IgeBootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="game.js"></script>
+</head>
+
+<body id="body">
+	<div id="loadingMain">
+		<div id="loadingDiv">
+		<img src="/iso_city/assets/ui/loading.jpg" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText1.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText2.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText3.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText4.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText5.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText6.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText7.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText8.png" style="display:none;" />
+		<img src="/iso_city/assets/ui/loadingText9.png" style="display:none;" />
+		<div id="loadingDivText" class="loadingDivText1"></div>
+		</div>
+	</div>
+	<div id="igeLogDiv"></div>
+	<div id="igeCordDiv"></div>
+	<div id="uiBar">
+		<div id="uiLogo"></div>
+		<div id="uiMenuButton_select" class="uiMenuButton" onclick="igeGame.selectCursor(GAME_ACTION_SELECT, 1); igeGame.closeAll('uiMenuGroup1');"></div>
+		<div id="uiMenuButton_move" class="uiMenuButton" onclick="igeGame.selectCursor(GAME_ACTION_MOVE, 1); igeGame.closeAll('uiMenuGroup1');"></div>
+		<div id="uiMenuButton_delete" class="uiMenuButton" onclick="igeGame.selectCursor(GAME_ACTION_DELETE, 1); igeGame.closeAll('uiMenuGroup1');"></div>
+		<div class="uiMenuButton uiMenu_sep"></div>
+		<div id="uiMenuButton_land" class="uiMenuButton" onclick="igeGame.toggleMenu('land', 'uiMenuGroup1');"></div>
+		<div id="uiMenuButton_pavement" class="uiMenuButton" onclick="igeGame.toggleMenu('pavement', 'uiMenuGroup1');"></div>
+		<div id="uiMenuButton_roads" class="uiMenuButton" onclick="igeGame.toggleMenu('roads', 'uiMenuGroup1');"></div>
+		<div id="uiMenuButton_buildings" class="uiMenuButton" onclick="igeGame.toggleMenu('buildings', 'uiMenuGroup1');"></div>
+	</div>
+	<div id="uiMenu_land" class="uiMenu uiMenuGroup1">
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_0.png" onclick="igeGame.selectCursor('road', 1); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_1.png" onclick="igeGame.selectCursor('road', 3); igeGame.closeAll('uiMenuGroup1');" />
+	</div>
+	<div id="uiMenu_pavement" class="uiMenu uiMenuGroup1">
+		<img src="/iso_city/assets/tiles/dirtSheet.png_ig_0.png" onclick="igeGame.selectCursor('tilePavement', 1); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/dirtSheet.png_ig_1.png" onclick="igeGame.selectCursor('tilePavement', 2); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/dirtSheet.png_ig_2.png" onclick="igeGame.selectCursor('tilePavement', 3); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/dirtSheet.png_ig_3.png" onclick="igeGame.selectCursor('tilePavement', 4); igeGame.closeAll('uiMenuGroup1');" />
+	</div>
+	<div id="uiMenu_roads" class="uiMenu uiMenuGroup1">
+		<img src="/iso_city/assets/ui/autoRoad.png" onclick="igeGame.selectCursor(); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_0.png" onclick="igeGame.selectCursor('road', 1); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_1.png" onclick="igeGame.selectCursor('road', 2); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_2.png" onclick="igeGame.selectCursor('road', 3); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_3.png" onclick="igeGame.selectCursor('road', 4); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_4.png" onclick="igeGame.selectCursor('road', 5); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_5.png" onclick="igeGame.selectCursor('road', 6); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_6.png" onclick="igeGame.selectCursor('road', 7); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_7.png" onclick="igeGame.selectCursor('road', 8); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/tiles/roadSheet.png_ig_8.png" onclick="igeGame.selectCursor('road', 9); igeGame.closeAll('uiMenuGroup1');" />
+	</div>
+	<div id="uiMenu_buildings" class="uiMenu uiMenuGroup1">
+		<img src="/iso_city/assets/buildings/house3.png" onclick="igeGame.selectCursor('house3', 1); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/buildings/office1.png" onclick="igeGame.selectCursor('office1', 1); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/buildings/factory1.png" onclick="igeGame.selectCursor('factory1', 1); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/buildings/restaurant1.png" onclick="igeGame.selectCursor('restaurant1', 1); igeGame.closeAll('uiMenuGroup1');" />
+		<img src="/iso_city/assets/buildings/tower2.png" onclick="igeGame.selectCursor('tower2', 1); igeGame.closeAll('uiMenuGroup1');" />
+	</div>
+	<div id="mainView"></div>
+</body>
+
+</html>

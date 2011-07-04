@@ -183,9 +183,15 @@ entities = new IgeClass({
 
 		this.engine.entities.create({
 			template_id: 'pound',
+<<<<<<< HEAD
 			entity_x: 30,
 			entity_y: 16,
 			entity_id: 'pound3016',
+=======
+			entity_x: -10,
+			entity_y: 7,
+			entity_id: 'pound107',
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});
@@ -231,19 +237,10 @@ entities = new IgeClass({
 				});
 			}
 		}
+<<<<<<< HEAD
 		for (var x =12; x < 23; x+=1) {
 			for (var y = 17; y < 28; y+=1) {
-				this.engine.entities.create({
-					template_id: 'tileBase',
-					entity_x:x,
-					entity_y:y,
-					entity_id: 'schoolBase2' + (x + '_' + y),
-					entity_locale: LOCALE_EVERYWHERE,
-					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-					map_id: 'schoolMap',
-				});
-			}
-		}
+=======
 		this.engine.entities.create({
 			template_id: 'schoolInterior',
 			entity_x:11,
@@ -256,14 +253,22 @@ entities = new IgeClass({
 		// Restaurant Interior
 		for (var x = -1; x < 22; x+=1) {
 			for (var y = 7; y < 19; y+=1) {
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
 					entity_y:y,
+<<<<<<< HEAD
+					entity_id: 'schoolBase2' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'schoolMap',
+=======
 					entity_id: 'resturantBase' + (x + '_' + y),
 					entity_locale: LOCALE_EVERYWHERE,
 					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 					map_id: 'restaurantMap',
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				});
 			}
 		}
@@ -273,6 +278,62 @@ entities = new IgeClass({
 			entity_y:10,
 			entity_id: 'resturantInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+<<<<<<< HEAD
+			map_id: 'schoolMap',
+		});	
+=======
+			map_id: 'restaurantMap',
+		});
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
+
+		// Charity Interior
+		for (var x = -1; x < 22; x+=1) {
+			for (var y = 7; y < 19; y+=1) {
+				this.engine.entities.create({
+					template_id: 'tileBase',
+					entity_x:x,
+					entity_y:y,
+					entity_id: 'charityBase' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+<<<<<<< HEAD
+					map_id: 'restaurantMap',
+=======
+					map_id: 'charityMap',
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
+				});
+			}
+		}
+		this.engine.entities.create({
+			template_id: 'charityInterior',
+			entity_x:8,
+			entity_y:10,
+			entity_id: 'charityInterior',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'charityMap',
+		});
+
+		// Old Folks Home Interior
+		for (var x = -1; x < 22; x+=1) {
+			for (var y = 7; y < 19; y+=1) {
+				this.engine.entities.create({
+					template_id: 'tileBase',
+					entity_x:x,
+					entity_y:y,
+					entity_id: 'oldFolksHomeBase' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'oldFolksHomeMap',
+				});
+			}
+		}
+		this.engine.entities.create({
+			template_id: 'oldFolksHomeInterior',
+			entity_x:8,
+			entity_y:10,
+			entity_id: 'oldFolksHomeInterior',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+<<<<<<< HEAD
 			map_id: 'restaurantMap',
 		});
 
@@ -332,12 +393,19 @@ entities = new IgeClass({
 			entity_y:10,
 			entity_id: 'oldFolksHomeInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+=======
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			map_id: 'oldFolksHomeMap',
 		});
 
 		// Police Station Interior
+<<<<<<< HEAD
 		for (var x = 0; x < 23; x+=1) {
 			for (var y = 6; y < 17; y+=1) {
+=======
+		for (var x = -1; x < 22; x+=1) {
+			for (var y = 7; y < 19; y+=1) {
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -349,6 +417,7 @@ entities = new IgeClass({
 				});
 			}
 		}
+<<<<<<< HEAD
 		for (var x =12; x < 23; x+=1) {
 			for (var y = 17; y < 28; y+=1) {
 				this.engine.entities.create({
@@ -365,6 +434,11 @@ entities = new IgeClass({
 		this.engine.entities.create({
 			template_id: 'stationInterior',
 			entity_x:11,
+=======
+		this.engine.entities.create({
+			template_id: 'stationInterior',
+			entity_x:8,
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			entity_y:10,
 			entity_id: 'stationInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
@@ -372,8 +446,13 @@ entities = new IgeClass({
 		});
 
 		// Museum Interior
+<<<<<<< HEAD
 		for (var x = 3; x < 21; x+=1) {
 			for (var y = 1; y < 19; y+=1) {
+=======
+		for (var x = -1; x < 22; x+=1) {
+			for (var y = 7; y < 19; y+=1) {
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -395,8 +474,13 @@ entities = new IgeClass({
 		});
 
 		// Library Interior
+<<<<<<< HEAD
 		for (var x = 3; x < 21; x+=1) {
 			for (var y = 1; y < 19; y+=1) {
+=======
+		for (var x = -1; x < 22; x+=1) {
+			for (var y = 7; y < 19; y+=1) {
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -441,8 +525,13 @@ entities = new IgeClass({
 		});
 
 		// Bank Interior
+<<<<<<< HEAD
 		for (var x = 5; x < 17; x+=1) {
 			for (var y = 1; y < 25; y+=1) {
+=======
+		for (var x = -1; x < 22; x+=1) {
+			for (var y = 7; y < 19; y+=1) {
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -461,6 +550,7 @@ entities = new IgeClass({
 			entity_id: 'bankInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'bankMap',
+<<<<<<< HEAD
 		});
 
 		// Creche Interior
@@ -590,6 +680,9 @@ entities = new IgeClass({
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'fireMap',
 		});		
+=======
+		});			
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 		
 
 		// Create some pavement
@@ -668,6 +761,7 @@ entities = new IgeClass({
 				entity_id: 'pave' + (20 + '_' + y),
 				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
 				map_id: 'townMap',
+<<<<<<< HEAD
 			});
 		}
 
@@ -679,6 +773,8 @@ entities = new IgeClass({
 				entity_id: 'pave' + (35 + '_' + y),
 				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
 				map_id: 'townMap',
+=======
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			});
 		}
 			

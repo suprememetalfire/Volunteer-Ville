@@ -1,6 +1,10 @@
 // Define the resources class -- all your assets, templates, animations and entities should be in here.
 function onBoot() {
+<<<<<<< HEAD
 assets = new IgeClass({
+=======
+assetsTiles = new IgeClass({
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 
 	engine: null,	
 

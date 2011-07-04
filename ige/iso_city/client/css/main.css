@@ -1,0 +1,225 @@
+body
+{
+	margin:0;
+	padding:0;
+	/*overflow:hidden;*/
+	background-color:#000;
+	height:100%;
+}
+
+canvas
+{
+	image-rendering:optimizeSpeed;
+}
+
+#mainVp, #miniVp
+{
+	/*background:#005AFF url(/iso_city/assets/backgrounds/sky.png) repeat-x;*/
+}
+
+#miniVp
+{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	border:1px #ccc dashed;
+	/*cursor:pointer;*/
+}
+
+#igeLogDiv {
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	width:400px;
+	z-index:110000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	color:#FFF;
+	background-color:#333;
+	border:1px solid #666;
+	padding:10px;
+}
+
+#igeCordDiv {
+	position:absolute;
+	right:465px;
+	bottom:10px;
+	width:300px;
+	z-index:110000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	color:#FFF;
+	background-color:#333;
+	border:1px solid #666;
+	padding:10px;
+	display:block;
+}
+
+#loadingMain {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+	background-color:#000;
+	z-index:40000;
+}
+
+#loadingDiv
+{
+	background-image:url(/iso_city/assets/ui/loading.jpg);
+	width:900px;
+	height:525px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-450px;
+	margin-top:-263px;
+	border:1px #666 solid;
+	overflow:hidden;
+}
+
+#loadingDivText {
+	position:absolute;
+	top:350px;
+	left:50%;
+	margin-left:-450px;
+	width:900px;
+	height:30px;
+}
+
+.loadingDivText1 {
+	background-image:url(/iso_city/assets/ui/loadingText1.png);
+}
+
+.loadingDivText2 {
+	background-image:url(/iso_city/assets/ui/loadingText2.png);
+}
+
+.loadingDivText3 {
+	background-image:url(/iso_city/assets/ui/loadingText3.png);
+}
+
+.loadingDivText4 {
+	background-image:url(/iso_city/assets/ui/loadingText4.png);
+}
+
+.loadingDivText5 {
+	background-image:url(/iso_city/assets/ui/loadingText5.png);
+}
+
+.loadingDivText6 {
+	background-image:url(/iso_city/assets/ui/loadingText6.png);
+}
+
+.loadingDivText7 {
+	background-image:url(/iso_city/assets/ui/loadingText7.png);
+}
+
+.loadingDivText8 {
+	background-image:url(/iso_city/assets/ui/loadingText8.png);
+}
+
+.loadingDivText9 {
+	background-image:url(/iso_city/assets/ui/loadingText9.png);
+}
+
+#uiBar {
+	width:100%;
+	height:74px;
+	background:url(/iso_city/assets/backgrounds/uiBar.png) repeat-x;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:30000;
+}
+
+#uiLogo {
+	background-image:url(/iso_city/assets/ui/logo.png);
+    display:block;
+    width:117px;
+    height:45px;
+	z-index:30000;
+	margin-top:10px;
+	margin-left:10px;
+	float:left;
+}
+
+.uiMenu {
+	background:url(/iso_city/assets/backgrounds/uiMenu.png) repeat-x;
+	position:absolute;
+	max-width:700px;
+	z-index:29000;
+	display:block;
+	top:-200px;
+	left:350px;
+}
+
+.uiMenu img {
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	cursor:pointer;
+	float:left;
+	height:30px;
+}
+
+.uiMenu img:hover {
+	background:#FFC;
+}
+
+.uiMenuButton {
+	width:64px;
+	height:64px;
+	z-index:30000;
+	display:block;
+	cursor:pointer;
+	float:left;
+}
+
+.uiMenu_sep {
+	width:30px;
+}
+
+#uiMenuButton_select {
+	background-image:url(/iso_city/assets/ui/uiButton_select.png);
+}
+
+#uiMenuButton_move {
+	background-image:url(/iso_city/assets/ui/uiButton_move.png);
+}
+
+#uiMenuButton_delete {
+	background-image:url(/iso_city/assets/ui/uiButton_delete.png);
+}
+
+#uiMenuButton_land {
+	background-image:url(/iso_city/assets/ui/uiButton_dollar.png);
+}
+
+#uiMenuButton_pavement {
+	background-image:url(/iso_city/assets/ui/uiButton_square.png);
+}
+
+#uiMenuButton_roads {
+	background-image:url(/iso_city/assets/ui/uiButton_roads.png);
+}
+
+#uiMenuButton_buildings {
+	background-image:url(/iso_city/assets/ui/uiButton_house.png);
+}
+
+#uiMenu_buildings img {
+	height:50px;
+}
+
+#mainView {
+	position:absolute;
+	top:64px;
+	left:0px;
+	width:100%;
+	height:100%;
+	margin-bottom:-64px;
+}

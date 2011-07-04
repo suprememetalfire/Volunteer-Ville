@@ -1,0 +1,68 @@
+<style>
+
+	.mainMenu_div {
+		background-image:url(/iso_city/assets/ui/splash.jpg);
+		width:900px;
+		height:525px;
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-left:-450px;
+		margin-top:-263px;
+		border:1px #666 solid;
+	}
+
+	.mainMenu_menuItem {
+		position:relative;
+		left:50%;
+		margin-left:-100px;
+		width:200px;
+		text-align:center;
+		color:#FFF;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:12px;
+		padding:10px;
+		border:1px #666 solid;
+		background-color:#333;
+	}
+	
+	.mainMenu_textBox {
+		position:absolute;
+		left:50%;
+		width:200px;
+		height:30px;
+		margin-left:-100px;
+		top:310px;
+		text-align:center;
+		background-color:#333;
+		border:1px #666 solid;
+		color:#FFF;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:12px;
+	}
+	
+	.mainMenu_button {
+		position:absolute;
+		left:50%;
+		width:214px;
+		height:39px;
+		margin-left:-107px;
+		top:380px;
+	}
+	
+	.mainMenu_error {
+		position:absolute;
+		left:50%;
+		width:327px;
+		height:22px;
+		margin-left:-163px;
+		top:350px;
+		display:none;
+		background-image:url(/iso_city/assets/ui/splashError1.png);
+	}
+</style>
+<div class="mainMenu_div">
+	<input id="mainMenu_userName" class="mainMenu_textBox" onkeyup="document.getElementById('mainMenu_error').style.display = 'none';" type="text" value="" />
+	<div id="mainMenu_error" class="mainMenu_error"></div>
+	<div id="startGame" class="mainMenu_button" onclick="igeGame.startSim();"></div>
+</div>

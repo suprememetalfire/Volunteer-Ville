@@ -37,20 +37,6 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.8
-		});
-
-		this.engine.assets.create({
-			"asset_id" : "schoolInterior",
-			"asset_image_url" : "/game_iso_city/assets/interiors/schoolInterior.png",
-			"asset_sheet_enabled" : false,
-			"asset_anchor_points" : [ 
-			[ 
-			260, 
-			195 ] ],
-			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
-			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.9
 		});		
 		
 		this.engine.assets.create({
@@ -82,13 +68,13 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
-			"asset_id" : "resturantInterior",
-			"asset_image_url" : "/game_iso_city/assets/interiors/resturantInterior.png",
+			"asset_id" : "bank",
+			"asset_image_url" : "/game_iso_city/assets/buildings/bank.png",
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			247, 
-			163 ] ],
+			235, 
+			175 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -96,11 +82,12 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
-			"asset_id" : "bank",
-			"asset_image_url" : "/game_iso_city/assets/buildings/bank.png",
+			"asset_id" : "busShelter",
+			"asset_image_url" : "/game_iso_city/assets/buildings/busShelter.png",
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
+<<<<<<< HEAD
 			245, 
 			185 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
@@ -121,16 +108,24 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.9
+=======
+			200, 
+			111 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 		});
 
 		this.engine.assets.create({
-			"asset_id" : "busShelter",
-			"asset_image_url" : "/game_iso_city/assets/buildings/busShelter.png",
+			"asset_id" : "pound",
+			"asset_image_url" : "/game_iso_city/assets/buildings/pound.png",
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
 			200, 
-			111 ] ],
+			141 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -187,20 +182,6 @@ assets = new IgeClass({
 			[ 
 			185, 
 			110 ] ],
-			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
-			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.9
-		});
-	
-		this.engine.assets.create({
-			"asset_id" : "charityInterior",
-			"asset_image_url" : "/game_iso_city/assets/interiors/charityInterior.png",
-			"asset_sheet_enabled" : false,
-			"asset_anchor_points" : [ 
-			[ 
-			212, 
-			152 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -278,6 +259,7 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
+<<<<<<< HEAD
 			"asset_id" : "stationInterior",
 			"asset_image_url" : "/game_iso_city/assets/interiors/stationInterior.png",
 			"asset_sheet_enabled" : false,
@@ -322,29 +304,38 @@ assets = new IgeClass({
 		this.engine.assets.create({
 			"asset_id" : "oldfolkshome",
 			"asset_image_url" : "/game_iso_city/assets/buildings/oldfolkshome.png",
+=======
+			"asset_id" : "fireStation",
+			"asset_image_url" : "/game_iso_city/assets/buildings/fireStation.png",
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
+			200, 
+			127 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.85
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "oldfolkshome",
+			"asset_image_url" : "/game_iso_city/assets/buildings/oldfolkshome.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+<<<<<<< HEAD
+			260, 
+			195 ] ],
+=======
 			225, 
 			152  ] ],
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 1.1				
-		});
-
-		this.engine.assets.create({
-			"asset_id" : "oldFolksHomeInterior",
-			"asset_image_url" : "/game_iso_city/assets/interiors/oldFolksHomeInterior.png",
-			"asset_sheet_enabled" : false,
-			"asset_anchor_points" : [ 
-			[ 
-			260, 
-			195 ] ],
-			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
-			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.9
 		});
 
 		this.engine.assets.create({
@@ -486,6 +477,7 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.55
 		});
+<<<<<<< HEAD
 
 		this.engine.assets.create({
 			"asset_id" : "museumInterior",
@@ -623,6 +615,8 @@ assets = new IgeClass({
 			"asset_locale": LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED
 		});
+=======
+>>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 
 		this.engine.assets.create({
 			"asset_id" : "van",
