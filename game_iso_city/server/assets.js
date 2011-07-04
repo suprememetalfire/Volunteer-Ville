@@ -101,12 +101,12 @@ assets = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			235, 
-			175 ] ],
+			245, 
+			185 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.9
+			"asset_scale" : 0.8
 		});
 
 		this.engine.assets.create({
@@ -143,8 +143,8 @@ assets = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			200, 
-			141 ] ],
+			190, 
+			80 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -297,12 +297,26 @@ assets = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			200, 
-			127 ] ],
+			180, 
+			75 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.85
+			"asset_scale" : 1.1
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "fireInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/fireInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			240, 
+			155 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
 		});
 
 		this.engine.assets.create({
@@ -376,6 +390,20 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "hallInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/hallInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			250, 
+			200 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "centre",
 			"asset_image_url" : "/game_iso_city/assets/buildings/centre.png",
 			"asset_sheet_enabled" : false,
@@ -387,6 +415,20 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 1 
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "centreInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/hallInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			250, 
+			200 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
 		});
 			
 		this.engine.assets.create({

@@ -169,8 +169,8 @@ templates = new IgeClass({
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
 				entity_layer:LAYER_OBJECTS,
-				entity_tile_width:4,
-				entity_tile_height:5,
+				entity_tile_width:3,
+				entity_tile_height:14,
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'pound',
@@ -347,6 +347,19 @@ templates = new IgeClass({
 		});
 
 		this.engine.templates.create({
+			template_id: 'hallInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-1100000,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'hallInterior',
+			},
+		});
+
+		this.engine.templates.create({
 			template_id: 'centre',
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
@@ -356,6 +369,19 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'centre',
+			},
+		});
+
+		this.engine.templates.create({
+			template_id: 'centreInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-1100000,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'centreInterior',
 			},
 		});
 
@@ -499,6 +525,19 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'fireStation',
+			},
+		});
+
+		this.engine.templates.create({
+			template_id: 'fireInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-1100000,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'fireInterior',
 			},
 		});
 		

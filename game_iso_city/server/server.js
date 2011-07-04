@@ -560,6 +560,105 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				map_persist:PERSIST_DISABLED,
 			});
 
+			this.engine.maps.create({
+				map_id:'hallMap',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
+			this.engine.maps.create({
+				map_id:'centreMap',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
+			this.engine.maps.create({
+				map_id:'fireMap',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
 			// Create main camera
 			this.engine.cameras.create({
 				camera_id:'mainCam',
@@ -824,6 +923,30 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 21, 21, 'shopMap');
 				this.engine.network.send('changeViewMap', 'shopMap', num);
 			}
+			else if( entity.entity_x == 13 && entity.entity_y == 19 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'centreMap');
+				this.engine.network.send('changeViewMap', 'centreMap', num);
+			}
+			else if( entity.entity_x == 10 && entity.entity_y == 19 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'hallMap');
+				this.engine.network.send('changeViewMap', 'hallMap', num);
+			}
+			else if( entity.entity_x == 33 && entity.entity_y == 5 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 5, 23, 'fireMap');
+				this.engine.network.send('changeViewMap', 'fireMap', num);
+			}
+			else if( entity.entity_x == 30 && entity.entity_y == 12 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 11, 23, 'bankMap');
+				this.engine.network.send('changeViewMap', 'bankMap', num);
+			}
 		}
 
 		// Inside to Outside.
@@ -873,6 +996,30 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 26, 10, 'townMap');
+			this.engine.network.send('changeViewMap', 'townMap', num );
+		}
+		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='hallMap' )
+		{
+			this.engine.entities.remove( entity);
+			this.createNewMapAvatar(num, 'womanWalk', 11, 19, 'townMap');
+			this.engine.network.send('changeViewMap', 'townMap', num );
+		}
+		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='centreMap' )
+		{
+			this.engine.entities.remove( entity);
+			this.createNewMapAvatar(num, 'womanWalk', 14, 19, 'townMap');
+			this.engine.network.send('changeViewMap', 'townMap', num );
+		}
+		if( entity.entity_x == 5 && entity.entity_y == 24 && entity.map_id =='fireMap' )
+		{
+			this.engine.entities.remove( entity);
+			this.createNewMapAvatar(num, 'womanWalk', 32, 5, 'townMap');
+			this.engine.network.send('changeViewMap', 'townMap', num );
+		}
+		if( entity.entity_x == 11 && entity.entity_y == 24 && entity.map_id =='bankMap' )
+		{
+			this.engine.entities.remove( entity);
+			this.createNewMapAvatar(num, 'womanWalk', 31, 12, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}		
 	},
