@@ -3,20 +3,13 @@ require('./config');
 igeConfig.init();
 
 require('./assets');
-require('./assetsInteriors');
-require('./assetsTiles');
 require('./templates');
 require('./animations');
 require('./entities');
-<<<<<<< HEAD
 /*require('./assetsInteriors');
 require('./templatesInteriors');
 require('./entitiesInteriors');
 require('./assetsTiles');
-=======
-/*require('./templatesInteriors');
-require('./entitiesInteriors');
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 require('./templatesTiles');
 require('./entitiesTiles');*/
 
@@ -31,20 +24,13 @@ var IgeGame = new IgeClass({
 	
 	engine: null,
 	assets: null,
-	assetsInteriors: null,
-	assetsTiles: null,	
 	templates: null,
 	animations: null,
 	entities: null,
-<<<<<<< HEAD
 	/*assetsInteriors: null,
 	templatesInteriors: null,
 	entitiesInteriors: null,
 	assetsTiles: null,
-=======
-	/*templatesInteriors: null,
-	entitiesInteriors: null,
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 	templatesTiles: null,
 	entitiesTiles: null,*/
 	paths: null,
@@ -56,21 +42,13 @@ var IgeGame = new IgeClass({
 	init: function (engine) {
 		this.engine = engine;
 		this.assets = new assets(this.engine);
-		this.assetsInteriors = new assetsInteriors(this.engine);
-		this.assetsTiles = new assetsTiles(this.engine);
 		this.templates = new templates(this.engine);
 		this.animations = new animations(this.engine);
-<<<<<<< HEAD
 		this.entities = new entities(this.engine);
 		/*this.assetsInteriors = new assetsInteriors(this.engine);
 		this.templatesInteriors = new templatesInteriors(this.engine);
 		this.entitiesInteriors = new entitiesInteriors(this.engine);
 		this.assetsTiles = new assetsTiles(this.engine);
-=======
-		this.entities = new entities(this.engine);		
-		/*this.templatesInteriors = new templatesInteriors(this.engine);
-		this.entitiesInteriors = new entitiesInteriors(this.engine);		
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 		this.templatesTiles = new templatesTiles(this.engine);
 		this.entitiesTiles = new entitiesTiles(this.engine);*/
 		
@@ -160,19 +138,11 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			clearInterval(this.intervalReadyCheck);
 
 			this.assets.load();
-<<<<<<< HEAD
 			this.templates.load();
 			this.animations.load();	
 			/*this.assetsInteriors.load();
 			this.templatesInteriors.load();
 			this.assetsTiles.load();
-=======
-			this.assetsInteriors.load();
-			this.assetsTiles.load();
-			this.templates.load();
-			this.animations.load();				
-			/*this.templatesInteriors.load();			
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			this.templatesTiles.load();*/	
 			
 			// Create ' screen
@@ -182,7 +152,6 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				screen_html: igeConfig.dir_game + '/client/html/mainMenu.html',
 				screen_parent_id: 'contain', 
 				screen_persist:PERSIST_DISABLED,
-<<<<<<< HEAD
 			});
 			
 			// Create map screen
@@ -523,8 +492,6 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 					},
 				],
 				map_persist:PERSIST_DISABLED,
-=======
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			});
 
 			this.engine.maps.create({
@@ -594,11 +561,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			});
 
 			this.engine.maps.create({
-<<<<<<< HEAD
 				map_id:'hallMap',
-=======
-				map_id:'townMap',
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				map_tilesize:60,
 				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
 				map_dirty_width:60,
@@ -631,11 +594,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			});
 
 			this.engine.maps.create({
-<<<<<<< HEAD
 				map_id:'centreMap',
-=======
-				map_id:'schoolMap',
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				map_tilesize:60,
 				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
 				map_dirty_width:60,
@@ -668,246 +627,11 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			});
 
 			this.engine.maps.create({
-<<<<<<< HEAD
 				map_id:'fireMap',
-=======
-				map_id:'restaurantMap',
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				map_tilesize:60,
 				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
 				map_dirty_width:60,
 				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'charityMap',
-				map_tilesize:20,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:20,
-				map_dirty_height:16,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'oldFolksHomeMap',
-				map_tilesize:20,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:20,
-				map_dirty_height:16,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'stationMap',
-				map_tilesize:20,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:20,
-				map_dirty_height:16,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'museumMap',
-				map_tilesize:20,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:20,
-				map_dirty_height:16,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'libraryMap',
-				map_tilesize:20,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:20,
-				map_dirty_height:16,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'hospitalMap',
-				map_tilesize:20,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:20,
-				map_dirty_height:16,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'bankMap',
-				map_tilesize:20,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:20,
-				map_dirty_height:16,
 				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
 				map_render:true,
 				map_layers:[
@@ -1154,17 +878,16 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			if( entity.entity_x == 23 && entity.entity_y == 5 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 0, 16, 'restaurantMap');
-<<<<<<< HEAD
+				this.createNewMapAvatar(num, 'womanWalkBig', 24, 11, 'restaurantMap');
 				this.engine.network.send('changeViewMap', 'restaurantMap', num);
 			}
-			else if( entity.entity_x == 5 && entity.entity_y == 23 )
+			else if( entity.entity_x == 4 && entity.entity_y == 23 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 17, 26, 'schoolMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 5, 23, 'schoolMap');
 				this.engine.network.send('changeViewMap', 'schoolMap', num);
 			}
-			else if( entity.entity_x == 17 && entity.entity_y == 25 )
+			else if( entity.entity_x == 13 && entity.entity_y == 25 )
 			{	
 				this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 15, 16, 'museumMap');
@@ -1182,7 +905,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 20, 9, 'stationMap');
 				this.engine.network.send('changeViewMap', 'stationMap', num);
 			}
-			else if( entity.entity_x == 17 && entity.entity_y == 19 )
+			else if( entity.entity_x == 15 && entity.entity_y == 9 )
 			{	
 				this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 15, 16, 'libraryMap');
@@ -1206,44 +929,34 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'centreMap');
 				this.engine.network.send('changeViewMap', 'centreMap', num);
 			}
-			else if( entity.entity_x == 10 && entity.entity_y == 19 )
+			else if( entity.entity_x == 10 && entity.entity_y == 18 )
 			{	
 				this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'hallMap');
 				this.engine.network.send('changeViewMap', 'hallMap', num);
 			}
-			else if( entity.entity_x == 33 && entity.entity_y == 5 )
+			else if( entity.entity_x == 32 && entity.entity_y == 4 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 5, 23, 'fireMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 31, 17, 'fireMap');
 				this.engine.network.send('changeViewMap', 'fireMap', num);
 			}
 			else if( entity.entity_x == 30 && entity.entity_y == 12 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 11, 23, 'bankMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 33, 24, 'bankMap');
 				this.engine.network.send('changeViewMap', 'bankMap', num);
-=======
-				this.engine.network.send('changeViewMap', 'restaurantMap');
-			}
-			if( entity.entity_x == 5 && entity.entity_y == 23 )
-			{	
-				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 17, 24, 'schoolMap');
-				this.engine.network.send('changeViewMap', 'schoolMap');
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 			}
 		}
 
 		// Inside to Outside.
-<<<<<<< HEAD
-		if (entity.entity_x == 17 && entity.entity_y == 27 && entity.map_id =='schoolMap' )
+		if (entity.entity_x == 5 && entity.entity_y == 24 && entity.map_id =='schoolMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk' , 6, 23, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk' , 5, 23, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == -1 && entity.entity_y == 16 && entity.map_id =='restaurantMap' )
+		if( entity.entity_x == 24 && entity.entity_y == 10 && entity.map_id =='restaurantMap' )
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 22, 5, 'townMap');
@@ -1252,7 +965,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='museumMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 17, 26, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk', 14, 25, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
 		if( entity.entity_x == 17 && entity.entity_y == 27 && entity.map_id =='oldFolksHomeMap' )
@@ -1270,7 +983,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='libraryMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 17, 10, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk', 16, 9, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
 		if( entity.entity_x == 18 && entity.entity_y == 10 && entity.map_id =='crecheMap' )
@@ -1288,7 +1001,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='hallMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 11, 19, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk', 10, 19, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
 		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='centreMap' )
@@ -1297,37 +1010,17 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			this.createNewMapAvatar(num, 'womanWalk', 14, 19, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 5 && entity.entity_y == 24 && entity.map_id =='fireMap' )
+		if( entity.entity_x == 31 && entity.entity_y == 18 && entity.map_id =='fireMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 32, 5, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk', 33, 5, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 11 && entity.entity_y == 24 && entity.map_id =='bankMap' )
+		if( entity.entity_x == 33 && entity.entity_y == 25 && entity.map_id =='bankMap' )
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 31, 12, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
-=======
-		if (entity.entity_x == 17 && entity.entity_y == 26 && entity.map_id =='schoolMap' )
-		{
-			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalkBig' , 5, 22, 'restaurantMap');
-			this.engine.network.send('changeViewMap', 'restaurantMap');
-		}
-		if( entity.entity_x == -1 && entity.entity_y == 16 && entity.map_id =='restaurantMap' )
-		{
-			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 22, 5, 'townMap');
-			this.engine.network.send('changeViewMap', 'townMap');
-		}
-
-		if( entity.entity_x == -1 && entity.entity_y == 16 && entity.map_id =='charityMap' )
-		{
-			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 17, 24, 'townMap');
-			this.engine.network.send('changeViewMap', 'townMap');
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 		}		
 	},
 	

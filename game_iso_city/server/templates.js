@@ -169,13 +169,8 @@ templates = new IgeClass({
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
 				entity_layer:LAYER_OBJECTS,
-<<<<<<< HEAD
 				entity_tile_width:3,
 				entity_tile_height:14,
-=======
-				entity_tile_width:4,
-				entity_tile_height:5,
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'pound',
@@ -532,7 +527,6 @@ templates = new IgeClass({
 				asset_id: 'fireStation',
 			},
 		});
-<<<<<<< HEAD
 
 		this.engine.templates.create({
 			template_id: 'fireInterior',
@@ -546,8 +540,6 @@ templates = new IgeClass({
 				asset_id: 'fireInterior',
 			},
 		});
-=======
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 		
 		this.engine.templates.create({
 			template_id: 'stadium1',

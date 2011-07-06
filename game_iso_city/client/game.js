@@ -76,7 +76,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.checkForSound();
 			},
 
-			checkForSound: function () {
+			/*checkForSound: function () {
 				if ( this.engine.sound != null && this.engine.sound.ready() )
 				{
 					// Create a new sound and play it
@@ -104,7 +104,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				{
 					setTimeout( this.bind( this.checkForSound ), 100 );
 				}
-			},
+			},*/
 			
 			// Called before the server starts sending large amounts of data
 			netSendStarted: function (collection, count) {
@@ -137,11 +137,11 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			{
 				if( this.on )
 				{
-					this.musicOn = true;
+					//this.engine.sound.play( 'gardens' );
 				}
 				else
 				{
-					this.musicOn = false;
+					//this.engine.sound.pause( 'gardens' );
 				}
 			},
 
@@ -154,16 +154,10 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				{
 					$('#igeStatsDiv').html('<center>' + ' COMMUNITY LEVEL ' + 0  + '<br> </br>' + ' BADGES ' + this.score  + '<br> </br>' + 'Current Task'  + '<br> </br>' +  'Go to the Town Hall');	
 				}
-
-				if( !this.musicOff )
-				{
-					
-				}
 				
 				this.engine.network.send('switchMap', this.score);	
 			},
 
-<<<<<<< HEAD
 			changeViewMap: function(mapname, num)
 			{
 				if( this.player.sessionId == num )
@@ -177,17 +171,6 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 
 			directionChange: function (entity) {
 				this.player = entity;
-=======
-			changeViewMap: function(mapname)
-			{
-				this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], mapname);	
-				var camera = this.engine.cameras.byId['mainCam'];
-				//this.engine.cameras.lookAt(camera, player.entity_x, player.entity_y);
-			},
-
-			directionChange: function (entity) {
-this.player = entity;
->>>>>>> dcfddef8c5108b0d4cf408c0d67ff19a3f3669fc
 				switch (entity.template_id) {
 					case 'womanWalk':
 						// Entity is a person sprite
