@@ -881,7 +881,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 24, 11, 'restaurantMap');
 				this.engine.network.send('changeViewMap', 'restaurantMap', num);
 			}
-			else if( entity.entity_x == 4 && entity.entity_y == 23 )
+			else if( entity.entity_x == 3 && entity.entity_y == 24 )
 			{	
 				this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 5, 23, 'schoolMap');
@@ -893,16 +893,16 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 15, 16, 'museumMap');
 				this.engine.network.send('changeViewMap', 'museumMap', num);
 			}
-			else if( entity.entity_x == 2 && entity.entity_y == 12 )
+			else if( entity.entity_x == 3 && entity.entity_y == 10 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 15, 16, 'oldFolksHomeMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 3, 9, 'oldFolksHomeMap');
 				this.engine.network.send('changeViewMap', 'oldFolksHomeMap', num);
 			}
-			else if( entity.entity_x == 10 && entity.entity_y == 12 )
+			else if( ( entity.entity_x == 9 && entity.entity_y == 11 ) || ( entity.entity_x == 9 && entity.entity_y == 12 ) )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 20, 9, 'stationMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 9, 11, 'stationMap');
 				this.engine.network.send('changeViewMap', 'stationMap', num);
 			}
 			else if( entity.entity_x == 15 && entity.entity_y == 9 )
@@ -911,10 +911,10 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 15, 16, 'libraryMap');
 				this.engine.network.send('changeViewMap', 'libraryMap', num);
 			}
-			else if( entity.entity_x == 2 && entity.entity_y == 19 )
+			else if( ( entity.entity_x == 2 && entity.entity_y == 17 ) || ( entity.entity_x == 3 && entity.entity_y == 17 ) )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 17, 10, 'crecheMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 3, 17, 'crecheMap');
 				this.engine.network.send('changeViewMap', 'crecheMap', num);
 			}
 			else if( entity.entity_x == 26 && entity.entity_y == 11 )
@@ -929,10 +929,10 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'centreMap');
 				this.engine.network.send('changeViewMap', 'centreMap', num);
 			}
-			else if( entity.entity_x == 10 && entity.entity_y == 18 )
+			else if( entity.entity_x == 10 && entity.entity_y == 18)
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'hallMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 10, 18, 'hallMap');
 				this.engine.network.send('changeViewMap', 'hallMap', num);
 			}
 			else if( entity.entity_x == 32 && entity.entity_y == 4 )
@@ -947,13 +947,19 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 33, 24, 'bankMap');
 				this.engine.network.send('changeViewMap', 'bankMap', num);
 			}
+			else if( ( entity.entity_x == 31 && entity.entity_y == 26 ) || ( entity.entity_x == 32 && entity.entity_y == 26 ) )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 32, 28, 'hospitalMap');
+				this.engine.network.send('changeViewMap', 'hospitalMap', num);
+			}
 		}
 
 		// Inside to Outside.
 		if (entity.entity_x == 5 && entity.entity_y == 24 && entity.map_id =='schoolMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk' , 5, 23, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk' , 5, 24, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
 		if( entity.entity_x == 24 && entity.entity_y == 10 && entity.map_id =='restaurantMap' )
@@ -968,16 +974,16 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			this.createNewMapAvatar(num, 'womanWalk', 14, 25, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 17 && entity.entity_y == 27 && entity.map_id =='oldFolksHomeMap' )
+		if( entity.entity_x == 3 && entity.entity_y == 10 && entity.map_id =='oldFolksHomeMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 2, 13, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk', 3, 12, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 21 && entity.entity_y == 9 && entity.map_id =='stationMap' )
+		if( entity.entity_x == 10 && entity.entity_y == 11 && entity.map_id =='stationMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 11, 12, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk', 10, 12, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
 		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='libraryMap' )
@@ -986,7 +992,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			this.createNewMapAvatar(num, 'womanWalk', 16, 9, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 18 && entity.entity_y == 10 && entity.map_id =='crecheMap' )
+		if( entity.entity_x == 4 && entity.entity_y == 17 && entity.map_id =='crecheMap' )
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 3, 19, 'townMap');
@@ -998,7 +1004,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			this.createNewMapAvatar(num, 'womanWalk', 26, 10, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='hallMap' )
+		if( entity.entity_x == 10 && entity.entity_y == 19 && entity.map_id =='hallMap' )
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 10, 19, 'townMap');
@@ -1020,8 +1026,15 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 31, 12, 'townMap');
+
 			this.engine.network.send('changeViewMap', 'townMap', num );
-		}		
+		}	
+		if( entity.entity_x == 32 && entity.entity_y == 29 && entity.map_id =='hospitalMap' )
+		{
+			this.engine.entities.remove( entity);
+			this.createNewMapAvatar(num, 'womanWalk', 33, 28, 'townMap');
+			this.engine.network.send('changeViewMap', 'townMap', num );
+		}	
 	},
 	
 	moveAvatar: function (cords, client) {
