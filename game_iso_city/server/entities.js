@@ -829,6 +829,15 @@ entities = new IgeClass({
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
 		});
+		this.engine.entities.create({
+			template_id: 'tileBase',
+			entity_x:13,
+			entity_y:18,
+			entity_id: 'townBase' + (13 + '_' + 18),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+			map_id: 'townMap',
+		});
 
 		// Create some pavement
 		for (var x = 0; x < 36; x+=1) {

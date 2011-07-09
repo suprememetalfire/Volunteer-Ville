@@ -420,15 +420,28 @@ canvas
 
 #igeStatsDiv {
 	position:absolute;
-	background-image:url(/game_iso_city/assets/backgrounds/uiBar.png); repeat-y;
-	left:0px;
-	top:65px;
+	background-image:url(/game_iso_city/assets/ui/osd1.png);
+	right:0px;
+	top:0px;
 	width:300px;
-	height:300px;
+	height:365px;
 	z-index:11000;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:20px;
 	color:#000000;
-	border:5px solid #666;
-	padding:10px;
+	padding:0px;
+}
+#igeStatsBDiv {
+	position:absolute;
+	background-image:url(/game_iso_city/assets/ui/osd2.png);
+	right:0px;
+	bottom:0px;
+	width:400px;
+	height:300px;
+	z-index:11000;
+
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	color:#000000;
+	padding:0px;
 }

@@ -33,6 +33,7 @@ function onBoot () {
 			clicked: true,
 			musicOn: true,
 			player: null,
+myTime: null,
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -150,9 +151,11 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			},
 
 			updateWorld: function () {
+this.myTime = new Date().getTime();
 				if( this.clicked ) 
 				{
-					$('#igeStatsDiv').html('<center>' + ' COMMUNITY LEVEL ' + 0  + '<br> </br>' + ' BADGES ' + this.score  + '<br> </br>' + 'Current Task'  + '<br> </br>' +  'Go to the Town Hall');	
+					$('#igeStatsDiv').html('<br></br> <br></br> <br></br> <center>' + this.score  + '<br></br> <br></br>' + 'Go to the Town Hall');	
+					$('#igeStatsBDiv').html( this.myTime );
 				}
 				
 				this.engine.network.send('switchMap', this.score);	

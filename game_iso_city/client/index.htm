@@ -16,29 +16,43 @@
 <body id="body">
 <div id="uiBar">
 		<div id="uiLogo"></div>
-		<div id="uiMenuButton_select" class="uiMenuButton" onclick="igeGame.switchButton(); igeGame.closeAll('uiMenuGroup1');"></div>
-		<div id="uiMenuButton_move" class="uiMenuButton" onclick="changeVisibility();"></div>
+		<div id="uiMenuButton_select" class="uiMenuButton" onclick="click();"></div>
+		<div id="uiMenuButton_move" class="uiMenuButton" onclick="igeGame.switchButton(); igeGame.closeAll('uiMenuGroup1');"></div>
 		<div id="uiMenuButton_delete" class="uiMenuButton" onclick="resetElement()"></div>
-	
-		<div id="uiMenuButton_land" class="uiMenuButton" onclick="igeGame.toggleMenu('land', 'uiMenuGroup1');"></div>
-		<div id="uiMenuButton_pavement" class="uiMenuButton" onclick="igeGame.toggleMenu('pavement', 'uiMenuGroup1');"></div>
-		<div id="uiMenuButton_roads" class="uiMenuButton" onclick="igeGame.toggleMenu('roads', 'uiMenuGroup1');"></div>
-		<div id="uiMenuButton_buildings" class="uiMenuButton" onclick="igeGame.toggleMenu('buildings', 'uiMenuGroup1');"></div>
 </div>
 
 <div id="igeLogDiv"></div>
 <div id="igeCordDiv"></div>
 <div id="igeStatsDiv"></div>
+<div id="igeStatsBDiv" class="uiMenuButton" onclick="changeVisibility();"></div>
 <div id="contain"></div>
 
 <script type="text/javascript">
+var clicked = true;
+
+	function click()
+	{
+		if( clicked )
+		{
+			changeVisibility();
+			clicked = false;
+		}
+		else
+		{
+			resetElement();
+			clicked = true;
+		}
+	}
+
 	function changeVisibility()
 	{
 		document.getElementById("igeStatsDiv").style.visibility="hidden";
+		document.getElementById("igeStatsBDiv").style.visibility="hidden";
 	}
 	function resetElement()
 	{
 		document.getElementById("igeStatsDiv").style.visibility="visible";
+		document.getElementById("igeStatsBDiv").style.visibility="visible";
 	}
 </script>
 </body>

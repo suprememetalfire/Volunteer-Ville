@@ -923,7 +923,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.createNewMapAvatar(num, 'womanWalkBig', 21, 21, 'shopMap');
 				this.engine.network.send('changeViewMap', 'shopMap', num);
 			}
-			else if( entity.entity_x == 13 && entity.entity_y == 19 )
+			else if( entity.entity_x == 13 && entity.entity_y == 18 )
 			{	
 				this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'centreMap');
@@ -952,6 +952,12 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 32, 28, 'hospitalMap');
 				this.engine.network.send('changeViewMap', 'hospitalMap', num);
+			}
+			else if( ( entity.entity_x == 13 && entity.entity_y == 18 ) )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 32, 28, 'centreMap');
+				this.engine.network.send('changeViewMap', 'centreMap', num);
 			}
 		}
 
@@ -1013,7 +1019,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 		if( entity.entity_x == 19 && entity.entity_y == 18 && entity.map_id =='centreMap' )
 		{
 			this.engine.entities.remove( entity);
-			this.createNewMapAvatar(num, 'womanWalk', 14, 19, 'townMap');
+			this.createNewMapAvatar(num, 'womanWalk', 13, 19, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
 		if( entity.entity_x == 31 && entity.entity_y == 18 && entity.map_id =='fireMap' )
