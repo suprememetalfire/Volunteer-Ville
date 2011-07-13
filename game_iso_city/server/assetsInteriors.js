@@ -136,7 +136,7 @@ assetsInteriors = new IgeClass({
 			"asset_scale" : 0.9
 		});
 
-		/*this.engine.assets.create({
+		this.engine.assets.create({
 			"asset_id" : "fireInterior",
 			"asset_image_url" : "/game_iso_city/assets/interiors/fireInterior.png",
 			"asset_sheet_enabled" : false,
@@ -179,20 +179,6 @@ assetsInteriors = new IgeClass({
 		});
 
 		this.engine.assets.create({
-			"asset_id" : "mealsInterior",
-			"asset_image_url" : "/game_iso_city/assets/interiors/mealsInterior.png",
-			"asset_sheet_enabled" : false,
-			"asset_anchor_points" : [ 
-			[ 
-			250, 
-			200 ] ],
-			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
-			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.9
-		})
-
-		this.engine.assets.create({
 			"asset_id" : "shopInterior",
 			"asset_image_url" : "/game_iso_city/assets/interiors/shopInterior.png",
 			"asset_sheet_enabled" : false,
@@ -204,7 +190,21 @@ assetsInteriors = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.9
-		});*/
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "crecheInterior",
+			"asset_image_url" : "/game_iso_city/assets/interiors/crecheInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			316, 
+			172 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1 
+		});
 	},	
 });	
 }

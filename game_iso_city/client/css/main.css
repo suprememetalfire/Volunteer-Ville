@@ -301,7 +301,7 @@ canvas
 
 #uiBar {
 	width:100%;
-	height:74px;
+	height:100px;
 	background:url(/game_iso_city/assets/backgrounds/uiBar.png) repeat-x;
 	position:absolute;
 	left:0px;
@@ -353,41 +353,108 @@ canvas
 	float:left;
 }
 
+.uiMenuButtonT {
+	width:200px;
+	height:200px;
+
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float:left;
+}
+
+.uiMenuButtonC {
+	width:200px;
+	height:85px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
+.uiMenuButtonCT {
+	width:200px;
+	height:100px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
+.uiMenuButtonGT {
+	width:117px;
+	height:60px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
 .uiMenu_sep {
 	width:30px;
 }
 
-#uiMenuButton_select {
-
-	background-image:url(/game_iso_city/assets/ui/uiButton_select.png);
+#uiMenuButton_menu {
+	background-image:url(/game_iso_city/assets/ui/uiButton_menu.png);
+}
+#uiMenuButton_music {
+	background-image:url(/game_iso_city/assets/ui/uiButton_music.png);
 }
 
-#uiMenuButton_move {
-	background-image:url(/game_iso_city/assets/ui/uiButton_move.png);
+#uiMenuButton_badges {
+	background-image:url(/game_iso_city/assets/ui/uiButton_badges.png);
 }
 
-#uiMenuButton_delete {
-	background-image:url(/game_iso_city/assets/ui/uiButton_delete.png);
+#uiMenuButton_osd {
+	background-image:url(/game_iso_city/assets/ui/osd.png);
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
+}
+	
+#uiMenuButton_osd1 {
+	background-image:url(/game_iso_city/assets/ui/osd1.png);
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
 }
 
-#uiMenuButton_land {
-	background-image:url(/game_iso_city/assets/ui/uiButton_dollar.png);
+#uiMenuButton_osd3 {
+	background-image:url(/game_iso_city/assets/ui/osd3.png);
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
 }
 
-#uiMenuButton_pavement {
-	background-image:url(/game_iso_city/assets/ui/uiButton_square.png);
+.playerButton 
+{
+	width:250px;
+	height:435px;
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float:left;
+}
+.playerButton_sep 
+{
+	width:30px;
 }
 
-#uiMenuButton_roads {
-	background-image:url(/game_iso_city/assets/ui/uiButton_roads.png);
+#playerOne
+{
+	background-image:url(/game_iso_city/assets/ui/uiButton_delet.png);
 }
-
-#uiMenuButton_buildings {
-	background-image:url(/game_iso_city/assets/ui/uiButton_house.png);
+#playerTwo 
+{
+	background-image:url(/game_iso_city/assets/ui/uiButton_delet.png);
 }
-
-#uiMenu_buildings img {
-	height:50px;
+#playerThree 
+{
+	background-image:url(/game_iso_city/assets/ui/uiButton_delet.png);
+}
+#playerFour 
+{
+	background-image:url(/game_iso_city/assets/ui/uiButton_delet.png);
 }
 
 #igeLogDiv {
@@ -418,28 +485,39 @@ canvas
 	padding:10px;
 }
 
-#igeStatsDiv {
-	position:absolute;
-	background-image:url(/game_iso_city/assets/ui/osd1.png);
-	right:0px;
-	top:0px;
-	width:300px;
-	height:365px;
-	z-index:11000;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:20px;
-	color:#000000;
-	padding:0px;
-}
 #igeStatsBDiv {
 	position:absolute;
 	background-image:url(/game_iso_city/assets/ui/osd2.png);
 	right:0px;
 	bottom:0px;
-	width:400px;
-	height:300px;
+	width:700px;
+	height:250px;
 	z-index:11000;
 
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	color:#000000;
+	padding:0px;
+}
+
+#igePlayerDiv {
+	position:absolute;
+	background-image:url(/game_iso_city/assets/ui/playerSelection.png);
+	left:25%;
+	top:25%;
+	width:1000px;
+	height:442px;
+	z-index:11000;
+}
+
+#igeBadgesDiv {
+	position:absolute;
+	background-image:url(/game_iso_city/assets/ui/badgesScreen.png);
+	left:50%;
+	top:0px;
+	width:150px;
+	height:400px;
+	z-index:11000;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:20px;
 	color:#000000;

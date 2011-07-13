@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>VolunteerVille</title>
+<title>Volunteer Village</title>
 
 <!-- STYLES -->
 <link href="css/main.css" rel="stylesheet" type="text/css" />
@@ -16,19 +16,34 @@
 <body id="body">
 <div id="uiBar">
 		<div id="uiLogo"></div>
-		<div id="uiMenuButton_select" class="uiMenuButton" onclick="click();"></div>
-		<div id="uiMenuButton_move" class="uiMenuButton" onclick="igeGame.switchButton(); igeGame.closeAll('uiMenuGroup1');"></div>
-		<div id="uiMenuButton_delete" class="uiMenuButton" onclick="resetElement()"></div>
+		<div id="uiMenuButton_menu" class="uiMenuButton" onclick="click();"></div>
+		<div id="uiMenuButton_music" class="uiMenuButton" onclick="igeGame.switchMusic();"></div>
+		<div id="uiMenuButton_badges" class="uiMenuButton" onclick="showBadges();"></div>
+		<div id="uiMenuButton_osd" class="uiMenuButtonC"></div>
+		<div id="uiMenuButton_osd1" class="uiMenuButtonCT"></div>
+		<div id="uiMenuButton_osd3" class="uiMenuButtonGT"></div>
+		
 </div>
 
 <div id="igeLogDiv"></div>
 <div id="igeCordDiv"></div>
-<div id="igeStatsDiv"></div>
-<div id="igeStatsBDiv" class="uiMenuButton" onclick="changeVisibility();"></div>
+<div id="igeStatsBDiv">
+	<div id="uiMenuButton_badges" class="uiMenuButtonT" onclick="showBadges();"></div>
+</div>
+<div id="igePlayerDiv">
+	<div id="playerOne" class="playerButton" onclick="showBadges();"></div>
+	<div id="playerTwo" class="playerButton" onclick="click();"></div>
+	<div id="playerThree" class="playerButton" onclick="showBadges();"></div>
+	<div id="playerFour" class="playerButton" onclick="click();"></div>
+</div>
+<div id="igeBadgesDiv"></div>
 <div id="contain"></div>
 
 <script type="text/javascript">
 var clicked = true;
+var show = false;
+
+document.getElementById("igeBadgesDiv").style.visibility="hidden";
 
 	function click()
 	{
@@ -46,13 +61,27 @@ var clicked = true;
 
 	function changeVisibility()
 	{
-		document.getElementById("igeStatsDiv").style.visibility="hidden";
 		document.getElementById("igeStatsBDiv").style.visibility="hidden";
+		document.getElementById("igePlayerDiv").style.visibility="hidden";
 	}
 	function resetElement()
 	{
-		document.getElementById("igeStatsDiv").style.visibility="visible";
 		document.getElementById("igeStatsBDiv").style.visibility="visible";
+		document.getElementById("igePlayerDiv").style.visibility="visible";
+	}
+
+	function showBadges()
+	{
+		if( show )
+		{
+			document.getElementById("igeBadgesDiv").style.visibility="hidden";
+			show = false;
+		}
+		else
+		{
+			document.getElementById("igeBadgesDiv").style.visibility="visible";
+			show = true;
+		}
 	}
 </script>
 </body>

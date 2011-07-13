@@ -128,7 +128,7 @@ templatesInteriors = new IgeClass({
 			},
 		});
 
-		/*this.engine.templates.create({
+		this.engine.templates.create({
 			template_id: 'fireInterior',
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
@@ -155,6 +155,19 @@ templatesInteriors = new IgeClass({
 		});
 
 		this.engine.templates.create({
+			template_id: 'crecheInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-110000,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'crecheInterior',
+			},
+		});
+
+		this.engine.templates.create({
 			template_id: 'hallInterior',
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
@@ -164,19 +177,6 @@ templatesInteriors = new IgeClass({
 				entity_z:-1100000,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'hallInterior',
-			},
-		});
-
-		this.engine.templates.create({
-			template_id: 'mealsInterior',
-			template_contents: {
-				entity_type:ENTITY_TYPE_OBJECT,
-				entity_layer:LAYER_OBJECTS,
-				entity_tile_width:20,
-				entity_tile_height:16,
-				entity_z:-1100000,
-				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
-				asset_id: 'mealsInterior',
 			},
 		});
 
@@ -191,7 +191,7 @@ templatesInteriors = new IgeClass({
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'shopInterior',
 			},
-		});*/		
+		});		
 	},	
 });
 }

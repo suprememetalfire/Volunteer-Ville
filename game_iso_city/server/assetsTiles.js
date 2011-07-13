@@ -1,6 +1,6 @@
 // Define the resources class -- all your assets, templates, animations and entities should be in here.
 function onBoot() {
-assets = new IgeClass({
+assetsTiles = new IgeClass({
 
 	engine: null,	
 
@@ -86,6 +86,22 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 1
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "swing",
+			"asset_image_url" : "/game_iso_city/assets/people/swing.png",
+			"asset_sheet_enabled" : true,
+			"asset_sheet_width" : 8,
+			"asset_sheet_height" : 	1,
+			"asset_anchor_points" : [ 
+			[ 
+			24, 
+			80 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.3
+		});
   
 		this.engine.assets.create({
 			"asset_id" : "grassSheet",
@@ -114,6 +130,21 @@ assets = new IgeClass({
 			"asset_sheet_height" : 1,
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale": LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "van",
+			"asset_image_url" : "/game_iso_city/assets/objects/van.png",
+			"asset_sheet_enabled" : true,
+			"asset_anchor_points" : [ 
+			[ 
+			125, 
+			124 ] ],
+			"asset_sheet_width" : 1,
+			"asset_sheet_height" : 4,
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED
 		});
 	},	

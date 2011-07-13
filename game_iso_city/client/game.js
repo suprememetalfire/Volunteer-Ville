@@ -34,6 +34,7 @@ function onBoot () {
 			musicOn: true,
 			player: null,
 myTime: null,
+			location: '',
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -77,14 +78,14 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				this.checkForSound();
 			},
 
-			/*checkForSound: function () {
+			checkForSound: function () {
 				if ( this.engine.sound != null && this.engine.sound.ready() )
 				{
 					// Create a new sound and play it
 					this.engine.sound.create(
 					{
-						sound_id: 'gardens',
-						sound_url: 'audio/artofgardens.mp3',
+						sound_id: 'background',
+						sound_url: 'audio/background.mp3',
 						sound_volume: 100, // Set sound to full volume
 						sound_auto_load: true, // Automatically load the sound data
 						sound_auto_play: true, // Don't automatically start playing the sound
@@ -97,7 +98,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 						onLoaded: function ( sound ) 
 						{
 							// Once the track is loaded, ask the engine to start playing it
-							this.engine.sound.play( sound );
+							this.engine.sound.play( 'background' );
 						}
 					});
 				} 
@@ -105,7 +106,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				{
 					setTimeout( this.bind( this.checkForSound ), 100 );
 				}
-			},*/
+			},
 			
 			// Called before the server starts sending large amounts of data
 			netSendStarted: function (collection, count) {
@@ -136,14 +137,16 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 
 			switchMusic: function ()
 			{
-				if( this.on )
+				/*if( this.musicOn )
 				{
-					//this.engine.sound.play( 'gardens' );
+					this.engine.sound.play( 'gardens' );
+					this.musicOn = false;
 				}
 				else
 				{
-					//this.engine.sound.pause( 'gardens' );
-				}
+					this.engine.sound.pause( 'gardens' );
+					this.musicOn = true;
+				}*/
 			},
 
 			sendUpdate: function( data ) {
@@ -154,11 +157,30 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 this.myTime = new Date().getTime();
 				if( this.clicked ) 
 				{
-					$('#igeStatsDiv').html('<br></br> <br></br> <br></br> <center>' + this.score  + '<br></br> <br></br>' + 'Go to the Town Hall');	
-					$('#igeStatsBDiv').html( this.myTime );
+			$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
+			$('#uiMenuButton_osd3').html('<br></br> <center>' + this.myTime  + '<br></br>     '+this.location);
+			$('#uiMenuButton_osd1').html('<br></br> <center>' + 'Go to the Town Hall');
+					$('#igeStatsDiv').html('<br></br> <br></br> <br></br> <center>' + this.score + '     '+this.location  + '<br></br> <br></br>' + 'Go to the Town Hall');	
+					//$('#igeStatsBDiv').html( this.myTime );
 				}
 				
 				this.engine.network.send('switchMap', this.score);	
+			},
+
+			guide: function (clientX, clientY)
+			{
+				if(clientX == 20 && clientY == 20 )
+				{
+					this.location = 'school';
+				}
+				else if(clientX == 20 && clientY == 21 )
+				{
+					this.location = 'creche';
+				}
+				else
+				{
+					this.location = '';
+				}
 			},
 
 			changeViewMap: function(mapname, num)
@@ -237,7 +259,9 @@ this.myTime = new Date().getTime();
 				
 				if (event.viewport.$local.mouseDownButton == 2) {
 					this.engine.viewports.panTo(event.viewport, clientX, clientY);
-				}		
+				}
+
+				this.guide(tileCords[0], tileCords[1]);		
 			},
 			
 			viewportMouseUp: function (event) {				

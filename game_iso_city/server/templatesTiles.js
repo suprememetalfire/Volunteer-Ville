@@ -9,7 +9,22 @@ templatesTiles = new IgeClass({
 	},
 	
 	// Create templates
-	load: function () {			
+	load: function () {
+		this.engine.templates.create({
+			template_id: 'tileBase',
+			template_contents: {
+				entity_type:ENTITY_TYPE_TILE,
+				entity_layer:LAYER_TILES,
+				entity_tile_width:1,
+				entity_tile_height:1,
+				entity_z:-110000,
+				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
+				asset_id: 'grassSheet2',
+				//map_id: 'testMap1',
+				path_class: ['walk'],
+			},
+		});
+			
 		this.engine.templates.create({
 			template_id: 'tilePavement',
 			template_contents: {
@@ -52,10 +67,10 @@ templatesTiles = new IgeClass({
 				//map_id: 'testMap1',
 				//path_class: ['walk'],
 			},
-		});
+		});		
 
 		this.engine.templates.create({
-			template_id: 'tileBase',
+			template_id: 'tileDoor',
 			template_contents: {
 				entity_type:ENTITY_TYPE_TILE,
 				entity_layer:LAYER_TILES,
@@ -63,7 +78,22 @@ templatesTiles = new IgeClass({
 				entity_tile_height:1,
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
-				asset_id: 'grassSheet2',
+				asset_id: 'doorSheet',
+				//map_id: 'testMap1',
+				path_class: ['walk'],
+			},
+		});
+
+		this.engine.templates.create({
+			template_id: 'tileQuest',
+			template_contents: {
+				entity_type:ENTITY_TYPE_TILE,
+				entity_layer:LAYER_TILES,
+				entity_tile_width:1,
+				entity_tile_height:1,
+				entity_z:0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
+				asset_id: 'doorSheet',
 				//map_id: 'testMap1',
 				path_class: ['walk'],
 			},

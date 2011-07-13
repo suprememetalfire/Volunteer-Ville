@@ -6,12 +6,13 @@ require('./assets');
 require('./templates');
 require('./animations');
 require('./entities');
-/*require('./assetsInteriors');
+require('./assetsInteriors');
 require('./templatesInteriors');
 require('./entitiesInteriors');
 require('./assetsTiles');
 require('./templatesTiles');
-require('./entitiesTiles');*/
+require('./entitiesTiles');
+require('./maps');
 
 
 // Image Generator Module
@@ -27,12 +28,13 @@ var IgeGame = new IgeClass({
 	templates: null,
 	animations: null,
 	entities: null,
-	/*assetsInteriors: null,
+	assetsInteriors: null,
 	templatesInteriors: null,
 	entitiesInteriors: null,
 	assetsTiles: null,
 	templatesTiles: null,
-	entitiesTiles: null,*/
+	entitiesTiles: null,
+	maps: null,
 	paths: null,
 	score: 0,
 	update: null,
@@ -45,12 +47,13 @@ var IgeGame = new IgeClass({
 		this.templates = new templates(this.engine);
 		this.animations = new animations(this.engine);
 		this.entities = new entities(this.engine);
-		/*this.assetsInteriors = new assetsInteriors(this.engine);
+		this.assetsInteriors = new assetsInteriors(this.engine);
 		this.templatesInteriors = new templatesInteriors(this.engine);
 		this.entitiesInteriors = new entitiesInteriors(this.engine);
 		this.assetsTiles = new assetsTiles(this.engine);
 		this.templatesTiles = new templatesTiles(this.engine);
-		this.entitiesTiles = new entitiesTiles(this.engine);*/
+		this.entitiesTiles = new entitiesTiles(this.engine);
+		this.maps = new maps(this.engine);
 		
 		// Create the game hooks into the engine
 		this.engine.network.events.on('clientConnect', this.bind(this.clientConnect));
@@ -140,10 +143,10 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			this.assets.load();
 			this.templates.load();
 			this.animations.load();	
-			/*this.assetsInteriors.load();
+			this.assetsInteriors.load();
 			this.templatesInteriors.load();
 			this.assetsTiles.load();
-			this.templatesTiles.load();*/	
+			this.templatesTiles.load();	
 			
 			// Create ' screen
 			this.engine.screens.create({
@@ -163,501 +166,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 				screen_persist:PERSIST_DISABLED,
 			});
 			
-			// Create map
-			this.engine.maps.create({
-				map_id:'townMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'schoolMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'restaurantMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'charityMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'oldFolksHomeMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'stationMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'museumMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'libraryMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'hospitalMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'bankMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'crecheMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'shopMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'hallMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'centreMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
-
-			this.engine.maps.create({
-				map_id:'fireMap',
-				map_tilesize:60,
-				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
-				map_dirty_width:60,
-				map_dirty_height:60,
-				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
-				map_render:true,
-				map_layers:[
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_BACKGROUNDS
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_TILES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_SPRITES
-					},
-					{
-						layer_auto_mode:LAYER_AUTO_NONE,
-						layer_type:LAYER_TYPE_CANVAS,
-						layer_entity_types: LAYER_UI
-					},
-				],
-				map_persist:PERSIST_DISABLED,
-			});
+			this.maps.load();
 
 			// Create main camera
 			this.engine.cameras.create({
@@ -695,8 +204,8 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			});
 
 			this.entities.load();
-			/*this.entitiesInteriors.load();
-			this.entitiesTiles.load();*/
+			this.entitiesInteriors.load();
+			this.entitiesTiles.load();
 
 			this.log('+++++++++++++++++++ All data loaded and ready - Engine online +++++++++++++++++++');
 						
@@ -896,10 +405,10 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			else if( entity.entity_x == 3 && entity.entity_y == 10 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 3, 9, 'oldFolksHomeMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 3, 8, 'oldFolksHomeMap');
 				this.engine.network.send('changeViewMap', 'oldFolksHomeMap', num);
 			}
-			else if( ( entity.entity_x == 9 && entity.entity_y == 11 ) || ( entity.entity_x == 9 && entity.entity_y == 12 ) )
+			else if( entity.entity_x == 9 && entity.entity_y == 11)
 			{	
 				this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 9, 11, 'stationMap');
@@ -980,7 +489,7 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			this.createNewMapAvatar(num, 'womanWalk', 14, 25, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 3 && entity.entity_y == 10 && entity.map_id =='oldFolksHomeMap' )
+		if( entity.entity_x == 3 && entity.entity_y == 9 && entity.map_id =='oldFolksHomeMap' )
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 3, 12, 'townMap');
