@@ -34,7 +34,12 @@ function onBoot () {
 			musicOn: true,
 			player: null,
 myTime: null,
-			location: '',
+			location: '',			
+			taskName: [],
+			taskPoints: [],
+			taskList: [],
+			taskCompleted: [],
+			currentTask: 0,
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -63,8 +68,22 @@ myTime: null,
 				this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));
 this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
-this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
-this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
+				this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
+				this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
+				this.engine.network.registerCommand('updateCommunity', this.bind(this.updateCommunity));
+
+				this.taskPoints[0] = 1;
+				this.taskPoints[1] = 5;
+				this.taskPoints[2] = 10;
+				this.taskPoints[3] = 15;
+				this.taskPoints[4] = 20;
+
+				for( var i = 0; i < 27; i++ )
+				{
+					this.taskName[i] = i;
+					this.taskList[i] = 0;
+					this.taskCompleted[i] = true;
+				}
 				
 				// Setup the network to the server
 				this.engine.network.setHostAndPort(null, 8080);
@@ -154,15 +173,16 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			},
 
 			updateWorld: function () {
+				
 this.myTime = new Date().getTime();
-				if( this.clicked ) 
-				{
-			$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
-			$('#uiMenuButton_osd3').html('<br></br> <center>' + this.myTime  + '<br></br>     '+this.location);
-			$('#uiMenuButton_osd1').html('<br></br> <center>' + 'Go to the Town Hall');
+				//if( this.clicked ) 
+				//{
+					$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
+					$('#uiMenuButton_osd3').html('<br></br> <center>' + this.myTime  + '<br></br>     '+this.location);
+					$('#uiMenuButton_osd1').html('<br></br> <center>' + 'Go to the Town Hall');
 					$('#igeStatsDiv').html('<br></br> <br></br> <br></br> <center>' + this.score + '     '+this.location  + '<br></br> <br></br>' + 'Go to the Town Hall');	
 					//$('#igeStatsBDiv').html( this.myTime );
-				}
+				//}
 				
 				this.engine.network.send('switchMap', this.score);	
 			},
@@ -192,6 +212,31 @@ this.myTime = new Date().getTime();
 					//this.engine.cameras.lookAt(this.cameraP, this.player.entity_x, this.player.entity_y);
 					//this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], this.player.sessionId);
 				}
+			},
+
+			tasks: function()
+			{
+				if( this.currentTask == this.taskName[0] )
+				{
+
+
+					if( this.taskCompleted[0] )
+					{
+						this.updateCommunity( this.taskPoints[2] );
+						this.engine.network.send('updateCommunity', this.communityLevel);
+						this.taskList[0] += 1;
+						//this.taskCompleted[0] = false;
+					}
+				}
+				else if( this.currentTask == this.taskName[1] )
+				{
+		
+				}
+			},
+
+			updateCommunity: function ( points ) 
+			{
+				this.communityLevel = points;
 			},
 
 			directionChange: function (entity) {
@@ -275,7 +320,7 @@ this.myTime = new Date().getTime();
 					this.engine.network.send('moveAvatar', [tileCords[0], tileCords[1]]);
 				}
 	//this.engine.network.send('moveVan');				
-
+this.tasks();
 				
 				if (event.button == 2) {
 					this.engine.viewports.panEnd(event.viewport, clientX, clientY);

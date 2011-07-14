@@ -362,8 +362,8 @@ entitiesInteriors = new IgeClass({
 		});
 
 		// Fire Station Interior
-		for (var x = 29; x < 41; x+=1) {
-			for (var y = -4; y < 20; y+=1) {
+		for (var x = 30; x < 42; x+=1) {
+			for (var y = -5; y < 19; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,

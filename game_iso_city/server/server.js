@@ -39,6 +39,7 @@ var IgeGame = new IgeClass({
 	score: 0,
 	update: null,
 	clicked: true,
+	communityLevel: 0,
 	
 	// Constructor
 	init: function (engine) {
@@ -71,11 +72,12 @@ this.engine.entities.events.on('vanDirectionChange', this.bind(this.vanDirection
     
 		this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));	
 this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
-this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
-this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
+		this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
+		this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
+		this.engine.network.registerCommand('updateCommunity', this.bind(this.updateCommunity));
 
-		this.update = setInterval(this.bind(this.updateWorld), 1000); 
-		
+		this.update = setInterval(this.bind(this.updateWorld), 1000);		
+
 		// Start the server engine
 		this.engine.start(igeConfig);
 		
@@ -207,20 +209,27 @@ this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMa
 			this.entitiesInteriors.load();
 			this.entitiesTiles.load();
 
-			this.log('+++++++++++++++++++ All data loaded and ready - Engine online +++++++++++++++++++');
-						
+			this.log('+++++++++++++++++++ All data loaded and ready - Engine online +++++++++++++++++++');						
 		}
 	},
 	
 	updateWorld: function () {
-		this.score++;
+		//this.score++;
 		//this.vanDirectionChange();
-		this.engine.network.send('sendUpdate',this.score);
+		
+
 		//this.moveVan();	
 	},
 
 	sendUpdate: function () {
-		this.score = this.score;
+		this.score = this.communityLevel;
+this.log('ddd');
+	},
+
+	updateCommunity: function( data )
+	{
+		this.communityLevel += data;
+		this.engine.network.send('sendUpdate',this.communityLevel);
 	},
 
 	////////////////////////////////////////////////////////////////////////////////////////
@@ -665,7 +674,11 @@ this.log('SW');
 		break;					
 		}
 	},
-	
+
+	updatCommunityLevel: function( points )
+	{
+		this.communityLevel += points;
+	},		
 });
 
 // Create a new engine instance
