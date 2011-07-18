@@ -223,7 +223,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 	sendUpdate: function () {
 		this.score = this.communityLevel;
-this.log('ddd');
 	},
 
 	updateCommunity: function( data )

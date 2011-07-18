@@ -39,7 +39,8 @@ myTime: null,
 			taskPoints: [],
 			taskList: [],
 			taskCompleted: [],
-			currentTask: 0,
+			currentTask: -1,
+			output: 0 ,
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -82,8 +83,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					this.taskName[i] = i;
 					this.taskList[i] = 0;
-					this.taskCompleted[i] = true;
+					this.taskCompleted[i] = false;
 				}
+
+				$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
 				
 				// Setup the network to the server
 				this.engine.network.setHostAndPort(null, 8080);
@@ -105,7 +108,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					{
 						sound_id: 'background',
 						sound_url: 'audio/background.mp3',
-						sound_volume: 100, // Set sound to full volume
+						sound_volume: 5, // Set sound to full volume
 						sound_auto_load: true, // Automatically load the sound data
 						sound_auto_play: true, // Don't automatically start playing the sound
 						sound_buffer: 5, // Buffer 5 seconds of audio before playing
@@ -168,19 +171,22 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}*/
 			},
 
-			sendUpdate: function( data ) {
+			sendUpdate: function( data ) 
+			{
 				this.score = data;
+				$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
 			},
 
 			updateWorld: function () {
-				
+				this.outputTasks();
+				this.acceptTask();
+				this.tasks();
 this.myTime = new Date().getTime();
 				//if( this.clicked ) 
 				//{
-					$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
+					
 					$('#uiMenuButton_osd3').html('<br></br> <center>' + this.myTime  + '<br></br>     '+this.location);
 					$('#uiMenuButton_osd1').html('<br></br> <center>' + 'Go to the Town Hall');
-					$('#igeStatsDiv').html('<br></br> <br></br> <br></br> <center>' + this.score + '     '+this.location  + '<br></br> <br></br>' + 'Go to the Town Hall');	
 					//$('#igeStatsBDiv').html( this.myTime );
 				//}
 				
@@ -218,19 +224,72 @@ this.myTime = new Date().getTime();
 			{
 				if( this.currentTask == this.taskName[0] )
 				{
-
+					
 
 					if( this.taskCompleted[0] )
 					{
-						this.updateCommunity( this.taskPoints[2] );
+						this.updateCommunity( this.taskPoints[0] );
 						this.engine.network.send('updateCommunity', this.communityLevel);
 						this.taskList[0] += 1;
-						//this.taskCompleted[0] = false;
+						this.taskCompleted[0] = false;
 					}
 				}
 				else if( this.currentTask == this.taskName[1] )
 				{
 		
+					if( this.taskCompleted[1] )
+					{
+						this.updateCommunity( this.taskPoints[2] );
+						this.engine.network.send('updateCommunity', this.communityLevel);
+						this.taskList[1] += 1;
+						this.taskCompleted[1] = false;
+					}
+				}
+				else if( this.currentTask == this.taskName[2] )
+				{
+					
+					if( this.taskCompleted[2] )
+					{
+						this.updateCommunity( this.taskPoints[2] );
+						this.engine.network.send('updateCommunity', this.communityLevel);
+						this.taskList[2] += 1;
+						this.taskCompleted[2] = false;
+					}		
+				}
+				else if( this.currentTask == this.taskName[3] )
+				{
+	
+					if( this.taskCompleted[3] )
+					{
+						this.updateCommunity( this.taskPoints[2] );
+						this.engine.network.send('updateCommunity', this.communityLevel);
+						this.taskList[3] += 1;
+						this.taskCompleted[3] = false;
+					}		
+				}
+			},
+		
+			acceptTask: function()
+			{
+				if( this.player.map_id == 'centreMap' )
+				{
+					this.currentTask = 0;
+				}
+			},
+
+			outputTasks: function()
+			{
+				if( this.output == 1 )
+				{
+					$('#igeQuestLog2').html('Go to the police station to be vetted for volunteer work.' + '<br></br>     '+this.location);
+				}
+				else if( this.output = 2 )
+				{
+					$('#igeQuestLog2').html('<br></br> <center>' + '2'  + '<br></br>     '+this.location);
+				}
+				else
+				{
+					$('#igeQuestLog2').html('<br></br> <center>' + 'qwertyui'  + '<br></br>     '+this.location);
 				}
 			},
 
@@ -320,7 +379,7 @@ this.myTime = new Date().getTime();
 					this.engine.network.send('moveAvatar', [tileCords[0], tileCords[1]]);
 				}
 	//this.engine.network.send('moveVan');				
-this.tasks();
+this.taskCompleted[0] = true;
 				
 				if (event.button == 2) {
 					this.engine.viewports.panEnd(event.viewport, clientX, clientY);
