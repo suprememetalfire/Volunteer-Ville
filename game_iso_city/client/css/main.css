@@ -547,158 +547,18 @@ canvas
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:20px;
 }
-.tasks
-{
-	width:214px;
-	height: 25px;
-	z-index:11000;
-	display:block;
-	cursor:pointer;
-	float: left;
-}
-.clean
-{
-	width:220px;
-	height: 25px;
-	z-index:110000;
-	display:block;
-	cursor:pointer;
-	float: left;
-}
-.clown
-{
-	width:260px;
-	height: 25px;
-	z-index:110000;
-	display:block;
-	cursor:pointer;
-	float: left;
-}
-.IT
-{
-	width:360px;
-	height: 25px;
-	z-index:110000;
-	display:block;
-	cursor:pointer;
-	float: left;
-}
 
-#blank
+#blank2
 {
-	background-image:url(/game_iso_city/assets/ui/blank.png);	
+	background-image:url(/game_iso_city/assets/ui/blank2.png);	
 }
-#gardai
+.blank2
 {
-	background-image:url(/game_iso_city/assets/ui/gardaiVetting.png);	
-}
-#art
-{
-	background-image:url(/game_iso_city/assets/ui/artAttack.png);	
-}
-#school
-{
-	background-image:url(/game_iso_city/assets/ui/backToSchool.png);	
-}
-#befriender
-{
-	background-image:url(/game_iso_city/assets/ui/befriender.png);	
-}
-#befriender2
-{
-	background-image:url(/game_iso_city/assets/ui/befriender2.png);	
-}
-#carWash
-{
-	background-image:url(/game_iso_city/assets/ui/carWash.png);	
-}
-#cleanUp
-{
-	background-image:url(/game_iso_city/assets/ui/cleanUpOnAisle7.png);	
-}
-#clown
-{
-	background-image:url(/game_iso_city/assets/ui/clownInChildrensUnit.png);	
-}
-#cooking
-{
-	background-image:url(/game_iso_city/assets/ui/cookingClub.png);	
-}
-#cooking2
-{
-	background-image:url(/game_iso_city/assets/ui/cookingClub2.png);	
-}
-#crime
-{
-	background-image:url(/game_iso_city/assets/ui/crimeVictimsSupport.png);	
-}
-#delivery
-{
-	background-image:url(/game_iso_city/assets/ui/deliveryService.png);	
-}
-#dog
-{
-	background-image:url(/game_iso_city/assets/ui/dogWalker.png);	
-}
-#enviroment
-{
-	background-image:url(/game_iso_city/assets/ui/enviromentalProtection.png);	
-}
-#handyMan
-{
-	background-image:url(/game_iso_city/assets/ui/homeRepairs.png);	
-}
-#infoDesk
-{
-	background-image:url(/game_iso_city/assets/ui/informationDesk.png);	
-}
-#infoPro
-{
-	background-image:url(/game_iso_city/assets/ui/informationProvider.png);	
-}
-#invigilator
-{
-	background-image:url(/game_iso_city/assets/ui/invigilator.png);	
-}
-#ITCrowd
-{
-	background-image:url(/game_iso_city/assets/ui/itCommunications.png);	
-}
-#ITCrowd2
-{
-	background-image:url(/game_iso_city/assets/ui/mediaCommunicationsVolunteer.png);	
-}
-#miniBus
-{
-	background-image:url(/game_iso_city/assets/ui/miniBusDriver.png);	
-}
-#miniBus2
-{
-	background-image:url(/game_iso_city/assets/ui/miniBusDriver2.png);	
-}
-#musician
-{
-	background-image:url(/game_iso_city/assets/ui/musician.png);	
-}
-#online
-{
-	background-image:url(/game_iso_city/assets/ui/onlineModerator.png);	
-}
-#shop
-{
-	background-image:url(/game_iso_city/assets/ui/shopAssistant.png);	
-}
-#tidyTowns
-{
-	background-image:url(/game_iso_city/assets/ui/tidyTowns.png);	
-}
-#tourist
-{
-	background-image:url(/game_iso_city/assets/ui/touristInformation.png);	
-}
-#windowShopping
-{
-	background-image:url(/game_iso_city/assets/ui/touristInformation.png);	
+	width:287px;
+	height: 529px;
+	z-index:110000;
+	display:block;
+	border: 5px dotted transparent;
 }
 
 #acceptButton
@@ -707,17 +567,9 @@ canvas
 }
 .acceptButton 
 {
-	width:149px;
+	width:300px;
 	height:50px;	
 	z-index:11000;
 	display:block;
 	cursor:pointer;
-}
-#prevButton
-{
-	background-image:url(/game_iso_city/assets/ui/previousButton.png);
-}
-#nextButton
-{
-	background-image:url(/game_iso_city/assets/ui/nextButton.png);
 }

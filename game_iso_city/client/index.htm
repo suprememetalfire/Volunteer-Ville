@@ -1,76 +1,139 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Volunteer Village</title>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="description" content="Volunteer Village" />
+		<meta name="keywords" content="Volunteer Village, Carlow" />
+		<meta name="author" content="PAtrick Kinsella, Luke Murray" />
+		<meta charset=UTF-8" />
 
-<!-- STYLES -->
-<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<title>Volunteer Village</title>
 
-<!-- Isogenic -->
-<script type="text/javascript" language="javascript" src="libraries/jquery.js"></script>
-<script type="text/javascript" language="javascript" src="/engine/IgeBootstrap.js"></script>
-<script type="text/javascript" language="javascript" src="game.js"></script>
-</head>
+		<!-- STYLES -->
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
 
-<body id="body">
-<div id="uiBar">
-		<div id="uiLogo"></div>
-		<div id="uiMenuButton_menu" class="uiMenuButton" onclick="click();"></div>
-		<div id="uiMenuButton_music" class="uiMenuButton" onclick="igeGame.switchMusic();"></div>
-		<div id="uiMenuButton_badges" class="uiMenuButton" onclick="showBadges();"></div>
-		<div id="uiMenuButton_osd" class="uiMenuButtonC"></div>
-		<div id="uiMenuButton_osd1" class="uiMenuButtonCT"></div>
-		<div id="uiMenuButton_osd3" class="uiMenuButtonGT"></div>
-		
-</div>
+		<!-- Isogenic -->
+		<script type="text/javascript" language="javascript" src="libraries/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="/engine/IgeBootstrap.js"></script>
+		<script type="text/javascript" language="javascript" src="game.js"></script>
+	</head>
 
-<div id="igeLogDiv"></div>
-<div id="igeCordDiv"></div>
-<div id="igeStatsBDiv">
-	<div id="uiMenuButton_badges" class="uiMenuButtonT" onclick="showBadges();"></div>
-</div>
-<div id="igePlayerDiv">
-	<div id="playerOne" class="playerButton" onclick="showBadges();"></div>
-	<div id="playerTwo" class="playerButton" onclick="click();"></div>
-	<div id="playerThree" class="playerButton" onclick="showBadges();"></div>
-	<div id="playerFour" class="playerButton" onclick="click();"></div>
-</div>
-<div id="igeQuestLog">
-	<div id="blank" class="tasks"></div>
-	<div id="gardai" class="tasks" onmouseover="igeGame.output = 1; igeGame.outpuTasks();"></div>
-	<div id="art" class="tasks" onmouseover="igeGame.output = 2; igeGame.outpuTasks();"></div>
-	<div id="school" class="tasks" onmouseover="click();"></div>
-	<div id="befriender" class="tasks" onmouseover="showBadges();"></div>
-	<div id="befriender2" class="tasks" onmouseover="click();"></div>
-	<div id="carWash" class="tasks" onmouseover="showBadges();"></div>
-	<div id="cleanUp" class="clean" onmouseover="click();"></div>
-	<div id="clown" class="clown" onmouseover="showBadges();"></div>
-	<div id="cooking" class="tasks" onmouseover="click();"></div>
-	<div id="cooking2" class="tasks" onmouseover="showBadges();"></div>
-	<div id="crime" class="clown" onmouseover="click();"></div>
-	<div id="delivery" class="tasks" onmouseover="showBadges();"></div>
-	<div id="dog" class="tasks" onmouseover="click();"></div>
-	<div id="enviroment" class="clown" onmouseover="showBadges();"></div>
-	<div id="handyMan" class="tasks" onmouseover="click();"></div>
-	<div id="infoDesk" class="tasks" onmouseover="showBadges();"></div>
-	<div id="infoPro" class="clown" onmouseover="click();"></div>
-	<div id="invigilator" class="tasks" onmouseover="showBadges();"></div>
-	<div id="ITCrowd" class="tasks" onmouseover="click();"></div>
-	<div id="ITCrowd2" class="IT" onmouseover="showBadges();"></div>
-	<div id="miniBus" class="tasks" onmouseover="click();"></div>
-	<div id="miniBus2" class="tasks" onmouseover="showBadges();"></div>
-	<div id="musician" class="tasks" onmouseover="click();"></div>
-	<div id="online" class="tasks" onmouseover="showBadges();"></div>
-	<div id="shop" class="tasks" onmouseover="click();"></div>
-	<div id="tidyTowns" class="tasks" onmouseover="showBadges();"></div>
-	<div id="tourist" class="tasks" onmouseover="click();"></div>
-	<div id="windowShopping" class="tasks" onmouseover="showBadges();"></div>
-</div>
-<div id="igeQuestLog2">
-</div>
-<div id="igeBadgesDiv"></div>
-<div id="contain"></div>
+	<body id="body">
+		<div id="uiBar">
+			<div id="uiLogo"></div>
+			<div id="uiMenuButton_menu" class="uiMenuButton" onclick="click();"></div>
+			<div id="uiMenuButton_music" class="uiMenuButton" onclick="igeGame.switchMusic();"></div>
+			<div id="uiMenuButton_badges" class="uiMenuButton" onclick="showBadges();"></div>
+			<div id="uiMenuButton_osd" class="uiMenuButtonC"></div>
+			<div id="uiMenuButton_osd1" class="uiMenuButtonCT"></div>
+			<div id="uiMenuButton_osd3" class="uiMenuButtonGT"></div>
+		</div>
+
+	<div id="igeLogDiv"></div>
+	<div id="igeCordDiv"></div>
+	<div id="igeStatsBDiv">
+		<div id="uiMenuButton_badges" class="uiMenuButtonT" onclick="showBadges();"></div>
+	</div>
+	<div id="igePlayerDiv">
+		<div id="playerOne" class="playerButton" onclick="showBadges();"></div>
+		<div id="playerTwo" class="playerButton" onclick="click();"></div>
+		<div id="playerThree" class="playerButton" onclick="showBadges();"></div>
+		<div id="playerFour" class="playerButton" onclick="click();"></div>
+	</div>
+	<div id="igeQuestLog">
+		<div> 
+			<h2 align="center">Task Log</h2>
+		</div>	
+		<div onclick="igeGame.output = 1; igeGame.outputTasks();"> 
+			<h3 align="center">Gardai Vetting</h3>
+		</div>	
+		<div onclick="igeGame.output = 2; igeGame.outputTasks();"> 
+			<h3 align="center">Art Attack</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Back To School</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Befriender</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Befriender2</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Car-Wash</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Clean Up On Aisle 7</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Clowning Around</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Cooking Club</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Cooking Club 2</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Crime Line</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Delivery Service</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Taking The dog For A Walk</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Enviromental Protection</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Handyman</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Information Desk</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Information Provider</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Invigilator</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">IT Communications</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Media & Communications</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Mini-Bus Driver</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Mini-Bus Driver 2</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Musician</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Online Moderator</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Part-Timer</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Tidy Towns</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Tourist Information</h3>
+		</div>
+		<div onclick="showBadges();"> 
+			<h3 align="center">Window Shopping</h3>
+		</div>
+	</div>
+	<div id="igeQuestLog2">
+		<div id="blank2" class="blank2"></div>
+		<div id="acceptButton" class="acceptButton" onclick="showBadges();"></div>
+	</div>
+	<div id="igeBadgesDiv"></div>
+	<div id="contain"></div>
 
 <script type="text/javascript">
 var clicked = true;
@@ -96,11 +159,15 @@ document.getElementById("igeBadgesDiv").style.visibility="hidden";
 	{
 		document.getElementById("igeStatsBDiv").style.visibility="hidden";
 		document.getElementById("igePlayerDiv").style.visibility="hidden";
+		document.getElementById("igeQuestLog").style.visibility="hidden";
+		document.getElementById("igeQuestLog2").style.visibility="hidden";
 	}
 	function resetElement()
 	{
 		document.getElementById("igeStatsBDiv").style.visibility="visible";
 		document.getElementById("igePlayerDiv").style.visibility="visible";
+		document.getElementById("igeQuestLog").style.visibility="visible";
+		document.getElementById("igeQuestLog2").style.visibility="visible";
 	}
 
 	function showBadges()
@@ -117,6 +184,5 @@ document.getElementById("igeBadgesDiv").style.visibility="hidden";
 		}
 	}
 </script>
-</body>
-
+	</body>
 </html>

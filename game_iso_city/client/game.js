@@ -100,7 +100,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.checkForSound();
 			},
 
-			checkForSound: function () {
+			/*checkForSound: function () {
 				if ( this.engine.sound != null && this.engine.sound.ready() )
 				{
 					// Create a new sound and play it
@@ -128,7 +128,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					setTimeout( this.bind( this.checkForSound ), 100 );
 				}
-			},
+			},*/
 			
 			// Called before the server starts sending large amounts of data
 			netSendStarted: function (collection, count) {
@@ -281,15 +281,15 @@ this.myTime = new Date().getTime();
 			{
 				if( this.output == 1 )
 				{
-					$('#igeQuestLog2').html('Go to the police station to be vetted for volunteer work.' + '<br></br>     '+this.location);
+					$('#blank2').html('<br></br> <center>Go to the police station ' + 'to be vetted for volunteer work.');
 				}
 				else if( this.output = 2 )
 				{
-					$('#igeQuestLog2').html('<br></br> <center>' + '2'  + '<br></br>     '+this.location);
+					$('#blank2').html('<br></br> <center>' + '2'  + '<br></br>     '+this.location);
 				}
 				else
 				{
-					$('#igeQuestLog2').html('<br></br> <center>' + 'qwertyui'  + '<br></br>     '+this.location);
+					$('#blank2').html('<br></br> <center>' + 'qwertyui'  + '<br></br>     '+this.location);
 				}
 			},
 
