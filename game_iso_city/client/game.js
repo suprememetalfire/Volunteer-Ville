@@ -39,8 +39,9 @@ myTime: null,
 			taskPoints: [],
 			taskList: [],
 			taskCompleted: [],
-			currentTask: -1,
-			output: 0 ,
+			output: -1,
+			out: -1,
+			strCurrentTask: 'Go to the Volunteer Centre',
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -174,23 +175,18 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			sendUpdate: function( data ) 
 			{
 				this.score = data;
-				$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
+				$( '#uiMenuButton_osd' ).html( '<br></br><br></br> <center>' + this.score );
 			},
 
-			updateWorld: function () {
-				this.outputTasks();
-				this.acceptTask();
+			updateWorld: function () 
+			{
 				this.tasks();
-this.myTime = new Date().getTime();
-				//if( this.clicked ) 
-				//{
-					
-					$('#uiMenuButton_osd3').html('<br></br> <center>' + this.myTime  + '<br></br>     '+this.location);
-					$('#uiMenuButton_osd1').html('<br></br> <center>' + 'Go to the Town Hall');
-					//$('#igeStatsBDiv').html( this.myTime );
-				//}
+this.myTime = new Date().getTime();					
 				
-				this.engine.network.send('switchMap', this.score);	
+				$( '#uiMenuButton_osd3' ).html( '<br></br> <center>' + this.myTime  + '<br></br>' + this.location );
+				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask );
+						
+				this.engine.network.send( 'switchMap', this.score );	
 			},
 
 			guide: function (clientX, clientY)
@@ -222,19 +218,11 @@ this.myTime = new Date().getTime();
 
 			tasks: function()
 			{
-				if( this.currentTask == this.taskName[0] )
+				if( this.output == this.taskName[0] )
 				{
-					
-
-					if( this.taskCompleted[0] )
-					{
-						this.updateCommunity( this.taskPoints[0] );
-						this.engine.network.send('updateCommunity', this.communityLevel);
-						this.taskList[0] += 1;
-						this.taskCompleted[0] = false;
-					}
+					this.taskOne();					
 				}
-				else if( this.currentTask == this.taskName[1] )
+				else if( this.output == this.taskName[1] )
 				{
 		
 					if( this.taskCompleted[1] )
@@ -245,7 +233,7 @@ this.myTime = new Date().getTime();
 						this.taskCompleted[1] = false;
 					}
 				}
-				else if( this.currentTask == this.taskName[2] )
+				else if( this.output == this.taskName[2] )
 				{
 					
 					if( this.taskCompleted[2] )
@@ -256,7 +244,7 @@ this.myTime = new Date().getTime();
 						this.taskCompleted[2] = false;
 					}		
 				}
-				else if( this.currentTask == this.taskName[3] )
+				else if( this.output == this.taskName[3] )
 				{
 	
 					if( this.taskCompleted[3] )
@@ -268,26 +256,38 @@ this.myTime = new Date().getTime();
 					}		
 				}
 			},
-		
-			acceptTask: function()
+
+			taskOne: function()
 			{
-				if( this.player.map_id == 'centreMap' )
+				this.strCurrentTask = 'Speak to the Gardai at the reception desk at the Police Station';
+
+				if( this.player.map_id == 'stationMap' && this.player.entity_x == 2 && this.player.entity_y == 8 )
 				{
-					this.currentTask = 0;
+					this.strCurrentTask = 'You Have Been Cleared';
+					this.taskCompleted[0] = true;
+				}
+
+				if( this.taskCompleted[0] )
+				{
+					this.updateCommunity( this.taskPoints[0] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[0] += 1;
+					this.taskCompleted[0] = false;
+					this.output = -1;
 				}
 			},
 
 			outputTasks: function()
 			{
-				if( this.output == 1 )
+				if( this.out == 0 )
 				{
-					$('#blank2').html('<br></br> <center>Go to the police station ' + 'to be vetted for volunteer work.');
+					$('#blank2').html('<center>Go to the police station ' + 'to be vetted for volunteer work.');
 				}
-				else if( this.output = 2 )
+				else if( this.out == 1 )
 				{
 					$('#blank2').html('<br></br> <center>' + '2'  + '<br></br>     '+this.location);
 				}
-				else
+				else if( this.out == 2 )
 				{
 					$('#blank2').html('<br></br> <center>' + 'qwertyui'  + '<br></br>     '+this.location);
 				}
@@ -379,7 +379,7 @@ this.myTime = new Date().getTime();
 					this.engine.network.send('moveAvatar', [tileCords[0], tileCords[1]]);
 				}
 	//this.engine.network.send('moveVan');				
-this.taskCompleted[0] = true;
+//this.taskCompleted[0] = true;
 				
 				if (event.button == 2) {
 					this.engine.viewports.panEnd(event.viewport, clientX, clientY);

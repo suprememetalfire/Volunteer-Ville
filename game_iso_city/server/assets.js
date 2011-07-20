@@ -31,8 +31,8 @@ assets = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			205, 
-			100 ] ],
+			200, 
+			117 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
