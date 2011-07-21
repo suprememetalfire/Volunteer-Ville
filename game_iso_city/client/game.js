@@ -281,16 +281,116 @@ this.myTime = new Date().getTime();
 			{
 				if( this.out == 0 )
 				{
-					$('#blank2').html('<center>Go to the police station ' + 'to be vetted for volunteer work.');
+					$( '#blank2' ).html(  '<center>Teach students about animal welfare and care.' );
 				}
 				else if( this.out == 1 )
 				{
-					$('#blank2').html('<br></br> <center>' + '2'  + '<br></br>     '+this.location);
+					$( '#blank2' ).html(  '<center>Update the shelters <br />website with photos of animals looking for new homes.' );
 				}
 				else if( this.out == 2 )
 				{
-					$('#blank2').html('<br></br> <center>' + 'qwertyui'  + '<br></br>     '+this.location);
+					$( '#blank2' ).html( '<center>Take abandoned dogs on <br /> walks around town.' );
 				}
+				else if( this.out == 3 )
+				{
+					$( '#blank2' ).html( '<center>Give tourists information <br /> about the town.' );
+				}
+				else if( this.out == 4 )
+				{
+					$( '#blank2' ).html( '<center>Work in the charity shop.' );
+				}
+				else if( this.out == 5 )
+				{
+					$( '#blank2' ).html( '<center>Drive the children to the park.' );
+				}
+				else if( this.out == 6 )
+				{
+					$( '#blank2' ).html( '<center>Wash cars for charity.' );
+				}
+				else if( this.out == 7 )
+				{
+					$( '#blank2' ).html( '<center>Repair peoples homes.' );
+				}
+				else if( this.out == 8 )
+				{
+					$( '#blank2' ).html( '<center>Maintain a forum for <br />isolated people from <br/>home.' );
+				}
+				else if( this.out == 9 )
+				{
+					$( '#blank2' ).html( '<center>Clean up the town for <br />the Tidy Towns <br/>competition.' );
+				}				
+				else if( this.out == 10 )
+				{
+					$( '#blank2' ).html( '<center>Spend time talking with <br />long-term patients in hospital.' );
+				}
+				else if( this.out == 11 )
+				{
+					$( '#blank2' ).html( '<center>Dress up as a clown and <br />put on a show in the<br /> Childrens Ward.' );
+				}
+				else if( this.out == 12 )
+				{
+					$( '#blank2' ).html( '<center>Deliver meals to people<br /> in their homes.' );
+				}
+				else if( this.out == 13 )
+				{
+					$( '#blank2' ).html( '<center>Help cook meals for the <br />Meals on Wheels group.' );
+				}
+				else if( this.out == 14 )
+				{
+					$( '#blank2' ).html( '<center>Pick up groceries for the</br> cook.' );
+				}
+				else if( this.out == 15 )
+				{
+					$( '#blank2' ).html( '<center>Provide information to visitors.' );
+				}
+				else if( this.out == 16 )
+				{
+					$( '#blank2' ).html( '<center>Help out as a tour guide.' );
+				}
+				else if( this.out == 17 )
+				{
+					$( '#blank2' ).html( '<center>Spend time talking with <br />residents.' );
+				}
+				else if( this.out == 18 )
+				{
+					$( '#blank2' ).html( '<center>Drive the residents to the park.' );
+				}
+				else if( this.out == 19 )
+				{
+					$( '#blank2' ).html( '<center>Perfrom for the residents.' );
+				}
+				else if( this.out == 20 )
+				{
+					$( '#blank2' ).html( '<center>Pick up litter around the park.' );
+				}
+				else if( this.out == 21 )
+				{
+					$( '#blank2' ).html( '<center>Go to the police station <br />to be vetted for volunteer work.' );
+				}
+				else if( this.out == 22 )
+				{
+					$( '#blank2' ).html( '<center>.' );
+				}
+				else if( this.out == 23 )
+				{
+					$( '#blank2' ).html( '<center>Teach a class on <br />healthy eating.' );
+				}
+				else if( this.out == 24 )
+				{
+					$( '#blank2' ).html( '<center>Teach art to students <br />in the Afterschool Club.' );
+				}
+				else if( this.out == 25 )
+				{
+					$( '#blank2' ).html( '<center>Give a talk to students <br />about enviromental <br />issues.' );
+				}
+				else if( this.out == 26 )
+				{
+					$( '#blank2' ).html( '<center>.' );
+				}
+				else if( this.out == 27 )
+				{
+					$( '#blank2' ).html( '<center>Update/maintain the <br />centres website and <br />facebook page.' );
+				}				
 			},
 
 			updateCommunity: function ( points ) 
