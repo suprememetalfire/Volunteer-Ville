@@ -178,15 +178,24 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				$( '#uiMenuButton_osd' ).html( '<br></br><br></br> <center>' + this.score );
 			},
 
+			gameTime: function()
+			{
+				this.myTime += 60;
+			},
+
 			updateWorld: function () 
 			{
-				this.tasks();
-this.myTime = new Date().getTime();					
-				
+				this.tasks();					
+				this.gameTime();
 				$( '#uiMenuButton_osd3' ).html( '<br></br> <center>' + this.myTime  + '<br></br>' + this.location );
-				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask );
+				this.osdOne();
 						
 				this.engine.network.send( 'switchMap', this.score );	
+			},
+
+			osdOne: function()
+			{
+				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask );
 			},
 
 			guide: function (clientX, clientY)
@@ -224,42 +233,22 @@ this.myTime = new Date().getTime();
 				}
 				else if( this.output == this.taskName[1] )
 				{
-		
-					if( this.taskCompleted[1] )
-					{
-						this.updateCommunity( this.taskPoints[2] );
-						this.engine.network.send('updateCommunity', this.communityLevel);
-						this.taskList[1] += 1;
-						this.taskCompleted[1] = false;
-					}
+					//this.taskTwo();	
 				}
 				else if( this.output == this.taskName[2] )
 				{
-					
-					if( this.taskCompleted[2] )
-					{
-						this.updateCommunity( this.taskPoints[2] );
-						this.engine.network.send('updateCommunity', this.communityLevel);
-						this.taskList[2] += 1;
-						this.taskCompleted[2] = false;
-					}		
+					//this.taskthree();	
 				}
-				else if( this.output == this.taskName[3] )
+				else if( this.output == this.taskName[21] )
 				{
-	
-					if( this.taskCompleted[3] )
-					{
-						this.updateCommunity( this.taskPoints[2] );
-						this.engine.network.send('updateCommunity', this.communityLevel);
-						this.taskList[3] += 1;
-						this.taskCompleted[3] = false;
-					}		
+					this.taskTwentyOne();	
 				}
 			},
 
-			taskOne: function()
+			taskTwentyOne: function()
 			{
 				this.strCurrentTask = 'Speak to the Gardai at the reception desk at the Police Station';
+				this.osdOne();
 
 				if( this.player.map_id == 'stationMap' && this.player.entity_x == 2 && this.player.entity_y == 8 )
 				{
@@ -273,6 +262,27 @@ this.myTime = new Date().getTime();
 					this.engine.network.send('updateCommunity', this.communityLevel);
 					this.taskList[0] += 1;
 					this.taskCompleted[0] = false;
+					this.output = -1;
+				}
+			},
+
+			taskOne: function()
+			{
+				this.strCurrentTask = 'Go to the shool';
+				this.osdOne();
+
+				if( this.player.map_id == 'schoolMap' && this.player.entity_x == 2 && this.player.entity_y == 8 )
+				{
+					this.strCurrentTask = 'You Have Been';
+					this.taskCompleted[1] = true;
+				}
+
+				if( this.taskCompleted[1] )
+				{
+					this.updateCommunity( this.taskPoints[1] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[1] += 1;
+					this.taskCompleted[1] = false;
 					this.output = -1;
 				}
 			},

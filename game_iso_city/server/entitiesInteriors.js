@@ -12,7 +12,7 @@ entitiesInteriors = new IgeClass({
 	load: function () {
 		// School Interior
 		for (var x = -11; x < 12; x+=1) {
-			for (var y = 2; y < 13; y+=1) {
+			for (var y = 3; y < 14; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,

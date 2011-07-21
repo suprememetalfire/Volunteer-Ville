@@ -68,7 +68,7 @@ entities = new IgeClass({
 			template_id: 'museum',
 			entity_x:10,
 			entity_y:24,
-			entity_id: 'museum924',
+			entity_id: 'museum1024',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});
@@ -157,20 +157,20 @@ entities = new IgeClass({
 		this.engine.entities.create({
 			template_id: 'meals',
 			entity_x:9,
-			entity_y:0,
+			entity_y:1,
 			entity_id: 'meals60',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});
 		
-		this.engine.entities.create({
+		/*this.engine.entities.create({
 			template_id: 'tower2',
 			entity_x:14,
 			entity_y:1,
 			entity_id: 'tower111',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
-		});
+		});*/
 		
 		this.engine.entities.create({
 			template_id: 'stadium1',
