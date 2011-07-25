@@ -12,17 +12,17 @@ entitiesTiles = new IgeClass({
 	load: function () {
 		// Create some grass
 		/*for (var x = -10; x < 50; x+=1) {
-			for (var y = -10; y < 50; y+=1) {
+			for (var y = -10; y < 50; y+=1) {*/
 				this.engine.entities.create({
 					template_id: 'tileGrass',
-					entity_x:x,
-					entity_y:y,
-					entity_id: 'grass' + (x + '_' + y),
+					entity_x:-10,
+					entity_y:0,
+					entity_id: 'grass' + (2 + '_' + 0),
 					entity_locale: LOCALE_EVERYWHERE,
 					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 					map_id: 'townMap',
 				});
-			}
+			/*}
 		}*/				
 		
 		// Door Tiles	
@@ -297,7 +297,7 @@ entitiesTiles = new IgeClass({
 			});
 		}		
 
-		for (var y = 0; y < 28; y+=1) {
+		for (var y = 0; y < 44; y+=1) {
 			this.engine.entities.create({
 				template_id: 'tilePavement',
 				entity_x:8,
@@ -308,7 +308,7 @@ entitiesTiles = new IgeClass({
 			});
 		}
 			
-		for (var x = 0; x < 36; x+=1) {
+		for (var x = 0; x < 56; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tilePavement',
 				entity_x:x,
@@ -374,7 +374,7 @@ entitiesTiles = new IgeClass({
 			});
 		}
 
-		for (var x = 0; x < 36; x+=1) {
+		for (var x = 0; x < 56; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tilePavement',
 				entity_x:x,
@@ -440,12 +440,34 @@ entitiesTiles = new IgeClass({
 			});
 		}
 
-		for (var y = 0; y < 28; y+=1) {
+		for (var y = 0; y < 44; y+=1) {
 			this.engine.entities.create({
 				template_id: 'tilePavement',
 				entity_x:26,
 				entity_y:y,
 				entity_id: 'pave' + (26 + '_' + y),
+				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				map_id: 'townMap',
+			});
+		}
+
+		for (var x = 9; x < 26; x+=1) {
+			this.engine.entities.create({
+				template_id: 'tilePavement',
+				entity_x:x,
+				entity_y:31,
+				entity_id: 'pave' + (x + '_' + 31),
+				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				map_id: 'townMap',
+			});
+		}
+
+		for (var x = 9; x < 26; x+=1) {
+			this.engine.entities.create({
+				template_id: 'tilePavement',
+				entity_x:x,
+				entity_y:43,
+				entity_id: 'pave' + (x + '_' + 43),
 				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
 				map_id: 'townMap',
 			});
@@ -621,7 +643,7 @@ entitiesTiles = new IgeClass({
 			});
 		}
 
-		for (var x = 0; x < 36; x+=1) {
+		for (var x = 0; x < 56; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tileRoad',
 				entity_x:x,
@@ -631,7 +653,7 @@ entitiesTiles = new IgeClass({
 				map_id: 'townMap',
 			});
 		}
-		for (var x = 0; x < 36; x+=1) {
+		for (var x = 0; x < 56; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tileRoad',
 				entity_x:x,
@@ -642,7 +664,7 @@ entitiesTiles = new IgeClass({
 			});
 		}
 
-		for (var x = 0; x < 36; x+=1) {
+		for (var x = 0; x < 56; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tileRoad',
 				entity_x:x,
@@ -652,7 +674,7 @@ entitiesTiles = new IgeClass({
 				map_id: 'townMap',
 			});
 		}
-		for (var x = 0; x < 36; x+=1) {
+		for (var x = 0; x < 56; x+=1) {
 			this.engine.entities.create({
 				template_id: 'tileRoad',
 				entity_x:x,

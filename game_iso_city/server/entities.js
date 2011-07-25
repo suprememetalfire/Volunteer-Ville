@@ -53,13 +53,28 @@ entities = new IgeClass({
 			entity_id: 'school124',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
-		});				
+		});
+	
+		for( var y = 8; y < 16; y += 7)
+		{
+			for( var x = 39; x < 54; x +=4 )
+			{
+				this.engine.entities.create({
+				template_id: 'houseC',
+				entity_x:x,
+				entity_y:y,
+				entity_id: 'houseC' + (x + '_' + y),
+				entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+				map_id: 'townMap',
+				});				
+			}
+		}
 
 		this.engine.entities.create({
 			template_id: 'lake',
-			entity_x:22,
-			entity_y:24,
-			entity_id: 'lake2224',
+			entity_x:16,
+			entity_y:36,
+			entity_id: 'lake1636',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});
@@ -93,9 +108,18 @@ entities = new IgeClass({
 
 		this.engine.entities.create({
 			template_id: 'bank',
+			entity_x:33,
+			entity_y:9,
+			entity_id: 'bank339',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'townMap',
+		});
+
+		this.engine.entities.create({
+			template_id: 'post',
 			entity_x:30,
 			entity_y:9,
-			entity_id: 'bank309',
+			entity_id: 'post309',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});

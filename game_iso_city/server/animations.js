@@ -127,8 +127,8 @@ animations = new IgeClass({
 				// Entity stuff
 				entity_type:ENTITY_TYPE_SPRITE,
 				entity_layer:LAYER_SPRITES,
-				entity_tile_width:1,
-				entity_tile_height:1,
+				entity_tile_width:5,
+				entity_tile_height:5,
 				entity_z:0,
 				// Animation stuff
 				animation_id: 'swing',
@@ -136,8 +136,6 @@ animations = new IgeClass({
 				// Asset stuff
 				asset_sheet_frame:1,
 				asset_id: 'swing',
-				// Map stuff
-				map_id: 'testMap1',
 			},
 		});
 

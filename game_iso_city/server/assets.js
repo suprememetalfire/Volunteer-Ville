@@ -73,8 +73,22 @@ assets = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			250, 
-			202 ] ],
+			230, 
+			195] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "post",
+			"asset_image_url" : "/game_iso_city/assets/buildings/postOffice.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			135, 
+			105 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -171,12 +185,12 @@ assets = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			170, 
-			107 ] ],
+			146.5, 
+			140 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.88
+			"asset_scale" : 1
 		});
 
 		this.engine.assets.create({

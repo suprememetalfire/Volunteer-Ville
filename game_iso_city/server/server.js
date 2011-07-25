@@ -205,6 +205,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				camera_id:'mainCam',
 			});
 
+			this.engine.entities.create({
+				template_id: 'swing',
+				// Entity stuff
+				entity_id: 'swing',
+				entity_x:23,
+				entity_y:34,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'townMap',
+			});	
+	
 			this.entities.load();
 			this.entitiesInteriors.load();
 			this.entitiesTiles.load();
