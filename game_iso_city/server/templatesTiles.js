@@ -64,7 +64,6 @@ templatesTiles = new IgeClass({
 				entity_z:-1100000,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
 				asset_id: 'grassSheet2',
-				//map_id: 'testMap1',
 				//path_class: ['walk'],
 			},
 		});		
@@ -79,7 +78,6 @@ templatesTiles = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
 				asset_id: 'doorSheet',
-				//map_id: 'testMap1',
 				path_class: ['walk'],
 			},
 		});

@@ -217,7 +217,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			});	
 	
 			this.entities.load();
-			this.entitiesInteriors.load();
+			//this.entitiesInteriors.load();
 			this.entitiesTiles.load();
 
 			this.log('+++++++++++++++++++ All data loaded and ready - Engine online +++++++++++++++++++');						

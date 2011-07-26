@@ -274,204 +274,949 @@ entitiesTiles = new IgeClass({
 		});
 
 		// Create some pavement
-		for (var x = 0; x < 36; x+=1) {
-			this.engine.entities.create({
+		// Row 1
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:5,
-				entity_id: 'pave' + (x + '_' + 5),
+				entity_x: x,
+				entity_y: 0,
+				entity_id: 'pave' + ( x + '_' + 0 ),
 				entity_locale: LOCALE_EVERYWHERE,
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
-			
-		for (var y = 0; y < 28; y+=1) {
-			this.engine.entities.create({
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:5,
-				entity_y:y,
-				entity_id: 'pave' + (5 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
-				map_id: 'townMap',
-			});
-		}		
-
-		for (var y = 0; y < 44; y+=1) {
-			this.engine.entities.create({
-				template_id: 'tilePavement',
-				entity_x:8,
-				entity_y:y,
-				entity_id: 'pave' + (8 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 0,
+				entity_id: 'pave' + ( x + '_' + 0 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
-			
-		for (var x = 0; x < 56; x+=1) {
-			this.engine.entities.create({
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:12,
-				entity_id: 'pave' + (x + '_' + 12),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 0,
+				entity_id: 'pave' + ( x + '_' + 0 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}	
-
-		for (var x = 0; x < 36; x+=1) {
-			this.engine.entities.create({
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:15,
-				entity_id: 'pave' + (x + '_' + 15),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 0,
+				entity_id: 'pave' + ( x + '_' + 0 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var y = 0; y < 28; y+=1) {
-			this.engine.entities.create({
+		// Row 2
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:17,
-				entity_y:y,
-				entity_id: 'pave' + (17 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 5,
+				entity_id: 'pave' + ( x + '_' + 5 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
-		}		
-
-		for (var y = 0; y < 28; y+=1) {
-			this.engine.entities.create({
+		}
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:20,
-				entity_y:y,
-				entity_id: 'pave' + (20 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 5,
+				entity_id: 'pave' + ( x + '_' + 5 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 5,
+				entity_id: 'pave' + ( x + '_' + 5 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 5,
+				entity_id: 'pave' + ( x + '_' + 5 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var y = 0; y < 28; y+=1) {
-			this.engine.entities.create({
+		// Row 3
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:35,
-				entity_y:y,
-				entity_id: 'pave' + (35 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 8,
+				entity_id: 'pave' + ( x + '_' + 8 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
-			
-		for (var x = 0; x < 36; x+=1) {
-			this.engine.entities.create({
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:8,
-				entity_id: 'pave' + (x + '_' + 8),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 8,
+				entity_id: 'pave' + ( x + '_' + 8 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 8,
+				entity_id: 'pave' + ( x + '_' + 8 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 8,
+				entity_id: 'pave' + ( x + '_' + 8 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		
+		// Row 4
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 12,
+				entity_id: 'pave' + ( x + '_' + 12 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 12,
+				entity_id: 'pave' + ( x + '_' + 12 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 12,
+				entity_id: 'pave' + ( x + '_' + 12 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 12,
+				entity_id: 'pave' + ( x + '_' + 12 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 38; x < 56; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 12,
+				entity_id: 'pave' + ( x + '_' + 12 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var x = 0; x < 56; x+=1) {
-			this.engine.entities.create({
+		// Row 5
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:19,
-				entity_id: 'pave' + (x + '_' + 19),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 15,
+				entity_id: 'pave' + ( x + '_' + 15 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
-		}		
-
-		for (var x = 0; x < 36; x+=1) {
-			this.engine.entities.create({
+		}
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:22,
-				entity_id: 'pave' + (x + '_' + 22),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 15,
+				entity_id: 'pave' + ( x + '_' + 15 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 15,
+				entity_id: 'pave' + ( x + '_' + 15 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 15,
+				entity_id: 'pave' + ( x + '_' + 15 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var x = 0; x < 36; x+=1) {
-			this.engine.entities.create({
+		// Row 6
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:28,
-				entity_id: 'pave' + (x + '_' + 28),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 19,
+				entity_id: 'pave' + ( x + '_' + 19 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 19,
+				entity_id: 'pave' + ( x + '_' + 19 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 19,
+				entity_id: 'pave' + ( x + '_' + 19 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 19,
+				entity_id: 'pave' + ( x + '_' + 19 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 38; x < 56; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 19,
+				entity_id: 'pave' + ( x + '_' + 19 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var x = 0; x < 36; x+=1) {
-			this.engine.entities.create({
+		// Row 7
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:0,
-				entity_id: 'pave' + (x + '_' + 0),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 22,
+				entity_id: 'pave' + ( x + '_' + 22 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 22,
+				entity_id: 'pave' + ( x + '_' + 22 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 22,
+				entity_id: 'pave' + ( x + '_' + 22 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 22,
+				entity_id: 'pave' + ( x + '_' + 22 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var y = 0; y < 28; y+=1) {
-			this.engine.entities.create({
+		// Row 8
+		for( var x = 0; x < 6; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:0,
-				entity_y:y,
-				entity_id: 'pave' + (0 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 28,
+				entity_id: 'pave' + ( x + '_' + 28 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 8; x < 18; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 28,
+				entity_id: 'pave' + ( x + '_' + 28 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var x = 20; x < 27; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 28,
+				entity_id: 'pave' + ( x + '_' + 28 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		for( var x = 29; x < 36; x += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: x,
+				entity_y: 28,
+				entity_id: 'pave' + ( x + '_' + 28 ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var y = 0; y < 28; y+=1) {
-			this.engine.entities.create({
+		// Row 9
+		for( var x = 9; x < 26; x += 1 )
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:29,
-				entity_y:y,
-				entity_id: 'pave' + (29 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 31,
+				entity_id: 'pave' + ( x + '_' + 31 ),
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var y = 0; y < 44; y+=1) {
-			this.engine.entities.create({
+		// Row 10
+		for ( var x = 9; x < 26; x += 1 )
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:26,
-				entity_y:y,
-				entity_id: 'pave' + (26 + '_' + y),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: x,
+				entity_y: 43,
+				entity_id: 'pave' + ( x + '_' + 43 ),
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		
+		// Column 1	
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 0,
+				entity_y: y,
+				entity_id: 'pave' + ( 0 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 0,
+				entity_y: y,
+				entity_id: 'pave' + ( 0 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 0,
+				entity_y: y,
+				entity_id: 'pave' + ( 0 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 0,
+				entity_y: y,
+				entity_id: 'pave' + ( 0 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}	
+		
+		// Column 2	
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 5,
+				entity_y: y,
+				entity_id: 'pave' + ( 5 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 5,
+				entity_y: y,
+				entity_id: 'pave' + ( 5 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 5,
+				entity_y: y,
+				entity_id: 'pave' + ( 5 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 5,
+				entity_y: y,
+				entity_id: 'pave' + ( 5 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var x = 9; x < 26; x+=1) {
-			this.engine.entities.create({
+		// Column 3	
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:31,
-				entity_id: 'pave' + (x + '_' + 31),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: 8,
+				entity_y: y,
+				entity_id: 'pave' + ( 8 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 8,
+				entity_y: y,
+				entity_id: 'pave' + ( 8 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 8,
+				entity_y: y,
+				entity_id: 'pave' + ( 8 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 8,
+				entity_y: y,
+				entity_id: 'pave' + ( 8 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 31; y < 44; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 8,
+				entity_y: y,
+				entity_id: 'pave' + ( 8 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
 		}
 
-		for (var x = 9; x < 26; x+=1) {
-			this.engine.entities.create({
+		// Column 4	
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
 				template_id: 'tilePavement',
-				entity_x:x,
-				entity_y:43,
-				entity_id: 'pave' + (x + '_' + 43),
-				asset_sheet_frame:(Math.ceil(Math.random() * 2)) + 1,
+				entity_x: 17,
+				entity_y: y,
+				entity_id: 'pave' + ( 17 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
 				map_id: 'townMap',
 			});
-		}		
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 17,
+				entity_y: y,
+				entity_id: 'pave' + ( 17 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 17,
+				entity_y: y,
+				entity_id: 'pave' + ( 17 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 17,
+				entity_y: y,
+				entity_id: 'pave' + ( 17 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+
+		// Column 5	
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 20,
+				entity_y: y,
+				entity_id: 'pave' + ( 20 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 20,
+				entity_y: y,
+				entity_id: 'pave' + ( 20 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 20,
+				entity_y: y,
+				entity_id: 'pave' + ( 20 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 20,
+				entity_y: y,
+				entity_id: 'pave' + ( 20 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+
+		// Column 6	
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 26,
+				entity_y: y,
+				entity_id: 'pave' + ( 26 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 26,
+				entity_y: y,
+				entity_id: 'pave' + ( 26 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 26,
+				entity_y: y,
+				entity_id: 'pave' + ( 26 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 26,
+				entity_y: y,
+				entity_id: 'pave' + ( 26 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 31; y < 44; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 26,
+				entity_y: y,
+				entity_id: 'pave' + ( 26 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+
+		// Column 7
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 29,
+				entity_y: y,
+				entity_id: 'pave' + ( 29 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 29,
+				entity_y: y,
+				entity_id: 'pave' + ( 29 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 29,
+				entity_y: y,
+				entity_id: 'pave' + ( 29 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 29,
+				entity_y: y,
+				entity_id: 'pave' + ( 29 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+
+		// Column 8	
+		for( var y = 1; y < 5; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 35,
+				entity_y: y,
+				entity_id: 'pave' + ( 35 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 9; y < 12; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 35,
+				entity_y: y,
+				entity_id: 'pave' + ( 35 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 16; y < 19; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 35,
+				entity_y: y,
+				entity_id: 'pave' + ( 35 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}
+		for( var y = 23; y < 28; y += 1 ) 
+		{
+			this.engine.entities.create
+			({
+				template_id: 'tilePavement',
+				entity_x: 35,
+				entity_y: y,
+				entity_id: 'pave' + ( 35 + '_' + y ),
+				entity_locale: LOCALE_EVERYWHERE,
+				asset_sheet_frame: ( Math.ceil( Math.random() * 2 ) ) + 1,
+				map_id: 'townMap',
+			});
+		}				
 		
 		// Create the roads
 		for (var y = 0; y < 29; y+=1) {
