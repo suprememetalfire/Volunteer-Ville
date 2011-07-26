@@ -191,7 +191,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.osdOne();
 						
 				this.engine.network.send( 'switchMap', this.score );
-				this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], avatarId);	
 			},
 
 			osdOne: function()

@@ -85,8 +85,8 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'charityInterior',
-			entity_x:8,
-			entity_y:10,
+			entity_x: 15,
+			entity_y: 7,
 			entity_id: 'charityInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'charityMap',
@@ -362,8 +362,8 @@ entitiesInteriors = new IgeClass({
 		});
 
 		// Fire Station Interior
-		for (var x = 30; x < 42; x+=1) {
-			for (var y = -5; y < 19; y+=1) {
+		for (var x = 31; x < 43; x+=1) {
+			for (var y = -17; y < 6; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -377,8 +377,8 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'fireInterior',
-			entity_x:32,
-			entity_y:5,
+			entity_x: 33,
+			entity_y: -8,
 			entity_id: 'fireInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'fireMap',
