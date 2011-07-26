@@ -190,7 +190,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				$( '#uiMenuButton_osd3' ).html( '<br></br> <center>' + this.myTime  + '<br></br>' + this.location );
 				this.osdOne();
 						
-				this.engine.network.send( 'switchMap', this.score );	
+				this.engine.network.send( 'switchMap', this.score );
+				this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], avatarId);	
 			},
 
 			osdOne: function()
@@ -470,6 +471,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				else if( ( x == 30 || x == 31 ) && ( y == 11 ) )
 				{
 					this.engine.network.send( 'moveAvatar', [31, 11] );
+				}
+				// Fire Station
+				else if( ( x == 32 && ( y == 3 || y == 4 ) ) || ( x == 33 && y == 4 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [33, 4] );
 				}
 				// Footpaths & Roads
 				else

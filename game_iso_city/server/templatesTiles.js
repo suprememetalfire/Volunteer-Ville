@@ -17,7 +17,7 @@ templatesTiles = new IgeClass({
 				entity_layer:LAYER_TILES,
 				entity_tile_width:1,
 				entity_tile_height:1,
-				entity_z:-110000,
+				entity_z:0,
 				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
 				asset_id: 'dirtSheet',
 				//map_id: 'testMap1',

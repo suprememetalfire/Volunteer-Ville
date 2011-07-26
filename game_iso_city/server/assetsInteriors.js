@@ -184,8 +184,8 @@ assetsInteriors = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			250, 
-			200 ] ],
+			255, 
+			190 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
@@ -198,12 +198,12 @@ assetsInteriors = new IgeClass({
 			"asset_sheet_enabled" : false,
 			"asset_anchor_points" : [ 
 			[ 
-			316, 
-			172 ] ],
+			310, 
+			165 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 1 
+			"asset_scale" : 0.9 
 		});
 	},	
 });	
