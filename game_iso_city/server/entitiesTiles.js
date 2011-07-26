@@ -37,48 +37,18 @@ entitiesTiles = new IgeClass({
 		});
 		this.engine.entities.create({
 			template_id: 'tileBase',
-			entity_x:3,
-			entity_y:24,
-			entity_id: 'townBase' + (3 + '_' + 24),
+			entity_x: 16,
+			entity_y: 25,
+			entity_id: 'townBase' + ( 16 + '_' + 25 ),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
 		});
-		for (var x = 12; x < 17; x+=1) 
-		{
-			this.engine.entities.create({
-				template_id: 'tileBase',
-				entity_x:x,
-				entity_y:25,
-				entity_id: 'townBase' + (x + '_' + 25),
-				entity_locale: LOCALE_EVERYWHERE,
-				asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-				map_id: 'townMap',
-			});
-		}		
 		this.engine.entities.create({
 			template_id: 'tileBase',
 			entity_x:3,
 			entity_y:18,
 			entity_id: 'townBase' + (3 + '_' + 18),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:3,
-			entity_y:17,
-			entity_id: 'townBase' + (3 + '_' + 17),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:2,
-			entity_y:17,
-			entity_id: 'townBase' + (2 + '_' + 17),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -94,27 +64,9 @@ entitiesTiles = new IgeClass({
 		});
 		this.engine.entities.create({
 			template_id: 'tileBase',
-			entity_x:3,
-			entity_y:10,
-			entity_id: 'townBase' + (3 + '_' + 10),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:2,
-			entity_y:10,
-			entity_id: 'townBase' + (2 + '_' + 10),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:9,
+			entity_x:10,
 			entity_y:11,
-			entity_id: 'townBase' + (9 + '_' + 11),
+			entity_id: 'townBase' + (10 + '_' + 11),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -148,36 +100,9 @@ entitiesTiles = new IgeClass({
 		});
 		this.engine.entities.create({
 			template_id: 'tileBase',
-			entity_x:9,
-			entity_y:11,
-			entity_id: 'townBase' + (9 + '_' + 11),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:15,
-			entity_y:9,
-			entity_id: 'townBase' + (15 + '_' + 9),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:15,
-			entity_y:8,
-			entity_id: 'townBase' + (15 + '_' + 8),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
 			entity_x:16,
-			entity_y:9,
-			entity_id: 'townBase' + (16 + '_' + 9),
+			entity_y:10,
+			entity_id: 'townBase' + (16 + '_' + 10),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -185,8 +110,8 @@ entitiesTiles = new IgeClass({
 		this.engine.entities.create({
 			template_id: 'tileBase',
 			entity_x:25,
-			entity_y:18,
-			entity_id: 'townBase' + (25 + '_' + 18),
+			entity_y:17,
+			entity_id: 'townBase' + (25 + '_' + 17),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -194,8 +119,8 @@ entitiesTiles = new IgeClass({
 		this.engine.entities.create({
 			template_id: 'tileBase',
 			entity_x:25,
-			entity_y:11,
-			entity_id: 'townBase' + (25 + '_' + 11),
+			entity_y:10,
+			entity_id: 'townBase' + (25 + '_' + 10),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -211,36 +136,9 @@ entitiesTiles = new IgeClass({
 		});
 		this.engine.entities.create({
 			template_id: 'tileBase',
-			entity_x:30,
+			entity_x:31,
 			entity_y:11,
-			entity_id: 'townBase' + (30 + '_' + 11),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:31,
-			entity_y:26,
-			entity_id: 'townBase' + (31 + '_' + 26),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:32,
-			entity_y:26,
-			entity_id: 'townBase' + (32 + '_' + 26),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:31,
-			entity_y:27,
-			entity_id: 'townBase' + (31 + '_' + 27),
+			entity_id: 'townBase' + (31 + '_' + 11),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -268,6 +166,15 @@ entitiesTiles = new IgeClass({
 			entity_x:13,
 			entity_y:18,
 			entity_id: 'townBase' + (13 + '_' + 18),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+			map_id: 'townMap',
+		});
+		this.engine.entities.create({
+			template_id: 'tileBase',
+			entity_x:13,
+			entity_y:14,
+			entity_id: 'townBase' + (13 + '_' + 14),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -1475,8 +1382,8 @@ entitiesTiles = new IgeClass({
  			({
 				template_id: 'tileRoad',
 				entity_x: x,
-				entity_y: 13,
-				entity_id: 'road' + ( x + '_' + 13 ),
+				entity_y: 20,
+				entity_id: 'road' + ( x + '_' + 20 ),
 				asset_sheet_frame: 2,
 				map_id: 'townMap',
 			});

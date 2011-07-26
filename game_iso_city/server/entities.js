@@ -21,9 +21,9 @@ entities = new IgeClass({
 
 		this.engine.entities.create({
 			template_id: 'centre',
-			entity_x:13,
-			entity_y:16,
-			entity_id: 'centre1316',
+			entity_x:10,
+			entity_y:9,
+			entity_id: 'centre109',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});
@@ -162,9 +162,9 @@ entities = new IgeClass({
 
 		this.engine.entities.create({
 			template_id: 'copshop',
-			entity_x:9,
-			entity_y:9,
-			entity_id: 'copshop99',
+			entity_x:13,
+			entity_y:16,
+			entity_id: 'copshop1316',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});
@@ -207,9 +207,9 @@ entities = new IgeClass({
 
 		this.engine.entities.create({
 			template_id: 'pound',
-			entity_x: 30,
+			entity_x: 32,
 			entity_y: 16,
-			entity_id: 'pound3016',
+			entity_id: 'pound3216',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});

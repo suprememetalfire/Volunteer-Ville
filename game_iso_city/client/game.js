@@ -403,6 +403,81 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}				
 			},
 
+			// Click on the door. Walk to the building.
+			clickMove: function( x, y )
+			{
+				// Meals on Wheels
+				if( ( x == 10 || x == 11 ) && ( y == 3 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [13, 14] );
+				}
+				// Creche
+				else if( ( x == 2 || x == 3 ) && ( y == 17 || y == 18 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [3, 18] );
+				}
+				// School
+				else if( ( x == 3 ) && ( y == 23 || y == 24 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [4, 24] );
+				}
+				// Old Folks Home
+				else if( ( x == 2 ) && ( y == 10 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [3, 11] );
+				}
+				// Town Hall
+				else if( ( x == 9 || x == 10 ) && ( y == 18 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [10, 18] );
+				}
+				// Volunteer Centre
+				else if( ( x == 9 || x == 10 ) && ( y == 11 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [10, 11] );
+				}
+				// Police Station
+				else if( ( x == 12 || x == 13 ) && ( y == 18 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [13, 18] );
+				}
+				// Library
+				else if( ( x == 15 ) && ( y == 9 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [16, 10] );
+				}
+				// Museum
+				else if( ( x == 13 ) && ( y == 24 || y == 25 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [13, 18] );
+				}
+				// Hospital
+				else if( ( x == 31 || x == 32 ) && ( y == 26 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [32, 27] );
+				}
+				// Charity Shop
+				else if( ( x == 25 && y == 17 ) || ( x == 24 && y == 16 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [25, 17] );
+				}
+				// Shopping centre
+				else if( ( x == 25 ) && ( y == 9 || y == 10 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [25, 10] );
+				}
+				// Post Office
+				else if( ( x == 30 || x == 31 ) && ( y == 11 ) )
+				{
+					this.engine.network.send( 'moveAvatar', [31, 11] );
+				}
+				// Footpaths & Roads
+				else
+				{
+					this.engine.network.send( 'moveAvatar', [x, y] );
+				}
+			},
+
 			updateCommunity: function ( points ) 
 			{
 				this.communityLevel = points;
@@ -486,7 +561,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					// Tell the server we want our avatar to move to a new position
 					var tileCords = this.engine.renderer.screenToMap[event.map.map_render_mode](clientX, clientY, event.viewport);
 					this.log('Sending new avatar move command...');
-					this.engine.network.send('moveAvatar', [tileCords[0], tileCords[1]]);
+					
+					this.clickMove( tileCords[0], tileCords[1] );
 				}
 	//this.engine.network.send('moveVan');				
 //this.taskCompleted[0] = true;

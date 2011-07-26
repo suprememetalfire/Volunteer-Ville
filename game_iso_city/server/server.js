@@ -216,7 +216,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				map_id: 'townMap',
 			});	
 	
-			//this.entities.load();
+			this.entities.load();
 			//this.entitiesInteriors.load();
 			this.entitiesTiles.load();
 
@@ -409,52 +409,52 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.createNewMapAvatar(num, 'womanWalkBig', 24, 11, 'restaurantMap');
 				this.engine.network.send('changeViewMap', 'restaurantMap', num);
 			}
-			else if( entity.entity_x == 3 && entity.entity_y == 24 )
+			else if( entity.entity_x == 4 && entity.entity_y == 24 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 5, 23, 'schoolMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 4, 24, 'schoolMap');
 				this.engine.network.send('changeViewMap', 'schoolMap', num);
 			}
-			else if( entity.entity_x == 13 && entity.entity_y == 25 )
+			else if( entity.entity_x == 16 && entity.entity_y == 25 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 15, 16, 'museumMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 16, 25, 'museumMap');
 				this.engine.network.send('changeViewMap', 'museumMap', num);
 			}
-			else if( entity.entity_x == 3 && entity.entity_y == 10 )
+			else if( entity.entity_x == 3 && entity.entity_y == 11 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 3, 8, 'oldFolksHomeMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 3, 11, 'oldFolksHomeMap');
 				this.engine.network.send('changeViewMap', 'oldFolksHomeMap', num);
-			}
-			else if( entity.entity_x == 9 && entity.entity_y == 11)
-			{	
-				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 9, 11, 'stationMap');
-				this.engine.network.send('changeViewMap', 'stationMap', num);
-			}
-			else if( entity.entity_x == 15 && entity.entity_y == 9 )
-			{	
-				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 15, 16, 'libraryMap');
-				this.engine.network.send('changeViewMap', 'libraryMap', num);
-			}
-			else if( ( entity.entity_x == 2 && entity.entity_y == 17 ) || ( entity.entity_x == 3 && entity.entity_y == 17 ) )
-			{	
-				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 3, 17, 'crecheMap');
-				this.engine.network.send('changeViewMap', 'crecheMap', num);
-			}
-			else if( entity.entity_x == 26 && entity.entity_y == 11 )
-			{	
-				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 21, 21, 'shopMap');
-				this.engine.network.send('changeViewMap', 'shopMap', num);
 			}
 			else if( entity.entity_x == 13 && entity.entity_y == 18 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 19, 17, 'centreMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 13, 18, 'stationMap');
+				this.engine.network.send('changeViewMap', 'stationMap', num);
+			}
+			else if( entity.entity_x == 16 && entity.entity_y == 10 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 16, 10, 'libraryMap');
+				this.engine.network.send('changeViewMap', 'libraryMap', num);
+			}
+			else if( entity.entity_x == 3 && entity.entity_y == 18 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 3, 18, 'crecheMap');
+				this.engine.network.send('changeViewMap', 'crecheMap', num);
+			}
+			else if( entity.entity_x == 25 && entity.entity_y == 10 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 25, 10, 'shopMap');
+				this.engine.network.send('changeViewMap', 'shopMap', num);
+			}
+			else if( entity.entity_x == 10 && entity.entity_y == 11 )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 10, 11, 'centreMap');
 				this.engine.network.send('changeViewMap', 'centreMap', num);
 			}
 			else if( entity.entity_x == 10 && entity.entity_y == 18)
@@ -475,16 +475,31 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.createNewMapAvatar(num, 'womanWalkBig', 33, 24, 'bankMap');
 				this.engine.network.send('changeViewMap', 'bankMap', num);
 			}
-			else if( ( entity.entity_x == 31 && entity.entity_y == 26 ) || ( entity.entity_x == 32 && entity.entity_y == 26 ) )
+			else if( entity.entity_x == 32 && entity.entity_y == 27 ) 
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 32, 28, 'hospitalMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 32, 27, 'hospitalMap');
 				this.engine.network.send('changeViewMap', 'hospitalMap', num);
 			}
-			else if( ( entity.entity_x == 13 && entity.entity_y == 18 ) )
+			// Charity Shop
+			else if( ( entity.entity_x == 25 && entity.entity_y == 17 ) )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 32, 28, 'centreMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 25, 17, 'centreMap');
+				this.engine.network.send('changeViewMap', 'centreMap', num);
+			}
+			// Meals
+			else if( ( entity.entity_x == 13 && entity.entity_y == 14 ) )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 13, 14, 'centreMap');
+				this.engine.network.send('changeViewMap', 'centreMap', num);
+			}
+			// Post Office
+			else if( ( entity.entity_x == 31 && entity.entity_y == 11 ) )
+			{	
+				this.engine.entities.remove( entity);
+				this.createNewMapAvatar(num, 'womanWalkBig', 31, 11, 'centreMap');
 				this.engine.network.send('changeViewMap', 'centreMap', num);
 			}
 		}
