@@ -129,8 +129,8 @@ entitiesInteriors = new IgeClass({
 		});
 
 		// Police Station Interior
-		for (var x = -12; x < 11; x+=1) {
-			for (var y = 6; y < 18; y+=1) {
+		for (var x = -8; x < 15; x+=1) {
+			for (var y = 16; y < 27; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -142,8 +142,8 @@ entitiesInteriors = new IgeClass({
 				});
 			}
 		}
-		for (var x = 0; x < 11; x+=1) {
-			for (var y = 18; y < 29; y+=1) {
+		for (var x = 4; x < 15; x+=1) {
+			for (var y = 27; y < 38; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -157,16 +157,16 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'stationInterior',
-			entity_x:-1,
-			entity_y:12,
+			entity_x: 3,
+			entity_y: 21,
 			entity_id: 'stationInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'stationMap',
 		});
 
 		// Museum Interior
-		for (var x = 3; x < 21; x+=1) {
-			for (var y = 1; y < 19; y+=1) {
+		for (var x = 0; x < 18; x+=1) {
+			for (var y = 17; y < 35; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -180,16 +180,16 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'museumInterior',
-			entity_x:8,
-			entity_y:10,
+			entity_x:5,
+			entity_y:26,
 			entity_id: 'museumInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'museumMap',
 		});
 
 		// Library Interior
-		for (var x = 3; x < 21; x+=1) {
-			for (var y = 1; y < 19; y+=1) {
+		for (var x = 1; x < 18; x+=1) {
+			for (var y = 4; y < 21; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -203,8 +203,8 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'libraryInterior',
-			entity_x:8,
-			entity_y:10,
+			entity_x: 5,
+			entity_y: 12,
 			entity_id: 'libraryInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'libraryMap',
@@ -212,7 +212,7 @@ entitiesInteriors = new IgeClass({
 
 		// Hospital Interior
 		for (var x = 17; x < 35; x+=1) {
-			for (var y = 12; y < 30; y+=1) {
+			for (var y = 21; y < 39; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -226,8 +226,8 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'hospitalInterior',
-			entity_x:22,
-			entity_y:21,
+			entity_x: 22,
+			entity_y: 30,
 			entity_id: 'hospitalInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'hospitalMap',
@@ -339,8 +339,8 @@ entitiesInteriors = new IgeClass({
 		});
 
 		// Volunteer Centre Interior
-		for (var x = 3; x < 21; x+=1) {
-			for (var y = 1; y < 19; y+=1) {
+		for (var x = 4; x < 21; x+=1) {
+			for (var y = -5; y < 13; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -354,8 +354,8 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'centreInterior',
-			entity_x:8,
-			entity_y:10,
+			entity_x: 8,
+			entity_y: 4,
 			entity_id: 'centreInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'centreMap',
