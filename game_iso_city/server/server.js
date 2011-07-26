@@ -216,7 +216,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				map_id: 'townMap',
 			});	
 	
-			this.entities.load();
+			//this.entities.load();
 			//this.entitiesInteriors.load();
 			this.entitiesTiles.load();
 
