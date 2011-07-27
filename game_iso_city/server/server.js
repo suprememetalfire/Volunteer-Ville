@@ -75,6 +75,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
 		this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
 		this.engine.network.registerCommand('updateCommunity', this.bind(this.updateCommunity));
+		this.engine.network.registerCommand('driveBus', this.bind(this.driveBus));
 
 		this.update = setInterval(this.bind(this.updateWorld), 1000);		
 
@@ -383,6 +384,49 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			session_id: sessionId,
 			map_id: mapname,
 		}, function (entity) {
+			if (entity != null) 
+			{
+				this.log('New avatar created for client: ' + sessionId);
+			} else {
+				this.log('Could not create new avatar for client: ' + sessionId);
+
+			}
+		});
+	},
+
+	// Create new avatar for switching maps.
+	driveBus: function( intState, sessionId , x, y )
+	{
+		var strState = '';
+		var templateName = '';
+
+		if( intState == 1 )
+		{
+			strState = 'van';
+			templateName = 'van';
+		}
+		else if( intState == 2 )
+		{
+			strState = 'woman';
+			templateName = 'womanWalk';
+		}
+
+		var player = this.engine.entities.read( strState + sessionId );
+		this.engine.entities.remove( player );
+
+		var entity = this.engine.entities.create
+		({
+			template_id: templateName,
+			// Entity stuff
+			entity_id: strState + sessionId,
+			entity_x:x,
+			entity_y:y,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			session_id: sessionId,
+			map_id: 'townMap',
+		}, function (entity)
+		{
 			if (entity != null) 
 			{
 				this.log('New avatar created for client: ' + sessionId);
