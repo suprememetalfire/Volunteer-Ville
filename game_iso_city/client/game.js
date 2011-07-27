@@ -42,6 +42,7 @@ myTime: null,
 			output: -1,
 			out: -1,
 			strCurrentTask: 'Go to the Volunteer Centre',
+			counter: 10,
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -189,6 +190,15 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.gameTime();
 				$( '#uiMenuButton_osd3' ).html( '<br></br> <center>' + this.myTime  + '<br></br>' + this.location );
 				this.osdOne();
+				if( this.counter <= 10 )
+				{
+					this.counter++;
+				}
+
+				if( this.counter >= 5 && this.counter < 10 )
+				{
+					this.strCurrentTask = '';
+				}			
 						
 				this.engine.network.send( 'switchMap', this.score );
 			},
@@ -247,42 +257,47 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskTwentyOne: function()
 			{
-				this.strCurrentTask = 'Speak to the Gardai at the reception desk at the Police Station';
-				this.osdOne();
-
-				if( this.player.map_id == 'stationMap' && this.player.entity_x == 2 && this.player.entity_y == 8 )
+				if( this.taskList[21] == 0 )
 				{
-					this.strCurrentTask = 'You Have Been Cleared';
-					this.taskCompleted[0] = true;
-				}
-
-				if( this.taskCompleted[0] )
-				{
-					this.updateCommunity( this.taskPoints[0] );
-					this.engine.network.send('updateCommunity', this.communityLevel);
-					this.taskList[0] += 1;
-					this.taskCompleted[0] = false;
-					this.output = -1;
+					this.strCurrentTask = 'Speak to the Gardai at the reception desk at the Police Station';
+					this.osdOne();
+	
+					if( this.player.map_id == 'stationMap' && ( ( this.player.entity_x >= 3 && this.player.entity_x <= 6 ) || ( this.player.entity_y >= 9 && this.player.entity_y <= 16 ) ) )
+					{
+						this.strCurrentTask = 'You Have Been Cleared';
+						this.counter = 0;
+						this.taskCompleted[21] = true;
+					}
+	
+					if( this.taskCompleted[21] )
+					{
+						this.updateCommunity( this.taskPoints[0] );
+						this.engine.network.send('updateCommunity', this.communityLevel);
+						this.taskList[21] += 1;
+						this.taskCompleted[21] = false;
+						this.output = -1;
+					}
 				}
 			},
 
 			taskOne: function()
 			{
-				this.strCurrentTask = 'Go to the shool';
+				this.strCurrentTask = 'Back To School';
 				this.osdOne();
-
-				if( this.player.map_id == 'schoolMap' && this.player.entity_x == 2 && this.player.entity_y == 8 )
+	
+				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
 				{
-					this.strCurrentTask = 'You Have Been';
-					this.taskCompleted[1] = true;
+					this.strCurrentTask = 'Youve Just Been Schooled';
+					this.counter = 0;
+					this.taskCompleted[0] = true;
 				}
 
-				if( this.taskCompleted[1] )
+				if( this.taskCompleted[0] )
 				{
 					this.updateCommunity( this.taskPoints[1] );
 					this.engine.network.send('updateCommunity', this.communityLevel);
-					this.taskList[1] += 1;
-					this.taskCompleted[1] = false;
+					this.taskList[0] += 1;
+					this.taskCompleted[0] = false;
 					this.output = -1;
 				}
 			},
