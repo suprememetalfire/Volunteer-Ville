@@ -289,8 +289,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskZero: function()
 			{
-				this.strCurrentTask = 'Back To School';
-				this.osdOne();
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Back To School';
+					this.osdOne();
+					this.display = false;
+				}
 	
 				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
 				{
@@ -311,8 +315,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskOne: function()
 			{
-				/*this.strCurrentTask = 'Back To School';
-				this.osdOne();
+				/*if( this.display == true )
+				{
+					this.strCurrentTask = 'Back To School';
+					this.osdOne();
+					this.display = false;
+				}
 	
 				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
 				{
@@ -333,8 +341,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskTwo: function()
 			{
-				/*this.strCurrentTask = 'Back To School';
-				this.osdOne();
+				/*if( this.display == true )
+				{
+					this.strCurrentTask = 'Back To School';
+					this.osdOne();
+					this.display = false;
+				}
 	
 				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
 				{
@@ -355,8 +367,13 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskThree: function()
 			{
-				this.strCurrentTask = 'Go to the Bus Shelter';
-				this.osdOne();
+				/*if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Bus Shelter';
+					this.osdOne();
+					this.display = false;
+				}
+				
 	
 				if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 0 && this.player.entity_x <= 5 )  && ( this.player.entity_y >= 0 && this.player.entity_y <= 5 ) ) )
 				{
@@ -377,8 +394,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskFour: function()
 			{
-				/*this.strCurrentTask = 'Go to the Bus Shelter';
-				this.osdOne();
+				/*if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Bus Shelter';
+					this.osdOne();
+					this.display = false;
+				}
 	
 				if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 0 && this.player.entity_x <= 5 )  && ( this.player.entity_y >= 0 && this.player.entity_y <= 5 ) ) )
 				{
@@ -399,10 +420,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskFive: function()
 			{
-				if( this.intState == 0 )
+				if( this.display == true )
 				{
 					this.strCurrentTask = 'Go to the Creche';
 					this.osdOne();
+					this.display = false;
 				}
 					
 				if( this.player.map_id == 'crecheMap'/* && ( ( this.player.entity_x >= 0 && this.player.entity_x <= 5 )  && ( this.player.entity_y >= 0 && this.player.entity_y <= 5 ) )*/ )
@@ -444,8 +466,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskTen: function()
 			{	
-				this.strCurrentTask = 'Go to the Hospital';
-				this.osdOne();
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Hospital';
+					this.osdOne();
+					this.display = false;
+				}
 
 				if( this.player.map_id == 'hospitalMap' && ( this.player.entity_x == 19 && this.player.entity_y == 32 ) )
 				{
@@ -501,7 +527,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskList[12] += 1;
 					this.taskCompleted[12] = false;
 					this.output = -1;
-					this.display = true;
 				}
 			},
 
@@ -509,8 +534,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			{
 				if( this.taskList[21] == 0 )
 				{
-					this.strCurrentTask = 'Speak to the Gardai at the reception desk at the Police Station';
-					this.osdOne();
+					if( this.display == true )
+					{
+						this.strCurrentTask = 'Speak to the Gardai at the reception desk at the Police Station';
+						this.osdOne();
+						this.display = false;
+					}
 	
 					if( this.player.map_id == 'stationMap' && ( ( this.player.entity_x >= 3 && this.player.entity_x <= 6 ) || ( this.player.entity_y >= 9 && this.player.entity_y <= 16 ) ) )
 					{
@@ -761,10 +790,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			// Switch player avatar between person and bus.
 			driveBus: function()
 			{
-				/*this.intState = this.intState;
+				//this.intState = this.intState;
 				this.player.sessionId = this.player.sessionId;
-				this.player.entity_x = this.player.entity_x;
-				this.player.entity_y = this.entity_y;*/
+				//this.player.entity_x = this.player.entity_x;
+				//this.player.entity_y = this.entity_y;
 			},
 
 			directionChange: function (entity) {

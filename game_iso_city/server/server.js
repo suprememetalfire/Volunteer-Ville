@@ -395,9 +395,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 	},
 
 	// Create new avatar for switching maps.
-	driveBus: function( intState, sessionId , x, y )
+	driveBus: function( /*intState, */sessionId/* , x, y*/ )
 	{
-		var strState = '';
+this.log(sessionId/* + x + y*/ );
+		/*var strState = '';
 		var templateName = '';
 
 		if( intState == 1 )
@@ -412,26 +413,26 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}
 
 		var player = this.engine.entities.read( strState + sessionId );
-		this.engine.entities.remove( player );
+		this.engine.entities.remove( player );*/
 
 		var entity = this.engine.entities.create
 		({
-			template_id: templateName,
+			template_id: 'van',
 			// Entity stuff
-			entity_id: strState + sessionId,
-			entity_x:x,
-			entity_y:y,
+			entity_id: 'crecheVan',
+			entity_x:2,
+			entity_y:20,
 			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 			entity_persist:PERSIST_DISABLED,
-			session_id: sessionId,
+			//session_id: sessionId,
 			map_id: 'townMap',
 		}, function (entity)
 		{
 			if (entity != null) 
 			{
-				this.log('New avatar created for client: ' + sessionId);
+				//this.log('New avatar created for client: ' + sessionId);
 			} else {
-				this.log('Could not create new avatar for client: ' + sessionId);
+				//this.log('Could not create new avatar for client: ' + sessionId);
 
 			}
 		});
