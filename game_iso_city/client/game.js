@@ -432,10 +432,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.strCurrentTask = 'All Aboard';
 					this.osdOne();
 				}
-				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) )
+				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intState == 0 )
 				{
 					this.intState = 1;
-					this.engine.network.send( 'driveBus', this.intState );
+					this.engine.network.send( 'driveBus', this.intState, this.player );
 					this.strCurrentTask = 'Drive to the Park';
 					this.osdOne();
 				}
@@ -444,10 +444,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.strCurrentTask = 'Return the bus to the Creche';
 					this.osdOne();
 				}
-				if( this.playermap_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 13 ) )
+				if( this.playermap_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 )/* && this.intState == 1*/ )
 				{
+this.log('werthvbghrththnbtehthegvfdnvuifavgbeiG');
 					this.intState = 2;
-					this.engine.network.send( 'driveBus', this.intState );
+					this.engine.network.send( 'driveBus', this.intState, this.player );
 					this.strCurrentTask = 'Good Work';
 					this.osdOne();				
 					this.counter = 0;
@@ -791,9 +792,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			driveBus: function()
 			{
 				//this.intState = this.intState;
-				this.player.sessionId = this.player.sessionId;
+				//this.player.sessionId = this.player.sessionId;
 				//this.player.entity_x = this.player.entity_x;
 				//this.player.entity_y = this.entity_y;
+
+				var xx = 20000;
 			},
 
 			directionChange: function (entity) {

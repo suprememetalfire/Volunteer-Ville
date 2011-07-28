@@ -395,47 +395,57 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 	},
 
 	// Create new avatar for switching maps.
-	driveBus: function( /*intState, */sessionId/* , x, y*/ )
+	driveBus: function( intState, player )
 	{
-this.log(sessionId/* + x + y*/ );
-		/*var strState = '';
-		var templateName = '';
+		var client = this.engine.entities.read( 'woman' + player.sessionId );
+		this.engine.entities.remove( player );
 
 		if( intState == 1 )
 		{
-			strState = 'van';
-			templateName = 'van';
+			var entity = this.engine.entities.create
+			({
+				template_id: 'van',
+				// Entity stuff
+				entity_id: 'woman' + client.sessionId,
+				entity_x: client.entity_x,
+				entity_y: client.entity_y,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				session_id: client.sessionId,
+				map_id: 'townMap',
+			}, function (entity)
+			{
+				if (entity != null) 
+				{
+					//this.log('New avatar created for client: ' + sessionId);
+				} else {
+					//this.log('Could not create new avatar for client: ' + sessionId);	
+				}
+			});
 		}
 		else if( intState == 2 )
 		{
-			strState = 'woman';
-			templateName = 'womanWalk';
-		}
-
-		var player = this.engine.entities.read( strState + sessionId );
-		this.engine.entities.remove( player );*/
-
-		var entity = this.engine.entities.create
-		({
-			template_id: 'van',
-			// Entity stuff
-			entity_id: 'crecheVan',
-			entity_x:2,
-			entity_y:20,
-			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
-			entity_persist:PERSIST_DISABLED,
-			//session_id: sessionId,
-			map_id: 'townMap',
-		}, function (entity)
-		{
-			if (entity != null) 
+			var entity = this.engine.entities.create
+			({
+				template_id: 'womanWalk',
+				// Entity stuff
+				entity_id: 'woman' + client.sessionId,
+				entity_x: client.entity_x,
+				entity_y: client.entity_y,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				session_id: client.sessionId,
+				map_id: 'townMap',
+			}, function (entity)
 			{
-				//this.log('New avatar created for client: ' + sessionId);
-			} else {
-				//this.log('Could not create new avatar for client: ' + sessionId);
-
-			}
-		});
+				if (entity != null) 
+				{
+					//this.log('New avatar created for client: ' + sessionId);
+				} else {
+					//this.log('Could not create new avatar for client: ' + sessionId);	
+				}
+			});
+		}		
 	},
 
 	// Go inside/outside Buildings.
