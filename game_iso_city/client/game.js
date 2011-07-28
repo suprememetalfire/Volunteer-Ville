@@ -83,7 +83,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.taskPoints[3] = 15;
 				this.taskPoints[4] = 20;
 
-				for( var i = 0; i < 27; i++ )
+				for( var i = 0; i < 28; i++ )
 				{
 					this.taskName[i] = i;
 					this.taskList[i] = 0;
@@ -244,39 +244,43 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			{
 				if( this.output == this.taskName[0] )
 				{
-					this.taskOne();					
+					this.taskZero();					
 				}
 				else if( this.output == this.taskName[1] )
 				{
-					this.taskTwo();	
+					this.taskOne();	
 				}
 				else if( this.output == this.taskName[2] )
 				{
-					this.taskthree();	
+					this.taskTwo();	
 				}
 				else if( this.output == this.taskName[3] )
 				{
-					this.taskFour();	
+					this.taskThree();	
 				}
 				else if( this.output == this.taskName[4] )
 				{
-					//this.taskFive();	
+					//this.taskFour();	
 				}
 				else if( this.output == this.taskName[5] )
 				{
-					this.taskSix();	
+					this.taskFive();	
 				}
 				else if( this.output == this.taskName[10] )
 				{
-					this.taskEleven();	
+					this.taskTen();	
 				}
 				else if( this.output == this.taskName[21] )
 				{
 					this.taskTwentyOne();	
 				}
+				else if( this.output == this.taskName[27] )
+				{
+					this.taskTwentySeven();	
+				}
 			},			
 
-			taskOne: function()
+			taskZero: function()
 			{
 				this.strCurrentTask = 'Back To School';
 				this.osdOne();
@@ -296,6 +300,28 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[0] = false;
 					this.output = -1;
 				}
+			},
+
+			taskOne: function()
+			{
+				/*this.strCurrentTask = 'Back To School';
+				this.osdOne();
+	
+				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
+				{
+					this.strCurrentTask = 'Youve Just Been Schooled';
+					this.counter = 0;
+					this.taskCompleted[0] = true;
+				}
+
+				if( this.taskCompleted[0] )
+				{
+					this.updateCommunity( this.taskPoints[1] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[0] += 1;
+					this.taskCompleted[0] = false;
+					this.output = -1;
+				}*/
 			},
 
 			taskTwo: function()
@@ -322,28 +348,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskThree: function()
 			{
-				/*this.strCurrentTask = 'Back To School';
-				this.osdOne();
-	
-				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
-				{
-					this.strCurrentTask = 'Youve Just Been Schooled';
-					this.counter = 0;
-					this.taskCompleted[0] = true;
-				}
-
-				if( this.taskCompleted[0] )
-				{
-					this.updateCommunity( this.taskPoints[1] );
-					this.engine.network.send('updateCommunity', this.communityLevel);
-					this.taskList[0] += 1;
-					this.taskCompleted[0] = false;
-					this.output = -1;
-				}*/
-			},
-
-			taskFour: function()
-			{
 				this.strCurrentTask = 'Go to the Bus Shelter';
 				this.osdOne();
 	
@@ -364,7 +368,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 			},
 
-			taskFive: function()
+			taskFour: function()
 			{
 				/*this.strCurrentTask = 'Go to the Bus Shelter';
 				this.osdOne();
@@ -386,7 +390,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}*/
 			},
 
-			taskSix: function()
+			taskFive: function()
 			{
 				if( this.intState == 0 )
 				{
@@ -431,19 +435,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 			},
 
-			taskEleven: function()
+			taskTen: function()
 			{	
+				this.strCurrentTask = 'Go to the Hospital';
+				this.osdOne();
+
 				if( this.player.map_id == 'hospitalMap' && ( this.player.entity_x == 19 && this.player.entity_y == 32 ) )
 				{
 					this.strCurrentTask = 'Talking';
 					this.osdOne();
 					this.counter = 0;
 					this.taskCompleted[10] = true;
-				}
-				else
-				{
-					this.strCurrentTask = 'Go to the Hospital';
-					this.osdOne();
 				}
 
 				if( this.taskCompleted[10] )
@@ -478,6 +480,28 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.taskCompleted[21] = false;
 						this.output = -1;
 					}
+				}
+			},
+
+			taskTwentySeven: function()
+			{
+				this.strCurrentTask = 'Go to the Centre';
+				this.osdOne();
+
+				if( this.player.map_id == 'centreMap' && ( ( this.player.entity_x >= 3 && this.player.entity_x <= 6 ) || ( this.player.entity_y >= 9 && this.player.entity_y <= 16 ) ) )
+				{
+					this.strCurrentTask = 'Updated';
+					this.counter = 0;
+					this.taskCompleted[27] = true;
+				}
+
+				if( this.taskCompleted[27] )
+				{
+					this.updateCommunity( this.taskPoints[0] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[27] += 1;
+					this.taskCompleted[27] = false;
+					this.output = -1;
 				}
 			},
 
@@ -603,7 +627,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				// Meals on Wheels
 				if( ( x == 10 || x == 11 ) && ( y == 3 ) )
 				{
-					this.engine.network.send( 'moveAvatar', [13, 14] );
+					this.engine.network.send( 'moveAvatar', [13, 4] );
 				}
 				// Creche
 				else if( ( x == 2 || x == 3 ) && ( y == 17 || y == 18 ) )

@@ -533,10 +533,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.send('changeViewMap', 'charityMap', num);
 			}
 			// Meals
-			else if( ( entity.entity_x == 13 && entity.entity_y == 14 ) )
+			else if( ( entity.entity_x == 13 && entity.entity_y == 4 ) )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 13, 14, 'centreMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 13, 4, 'centreMap');
 				this.engine.network.send('changeViewMap', 'centreMap', num);
 			}
 			// Post Office
