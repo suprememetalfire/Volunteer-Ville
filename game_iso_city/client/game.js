@@ -432,22 +432,23 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.strCurrentTask = 'All Aboard';
 					this.osdOne();
 				}
-				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intState == 0 )
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intState == 0 )
 				{
 					this.intState = 1;
 					this.engine.network.send( 'driveBus', this.intState, this.player );
 					this.strCurrentTask = 'Drive to the Park';
 					this.osdOne();
 				}
-				if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 8 && this.player.entity_x <= 26 )  && ( this.player.entity_y == 30 ) ) )
+				else if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 8 && this.player.entity_x <= 26 )  && ( this.player.entity_y == 30 ) ) )
 				{					
 					this.strCurrentTask = 'Return the bus to the Creche';
 					this.osdOne();
+					this.intState = 2;
 				}
-				if( this.playermap_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 )/* && this.intState == 1*/ )
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intState == 2 )
 				{
 this.log('werthvbghrththnbtehthegvfdnvuifavgbeiG');
-					this.intState = 2;
+					
 					this.engine.network.send( 'driveBus', this.intState, this.player );
 					this.strCurrentTask = 'Good Work';
 					this.osdOne();				
@@ -835,6 +836,24 @@ this.log('werthvbghrththnbtehthegvfdnvuifavgbeiG');
 							break;						
 							case DIRECTION_SW:
 								this.engine.entities.setAnimation(entity, 'womanWalkSW');
+							break;		
+						}
+					break;
+					case 'van':
+						// Entity is a person sprite
+						switch (entity.entity_direction) 
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'vanNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'vanSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'vanNW');
+							break;						
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'vanSW');
 							break;		
 						}
 					break;					

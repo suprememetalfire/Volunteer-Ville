@@ -142,8 +142,8 @@ animations = new IgeClass({
 		this.engine.animations.create({
 			animation_id: 'vanSW',
 			animation_frame_from: 1,
-			animation_frame_to: 2,
-			animation_fps: 4,
+			animation_frame_to: 1,
+			animation_fps: 1,
 			animation_loop: true,
 		});
 
@@ -151,23 +151,23 @@ animations = new IgeClass({
 			animation_id: 'vanSE',
 			animation_frame_from: 2,
 			animation_frame_to: 2,
-			animation_fps: 4,
+			animation_fps: 1,
 			animation_loop: true,
 		});
 
 		this.engine.animations.create({
 			animation_id: 'vanNE',
 			animation_frame_from: 3,
-			animation_frame_to: 4,
-			animation_fps: 4,
+			animation_frame_to: 3,
+			animation_fps: 1,
 			animation_loop: true,
 		});
 
 		this.engine.animations.create({
 			animation_id: 'vanNW',
 			animation_frame_from: 4,
-			animation_frame_to: 1,
-			animation_fps: 4,
+			animation_frame_to: 4,
+			animation_fps: 1,
 			animation_loop: true,
 		});
 

@@ -398,53 +398,15 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 	driveBus: function( intState, player )
 	{
 		var client = this.engine.entities.read( 'woman' + player.sessionId );
-		this.engine.entities.remove( player );
+		this.engine.entities.remove( client );		
 
 		if( intState == 1 )
 		{
-			var entity = this.engine.entities.create
-			({
-				template_id: 'van',
-				// Entity stuff
-				entity_id: 'woman' + client.sessionId,
-				entity_x: client.entity_x,
-				entity_y: client.entity_y,
-				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
-				entity_persist:PERSIST_DISABLED,
-				session_id: client.sessionId,
-				map_id: 'townMap',
-			}, function (entity)
-			{
-				if (entity != null) 
-				{
-					//this.log('New avatar created for client: ' + sessionId);
-				} else {
-					//this.log('Could not create new avatar for client: ' + sessionId);	
-				}
-			});
+			this.createNewMapAvatar( player.sessionId, 'van', 2, 20, 'townMap' );
 		}
 		else if( intState == 2 )
 		{
-			var entity = this.engine.entities.create
-			({
-				template_id: 'womanWalk',
-				// Entity stuff
-				entity_id: 'woman' + client.sessionId,
-				entity_x: client.entity_x,
-				entity_y: client.entity_y,
-				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
-				entity_persist:PERSIST_DISABLED,
-				session_id: client.sessionId,
-				map_id: 'townMap',
-			}, function (entity)
-			{
-				if (entity != null) 
-				{
-					//this.log('New avatar created for client: ' + sessionId);
-				} else {
-					//this.log('Could not create new avatar for client: ' + sessionId);	
-				}
-			});
+			this.createNewMapAvatar( player.sessionId, 'womanWalk', 2, 20, 'townMap' );
 		}		
 	},
 
