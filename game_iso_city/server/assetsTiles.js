@@ -140,9 +140,9 @@ assetsTiles = new IgeClass({
 			"asset_anchor_points" : [ 
 			[ 
 			125, 
-			124 ] ],
-			"asset_sheet_width" : 1,
-			"asset_sheet_height" : 4,
+			125 ] ],
+			"asset_sheet_width" : 4,
+			"asset_sheet_height" : 1,
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED
