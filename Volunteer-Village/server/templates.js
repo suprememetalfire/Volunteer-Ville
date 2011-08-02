@@ -309,37 +309,27 @@ templates = new IgeClass({
 			},
 		});
 
-		/*this.engine.templates.create({
-			template_id: 'van',
+		this.engine.templates.create({
+			template_id: 'bag',
 			template_contents: {
-				entity_type:ENTITY_TYPE_OBJECT,
-				entity_layer:LAYER_OBJECTS,
+				entity_type:ENTITY_TYPE_TILE,
+				entity_layer:LAYER_TILES,
 				entity_tile_width:1,
 				entity_tile_height:1,
-				entity_z:0,
-				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
-				asset_id: 'van',
+				entity_z:100,
+				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
+				asset_id: 'bag',
 			},
-		});*/
-		/*this.engine.templates.create({
-			template_id: 'van',
-			template_contents: {
-				// Entity stuff
-				entity_type:ENTITY_TYPE_SPRITE,
-				entity_layer:LAYER_SPRITES,
-				entity_tile_width:1,
-				entity_tile_height:1,
-				entity_z:0,
-				// Animation stuff
-				animation_id: 'van',
-				animation_dirty: true,
-				// Asset stuff
-				asset_sheet_frame:1,
-				asset_id: 'van',
-				// Map stuff
-				//map_id: 'testMap1',
-			},
-		});*/		
+		});
+		this.engine.entities.create
+		({
+			template_id: 'bag',
+			entity_x: 4,
+			entity_y: -1,
+			entity_id: 'bag',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'shopMap',
+		});		
 	},	
 });
 }

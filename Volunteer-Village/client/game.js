@@ -77,6 +77,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
 				this.engine.network.registerCommand('updateCommunity', this.bind(this.updateCommunity));
 				this.engine.network.registerCommand('driveBus', this.bind(this.driveBus));
+				this.engine.network.registerCommand('createTaskObjects', this.bind(this.createTaskObjects));
+				this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
 
 				this.taskPoints[0] = 1;
 				this.taskPoints[1] = 5;
@@ -276,6 +278,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				else if( this.output == this.taskName[12] )
 				{
 					this.taskTwelve();	
+				}
+				else if( this.output == this.taskName[14] )
+				{
+					this.taskFourteen();	
 				}
 				else if( this.output == this.taskName[21] )
 				{
@@ -496,7 +502,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			{	
 				if( this.display == true )
 				{
-					this.strCurrentTask = 'Go to the Meals on Wheels Depot';
+					this.strCurrentTask = 'Go to the Meals on Wheels Depot.';
 					this.osdOne();
 					this.display = false;
 				}
@@ -505,12 +511,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					this.intTask[12] = 1;
 					this.engine.network.send( 'driveBus', this.intTask[12], this.player );
-					this.strCurrentTask = 'Deliver to Number 2, Helping Lane';
+					this.strCurrentTask = 'Deliver to Number 2, Helping Lane.';
 					this.osdOne();					
 				}
 				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 45 && this.player.entity_y == 20 ) && this.intTask[12] == 1 )
 				{
-					this.strCurrentTask = 'Return the van to the Depot';
+					this.strCurrentTask = 'Return the van to the Depot.';
 					this.osdOne();					
 					this.intTask[12] = 2;
 				}				
@@ -531,6 +537,49 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[12] = false;
 					this.output = -1;
 					this.intTask[12] = 0;
+				}
+			},
+
+			taskFourteen: function()
+			{	
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Shopping Centre.';
+					this.osdOne();
+					this.display = false;
+				}
+
+				if( this.player.map_id == 'shopMap' && this.intTask[14] == 0)
+				{
+					this.intTask[14] = 1;
+					this.strCurrentTask = 'Pick-up groceries.';
+					this.osdOne();	
+
+					this.engine.network.send( 'createTaskObjects', 'shopMap', 4, -1, 'bag' );
+				}
+				else if( this.player.map_id == 'shopMap' && ( this.player.entity_x == 4 && this.player.entity_y == -1 ) && this.intTask[14] == 1 )
+				{
+					this.engine.network.send( 'destroyTaskObjects', 'bag' );
+					this.strCurrentTask = 'Return the van to the Depot';
+					this.osdOne();					
+					this.intTask[14] = 2;
+				}				
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.intTask[14] == 2 )
+				{
+					this.strCurrentTask = 'Delivered';
+					this.osdOne();					
+					this.counter = 0;
+					this.taskCompleted[14] = true;
+				}
+
+				if( this.taskCompleted[14] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[14] += 1;
+					this.taskCompleted[14] = false;
+					this.output = -1;
+					this.intTask[14] = 0;
 				}
 			},
 

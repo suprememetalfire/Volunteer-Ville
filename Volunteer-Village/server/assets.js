@@ -318,6 +318,20 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.55
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "bag",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/tree1.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			11, 
+			19 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.5
+		});
 	},	
 });	
 }

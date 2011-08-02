@@ -76,6 +76,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
 		this.engine.network.registerCommand('updateCommunity', this.bind(this.updateCommunity));
 		this.engine.network.registerCommand('driveBus', this.bind(this.driveBus));
+		this.engine.network.registerCommand('createTaskObjects', this.bind(this.createTaskObjects));
+		this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
 
 		this.update = setInterval(this.bind(this.updateWorld), 1000);		
 
@@ -408,6 +410,25 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		{
 			this.createNewMapAvatar( player.sessionId, 'womanWalk', client.entity_x, client.entity_y, 'townMap' );
 		}		
+	},
+
+	createTaskObjects: function( map, x, y, value )
+	{
+		this.engine.entities.create
+		({
+			template_id: 'bag',
+			entity_x: 7,
+			entity_y: 8,
+			entity_id: 'bag',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'shopMap',
+		});
+	},
+
+	destroyTaskObjects: function( value )
+	{
+		var entity = this.engine.entities.read( value );
+		this.engine.entities.remove( entity );
 	},
 
 	// Go inside/outside Buildings.
