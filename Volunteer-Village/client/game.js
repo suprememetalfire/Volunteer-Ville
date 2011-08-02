@@ -43,8 +43,7 @@ myTime: null,
 			out: -1,
 			strCurrentTask: 'Go to the Volunteer Centre',
 			counter: 10,
-			intState: 0,
-			taskTwelveBool: false,
+			intTask: [],
 			display: true,
 			
 			init: function (engine) {
@@ -87,6 +86,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 				for( var i = 0; i < 28; i++ )
 				{
+					this.intTask[i] = 0;
 					this.taskName[i] = i;
 					this.taskList[i] = 0;
 					this.taskCompleted[i] = false;
@@ -432,24 +432,22 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.strCurrentTask = 'All Aboard';
 					this.osdOne();
 				}
-				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intState == 0 )
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intTask[5] == 0 )
 				{
-					this.intState = 1;
-					this.engine.network.send( 'driveBus', this.intState, this.player );
+					this.intTask[5] = 1;
+					this.engine.network.send( 'driveBus', this.intTask[5], this.player );
 					this.strCurrentTask = 'Drive to the Park';
 					this.osdOne();
 				}
-				else if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 8 && this.player.entity_x <= 26 )  && ( this.player.entity_y == 30 ) ) )
+				else if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 8 && this.player.entity_x <= 26 )  && ( this.player.entity_y == 30 ) ) && this.intTask[5] == 1 )
 				{					
 					this.strCurrentTask = 'Return the bus to the Creche';
 					this.osdOne();
-					this.intState = 2;
+					this.intTask[5] = 2;
 				}
-				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intState == 2 )
-				{
-this.log('werthvbghrththnbtehthegvfdnvuifavgbeiG');
-					
-					this.engine.network.send( 'driveBus', this.intState, this.player );
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intTask[5] == 2 )
+				{					
+					this.engine.network.send( 'driveBus', this.intTask[5], this.player );
 					this.strCurrentTask = 'Good Work';
 					this.osdOne();				
 					this.counter = 0;
@@ -463,6 +461,7 @@ this.log('werthvbghrththnbtehthegvfdnvuifavgbeiG');
 					this.taskList[5] += 1;
 					this.taskCompleted[5] = false;
 					this.output = -1;
+					this.intTask[5] = 0;
 				}
 			},
 
@@ -502,22 +501,24 @@ this.log('werthvbghrththnbtehthegvfdnvuifavgbeiG');
 					this.display = false;
 				}
 
-				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.taskTwelveBool == false )
+				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.intTask[12] == 0)
 				{
+					this.intTask[12] = 1;
+					this.engine.network.send( 'driveBus', this.intTask[12], this.player );
 					this.strCurrentTask = 'Deliver to Number 2, Helping Lane';
-					this.osdOne();
+					this.osdOne();					
 				}
-				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 45 && this.player.entity_y == 20 ) && this.taskTwelveBool == false )
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 45 && this.player.entity_y == 20 ) && this.intTask[12] == 1 )
 				{
 					this.strCurrentTask = 'Return the van to the Depot';
-					this.osdOne();
-					this.taskTwelveBool = true;
+					this.osdOne();					
+					this.intTask[12] = 2;
 				}				
-				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.taskTwelveBool == true )
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.intTask[12] == 2 )
 				{
+					this.engine.network.send( 'driveBus', this.intTask[12], this.player );
 					this.strCurrentTask = 'Delivered';
-					this.osdOne();
-					this.taskTwelveBool = false;
+					this.osdOne();					
 					this.counter = 0;
 					this.taskCompleted[12] = true;
 				}
@@ -529,6 +530,7 @@ this.log('werthvbghrththnbtehthegvfdnvuifavgbeiG');
 					this.taskList[12] += 1;
 					this.taskCompleted[12] = false;
 					this.output = -1;
+					this.intTask[12] = 0;
 				}
 			},
 

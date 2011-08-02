@@ -402,11 +402,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( intState == 1 )
 		{
-			this.createNewMapAvatar( player.sessionId, 'van', 2, 20, 'townMap' );
+			this.createNewMapAvatar( player.sessionId, 'van', client.entity_x, client.entity_y, 'townMap' );
 		}
 		else if( intState == 2 )
 		{
-			this.createNewMapAvatar( player.sessionId, 'womanWalk', 2, 20, 'townMap' );
+			this.createNewMapAvatar( player.sessionId, 'womanWalk', client.entity_x, client.entity_y, 'townMap' );
 		}		
 	},
 

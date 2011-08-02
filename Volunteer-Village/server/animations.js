@@ -16,7 +16,7 @@ animations = new IgeClass({
 			animation_frame_from: 1,
 			animation_frame_to: 9,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 		
 		this.engine.animations.create({
@@ -24,7 +24,7 @@ animations = new IgeClass({
 			animation_frame_from: 10,
 			animation_frame_to: 18,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 		
 		this.engine.animations.create({
@@ -32,7 +32,7 @@ animations = new IgeClass({
 			animation_frame_from: 19,
 			animation_frame_to: 27,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 		
 		this.engine.animations.create({
@@ -40,7 +40,7 @@ animations = new IgeClass({
 			animation_frame_from: 28,
 			animation_frame_to: 36,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 		
 		this.engine.animations.create({
@@ -48,7 +48,7 @@ animations = new IgeClass({
 			animation_frame_from: 37,
 			animation_frame_to: 45,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 		
 		this.engine.animations.create({
@@ -56,7 +56,7 @@ animations = new IgeClass({
 			animation_frame_from: 46,
 			animation_frame_to: 54,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 		
 		this.engine.animations.create({
@@ -64,7 +64,7 @@ animations = new IgeClass({
 			animation_frame_from: 55,
 			animation_frame_to: 63,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 		
 		this.engine.animations.create({
@@ -72,7 +72,7 @@ animations = new IgeClass({
 			animation_frame_from: 64,
 			animation_frame_to: 72,
 			animation_fps: 9,
-			animation_loop: true,
+			animation_loop: false,
 		});
 
 		this.engine.templates.create({
@@ -118,7 +118,7 @@ animations = new IgeClass({
 			animation_frame_from: 1,
 			animation_frame_to: 8,
 			animation_fps: 8,
-			animation_loop: true,
+			animation_loop: false,
 		});		
 
 		this.engine.templates.create({
@@ -144,7 +144,7 @@ animations = new IgeClass({
 			animation_frame_from: 1,
 			animation_frame_to: 1,
 			animation_fps: 1,
-			animation_loop: true,
+			animation_loop: false,
 		});
 
 		this.engine.animations.create({
@@ -152,7 +152,7 @@ animations = new IgeClass({
 			animation_frame_from: 2,
 			animation_frame_to: 2,
 			animation_fps: 1,
-			animation_loop: true,
+			animation_loop: false,
 		});
 
 		this.engine.animations.create({
@@ -160,7 +160,7 @@ animations = new IgeClass({
 			animation_frame_from: 3,
 			animation_frame_to: 3,
 			animation_fps: 1,
-			animation_loop: true,
+			animation_loop: false,
 		});
 
 		this.engine.animations.create({
@@ -168,7 +168,7 @@ animations = new IgeClass({
 			animation_frame_from: 4,
 			animation_frame_to: 4,
 			animation_fps: 1,
-			animation_loop: true,
+			animation_loop: false,
 		});
 
 		this.engine.templates.create({
