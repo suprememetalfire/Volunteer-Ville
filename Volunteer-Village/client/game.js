@@ -238,23 +238,22 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					this.taskZero();					
 				}
-				else if( this.output == this.taskName[1] )
+				/*else if( this.output == this.taskName[1] )
 				{
-					this.taskOne();	
-					
+					this.taskOne();						
 				}
 				else if( this.output == this.taskName[2] )
 				{
 					this.taskTwo();	
-				}
+				}*/
 				else if( this.output == this.taskName[3] )
 				{
 					this.taskThree();	
 				}
-				else if( this.output == this.taskName[4] )
+				/*else if( this.output == this.taskName[4] )
 				{
 					this.taskFour();	
-				}
+				}*/
 				else if( this.output == this.taskName[5] )
 				{
 					this.taskFive();	
@@ -279,18 +278,70 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					this.taskTen();	
 				}
+				else if( this.output == this.taskName[11] )
+				{
+					this.taskEleven();	
+				}
 				else if( this.output == this.taskName[12] )
 				{
 					this.taskTwelve();	
 				}
+				/*else if( this.output == this.taskName[13] )
+				{
+					this.taskThirteen();	
+				}*/
 				else if( this.output == this.taskName[14] )
 				{
 					this.taskFourteen();	
 				}
+				/*else if( this.output == this.taskName[15] )
+				{
+					this.taskFifteen();	
+				}
+				else if( this.output == this.taskName[16] )
+				{
+					this.taskSixteen();	
+				}
+				else if( this.output == this.taskName[17] )
+				{
+					this.taskSeventeen();	
+				}
+				else if( this.output == this.taskName[18] )
+				{
+					this.taskEighteen();	
+				}
+				else if( this.output == this.taskName[19] )
+				{
+					this.taskNineteen();	
+				}
+				else if( this.output == this.taskName[20] )
+				{
+					this.taskTwenty();	
+				}*/
 				else if( this.output == this.taskName[21] )
 				{
 					this.taskTwentyOne();	
 				}
+				/*else if( this.output == this.taskName[22] )
+				{
+					this.taskTwentyTwo();	
+				}
+				else if( this.output == this.taskName[23] )
+				{
+					this.taskTwentyThree();	
+				}
+				else if( this.output == this.taskName[24] )
+				{
+					this.taskTwentyFour();	
+				}
+				else if( this.output == this.taskName[25] )
+				{
+					this.taskTwentyFive();	
+				}
+				else if( this.output == this.taskName[26] )
+				{
+					this.taskTwentySix();	
+				}*/
 				else if( this.output == this.taskName[27] )
 				{
 					this.taskTwentySeven();	
@@ -325,54 +376,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskOne: function()
 			{
-				/*if( this.display == true )
-				{
-					this.strCurrentTask = 'Back To School';
-					this.osdOne();
-					this.display = false;
-				}
-	
-				if( this.player.map_id == 'shelterschoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
-				{
-					this.strCurrentTask = 'Youve Just Been Schooled';
-					this.counter = 0;
-					this.taskCompleted[0] = true;
-				}
 
-				if( this.taskCompleted[0] )
-				{
-					this.updateCommunity( this.taskPoints[1] );
-					this.engine.network.send('updateCommunity', this.communityLevel);
-					this.taskList[0] += 1;
-					this.taskCompleted[0] = false;
-					this.output = -1;
-				}*/
 			},
 
 			taskTwo: function()
 			{
-				/*if( this.display == true )
-				{
-					this.strCurrentTask = 'Back To School';
-					this.osdOne();
-					this.display = false;
-				}
-	
-				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
-				{
-					this.strCurrentTask = 'Youve Just Been Schooled';
-					this.counter = 0;
-					this.taskCompleted[0] = true;
-				}
-
-				if( this.taskCompleted[0] )
-				{
-					this.updateCommunity( this.taskPoints[1] );
-					this.engine.network.send('updateCommunity', this.communityLevel);
-					this.taskList[0] += 1;
-					this.taskCompleted[0] = false;
-					this.output = -1;
-				}*/
+				
 			},
 
 			taskThree: function()
@@ -404,28 +413,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskFour: function()
 			{
-				/*if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to the Bus Shelter';
-					this.osdOne();
-					this.display = false;
-				}
-	
-				if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 0 && this.player.entity_x <= 5 )  && ( this.player.entity_y >= 0 && this.player.entity_y <= 5 ) ) )
-				{
-					this.strCurrentTask = 'Thank You';
-					this.counter = 0;
-					this.taskCompleted[3] = true;
-				}
-
-				if( this.taskCompleted[3] )
-				{
-					this.updateCommunity( this.taskPoints[3] );
-					this.engine.network.send('updateCommunity', this.communityLevel);
-					this.taskList[3] += 1;
-					this.taskCompleted[3] = false;
-					this.output = -1;
-				}*/
+				
 			},
 
 			taskFive: function()
@@ -544,6 +532,16 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 			},
 
+			taskEight: function()
+			{
+				
+			},
+
+			taskNine: function()
+			{
+				
+			},
+
 			taskTen: function()
 			{	
 				if( this.display == true )
@@ -567,6 +565,33 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.engine.network.send('updateCommunity', this.communityLevel);
 					this.taskList[10] += 1;
 					this.taskCompleted[10] = false;
+					this.output = -1;
+				}
+			},
+
+			taskEleven: function()
+			{	
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Hospital';
+					this.osdOne();
+					this.display = false;
+				}
+
+				if( this.player.map_id == 'hospitalMap' && ( this.player.entity_x == 19 && this.player.entity_y == 32 ) )
+				{
+					this.strCurrentTask = 'Clowning';
+					this.osdOne();
+					this.counter = 0;
+					this.taskCompleted[11] = true;
+				}
+
+				if( this.taskCompleted[11] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[11] += 1;
+					this.taskCompleted[11] = false;
 					this.output = -1;
 				}
 			},
@@ -611,6 +636,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.output = -1;
 					this.intTask[12] = -1;
 				}
+			},
+
+			taskThirteen: function()
+			{
+				
 			},
 
 			taskFourteen: function()
