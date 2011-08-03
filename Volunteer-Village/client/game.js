@@ -88,7 +88,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 				for( var i = 0; i < 28; i++ )
 				{
-					this.intTask[i] = 0;
+					this.intTask[i] = -1;
 					this.taskName[i] = i;
 					this.taskList[i] = 0;
 					this.taskCompleted[i] = false;
@@ -151,18 +151,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			
 			clientDisconnect: function (sessionId) {
 				console.log('Player disconnected with session: ' + sessionId);
-			},
-
-			switchButton: function () 
-			{
-				if( this.clicked )
-				{
-					this.clicked = false;
-				}
-				else
-				{
-					this.clicked = true;
-				}
 			},
 
 			switchMusic: function ()
@@ -265,11 +253,27 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[4] )
 				{
-					//this.taskFour();	
+					this.taskFour();	
 				}
 				else if( this.output == this.taskName[5] )
 				{
 					this.taskFive();	
+				}
+				else if( this.output == this.taskName[6] )
+				{
+					this.taskSix();	
+				}
+				else if( this.output == this.taskName[7] )
+				{
+					this.taskSeven();	
+				}
+				else if( this.output == this.taskName[8] )
+				{
+					this.taskEight();	
+				}
+				else if( this.output == this.taskName[9] )
+				{
+					this.taskNine();	
 				}
 				else if( this.output == this.taskName[10] )
 				{
@@ -328,7 +332,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.display = false;
 				}
 	
-				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
+				if( this.player.map_id == 'shelterschoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
 				{
 					this.strCurrentTask = 'Youve Just Been Schooled';
 					this.counter = 0;
@@ -373,7 +377,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 			taskThree: function()
 			{
-				/*if( this.display == true )
+				if( this.display == true )
 				{
 					this.strCurrentTask = 'Go to the Bus Shelter';
 					this.osdOne();
@@ -437,6 +441,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					this.strCurrentTask = 'All Aboard';
 					this.osdOne();
+					this.intTask[5] = 0;
 				}
 				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 20 ) && this.intTask[5] == 0 )
 				{
@@ -468,6 +473,74 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[5] = false;
 					this.output = -1;
 					this.intTask[5] = 0;
+				}
+			},
+
+			taskSix: function()
+			{
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Fire Station';
+					this.osdOne();
+					this.display = false;
+				}	
+
+				if( this.player.map_id == 'fireMap'/* && ( this.player.entity_x == 19 && this.player.entity_y == 32 ) */)
+				{
+					this.intTask[6] = 0;
+					this.strCurrentTask = 'Go outside.';
+					this.osdOne();
+				}
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 34 && this.player.entity_y == 5 ) && this.intTask[6] == 0 )
+				{
+					this.strCurrentTask = 'Washed.';
+					this.osdOne();
+					this.counter = 0;
+					this.taskCompleted[6] = true;
+				}
+
+				if( this.taskCompleted[6] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[6] += 1;
+					this.taskCompleted[6] = false;
+					this.output = -1;
+					this.intTask[6] = -1;
+				}
+			},
+
+			taskSeven: function()
+			{
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to Number 1, Helping Lane';
+					this.osdOne();
+					this.display = false;
+				}	
+
+				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 41 && this.player.entity_y == 19 ) && this.intTask[7] == -1 )
+				{
+					this.intTask[7] = 0;
+					this.strCurrentTask = 'Fix the roof.';
+					this.osdOne();
+				}
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 39 && this.player.entity_y == 19 ) && this.intTask[7] == 0 )
+				{
+					this.strCurrentTask = 'Fixed.';
+					this.osdOne();
+					this.counter = 0;
+					this.taskCompleted[7] = true;
+				}
+
+				if( this.taskCompleted[7] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[7] += 1;
+					this.taskCompleted[7] = false;
+					this.output = -1;
+					this.intTask[7] = -1;
 				}
 			},
 
@@ -507,7 +580,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.display = false;
 				}
 
-				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.intTask[12] == 0)
+				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.intTask[12] == -1)
 				{
 					this.intTask[12] = 1;
 					this.engine.network.send( 'driveBus', this.intTask[12], this.player );
@@ -536,7 +609,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskList[12] += 1;
 					this.taskCompleted[12] = false;
 					this.output = -1;
-					this.intTask[12] = 0;
+					this.intTask[12] = -1;
 				}
 			},
 
@@ -549,13 +622,13 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.display = false;
 				}
 
-				if( this.player.map_id == 'shopMap' && this.intTask[14] == 0)
+				if( this.player.map_id == 'shopMap' && this.intTask[14] == -1 )
 				{
 					this.intTask[14] = 1;
 					this.strCurrentTask = 'Pick-up groceries.';
 					this.osdOne();	
 
-					this.engine.network.send( 'createTaskObjects', 'shopMap', 4, -1, 'bag' );
+					this.engine.network.send( 'createTaskObjects'/*, 'shopMap', 4, -1, 'bag'*/ );
 				}
 				else if( this.player.map_id == 'shopMap' && ( this.player.entity_x == 4 && this.player.entity_y == -1 ) && this.intTask[14] == 1 )
 				{
@@ -579,7 +652,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskList[14] += 1;
 					this.taskCompleted[14] = false;
 					this.output = -1;
-					this.intTask[14] = 0;
+					this.intTask[14] = -1;
 				}
 			},
 
@@ -950,8 +1023,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					
 					this.clickMove( tileCords[0], tileCords[1] );
 				}
-	//this.engine.network.send('moveVan');				
-//this.taskCompleted[0] = true;
 				
 				if (event.button == 2) {
 					this.engine.viewports.panEnd(event.viewport, clientX, clientY);

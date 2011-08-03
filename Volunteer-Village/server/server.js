@@ -412,13 +412,13 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}		
 	},
 
-	createTaskObjects: function( map, x, y, value )
+	createTaskObjects: function( /*map, x, y, value*/ )
 	{
 		this.engine.entities.create
 		({
 			template_id: 'bag',
-			entity_x: 7,
-			entity_y: 8,
+			entity_x: 4,
+			entity_y: -2,
 			entity_id: 'bag',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'shopMap',

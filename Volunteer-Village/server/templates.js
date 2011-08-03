@@ -312,24 +312,25 @@ templates = new IgeClass({
 		this.engine.templates.create({
 			template_id: 'bag',
 			template_contents: {
-				entity_type:ENTITY_TYPE_TILE,
-				entity_layer:LAYER_TILES,
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
 				entity_tile_width:1,
 				entity_tile_height:1,
-				entity_z:100,
-				entity_tile_block: ENTITY_TB_NOBLOCK_CHECK,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'bag',
 			},
 		});
-		this.engine.entities.create
+			
+		/*this.engine.entities.create
 		({
 			template_id: 'bag',
 			entity_x: 4,
-			entity_y: -1,
+			entity_y: -2,
 			entity_id: 'bag',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'shopMap',
-		});		
+		});*/				
 	},	
 });
 }
