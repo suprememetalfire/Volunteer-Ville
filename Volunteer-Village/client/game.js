@@ -324,7 +324,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[22] )
 				{
-					//this.taskTwentyTwo();	
+					this.taskTwentyTwo();	
 				}
 				else if( this.output == this.taskName[23] )
 				{
@@ -853,6 +853,32 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.taskCompleted[21] = false;
 						this.output = -1;
 					}
+				}
+			},
+			
+			taskTwentyTwo: function()
+			{
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Police Station';
+					this.osdOne();
+					this.display = false;
+				}
+	
+				if( this.player.map_id == 'stationMap' && ( this.player.entity_x == -3 && this.player.entity_y == 19 ) )
+				{
+					this.strCurrentTask = 'Call';
+					this.counter = 0;
+					this.taskCompleted[22] = true;
+				}
+
+				if( this.taskCompleted[22] )
+				{
+					this.updateCommunity( this.taskPoints[2] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[22] += 1;
+					this.taskCompleted[22] = false;
+					this.output = -1;
 				}
 			},
 
