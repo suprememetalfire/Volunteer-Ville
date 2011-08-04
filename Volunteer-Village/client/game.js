@@ -304,7 +304,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[17] )
 				{
-					//this.taskSeventeen();	
+					this.taskSeventeen();	
 				}
 				else if( this.output == this.taskName[18] )
 				{
@@ -684,6 +684,33 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[14] = false;
 					this.output = -1;
 					this.intTask[14] = -1;
+				}
+			},
+
+			taskSeventeen: function()
+			{	
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Old Folks Home';
+					this.osdOne();
+					this.display = false;
+				}
+
+				if( this.player.map_id == 'oldFolksHomeMap' && ( this.player.entity_x == -6 && this.player.entity_y == -7 ) )
+				{
+					this.strCurrentTask = 'Talking';
+					this.osdOne();
+					this.counter = 0;
+					this.taskCompleted[17] = true;
+				}
+
+				if( this.taskCompleted[17] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[17] += 1;
+					this.taskCompleted[17] = false;
+					this.output = -1;
 				}
 			},
 
