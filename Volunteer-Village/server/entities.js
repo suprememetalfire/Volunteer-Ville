@@ -77,7 +77,7 @@ entities = new IgeClass({
 			entity_id: 'lake1636',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
-		});		
+		});
 
 		this.engine.entities.create({
 			template_id: 'museum',

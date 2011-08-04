@@ -409,7 +409,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		else if( intState == 2 )
 		{
 			this.createNewMapAvatar( player.sessionId, 'womanWalk', client.entity_x, client.entity_y, 'townMap' );
-		}		
+		}	
 	},
 
 	createTaskObjects: function( /*map, x, y, value*/ )

@@ -238,22 +238,22 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					this.taskZero();					
 				}
-				/*else if( this.output == this.taskName[1] )
+				else if( this.output == this.taskName[1] )
 				{
-					this.taskOne();						
+					//this.taskOne();						
 				}
 				else if( this.output == this.taskName[2] )
 				{
-					this.taskTwo();	
-				}*/
+					//this.taskTwo();	
+				}
 				else if( this.output == this.taskName[3] )
 				{
 					this.taskThree();	
 				}
-				/*else if( this.output == this.taskName[4] )
+				else if( this.output == this.taskName[4] )
 				{
-					this.taskFour();	
-				}*/
+					//this.taskFour();	
+				}
 				else if( this.output == this.taskName[5] )
 				{
 					this.taskFive();	
@@ -268,11 +268,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[8] )
 				{
-					this.taskEight();	
+					//this.taskEight();	
 				}
 				else if( this.output == this.taskName[9] )
 				{
-					this.taskNine();	
+					//this.taskNine();	
 				}
 				else if( this.output == this.taskName[10] )
 				{
@@ -286,62 +286,62 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{
 					this.taskTwelve();	
 				}
-				/*else if( this.output == this.taskName[13] )
+				else if( this.output == this.taskName[13] )
 				{
-					this.taskThirteen();	
-				}*/
+					//this.taskThirteen();	
+				}
 				else if( this.output == this.taskName[14] )
 				{
 					this.taskFourteen();	
 				}
-				/*else if( this.output == this.taskName[15] )
+				else if( this.output == this.taskName[15] )
 				{
-					this.taskFifteen();	
+					//this.taskFifteen();	
 				}
 				else if( this.output == this.taskName[16] )
 				{
-					this.taskSixteen();	
+					//this.taskSixteen();	
 				}
 				else if( this.output == this.taskName[17] )
 				{
-					this.taskSeventeen();	
+					//this.taskSeventeen();	
 				}
 				else if( this.output == this.taskName[18] )
 				{
-					this.taskEighteen();	
+					//this.taskEighteen();	
 				}
 				else if( this.output == this.taskName[19] )
 				{
-					this.taskNineteen();	
+					//this.taskNineteen();	
 				}
 				else if( this.output == this.taskName[20] )
 				{
-					this.taskTwenty();	
-				}*/
+					//this.taskTwenty();	
+				}
 				else if( this.output == this.taskName[21] )
 				{
 					this.taskTwentyOne();	
 				}
-				/*else if( this.output == this.taskName[22] )
+				else if( this.output == this.taskName[22] )
 				{
-					this.taskTwentyTwo();	
+					//this.taskTwentyTwo();	
 				}
 				else if( this.output == this.taskName[23] )
 				{
-					this.taskTwentyThree();	
+					//this.taskTwentyThree();	
 				}
 				else if( this.output == this.taskName[24] )
 				{
-					this.taskTwentyFour();	
+					//this.taskTwentyFour();	
 				}
 				else if( this.output == this.taskName[25] )
 				{
-					this.taskTwentyFive();	
+					//this.taskTwentyFive();	
 				}
 				else if( this.output == this.taskName[26] )
 				{
-					this.taskTwentySix();	
-				}*/
+					//this.taskTwentySix();	
+				}
 				else if( this.output == this.taskName[27] )
 				{
 					this.taskTwentySeven();	
@@ -574,6 +574,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				if( this.display == true )
 				{
 					this.strCurrentTask = 'Go to the Hospital';
+
 					this.osdOne();
 					this.display = false;
 				}
