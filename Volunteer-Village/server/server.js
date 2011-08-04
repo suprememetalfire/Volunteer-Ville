@@ -90,6 +90,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.aryTaskObjects[i] = 0;
 		}
 		this.aryTaskObjects[14] = [ 'bag', 4, -1, 'shopMap' ];
+		this.aryTaskObjects[19] = [ 'guitar', 0, -8, 'oldFolksHomeMap' ];
 		
 		// Set an interval so that the serverReady method is called until ready
 		this.intervalReadyCheck = setInterval(this.bind(this.serverReady));
@@ -421,7 +422,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 	createTaskObjects: function( num )
 	{
-		
+		//var client = this.engine.entities.read( 'woman' + player.sessionId );
+		//var temp = client.sessionId;
+//this.log(num);		
+
 		this.engine.entities.create
 		({
 			template_id: this.aryTaskObjects[num][0],

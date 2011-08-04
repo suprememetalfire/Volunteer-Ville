@@ -318,6 +318,20 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.55
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "guitar",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/guitar.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			11.5, 
+			25 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.5
+		});
 	},	
 });	
 }

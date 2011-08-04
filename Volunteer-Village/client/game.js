@@ -312,7 +312,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[19] )
 				{
-					//this.taskNineteen();	
+					this.taskNineteen();	
 				}
 				else if( this.output == this.taskName[20] )
 				{
@@ -762,6 +762,35 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 			},
 
+			taskNineteen: function()
+			{	
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Old Folks Home';
+					this.osdOne();
+					this.display = false;
+					this.engine.network.send( 'createTaskObjects', 19 );
+				}
+
+				if( this.player.map_id == 'oldFolksHomeMap' && ( this.player.entity_x == 0 && this.player.entity_y == -8 ) )
+				{
+					this.strCurrentTask = 'Pick up the guitar.';					
+					this.engine.network.send( 'destroyTaskObjects', 'guitar' );
+					this.osdOne();
+					this.counter = 0;
+					this.taskCompleted[19] = true;
+				}
+
+				if( this.taskCompleted[19] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[19] += 1;
+					this.taskCompleted[19] = false;
+					this.output = -1;
+				}
+			},
+
 			taskTwentyOne: function()
 			{
 				if( this.taskList[21] == 0 )
@@ -1029,12 +1058,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			// Switch player avatar between person and bus.
 			driveBus: function()
 			{
-				//this.intState = this.intState;
-				//this.player.sessionId = this.player.sessionId;
-				//this.player.entity_x = this.player.entity_x;
-				//this.player.entity_y = this.entity_y;
-
-				var xx = 20000;
 			},
 
 			directionChange: function (entity) {

@@ -309,34 +309,20 @@ templates = new IgeClass({
 			},
 		});
 
-		/*this.engine.templates.create({
-			template_id: 'bag',
-			template_contents:
-			 {
-				entity_type:ENTITY_TYPE_SPRITE,
-				entity_layer:LAYER_SPRITES,
+		this.engine.templates.create
+		({
+			template_id: 'guitar',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
 				entity_tile_width: 1,
 				entity_tile_height: 1,
 				entity_z: 0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
-				// Animation stuff
-				//animation_id: 'bag',
-				//animation_dirty: true,
-				// Asset stuff
-				//asset_sheet_frame: 1,
-				asset_id: 'bag',
+				asset_id: 'guitar',
 			},
-		});*/
-			
-		/*this.engine.entities.create
-		({
-			template_id: 'bag',
-			entity_x: 4,
-			entity_y: -2,
-			entity_id: 'bag',
-			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
-			map_id: 'shopMap',
-		});*/				
+		});				
 	},	
 });
 }

@@ -117,7 +117,7 @@ assetsTiles = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.3
-		});
+		});		
   
 		this.engine.assets.create({
 			"asset_id" : "grassSheet",
