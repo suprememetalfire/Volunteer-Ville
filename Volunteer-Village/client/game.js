@@ -316,7 +316,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[20] )
 				{
-					//this.taskTwenty();	
+					this.taskTwenty();	
 				}
 				else if( this.output == this.taskName[21] )
 				{
@@ -663,7 +663,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.player.map_id == 'shopMap' && ( this.player.entity_x == 4 && this.player.entity_y == -1 ) && this.intTask[14] == 1 )
 				{
-					this.engine.network.send( 'destroyTaskObjects', 'bag' );
+					this.engine.network.send( 'destroyTaskObjects', 14 );
 					this.strCurrentTask = 'Return to the Depot.';
 					this.osdOne();					
 					this.intTask[14] = 2;
@@ -775,7 +775,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				if( this.player.map_id == 'oldFolksHomeMap' && ( this.player.entity_x == 0 && this.player.entity_y == -8 ) )
 				{
 					this.strCurrentTask = 'Pick up the guitar.';					
-					this.engine.network.send( 'destroyTaskObjects', 'guitar' );
+					this.engine.network.send( 'destroyTaskObjects', 19 );
 					this.osdOne();
 					this.counter = 0;
 					this.taskCompleted[19] = true;
@@ -788,6 +788,42 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskList[19] += 1;
 					this.taskCompleted[19] = false;
 					this.output = -1;
+				}
+			},
+
+			taskTwenty: function()
+			{	
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Park.';
+					this.osdOne();
+					this.display = false;
+					this.engine.network.send( 'createTaskObjects', 20 );
+				}
+
+				if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 8 && this.player.entity_x <= 26 ) && this.player.entity_y == 31 ) && this.intTask[20] == -1 )
+				{
+					this.intTask[20] = 1;
+					this.strCurrentTask = 'Pick-up the litter.';
+					this.osdOne();						
+				}
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 34 ) && this.intTask[20] == 1 )
+				{
+					this.engine.network.send( 'destroyTaskObjects', 'guitar' );
+					this.strCurrentTask = 'Good Job.';
+					this.osdOne();					
+					this.counter = 0;
+					this.taskCompleted[20] = true;
+				}
+
+				if( this.taskCompleted[20] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[20] += 1;
+					this.taskCompleted[20] = false;
+					this.output = -1;
+					this.intTask[20] = -1;
 				}
 			},
 

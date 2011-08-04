@@ -11,19 +11,33 @@ entitiesTiles = new IgeClass({
 	// Create entities
 	load: function () {
 		// Create some grass
-		/*for (var x = -10; x < 50; x+=1) {
-			for (var y = -10; y < 50; y+=1) {*/
-				this.engine.entities.create({
-					template_id: 'tileGrass',
-					entity_x:-10,
-					entity_y:0,
-					entity_id: 'grass' + (2 + '_' + 0),
+		for( var x = 9; x < 26; x += 1 )
+		{
+			for( var y = 32; y < 43; y += 1 )
+			{
+				this.engine.entities.create
+				({
+					template_id: 'tileBase',
+					entity_x: x,
+					entity_y: y,
+					entity_id: 'townBase' + ( x + '_' + y ),
 					entity_locale: LOCALE_EVERYWHERE,
-					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					asset_sheet_frame: ( Math.ceil( Math.random() * 3 ) ) + 1,
 					map_id: 'townMap',
 				});
-			/*}
-		}*/				
+			}
+		}
+
+		this.engine.entities.create
+		({
+			template_id: 'tileGrass',
+			entity_x: -10,
+			entity_y: 0,
+			entity_id: 'grass' + ( -10 + '_' + 0 ),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame: ( Math.ceil(Math.random() * 3 ) ) + 1,
+			map_id: 'townMap',
+		});				
 		
 		// Door Tiles	
 		// School

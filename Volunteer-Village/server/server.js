@@ -91,6 +91,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}
 		this.aryTaskObjects[14] = [ 'bag', 4, -1, 'shopMap' ];
 		this.aryTaskObjects[19] = [ 'guitar', 0, -8, 'oldFolksHomeMap' ];
+		this.aryTaskObjects[20] = [ 'guitar', 13, 34, 'townMap' ];
 		
 		// Set an interval so that the serverReady method is called until ready
 		this.intervalReadyCheck = setInterval(this.bind(this.serverReady));
@@ -228,7 +229,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			});	
 	
 			this.entities.load();
-			this.entitiesInteriors.load();
+			//this.entitiesInteriors.load();
 			this.entitiesTiles.load();
 
 			this.log('+++++++++++++++++++ All data loaded and ready - Engine online +++++++++++++++++++');						
