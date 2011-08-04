@@ -116,7 +116,7 @@ assetsTiles = new IgeClass({
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 1
+			"asset_scale" : 0.3
 		});
   
 		this.engine.assets.create({
@@ -156,12 +156,13 @@ assetsTiles = new IgeClass({
 			"asset_anchor_points" : [ 
 			[ 
 			125, 
-			125 ] ],
+			180 ] ],
 			"asset_sheet_width" : 4,
 			"asset_sheet_height" : 1,
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale": 0.9
 		});
 	},	
 });	

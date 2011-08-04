@@ -10,7 +10,7 @@ igeConfig = {
 		// Add the root to the engine and node_modules paths
 		this.dir_engine = this.dir_root + this.dir_engine;
 		this.dir_node_modules = this.dir_root + this.dir_node_modules;
-this.dir_game = this.dir_game_root;
+		this.dir_game = this.dir_game_root;
 		this.dir_game_root = this.dir_root + this.dir_game_root;
 	},
 	

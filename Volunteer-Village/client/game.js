@@ -308,7 +308,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[18] )
 				{
-					//this.taskEighteen();	
+					this.taskEighteen();	
 				}
 				else if( this.output == this.taskName[19] )
 				{
@@ -687,6 +687,54 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 			},
 
+			taskEighteen: function()
+			{
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the Old Folks Home';
+					this.osdOne();
+					this.display = false;
+				}
+					
+				if( this.player.map_id == 'oldFolksHomeMap' && ( this.player.entity_x == -1 && this.player.entity_y == 5 ) )
+				{
+					this.strCurrentTask = 'All Aboard';
+					this.osdOne();
+					this.intTask[18] = 0;
+				}
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y ==13 ) && this.intTask[18] == 0 )
+				{
+					this.intTask[18] = 1;
+					this.engine.network.send( 'driveBus', this.intTask[18], this.player );
+					this.strCurrentTask = 'Drive to the Park';
+					this.osdOne();
+				}
+				else if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 8 && this.player.entity_x <= 26 )  && ( this.player.entity_y == 30 ) ) && this.intTask[18] == 1 )
+				{					
+					this.strCurrentTask = 'Return the bus to the Old Folks Home';
+					this.osdOne();
+					this.intTask[18] = 2;
+				}
+				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 2 && this.player.entity_y == 13 ) && this.intTask[18] == 2 )
+				{					
+					this.engine.network.send( 'driveBus', this.intTask[18], this.player );
+					this.strCurrentTask = 'Good Work';
+					this.osdOne();				
+					this.counter = 0;
+					this.taskCompleted[18] = true;
+				}
+
+				if( this.taskCompleted[18] )
+				{
+					this.updateCommunity( this.taskPoints[3] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[18] += 1;
+					this.taskCompleted[18] = false;
+					this.output = -1;
+					this.intTask[18] = 0;
+				}
+			},
+
 			taskTwentyOne: function()
 			{
 				if( this.taskList[21] == 0 )
@@ -857,85 +905,92 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			// Click on the door. Walk to the building.
 			clickMove: function( x, y )
 			{
-				// Meals on Wheels
-				if( ( x == 10 || x == 11 ) && ( y == 3 ) )
+				
+					// Meals on Wheels
+					if( ( x == 10 || x == 11 ) && ( y == 3 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [13, 4] );
+					}
+					// Creche
+					else if( ( x == 2 || x == 3 ) && ( y == 17 || y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [3, 18] );
+					}
+					// School
+					else if( ( x == 3 ) && ( y == 23 || y == 24 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [4, 24] );
+					}
+					// Old Folks Home
+					else if( ( x == 2 ) && ( y == 10 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [3, 11] );
+					}
+					// Town Hall
+					else if( ( x == 9 || x == 10 ) && ( y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [10, 18] );
+					}
+					// Volunteer Centre
+					else if( ( x == 9 || x == 10 ) && ( y == 11 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [10, 11] );
+					}
+					// Police Station
+					else if( ( x == 12 || x == 13 ) && ( y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [13, 18] );
+					}
+					// Library
+					else if( ( x == 15 ) && ( y == 9 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [16, 10] );
+					}
+					// Museum
+					else if( ( x == 13 ) && ( y == 24 || y == 25 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [13, 18] );
+					}
+					// Hospital
+					else if( ( x == 31 || x == 32 ) && ( y == 26 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [32, 27] );
+					}
+					// Charity Shop
+					else if( ( x == 25 && y == 17 ) || ( x == 24 && y == 16 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [25, 17] );
+					}
+					// Shopping centre
+					else if( ( x == 25 ) && ( y == 9 || y == 10 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [25, 10] );
+					}
+					// Post Office
+					else if( ( x == 30 || x == 31 ) && ( y == 11 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [31, 11] );
+					}
+					// Fire Station
+					else if( ( x == 32 && ( y == 3 || y == 4 ) ) || ( x == 33 && y == 4 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [33, 4] );
+					}
+					// Footpaths & Roads
+					else
+					{
+						this.engine.network.send( 'moveAvatar', [x, y] );
+					}
+	
+					if( ( x == 44 || x == 45 ) && ( y == 17 || y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [45, 20] );
+					}
+				
+				
+				if( this.player.map_id == 'oldFolksHomeMap' && ( ( x >= -2 && x <= 1 ) && ( y >= 2 && y <= 4 ) ) )
 				{
-					this.engine.network.send( 'moveAvatar', [13, 4] );
-				}
-				// Creche
-				else if( ( x == 2 || x == 3 ) && ( y == 17 || y == 18 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [3, 18] );
-				}
-				// School
-				else if( ( x == 3 ) && ( y == 23 || y == 24 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [4, 24] );
-				}
-				// Old Folks Home
-				else if( ( x == 2 ) && ( y == 10 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [3, 11] );
-				}
-				// Town Hall
-				else if( ( x == 9 || x == 10 ) && ( y == 18 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [10, 18] );
-				}
-				// Volunteer Centre
-				else if( ( x == 9 || x == 10 ) && ( y == 11 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [10, 11] );
-				}
-				// Police Station
-				else if( ( x == 12 || x == 13 ) && ( y == 18 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [13, 18] );
-				}
-				// Library
-				else if( ( x == 15 ) && ( y == 9 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [16, 10] );
-				}
-				// Museum
-				else if( ( x == 13 ) && ( y == 24 || y == 25 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [13, 18] );
-				}
-				// Hospital
-				else if( ( x == 31 || x == 32 ) && ( y == 26 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [32, 27] );
-				}
-				// Charity Shop
-				else if( ( x == 25 && y == 17 ) || ( x == 24 && y == 16 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [25, 17] );
-				}
-				// Shopping centre
-				else if( ( x == 25 ) && ( y == 9 || y == 10 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [25, 10] );
-				}
-				// Post Office
-				else if( ( x == 30 || x == 31 ) && ( y == 11 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [31, 11] );
-				}
-				// Fire Station
-				else if( ( x == 32 && ( y == 3 || y == 4 ) ) || ( x == 33 && y == 4 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [33, 4] );
-				}
-				// Footpaths & Roads
-				else
-				{
-					this.engine.network.send( 'moveAvatar', [x, y] );
-				}
-
-				if( ( x == 44 || x == 45 ) && ( y == 17 || y == 18 ) )
-				{
-					this.engine.network.send( 'moveAvatar', [45, 20] );
+					this.engine.network.send( 'moveAvatar', [-1,5] );
 				}
 			},
 
