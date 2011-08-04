@@ -332,11 +332,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[24] )
 				{
-					//this.taskTwentyFour();	
+					this.taskTwentyFour();	
 				}
 				else if( this.output == this.taskName[25] )
 				{
-					//this.taskTwentyFive();	
+					this.taskTwentyFive();	
 				}
 				else if( this.output == this.taskName[26] )
 				{
@@ -878,6 +878,58 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.engine.network.send('updateCommunity', this.communityLevel);
 					this.taskList[22] += 1;
 					this.taskCompleted[22] = false;
+					this.output = -1;
+				}
+			},
+
+			taskTwentyFour: function()
+			{
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the School';
+					this.osdOne();
+					this.display = false;
+				}
+	
+				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
+				{
+					this.strCurrentTask = 'Art';
+					this.counter = 0;
+					this.taskCompleted[24] = true;
+				}
+
+				if( this.taskCompleted[24] )
+				{
+					this.updateCommunity( this.taskPoints[1] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[24] += 1;
+					this.taskCompleted[24] = false;
+					this.output = -1;
+				}
+			},
+
+			taskTwentyFive: function()
+			{
+				if( this.display == true )
+				{
+					this.strCurrentTask = 'Go to the School';
+					this.osdOne();
+					this.display = false;
+				}
+	
+				if( this.player.map_id == 'schoolMap' && ( this.player.entity_x == -7 && this.player.entity_y == 4 ) )
+				{
+					this.strCurrentTask = 'Enviro';
+					this.counter = 0;
+					this.taskCompleted[25] = true;
+				}
+
+				if( this.taskCompleted[25] )
+				{
+					this.updateCommunity( this.taskPoints[1] );
+					this.engine.network.send('updateCommunity', this.communityLevel);
+					this.taskList[25] += 1;
+					this.taskCompleted[25] = false;
 					this.output = -1;
 				}
 			},
