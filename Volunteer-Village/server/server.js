@@ -40,6 +40,7 @@ var IgeGame = new IgeClass({
 	update: null,
 	clicked: true,
 	communityLevel: 0,
+	aryTaskObjects: [],
 	
 	// Constructor
 	init: function (engine) {
@@ -83,6 +84,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		// Start the server engine
 		this.engine.start(igeConfig);
+
+		for( var i = 0; i < 28; i++ )
+		{
+			this.aryTaskObjects[i] = 0;
+		}
+		this.aryTaskObjects[14] = [ 'bag', 4, -1, 'shopMap' ];
 		
 		// Set an interval so that the serverReady method is called until ready
 		this.intervalReadyCheck = setInterval(this.bind(this.serverReady));
@@ -412,16 +419,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}	
 	},
 
-	createTaskObjects: function( /*map, x, y, value*/ )
+	createTaskObjects: function( num )
 	{
+		
 		this.engine.entities.create
 		({
-			template_id: 'bag',
-			entity_x: 4,
-			entity_y: -2,
-			entity_id: 'bag',
+			template_id: this.aryTaskObjects[num][0],
+			entity_x: this.aryTaskObjects[num][1],
+			entity_y: this.aryTaskObjects[num][2],
+			entity_id: this.aryTaskObjects[num][0],
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
-			map_id: 'shopMap',
+			map_id: this.aryTaskObjects[num][3],
 		});
 	},
 

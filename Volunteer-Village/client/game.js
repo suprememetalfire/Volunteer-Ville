@@ -659,12 +659,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.strCurrentTask = 'Pick-up groceries.';
 					this.osdOne();	
 
-					this.engine.network.send( 'createTaskObjects'/*, 'shopMap', 4, -1, 'bag'*/ );
+					this.engine.network.send( 'createTaskObjects', 14 );
 				}
 				else if( this.player.map_id == 'shopMap' && ( this.player.entity_x == 4 && this.player.entity_y == -1 ) && this.intTask[14] == 1 )
 				{
 					this.engine.network.send( 'destroyTaskObjects', 'bag' );
-					this.strCurrentTask = 'Return the van to the Depot';
+					this.strCurrentTask = 'Return to the Depot.';
 					this.osdOne();					
 					this.intTask[14] = 2;
 				}				

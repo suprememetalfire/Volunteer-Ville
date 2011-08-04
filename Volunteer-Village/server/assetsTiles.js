@@ -102,6 +102,22 @@ assetsTiles = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.3
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "bag",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/bag.png",
+			"asset_sheet_enabled" : true,
+			"asset_sheet_width" : 5,
+			"asset_sheet_height" : 	1,
+			"asset_anchor_points" : [ 
+			[ 
+			25, 
+			25 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1
+		});
   
 		this.engine.assets.create({
 			"asset_id" : "grassSheet",

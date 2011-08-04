@@ -319,7 +319,7 @@ assets = new IgeClass({
 			"asset_scale" : 0.55
 		});
 
-		this.engine.assets.create({
+/*		this.engine.assets.create({
 			"asset_id" : "bag",
 			"asset_image_url" : "/Volunteer-Village/assets/objects/tree1.png",
 			"asset_sheet_enabled" : false,
@@ -331,7 +331,7 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.5
-		});
+		});*/
 	},	
 });	
 }

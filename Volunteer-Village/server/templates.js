@@ -309,7 +309,7 @@ templates = new IgeClass({
 			},
 		});
 
-		this.engine.templates.create({
+		/*this.engine.templates.create({
 			template_id: 'bag',
 			template_contents:
 			 {
@@ -326,7 +326,7 @@ templates = new IgeClass({
 				//asset_sheet_frame: 1,
 				asset_id: 'bag',
 			},
-		});
+		});*/
 			
 		/*this.engine.entities.create
 		({

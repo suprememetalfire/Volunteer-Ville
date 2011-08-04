@@ -186,8 +186,35 @@ animations = new IgeClass({
 				// Asset stuff
 				asset_sheet_frame:1,
 				asset_id: 'van',
-				// Map stuff
-				//map_id: 'testMap1',
+			},
+		});
+
+		this.engine.animations.create
+		({
+			animation_id: 'bag',
+			animation_frame_from: 1,
+			animation_frame_to: 2,
+			animation_fps: 2,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'bag',
+			template_contents: 
+			{
+				// Entity stuff
+				entity_type: ENTITY_TYPE_SPRITE,
+				entity_layer: LAYER_SPRITES,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				// Animation stuff
+				animation_id: 'bag',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame: 1,
+				asset_id: 'bag',
 			},
 		});
 	},
