@@ -79,6 +79,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('driveBus', this.bind(this.driveBus));
 		this.engine.network.registerCommand('createTaskObjects', this.bind(this.createTaskObjects));
 		this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
+		this.engine.network.registerCommand('taskThreePartOne', this.bind(this.taskThreePartOne));
+		this.engine.network.registerCommand('taskThreePartTwo', this.bind(this.taskThreePartTwo));
+		this.engine.network.registerCommand('taskThreePartThree', this.bind(this.taskThreePartThree));	
+		this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));	
 
 		this.update = setInterval(this.bind(this.updateWorld), 1000);		
 
@@ -229,7 +233,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			});	
 	
 			this.entities.load();
-			this.entitiesInteriors.load();
+			//this.entitiesInteriors.load();
 			this.entitiesTiles.load();
 
 			this.log('+++++++++++++++++++ All data loaded and ready - Engine online +++++++++++++++++++');						
@@ -419,6 +423,41 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		{
 			this.createNewMapAvatar( player.sessionId, 'womanWalk', client.entity_x, client.entity_y, 'townMap' );
 		}	
+	},
+
+	taskThreePartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 13 && entity.entity_y == 4 ) )
+		{
+			//this.driveBus( 1, entity );
+			this.engine.network.send( 'taskStageTwelve', 0 );
+		}
+	},
+
+	taskThreePartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 19 && entity.entity_y == 5 ) )
+		{
+			this.engine.network.send( 'taskStageTwelve', 1 );
+		}
+	},
+
+	taskThreePartThree: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 13 && entity.entity_y == 4 ) )
+		{
+			//this.engine.entities.remove( entity );
+			//this.createNewMapAvatar( entity.sessionId, 'woman', entity.entity_x, entity.entity_y, 'townMap' );
+			this.engine.network.send( 'taskStageTwelve', 2 );
+			this.communityLevel += 15;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
 	},
 
 	createTaskObjects: function( num )
@@ -749,12 +788,7 @@ this.log('SW');
 			}
 		break;					
 		}
-	},
-
-	updatCommunityLevel: function( points )
-	{
-		this.communityLevel += points;
-	},		
+	},			
 });
 
 // Create a new engine instance

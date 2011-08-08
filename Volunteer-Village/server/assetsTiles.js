@@ -116,7 +116,7 @@ assetsTiles = new IgeClass({
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.3
+			"asset_scale" : 0.7
 		});		
   
 		this.engine.assets.create({

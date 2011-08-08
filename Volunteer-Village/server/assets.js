@@ -168,15 +168,17 @@ assets = new IgeClass({
 		this.engine.assets.create({
 			"asset_id" : "lake",
 			"asset_image_url" : "/Volunteer-Village/assets/objects/lake.png",
-			"asset_sheet_enabled" : false,
+			"asset_sheet_enabled" : true,
+			"asset_sheet_width" : 6,
+			"asset_sheet_height" : 	1,
 			"asset_anchor_points" : [ 
 			[ 
-			200, 
-			141 ] ],
+			250, 
+			82 ] ],
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 1.186
+			"asset_scale" : 1
 		});
 
 		this.engine.assets.create({

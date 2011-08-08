@@ -127,7 +127,7 @@ templates = new IgeClass({
 			},
 		});
 
-		this.engine.templates.create({
+		/*this.engine.templates.create({
 			template_id: 'lake',
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
@@ -138,7 +138,7 @@ templates = new IgeClass({
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'lake',
 			},
-		});
+		});*/
 		
 		this.engine.templates.create({
 			template_id: 'tower2',

@@ -217,6 +217,35 @@ animations = new IgeClass({
 				asset_id: 'bag',
 			},
 		});
+
+		this.engine.animations.create
+		({
+			animation_id: 'lake',
+			animation_frame_from: 1,
+			animation_frame_to: 6,
+			animation_fps: 6,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'lake',
+			template_contents: 
+			{
+				// Entity stuff
+				entity_type: ENTITY_TYPE_SPRITE,
+				entity_layer: LAYER_SPRITES,
+				entity_tile_width: 5,
+				entity_tile_height: 5,
+				entity_z: 0,
+				// Animation stuff
+				animation_id: 'lake',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame: 1,
+				asset_id: 'lake',
+			},
+		});
 	},
 });
 }
