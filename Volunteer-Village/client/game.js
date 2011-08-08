@@ -78,9 +78,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('driveBus', this.bind(this.driveBus));
 				this.engine.network.registerCommand('createTaskObjects', this.bind(this.createTaskObjects));
 				this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
-				this.engine.network.registerCommand('taskThreePartOne', this.bind(this.taskThreePartOne));
-				this.engine.network.registerCommand('taskThreePartTwo', this.bind(this.taskThreePartTwo));
-				this.engine.network.registerCommand('taskThreePartThree', this.bind(this.taskThreePartThree));	
+				this.engine.network.registerCommand('taskZero', this.bind(this.taskZero));
+				this.engine.network.registerCommand('taskTwelvePartOne', this.bind(this.taskTwelvePartOne));
+				this.engine.network.registerCommand('taskTwelvePartTwo', this.bind(this.taskTwelvePartTwo));
+				this.engine.network.registerCommand('taskTwelvePartThree', this.bind(this.taskTwelvePartThree));	
+				this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));
 				this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));
 
 				for( var i = 0; i < 28; i++ )
@@ -227,6 +229,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					//this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], this.player.sessionId);
 				}
 			},
+			
+			taskStageZero: function( value )
+			{
+				this.intTask[0] = value;
+			},
 
 			taskStageTwelve: function( value )
 			{
@@ -237,7 +244,20 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			{
 				if( this.output == this.taskName[0] )
 				{
-					this.taskZero();					
+					//this.taskZero();	
+					if( this.intTask[0] == -1 )
+					{
+						this.engine.network.send( 'taskZero', 0, this.player );
+						this.strCurrentTask = 'Back To School';
+					}
+					else if( this.intTask[0] == 0 )
+					{
+						this.strCurrentTask = 'Youve Just Been Schooled';
+						this.taskList[0] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[0] = -1;
+					}			
 				}
 				else if( this.output == this.taskName[1] )
 				{
@@ -249,7 +269,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[3] )
 				{
-					this.taskThree();	
+					this.taskTwelve();	
 				}
 				else if( this.output == this.taskName[4] )
 				{
@@ -288,22 +308,26 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					//this.taskTwelve();	
 					if( this.intTask[12] == -1 )
 					{
-						this.engine.network.send( 'taskThreePartOne', 1, this.player );
+						this.engine.network.send( 'taskTwelvePartOne', 1, this.player );
 						this.strCurrentTask = 'Go To The Depot';
 					}
 					else if( this.intTask[12] == 0 )
 					{
-						this.engine.network.send( 'taskThreePartTwo', 1, this.player );
+						this.engine.network.send( 'taskTwelvePartTwo', 1, this.player );
 						this.strCurrentTask = 'Go to House';
 					}
 					else if( this.intTask[12] == 1 )
 					{
-						this.engine.network.send( 'taskThreePartThree', 1, this.player );
+						this.engine.network.send( 'taskTwelvePartThree', 1, this.player );
 						this.strCurrentTask = 'Return to Depot';
 					}
 					else if( this.intTask[12] == 2 )
 					{
 						this.strCurrentTask = 'Done';
+						this.taskList[12] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[12] = -1;
 					}
 				}
 				else if( this.output == this.taskName[13] )

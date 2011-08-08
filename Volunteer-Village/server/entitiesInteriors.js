@@ -46,7 +46,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'schoolMap',
 		});	
 
-		// Restaurant Interior
+		/*// Restaurant Interior
 		for (var x = 24; x < 47; x+=1) {
 			for (var y = 2; y < 14; y+=1) {
 				this.engine.entities.create({
@@ -382,7 +382,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'fireInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'fireMap',
-		});
+		});*/
 	},	
 });
 }
