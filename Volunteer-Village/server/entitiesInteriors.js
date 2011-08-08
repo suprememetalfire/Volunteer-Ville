@@ -10,7 +10,7 @@ entitiesInteriors = new IgeClass({
 	
 	// Create entities
 	load: function () {
-		// School Interior
+		/*// School Interior
 		for (var x = -13; x < 10; x+=1) {
 			for (var y = 4; y < 15; y+=1) {
 				this.engine.entities.create({
@@ -46,7 +46,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'schoolMap',
 		});	
 
-		/*// Restaurant Interior
+		// Restaurant Interior
 		for (var x = 24; x < 47; x+=1) {
 			for (var y = 2; y < 14; y+=1) {
 				this.engine.entities.create({
@@ -254,7 +254,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'bankInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'bankMap',
-		});*/
+		});
 
 		// Creche Interior
 		for (var x = -13; x < 5; x+=1) {
@@ -279,7 +279,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'crecheMap',
 		});	
 		
-		/*// Shop Interior
+		// Shop Interior
 		for (var x = 4; x < 27; x+=1) {
 			for (var y = -7; y < 5; y+=1) {
 				this.engine.entities.create({

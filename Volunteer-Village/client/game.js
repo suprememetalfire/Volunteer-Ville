@@ -86,9 +86,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskFivePartFour', this.bind(this.taskFivePartFour));
 				this.engine.network.registerCommand('taskSixPartOne', this.bind(this.taskSixPartOne));
 				this.engine.network.registerCommand('taskSixPartTwo', this.bind(this.taskSixPartTwo));
+				this.engine.network.registerCommand('taskSevenPartOne', this.bind(this.taskSevenPartOne));
+				this.engine.network.registerCommand('taskSixPartTwo', this.bind(this.taskSixPartTwo));
+				this.engine.network.registerCommand('taskTenPartOne', this.bind(this.taskTenPartOne));
+				this.engine.network.registerCommand('taskTenPartTwo', this.bind(this.taskTenPartTwo));
+				this.engine.network.registerCommand('taskElevenPartOne', this.bind(this.taskElevenPartOne));
+				this.engine.network.registerCommand('taskElevenPartTwo', this.bind(this.taskElevenPartTwo));
 				this.engine.network.registerCommand('taskTwelvePartOne', this.bind(this.taskTwelvePartOne));
 				this.engine.network.registerCommand('taskTwelvePartTwo', this.bind(this.taskTwelvePartTwo));
 				this.engine.network.registerCommand('taskTwelvePartThree', this.bind(this.taskTwelvePartThree));
+				this.engine.network.registerCommand('taskSeventeenPartOne', this.bind(this.taskSeventeenPartOne));
+				this.engine.network.registerCommand('taskSeventeenPartTwo', this.bind(this.taskSeventeenPartTwo));
 				this.engine.network.registerCommand('taskEighteenPartOne', this.bind(this.taskEighteenPartOne));
 				this.engine.network.registerCommand('taskEighteenPartTwo', this.bind(this.taskEighteenPartTwo));
 				this.engine.network.registerCommand('taskEighteenPartThree', this.bind(this.taskEighteenPartThree));
@@ -97,7 +105,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
 				this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
 				this.engine.network.registerCommand('taskStageSix', this.bind(this.taskStageSix));
+				this.engine.network.registerCommand('taskStageSeven', this.bind(this.taskStageSeven));
+				this.engine.network.registerCommand('taskStageTen', this.bind(this.taskStageTen));
+				this.engine.network.registerCommand('taskStageEleven', this.bind(this.taskStageEleven));
 				this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));
+				this.engine.network.registerCommand('taskStageSeventeen', this.bind(this.taskStageSeventeen));
 				this.engine.network.registerCommand('taskStageEighteen', this.bind(this.taskStageEighteen));
 
 				for( var i = 0; i < 28; i++ )
@@ -310,6 +322,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.intTask[12] = value;
 			},
 
+			taskStageSeventeen: function( value )
+			{
+				this.intTask[17] = value;
+			},
+
 			taskStageEighteen: function( value )
 			{
 				this.intTask[18] = value;
@@ -412,6 +429,24 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[7] )
 				{	
+					if( this.intTask[7] == -1 )
+					{
+						this.engine.network.send( 'taskSevenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To Number One, Helping Hand Lane';
+					}
+					else if( this.intTask[7] == 0 )
+					{
+						this.engine.network.send( 'taskSevenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Fix The Roof';
+					}
+					else if( this.intTask[7] == 1 )
+					{
+						this.strCurrentTask = 'Fixed';
+						this.taskList[7] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[7] = -1;
+					}
 				}
 				else if( this.output == this.taskName[8] )
 				{	
@@ -421,9 +456,45 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[10] )
 				{	
+					if( this.intTask[10] == -1 )
+					{
+						this.engine.network.send( 'taskTenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Hospital';
+					}
+					else if( this.intTask[10] == 0 )
+					{
+						this.engine.network.send( 'taskTenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Talk To A Patient';
+					}
+					else if( this.intTask[10] == 1 )
+					{
+						this.strCurrentTask = 'Talking';
+						this.taskList[10] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[10] = -1;
+					}
 				}
 				else if( this.output == this.taskName[11] )
 				{	
+					if( this.intTask[11] == -1 )
+					{
+						this.engine.network.send( 'taskElevenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Hospital';
+					}
+					else if( this.intTask[11] == 0 )
+					{
+						this.engine.network.send( 'taskElevenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Kids';
+					}
+					else if( this.intTask[11] == 1 )
+					{
+						this.strCurrentTask = 'Clowning Around';
+						this.taskList[11] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[11] = -1;
+					}
 				}
 				else if( this.output == this.taskName[12] )
 				{	
@@ -464,7 +535,25 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				{	
 				}
 				else if( this.output == this.taskName[17] )
-				{	
+				{
+					if( this.intTask[17] == -1 )
+					{
+						this.engine.network.send( 'taskSeventeenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Old Folks Home';
+					}
+					else if( this.intTask[17] == 0 )
+					{
+						this.engine.network.send( 'taskSeventeenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Talk To A Patient';
+					}
+					else if( this.intTask[17] == 1 )
+					{
+						this.strCurrentTask = 'Talking';
+						this.taskList[17] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[17] = -1;
+					}	
 				}
 				else if( this.output == this.taskName[18] )
 				{	
@@ -524,97 +613,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				else if( this.output == this.taskName[27] )
 				{	
 				}
-			},
-
-			taskSeven: function()
-			{
-				if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to Number 1, Helping Lane';
-					this.osdOne();
-					this.display = false;
-				}	
-
-				if( this.player.map_id == 'townMap' && ( this.player.entity_x == 41 && this.player.entity_y == 19 ) && this.intTask[7] == -1 )
-				{
-					this.intTask[7] = 0;
-					this.strCurrentTask = 'Fix the roof.';
-					this.osdOne();
-				}
-				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 39 && this.player.entity_y == 19 ) && this.intTask[7] == 0 )
-				{
-					this.strCurrentTask = 'Fixed.';
-					this.osdOne();
-					//this.counter = 0;
-					this.taskCompleted[7] = true;
-				}
-
-				if( this.taskCompleted[7] )
-				{
-					this.engine.network.send('updateCommunity', 15);
-					this.taskList[7] += 1;
-					this.taskCompleted[7] = false;
-					this.output = -1;
-					this.intTask[7] = -1;
-				}
-			},
-
-			taskTen: function()
-			{	
-				if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to the Hospital';
-					this.osdOne();
-					this.display = false;
-				}
-
-				if( this.player.map_id == 'hospitalMap' && ( this.player.entity_x == 19 && this.player.entity_y == 32 ) )
-				{
-					this.strCurrentTask = 'Talking';
-					this.osdOne();
-					//this.counter = 0;
-					this.taskCompleted[10] = true;
-				}
-
-				if( this.taskCompleted[10] )
-				{
-					this.engine.network.send('updateCommunity', 15);
-					this.taskList[10] += 1;
-					this.taskCompleted[10] = false;
-					this.output = -1;
-				}
-			},
-
-			taskEleven: function()
-			{	
-				if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to the Hospital';
-
-					this.osdOne();
-					this.display = false;
-				}
-
-				if( this.player.map_id == 'hospitalMap' && ( this.player.entity_x == 19 && this.player.entity_y == 32 ) )
-				{
-					this.strCurrentTask = 'Clowning';
-					this.osdOne();
-					//this.counter = 0;
-					this.taskCompleted[11] = true;
-				}
-
-				if( this.taskCompleted[11] )
-				{
-					this.engine.network.send('updateCommunity', 15);
-					this.taskList[11] += 1;
-					this.taskCompleted[11] = false;
-					this.output = -1;
-				}
-			},
-
-			taskThirteen: function()
-			{
-				
 			},
 
 			taskFourteen: function()
@@ -1068,6 +1066,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.engine.network.send( 'moveAvatar', [x, y] );
 					}
 	
+					// Houses
+					if( ( x == 40 || x == 41 ) && ( y == 17 || y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [41, 19] );
+					}
 					if( ( x == 44 || x == 45 ) && ( y == 17 || y == 18 ) )
 					{
 						this.engine.network.send( 'moveAvatar', [45, 20] );
