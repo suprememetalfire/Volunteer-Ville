@@ -81,15 +81,25 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
 		this.engine.network.registerCommand('taskZero', this.bind(this.taskZero));
 		this.engine.network.registerCommand('taskThree', this.bind(this.taskThree));
+		this.engine.network.registerCommand('taskFivePartOne', this.bind(this.taskFivePartOne));
+		this.engine.network.registerCommand('taskFivePartTwo', this.bind(this.taskFivePartTwo));
+		this.engine.network.registerCommand('taskFivePartThree', this.bind(this.taskFivePartThree));
+		this.engine.network.registerCommand('taskFivePartFour', this.bind(this.taskFivePartFour));
 		this.engine.network.registerCommand('taskSixPartOne', this.bind(this.taskSixPartOne));
 		this.engine.network.registerCommand('taskSixPartTwo', this.bind(this.taskSixPartTwo));
 		this.engine.network.registerCommand('taskTwelvePartOne', this.bind(this.taskTwelvePartOne));
 		this.engine.network.registerCommand('taskTwelvePartTwo', this.bind(this.taskTwelvePartTwo));
 		this.engine.network.registerCommand('taskTwelvePartThree', this.bind(this.taskTwelvePartThree));
+		this.engine.network.registerCommand('taskEighteenPartOne', this.bind(this.taskEighteenPartOne));
+		this.engine.network.registerCommand('taskEighteenPartTwo', this.bind(this.taskEighteenPartTwo));
+		this.engine.network.registerCommand('taskEighteenPartThree', this.bind(this.taskEighteenPartThree));
+		this.engine.network.registerCommand('taskEighteenPartFour', this.bind(this.taskEighteenPartFour));
 		this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));	
 		this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
+		this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
 		this.engine.network.registerCommand('taskStageSix', this.bind(this.taskStageSix));
-		this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));	
+		this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));
+		this.engine.network.registerCommand('taskStageEighteen', this.bind(this.taskStageEighteen));	
 
 		this.update = setInterval(this.bind(this.updateWorld), 1000);		
 
@@ -455,6 +465,52 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
 	},
+		
+	taskFivePartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'crecheMap' )
+		{
+			this.engine.network.send( 'taskStageFive', 0 );
+		}
+	},
+
+	taskFivePartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 2 && entity.entity_y == 20 ) )
+		{
+			//this.engine.entities.remove( entity );
+			//this.createNewMapAvatar( entity.sessionId, 'woman', entity.entity_x, entity.entity_y, 'townMap' );
+			this.engine.network.send( 'taskStageFive', 1 );
+		}
+	},
+
+	taskFivePartThree: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 8 && entity.entity_y == 30 ) )
+		{			
+			this.engine.network.send( 'taskStageFive', 2 );
+		}
+	},
+
+	taskFivePartFour: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 2 && entity.entity_y == 20 ) )
+		{
+			//this.engine.entities.remove( entity );
+			//this.createNewMapAvatar( entity.sessionId, 'woman', entity.entity_x, entity.entity_y, 'townMap' );
+			this.engine.network.send( 'taskStageFive', 3 );
+			this.communityLevel += 15;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},
 
 	taskSixPartOne: function( val, client )
 	{
@@ -509,6 +565,52 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			//this.engine.entities.remove( entity );
 			//this.createNewMapAvatar( entity.sessionId, 'woman', entity.entity_x, entity.entity_y, 'townMap' );
 			this.engine.network.send( 'taskStageTwelve', 2 );
+			this.communityLevel += 15;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},
+
+	taskEighteenPartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'oldFolksHomeMap' )
+		{
+			this.engine.network.send( 'taskStageEighteen', 0 );
+		}
+	},
+
+	taskEighteenPartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 2 && entity.entity_y == 13 ) )
+		{
+			//this.engine.entities.remove( entity );
+			//this.createNewMapAvatar( entity.sessionId, 'woman', entity.entity_x, entity.entity_y, 'townMap' );
+			this.engine.network.send( 'taskStageEighteen', 1 );
+		}
+	},
+
+	taskEighteenPartThree: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 8 && entity.entity_y == 30 ) )
+		{			
+			this.engine.network.send( 'taskStageEighteen', 2 );
+		}
+	},
+
+	taskEighteenPartFour: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 2 && entity.entity_y == 13 ) )
+		{
+			//this.engine.entities.remove( entity );
+			//this.createNewMapAvatar( entity.sessionId, 'woman', entity.entity_x, entity.entity_y, 'townMap' );
+			this.engine.network.send( 'taskStageEighteen', 3 );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
