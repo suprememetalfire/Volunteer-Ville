@@ -721,7 +721,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[20] )
 				{	
-					/*if( this.intTask[20] == -1 )
+					if( this.intTask[20] == -1 )
 					{
 						this.engine.network.send( 'taskTwentyPartOne', 1, this.player );
 						this.strCurrentTask = 'Go To The Park';
@@ -738,32 +738,35 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[20] = -1;
-					}*/
+					}
 				}
 				else if( this.output == this.taskName[21] )
 				{
-					/*if( this.intTask[21] == -1 )
+					if( this.taskList[21] == 0 )
 					{
-						this.engine.network.send( 'taskTwentyOnePartOne', 1, this.player );
-						this.strCurrentTask = 'Go To The Police Station';
+						if( this.intTask[21] == -1 )
+						{
+							this.engine.network.send( 'taskTwentyOnePartOne', 1, this.player );
+							this.strCurrentTask = 'Go To The Police Station';
+						}
+						else if( this.intTask[21] == 0 )
+						{
+							this.engine.network.send( 'taskTwentyOnePartTwo', 1, this.player );
+							this.strCurrentTask = 'Speak To The Garda at Reception';
+						}
+						else if( this.intTask[21] == 1 )
+						{
+							this.strCurrentTask = 'Good To Go';
+							this.taskList[21] += 1;
+							this.output = -1;
+							this.counter = 0;
+							this.intTask[21] = -1;
+						}	
 					}
-					else if( this.intTask[21] == 0 )
-					{
-						this.engine.network.send( 'taskTwentyOnePartTwo', 1, this.player );
-						this.strCurrentTask = 'Speak To The Garda at Reception';
-					}
-					else if( this.intTask[21] == 1 )
-					{
-						this.strCurrentTask = 'Good To Go';
-						this.taskList[21] += 1;
-						this.output = -1;
-						this.counter = 0;
-						this.intTask[21] = -1;
-					}*/	
 				}
 				else if( this.output == this.taskName[22] )
 				{
-					/*if( this.intTask[22] == -1 )
+					if( this.intTask[22] == -1 )
 					{
 						this.engine.network.send( 'taskTwentyTwoPartOne', 1, this.player );
 						this.strCurrentTask = 'Go To The Police Station';
@@ -780,7 +783,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[22] = -1;
-					}*/	
+					}	
 				}
 				else if( this.output == this.taskName[23] )
 				{	
@@ -847,94 +850,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					}*/
 				}
 			},
-
-			/*taskTwenty: function()
-			{	
-				if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to the Park.';
-					this.osdOne();
-					this.display = false;
-					this.engine.network.send( 'createTaskObjects', 20 );
-				}
-
-				if( this.player.map_id == 'townMap' && ( ( this.player.entity_x >= 8 && this.player.entity_x <= 26 ) && this.player.entity_y == 31 ) && this.intTask[20] == -1 )
-				{
-					this.intTask[20] = 1;
-					this.strCurrentTask = 'Pick-up the litter.';
-					this.osdOne();						
-				}
-				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 34 ) && this.intTask[20] == 1 )
-				{
-					this.engine.network.send( 'destroyTaskObjects', 'guitar' );
-					this.strCurrentTask = 'Good Job.';
-					this.osdOne();					
-					//this.counter = 0;
-					this.taskCompleted[20] = true;
-				}
-
-				if( this.taskCompleted[20] )
-				{
-					this.engine.network.send('updateCommunity', 15);
-					this.taskList[20] += 1;
-					this.taskCompleted[20] = false;
-					this.output = -1;
-					this.intTask[20] = -1;
-				}
-			},*/
-
-			/*taskTwentyOne: function()
-			{
-				if( this.taskList[21] == 0 )
-				{
-					if( this.display == true )
-					{
-						this.strCurrentTask = 'Speak to the Gardai at the reception desk at the Police Station';
-						this.osdOne();
-						this.display = false;
-					}
-	
-					if( this.player.map_id == 'stationMap' && ( ( this.player.entity_x >= 3 && this.player.entity_x <= 6 ) || ( this.player.entity_y >= 9 && this.player.entity_y <= 16 ) ) )
-					{
-						this.strCurrentTask = 'You Have Been Cleared';
-						//this.counter = 0;
-						this.taskCompleted[21] = true;
-					}
-	
-					if( this.taskCompleted[21] )
-					{
-						this.engine.network.send('updateCommunity', 1);
-						this.taskList[21] += 1;
-						this.taskCompleted[21] = false;
-						this.output = -1;
-					}
-				}
-			},*/
-			
-			/*taskTwentyTwo: function()
-			{
-				if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to the Police Station';
-					this.osdOne();
-					this.display = false;
-				}
-	
-				if( this.player.map_id == 'stationMap' && ( this.player.entity_x == -3 && this.player.entity_y == 19 ) )
-				{
-					this.strCurrentTask = 'Call';
-					//this.counter = 0;
-					this.taskCompleted[22] = true;
-				}
-
-				if( this.taskCompleted[22] )
-				{
-					this.engine.network.send('updateCommunity', 15);
-					this.taskList[22] += 1;
-					this.taskCompleted[22] = false;
-					this.output = -1;
-				}
-			},*/
 
 			/*taskTwentyFour: function()
 			{

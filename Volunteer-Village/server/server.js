@@ -798,7 +798,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}
 	},
 
-	/*taskTwentyPartOne: function( val, client )
+	taskTwentyPartOne: function( val, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 	
@@ -820,9 +820,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
-	},*/
+	},
 
-	/*taskTwentyOnePartOne: function( val, client )
+	taskTwentyOnePartOne: function( val, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 	
@@ -836,15 +836,15 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 
-		if( entity.map_id == 'stationMap' && ( entity.entity_x == 13 && entity.entity_y == 34 ) )
+		if( entity.map_id == 'stationMap' && ( entity.entity_x == 6 && entity.entity_y == 17 ) )
 		{	
 			this.engine.network.send( 'taskStageTwentyOne', 1 );
 			this.communityLevel += 1;
 			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
-	},*/
+	},
 
-	/*taskTwentyTwoPartOne: function( val, client )
+	taskTwentyTwoPartOne: function( val, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 	
@@ -864,7 +864,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
-	},*/
+	},
 
 	/*taskTwentyFourPartOne: function( val, client )
 	{
@@ -918,7 +918,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		{
 			this.engine.network.send( 'taskStageTwentySeven', 0 );			
 		}
-	},
+	},*/
 
 	createTaskObjects: function( num )
 	{
