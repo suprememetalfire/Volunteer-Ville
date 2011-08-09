@@ -281,144 +281,228 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 			},
 			
-			taskStageZero: function( value )
+			taskStageZero: function( value, num )
 			{
-				this.intTask[0] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[0] = value;
+				}
 			},
 
-			taskStageOne: function( value )
+			taskStageOne: function( value, num )
 			{
-				this.intTask[1] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[1] = value;
+				}
 			},
 
-			taskStageTwo: function( value )
+			taskStageTwo: function( value, num )
 			{
-				this.intTask[2] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[2] = value;
+				}
 			},
 
-			taskStageThree: function( value )
+			taskStageThree: function( value, num )
 			{
-				this.intTask[3] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[3] = value;
+				}
 			},
 
-			taskStageFour: function( value )
+			taskStageFour: function( value, num )
 			{
-				this.intTask[4] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[4] = value;
+				}
 			},
 
-			taskStageFive: function( value )
+			taskStageFive: function( value, num )
 			{
-				this.intTask[5] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[5] = value;
+				}
 			},
 
-			taskStageSix: function( value )
+			taskStageSix: function( value, num )
 			{
-				this.intTask[6] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[6] = value;
+				}
 			},
 
-			taskStageSeven: function( value )
+			taskStageSeven: function( value, num )
 			{
-				this.intTask[7] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[7] = value;
+				}
 			},
 
-			taskStageEight: function( value )
+			taskStageEight: function( value, num )
 			{
-				this.intTask[8] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[8] = value;
+				}
 			},
 
-			taskStageNine: function( value )
+			taskStageNine: function( value, num )
 			{
-				this.intTask[9] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[9] = value;
+				}
 			},
 		
-			taskStageTen: function( value )
+			taskStageTen: function( value, num )
 			{
-				this.intTask[10] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[10] = value;
+				}
 			},
 
-			taskStageEleven: function( value )
+			taskStageEleven: function( value, num )
 			{
-				this.intTask[11] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[11] = value;
+				}
 			},
 
-			taskStageTwelve: function( value )
+			taskStageTwelve: function( value, num )
 			{
-				this.intTask[12] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[12] = value;
+				}
 			},
 
-			taskStageThirteen: function( value )
+			taskStageThirteen: function( value, num )
 			{
-				this.intTask[13] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[13] = value;
+				}
 			},
 
-			taskStageFourteen: function( value )
+			taskStageFourteen: function( value, num )
 			{
-				this.intTask[14] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[14] = value;
+				}
 			},
 
-			taskStageSeventeen: function( value )
+			taskStageFifteen: function( value, num )
 			{
-				this.intTask[17] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[15] = value;
+				}
 			},
 
-			taskStageFifteen: function( value )
+			taskStageSixteen: function( value, num )
 			{
-				this.intTask[15] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[16] = value;
+				}
 			},
 
-			taskStageSixteen: function( value )
+			taskStageSeventeen: function( value, num )
 			{
-				this.intTask[16] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[17] = value;
+				}
 			},
 
-			taskStageEighteen: function( value )
+			taskStageEighteen: function( value, num )
 			{
-				this.intTask[18] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[18] = value;
+				}
 			},
 
-			taskStageNineteen: function( value )
+			taskStageNineteen: function( value, num )
 			{
-				this.intTask[19] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[19] = value;
+				}
 			},
 
-			taskStageTwenty: function( value )
+			taskStageTwenty: function( value, num )
 			{
-				this.intTask[20] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[20] = value;
+				}
 			},
 
-			taskStageTwentyOne: function( value )
+			taskStageTwentyOne: function( value, num )
 			{
-				this.intTask[21] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[21] = value;
+				}
 			},
 
-			taskStageTwentyTwo: function( value )
+			taskStageTwentyTwo: function( value, num )
 			{
-				this.intTask[22] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[22] = value;
+				}
 			},
 
-			taskStageTwentyThree: function( value )
+			taskStageTwentyThree: function( value, num )
 			{
-				this.intTask[23] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[23] = value;
+				}
 			},
 
-			taskStageTwentyFour: function( value )
+			taskStageTwentyFour: function( value, num )
 			{
-				this.intTask[24] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[24] = value;
+				}
 			},
 
-			taskStageTwentyFive: function( value )
+			taskStageTwentyFive: function( value, num )
 			{
-				this.intTask[25] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[25] = value;
+				}
 			},
 
-			taskStageTwentySix: function( value )
+			taskStageTwentySix: function( value, num )
 			{
-				this.intTask[26] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[26] = value;
+				}
 			},
 
-			taskStageTwentySeven: function( value )
+			taskStageTwentySeven: function( value, num )
 			{
-				this.intTask[27] = value;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[27] = value;
+				}
 			},
 
 			tasks: function()
