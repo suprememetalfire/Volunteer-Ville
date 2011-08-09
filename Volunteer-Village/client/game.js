@@ -106,6 +106,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskEighteenPartFour', this.bind(this.taskEighteenPartFour));
 				this.engine.network.registerCommand('taskNineteenPartOne', this.bind(this.taskNineteenPartOne));
 				this.engine.network.registerCommand('taskNineteenPartTwo', this.bind(this.taskNineteenPartTwo));
+				this.engine.network.registerCommand('taskTwentyPartOne', this.bind(this.taskTwentyPartOne));
+				this.engine.network.registerCommand('taskTwentyPartTwo', this.bind(this.taskTwentyPartTwo));
+				this.engine.network.registerCommand('taskTwentyOnePartOne', this.bind(this.taskTwentyOnePartOne));
+				this.engine.network.registerCommand('taskTwentyOnePartTwo', this.bind(this.taskTwentyOnePartTwo));
+				this.engine.network.registerCommand('taskTwentyTwoPartOne', this.bind(this.taskTwentyTwoPartOne));
+				this.engine.network.registerCommand('taskTwentyTwoPartTwo', this.bind(this.taskTwentyTwoPartTwo));
+				this.engine.network.registerCommand('taskTwentyFourPartOne', this.bind(this.taskTwentyFourPartOne));
+				this.engine.network.registerCommand('taskTwentyFourPartTwo', this.bind(this.taskTwentyFourPartTwo));
+				this.engine.network.registerCommand('taskTwentyFivePartOne', this.bind(this.taskTwentyFivePartOne));
+				this.engine.network.registerCommand('taskTwentyFivePartTwo', this.bind(this.taskTwentyFivePartTwo));
+				this.engine.network.registerCommand('taskTwentySeven', this.bind(this.taskTwentySeven));
 				this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));
 				this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
 				this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
@@ -118,6 +129,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskStageSeventeen', this.bind(this.taskStageSeventeen));
 				this.engine.network.registerCommand('taskStageEighteen', this.bind(this.taskStageEighteen));
 				this.engine.network.registerCommand('taskStageNineteen', this.bind(this.taskStageNineteen));
+				this.engine.network.registerCommand('taskStageTwenty', this.bind(this.taskStageTwenty));
+				this.engine.network.registerCommand('taskStageTwentyOne', this.bind(this.taskStageTwentyOne));
+				this.engine.network.registerCommand('taskStageTwentyTwo', this.bind(this.taskStageTwentyTwo));
+				this.engine.network.registerCommand('taskStageTwentyFour', this.bind(this.taskStageTwentyFour));
+				this.engine.network.registerCommand('taskStageTwentyFive', this.bind(this.taskStageTwentyFive));
+				this.engine.network.registerCommand('taskStageTwentySeven', this.bind(this.taskStageTwentySeven));
 
 				for( var i = 0; i < 28; i++ )
 				{
@@ -362,6 +379,46 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			taskStageNineteen: function( value )
 			{
 				this.intTask[19] = value;
+			},
+
+			taskStageTwenty: function( value )
+			{
+				this.intTask[20] = value;
+			},
+
+			taskStageTwentyOne: function( value )
+			{
+				this.intTask[21] = value;
+			},
+
+			taskStageTwentyTwo: function( value )
+			{
+				this.intTask[22] = value;
+			},
+
+			taskStageTwentyThree: function( value )
+			{
+				this.intTask[23] = value;
+			},
+
+			taskStageTwentyFour: function( value )
+			{
+				this.intTask[24] = value;
+			},
+
+			taskStageTwentyFive: function( value )
+			{
+				this.intTask[25] = value;
+			},
+
+			taskStageTwentySix: function( value )
+			{
+				this.intTask[26] = value;
+			},
+
+			taskStageTwentySeven: function( value )
+			{
+				this.intTask[27] = value;
 			},
 
 			tasks: function()
@@ -664,73 +721,134 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[20] )
 				{	
+					/*if( this.intTask[20] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Park';
+					}
+					else if( this.intTask[20] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyPartTwo', 1, this.player );
+						this.strCurrentTask = 'Pickup The Litter';
+					}
+					else if( this.intTask[20] == 1 )
+					{
+						this.strCurrentTask = 'Good Work';
+						this.taskList[20] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[20] = -1;
+					}*/
 				}
 				else if( this.output == this.taskName[21] )
-				{	
+				{
+					/*if( this.intTask[21] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyOnePartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Police Station';
+					}
+					else if( this.intTask[21] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyOnePartTwo', 1, this.player );
+						this.strCurrentTask = 'Speak To The Garda at Reception';
+					}
+					else if( this.intTask[21] == 1 )
+					{
+						this.strCurrentTask = 'Good To Go';
+						this.taskList[21] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[21] = -1;
+					}*/	
 				}
 				else if( this.output == this.taskName[22] )
-				{	
+				{
+					/*if( this.intTask[22] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyTwoPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Police Station';
+					}
+					else if( this.intTask[22] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyTwoPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Desk';
+					}
+					else if( this.intTask[22] == 1 )
+					{
+						this.strCurrentTask = 'Call';
+						this.taskList[22] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[22] = -1;
+					}*/	
 				}
 				else if( this.output == this.taskName[23] )
 				{	
 				}
 				else if( this.output == this.taskName[24] )
 				{	
+					/*if( this.intTask[24] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyFourPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The School';
+					}
+					else if( this.intTask[24] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyFourPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Blackboard';
+					}
+					else if( this.intTask[24] == 1 )
+					{
+						this.strCurrentTask = 'Art';
+						this.taskList[24] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[24] = -1;
+					}*/
 				}
 				else if( this.output == this.taskName[25] )
-				{	
+				{
+					/*if( this.intTask[25] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyFivePartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The School';
+					}
+					else if( this.intTask[25] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyFivePartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Blackboard';
+					}
+					else if( this.intTask[25] == 1 )
+					{
+						this.strCurrentTask = 'Enviro';
+						this.taskList[25] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[25] = -1;
+					}*/	
 				}
 				else if( this.output == this.taskName[26] )
 				{	
 				}
 				else if( this.output == this.taskName[27] )
 				{	
+					/*if( this.intTask[27] == -1 )
+					{
+						this.engine.network.send( 'taskTwentySeven', 1, this.player );
+						this.strCurrentTask = 'Go To The Computer';
+					}
+					else if( this.intTask[27] == 1 )
+					{
+						this.strCurrentTask = 'Updated';
+						this.taskList[27] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[27] = -1;
+					}*/
 				}
 			},
 
-			taskFourteen: function()
-			{	
-				if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to the Shopping Centre.';
-					this.osdOne();
-					this.display = false;
-				}
-
-				if( this.player.map_id == 'shopMap' && this.intTask[14] == -1 )
-				{
-					this.intTask[14] = 1;
-					this.strCurrentTask = 'Pick-up groceries.';
-					this.osdOne();	
-
-					this.engine.network.send( 'createTaskObjects', 14 );
-				}
-				else if( this.player.map_id == 'shopMap' && ( this.player.entity_x == 4 && this.player.entity_y == -1 ) && this.intTask[14] == 1 )
-				{
-					this.engine.network.send( 'destroyTaskObjects', 14 );
-					this.strCurrentTask = 'Return to the Depot.';
-					this.osdOne();					
-					this.intTask[14] = 2;
-				}				
-				else if( this.player.map_id == 'townMap' && ( this.player.entity_x == 13 && this.player.entity_y == 4 ) && this.intTask[14] == 2 )
-				{
-					this.strCurrentTask = 'Delivered';
-					this.osdOne();					
-					//this.counter = 0;
-					this.taskCompleted[14] = true;
-				}
-
-				if( this.taskCompleted[14] )
-				{
-					this.engine.network.send('updateCommunity', 15);
-					this.taskList[14] += 1;
-					this.taskCompleted[14] = false;
-					this.output = -1;
-					this.intTask[14] = -1;
-				}
-			},
-
-			taskTwenty: function()
+			/*taskTwenty: function()
 			{	
 				if( this.display == true )
 				{
@@ -763,9 +881,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.output = -1;
 					this.intTask[20] = -1;
 				}
-			},
+			},*/
 
-			taskTwentyOne: function()
+			/*taskTwentyOne: function()
 			{
 				if( this.taskList[21] == 0 )
 				{
@@ -791,9 +909,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.output = -1;
 					}
 				}
-			},
+			},*/
 			
-			taskTwentyTwo: function()
+			/*taskTwentyTwo: function()
 			{
 				if( this.display == true )
 				{
@@ -816,9 +934,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[22] = false;
 					this.output = -1;
 				}
-			},
+			},*/
 
-			taskTwentyFour: function()
+			/*taskTwentyFour: function()
 			{
 				if( this.display == true )
 				{
@@ -841,9 +959,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[24] = false;
 					this.output = -1;
 				}
-			},
+			},*/
 
-			taskTwentyFive: function()
+			/*taskTwentyFive: function()
 			{
 				if( this.display == true )
 				{
@@ -866,9 +984,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[25] = false;
 					this.output = -1;
 				}
-			},
+			},*/
 
-			taskTwentySeven: function()
+			/*taskTwentySeven: function()
 			{
 				this.strCurrentTask = 'Go to the Centre';
 				this.osdOne();
@@ -887,7 +1005,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[27] = false;
 					this.output = -1;
 				}
-			},
+			},*/
 
 			outputTasks: function()
 			{

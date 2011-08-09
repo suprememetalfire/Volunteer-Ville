@@ -107,6 +107,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('taskEighteenPartFour', this.bind(this.taskEighteenPartFour));
 		this.engine.network.registerCommand('taskNineteenPartOne', this.bind(this.taskNineteenPartOne));
 		this.engine.network.registerCommand('taskNineteenPartTwo', this.bind(this.taskNineteenPartTwo));
+		this.engine.network.registerCommand('taskTwentyPartOne', this.bind(this.taskTwentyPartOne));
+		this.engine.network.registerCommand('taskTwentyPartTwo', this.bind(this.taskTwentyPartTwo));
+		this.engine.network.registerCommand('taskTwentyOnePartOne', this.bind(this.taskTwentyOnePartOne));
+		this.engine.network.registerCommand('taskTwentyOnePartTwo', this.bind(this.taskTwentyOnePartTwo));
+		this.engine.network.registerCommand('taskTwentyTwoPartOne', this.bind(this.taskTwentyTwoPartOne));
+		this.engine.network.registerCommand('taskTwentyTwoPartTwo', this.bind(this.taskTwentyTwoPartTwo));
+		this.engine.network.registerCommand('taskTwentyFourPartOne', this.bind(this.taskTwentyFourPartOne));
+		this.engine.network.registerCommand('taskTwentyFourPartTwo', this.bind(this.taskTwentyFourPartTwo));
+		this.engine.network.registerCommand('taskTwentyFivePartOne', this.bind(this.taskTwentyFivePartOne));
+		this.engine.network.registerCommand('taskTwentyFivePartTwo', this.bind(this.taskTwentyFivePartTwo));
+		this.engine.network.registerCommand('taskTwentySeven', this.bind(this.taskTwentySeven));
 		this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));	
 		this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
 		this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
@@ -118,7 +129,13 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('taskStageFourteen', this.bind(this.taskStageFourteen));
 		this.engine.network.registerCommand('taskStageSeventeen', this.bind(this.taskStageSeventeen));
 		this.engine.network.registerCommand('taskStageEighteen', this.bind(this.taskStageEighteen));	
-		this.engine.network.registerCommand('taskStageNineteen', this.bind(this.taskStageNineteen));	
+		this.engine.network.registerCommand('taskStageNineteen', this.bind(this.taskStageNineteen));
+		this.engine.network.registerCommand('taskStageTwenty', this.bind(this.taskStageTwenty));
+		this.engine.network.registerCommand('taskStageTwentyOne', this.bind(this.taskStageTwentyOne));
+		this.engine.network.registerCommand('taskStageTwentyTwo', this.bind(this.taskStageTwentyTwo));	
+		this.engine.network.registerCommand('taskStageTwentyFour', this.bind(this.taskStageTwentyFour));
+		this.engine.network.registerCommand('taskStageTwentyFive', this.bind(this.taskStageTwentyFive));
+		this.engine.network.registerCommand('taskStageTwentySeven', this.bind(this.taskStageTwentySeven));
 
 		this.update = setInterval(this.bind(this.updateWorld), 1000);		
 
@@ -778,6 +795,128 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.engine.network.send( 'taskStageNineteen', 1 );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},
+
+	/*taskTwentyPartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+	
+		if( entity.map_id == 'townMap' )
+		{
+			this.createTaskObjects( 20 );
+			this.engine.network.send( 'taskStageTwenty', 0 );			
+		}
+	},
+
+	taskTwentyPartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 13 && entity.entity_y == 34 ) )
+		{	
+			this.destroyTaskObjects( 'guitar' );
+			this.engine.network.send( 'taskStageTwenty', 1 );
+			this.communityLevel += 15;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},*/
+
+	/*taskTwentyOnePartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+	
+		if( entity.map_id == 'stationMap' )
+		{
+			this.engine.network.send( 'taskStageTwentyOne', 0 );			
+		}
+	},
+
+	taskTwentyOnePartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'stationMap' && ( entity.entity_x == 13 && entity.entity_y == 34 ) )
+		{	
+			this.engine.network.send( 'taskStageTwentyOne', 1 );
+			this.communityLevel += 1;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},*/
+
+	/*taskTwentyTwoPartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+	
+		if( entity.map_id == 'stationMap' )
+		{
+			this.engine.network.send( 'taskStageTwentyTwo', 0 );			
+		}
+	},
+
+	taskTwentyTwoPartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'stationMap' && ( entity.entity_x == -3 && entity.entity_y == 19 ) )
+		{	
+			this.engine.network.send( 'taskStageTwentyTwo', 1 );
+			this.communityLevel += 10;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},*/
+
+	/*taskTwentyFourPartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+	
+		if( entity.map_id == 'schoolMap' )
+		{
+			this.engine.network.send( 'taskStageTwentyFour', 0 );			
+		}
+	},
+
+	taskTwentyFourPartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'schoolMap' && ( entity.entity_x == -7 && entity.entity_y == 4 ) )
+		{	
+			this.engine.network.send( 'taskStageTwentyFour', 1 );
+			this.communityLevel += 10;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},*/
+
+	/*taskTwentyFivePartOne: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+	
+		if( entity.map_id == 'schoolMap' )
+		{
+			this.engine.network.send( 'taskStageTwentyFive', 0 );			
+		}
+	},
+
+	taskTwentyFivePartTwo: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+
+		if( entity.map_id == 'schoolMap' && ( entity.entity_x == -7 && entity.entity_y == 4 ) )
+		{	
+			this.engine.network.send( 'taskStageTwentyFive', 1 );
+			this.communityLevel += 10;
+			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},*/
+
+	/*taskTwentySeven: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+	
+		if( entity.map_id == 'centreMap' && ( entity.entity_x == -7 && entity.entity_y == 4 )  )
+		{
+			this.engine.network.send( 'taskStageTwentySeven', 0 );			
 		}
 	},
 
