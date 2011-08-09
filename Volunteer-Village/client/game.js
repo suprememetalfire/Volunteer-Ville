@@ -95,6 +95,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskTwelvePartOne', this.bind(this.taskTwelvePartOne));
 				this.engine.network.registerCommand('taskTwelvePartTwo', this.bind(this.taskTwelvePartTwo));
 				this.engine.network.registerCommand('taskTwelvePartThree', this.bind(this.taskTwelvePartThree));
+				this.engine.network.registerCommand('taskFourteenPartOne', this.bind(this.taskFourteenPartOne));
+				this.engine.network.registerCommand('taskFourteenPartTwo', this.bind(this.taskFourteenPartTwo));
+				this.engine.network.registerCommand('taskFourteenPartThree', this.bind(this.taskFourteenPartThree));
 				this.engine.network.registerCommand('taskSeventeenPartOne', this.bind(this.taskSeventeenPartOne));
 				this.engine.network.registerCommand('taskSeventeenPartTwo', this.bind(this.taskSeventeenPartTwo));
 				this.engine.network.registerCommand('taskEighteenPartOne', this.bind(this.taskEighteenPartOne));
@@ -111,6 +114,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskStageTen', this.bind(this.taskStageTen));
 				this.engine.network.registerCommand('taskStageEleven', this.bind(this.taskStageEleven));
 				this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));
+				this.engine.network.registerCommand('taskStageFourteen', this.bind(this.taskStageFourteen));
 				this.engine.network.registerCommand('taskStageSeventeen', this.bind(this.taskStageSeventeen));
 				this.engine.network.registerCommand('taskStageEighteen', this.bind(this.taskStageEighteen));
 				this.engine.network.registerCommand('taskStageNineteen', this.bind(this.taskStageNineteen));
@@ -325,9 +329,29 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.intTask[12] = value;
 			},
 
+			taskStageThirteen: function( value )
+			{
+				this.intTask[13] = value;
+			},
+
+			taskStageFourteen: function( value )
+			{
+				this.intTask[14] = value;
+			},
+
 			taskStageSeventeen: function( value )
 			{
 				this.intTask[17] = value;
+			},
+
+			taskStageFifteen: function( value )
+			{
+				this.intTask[15] = value;
+			},
+
+			taskStageSixteen: function( value )
+			{
+				this.intTask[16] = value;
 			},
 
 			taskStageEighteen: function( value )
@@ -535,6 +559,29 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[14] )
 				{	
+					if( this.intTask[14] == -1 )
+					{
+						this.engine.network.send( 'taskFourteenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Shopping Centre';
+					}
+					else if( this.intTask[14] == 0 )
+					{
+						this.engine.network.send( 'taskFourteenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Pickup Groceries';
+					}
+					else if( this.intTask[14] == 1 )
+					{
+						this.engine.network.send( 'taskFourteenPartThree', 1, this.player );
+						this.strCurrentTask = 'Return To The Depot';
+					}
+					else if( this.intTask[14] == 2 )
+					{
+						this.strCurrentTask = 'Delivered';
+						this.taskList[14] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[14] = -1;
+					}
 				}
 				else if( this.output == this.taskName[15] )
 				{	
@@ -680,34 +727,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					this.taskCompleted[14] = false;
 					this.output = -1;
 					this.intTask[14] = -1;
-				}
-			},
-
-			taskNineteen: function()
-			{	
-				if( this.display == true )
-				{
-					this.strCurrentTask = 'Go to the Old Folks Home';
-					this.osdOne();
-					this.display = false;
-					this.engine.network.send( 'createTaskObjects', 19 );
-				}
-
-				if( this.player.map_id == 'oldFolksHomeMap' && ( this.player.entity_x == 0 && this.player.entity_y == -8 ) )
-				{
-					this.strCurrentTask = 'Pick up the guitar.';					
-					this.engine.network.send( 'destroyTaskObjects', 19 );
-					this.osdOne();
-					//this.counter = 0;
-					this.taskCompleted[19] = true;
-				}
-
-				if( this.taskCompleted[19] )
-				{
-					this.engine.network.send('updateCommunity', 15);
-					this.taskList[19] += 1;
-					this.taskCompleted[19] = false;
-					this.output = -1;
 				}
 			},
 
