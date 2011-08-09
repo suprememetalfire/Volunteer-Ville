@@ -866,7 +866,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}
 	},
 
-	/*taskTwentyFourPartOne: function( val, client )
+	taskTwentyFourPartOne: function( val, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 	
@@ -886,9 +886,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
-	},*/
+	},
 
-	/*taskTwentyFivePartOne: function( val, client )
+	taskTwentyFivePartOne: function( val, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 	
@@ -908,17 +908,19 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
-	},*/
+	},
 
-	/*taskTwentySeven: function( val, client )
+	taskTwentySeven: function( val, client )
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 	
-		if( entity.map_id == 'centreMap' && ( entity.entity_x == -7 && entity.entity_y == 4 )  )
+		if( entity.map_id == 'centreMap' && ( entity.entity_x == 5 && entity.entity_y == 5 )  )
 		{
-			this.engine.network.send( 'taskStageTwentySeven', 0 );			
+			this.engine.network.send( 'taskStageTwentySeven', 0 );	
+			this.communityLevel += 10;
+			this.engine.network.send('sendUpdate',this.communityLevel);		
 		}
-	},*/
+	},
 
 	createTaskObjects: function( num )
 	{

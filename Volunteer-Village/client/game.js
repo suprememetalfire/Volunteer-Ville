@@ -790,7 +790,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[24] )
 				{	
-					/*if( this.intTask[24] == -1 )
+					if( this.intTask[24] == -1 )
 					{
 						this.engine.network.send( 'taskTwentyFourPartOne', 1, this.player );
 						this.strCurrentTask = 'Go To The School';
@@ -807,11 +807,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[24] = -1;
-					}*/
+					}
 				}
 				else if( this.output == this.taskName[25] )
 				{
-					/*if( this.intTask[25] == -1 )
+					if( this.intTask[25] == -1 )
 					{
 						this.engine.network.send( 'taskTwentyFivePartOne', 1, this.player );
 						this.strCurrentTask = 'Go To The School';
@@ -828,26 +828,26 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[25] = -1;
-					}*/	
+					}	
 				}
 				else if( this.output == this.taskName[26] )
 				{	
 				}
 				else if( this.output == this.taskName[27] )
 				{	
-					/*if( this.intTask[27] == -1 )
+					if( this.intTask[27] == -1 )
 					{
 						this.engine.network.send( 'taskTwentySeven', 1, this.player );
 						this.strCurrentTask = 'Go To The Computer';
 					}
-					else if( this.intTask[27] == 1 )
+					else if( this.intTask[27] == 0 )
 					{
 						this.strCurrentTask = 'Updated';
 						this.taskList[27] += 1;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[27] = -1;
-					}*/
+					}
 				}
 			},
 
