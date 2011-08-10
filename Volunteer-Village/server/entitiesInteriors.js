@@ -254,11 +254,11 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'hospitalInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'hospitalMap',
-		});
+		});*/
 
 		// Bank Interior
-		for (var x = 27; x < 38; x+=1) {
-			for (var y = 3; y < 27; y+=1) {
+		for (var x = 24; x < 36; x+=1) {
+			for (var y = 1; y < 24; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -272,8 +272,8 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'bankInterior',
-			entity_x:30,
-			entity_y:12,
+			entity_x:27,
+			entity_y:9,
 			entity_id: 'bankInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'bankMap',
@@ -281,7 +281,7 @@ entitiesInteriors = new IgeClass({
 
 		// Post Office Interior
 		for (var x = 24; x < 38; x+=1) {
-			for (var y = 5; y < 27; y+=1) {
+			for (var y = -8; y < 14; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -296,13 +296,13 @@ entitiesInteriors = new IgeClass({
 		this.engine.entities.create({
 			template_id: 'postInterior',
 			entity_x:30,
-			entity_y:12,
+			entity_y:-1,
 			entity_id: 'postInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'postMap',
 		});
 
-		// Animal Shelter Interior
+		/*// Animal Shelter Interior
 		for (var x = 23; x < 41; x+=1) {
 			for (var y = 2; y < 20; y+=1) {
 				this.engine.entities.create({

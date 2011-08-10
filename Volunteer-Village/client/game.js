@@ -1061,7 +1061,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.engine.network.send( 'moveAvatar', [11, 3] );
 					}
 					// Van
-					if( ( x >= 11 && x <= 13 ) && ( y >= 1 && y <= 3 ) )
+					if( ( ( x >= 11 && x <= 13 ) && ( y >= 1 && y <= 2 ) )  || ( x == 13 && y == 3 ) )
 					{
 						this.engine.network.send( 'moveAvatar', [12, 3] );
 					}

@@ -1056,7 +1056,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			else if( entity.entity_x == 34 && entity.entity_y == 10 )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 33, 25, 'bankMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 34, 10, 'bankMap');
 				this.engine.network.send('changeViewMap', 'bankMap', num);
 			}
 			else if( entity.entity_x == 32 && entity.entity_y == 27 ) 
@@ -1083,7 +1083,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			else if( ( entity.entity_x == 31 && entity.entity_y == 11 ) )
 			{	
 				this.engine.entities.remove( entity);
-				this.createNewMapAvatar(num, 'womanWalkBig', 31, 24, 'postMap');
+				this.createNewMapAvatar(num, 'womanWalkBig', 31, 11, 'postMap');
 				this.engine.network.send('changeViewMap', 'postMap', num);
 			}
 			// Animal Shelter
@@ -1169,14 +1169,14 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.createNewMapAvatar(num, 'womanWalk', 33, 5, 'townMap');
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 33 && entity.entity_y == 26 && entity.map_id =='bankMap' )
+		if( entity.entity_x == 35 && entity.entity_y == 10 && entity.map_id =='bankMap' )
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 35, 10, 'townMap');
 
 			this.engine.network.send('changeViewMap', 'townMap', num );
 		}
-		if( entity.entity_x == 31 && entity.entity_y == 25 && entity.map_id =='postMap' )
+		if( entity.entity_x == 31 && entity.entity_y == 12 && entity.map_id =='postMap' )
 		{
 			this.engine.entities.remove( entity);
 			this.createNewMapAvatar(num, 'womanWalk', 31, 12, 'townMap');
