@@ -112,6 +112,58 @@ animations = new IgeClass({
 				asset_id: 'woman_sheetBig',
 			},
 		});
+		
+		this.engine.animations.create({
+			animation_id: 'whiteMDogSW',
+			animation_frame_from: 1,
+			animation_frame_to: 9,
+			animation_fps: 9,
+			animation_loop: true,
+		});
+		
+		this.engine.animations.create({
+			animation_id: 'whiteMDogNW',
+			animation_frame_from: 10,
+			animation_frame_to: 18,
+			animation_fps: 9,
+			animation_loop: true,
+		});
+				
+		this.engine.animations.create({
+			animation_id: 'whiteMDogSE',
+			animation_frame_from: 19,
+			animation_frame_to: 27,
+			animation_fps: 9,
+			animation_loop: true,
+		});
+		
+		this.engine.animations.create({
+			animation_id: 'whiteMDogNE',
+			animation_frame_from: 28,
+			animation_frame_to: 36,
+			animation_fps: 9,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create({
+			template_id: 'whiteMDog',
+			template_contents: {
+				// Entity stuff
+				entity_type:ENTITY_TYPE_SPRITE,
+				entity_layer:LAYER_SPRITES,
+				entity_tile_width:1,
+				entity_tile_height:1,
+				entity_z:0,
+				// Animation stuff
+				animation_id: 'whiteMDogSE',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame:1,
+				asset_id: 'whiteMDog',
+				// Map stuff
+				//map_id: 'testMap3',
+			},
+		});
 
 		this.engine.animations.create({
 			animation_id: 'swing',

@@ -88,6 +88,22 @@ assetsTiles = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "whiteMDog",
+			"asset_image_url" : "/Volunteer-Village/assets/people/whiteMDog.png",
+			"asset_sheet_enabled" : true,
+			"asset_sheet_width" : 9,
+			"asset_sheet_height" : 4,
+			"asset_anchor_points" : [ 
+			[ 
+			82, 
+			100 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.7
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "swing",
 			"asset_image_url" : "/Volunteer-Village/assets/people/swing.png",
 			"asset_sheet_enabled" : true,

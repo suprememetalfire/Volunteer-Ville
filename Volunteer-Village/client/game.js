@@ -79,6 +79,11 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('createTaskObjects', this.bind(this.createTaskObjects));
 				this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
 				this.engine.network.registerCommand('taskZero', this.bind(this.taskZero));
+				this.engine.network.registerCommand('taskTwoPartOne', this.bind(this.taskTwoPartOne));
+				this.engine.network.registerCommand('taskTwoPartTwo', this.bind(this.taskTwoPartTwo));
+				this.engine.network.registerCommand('taskTwoPartThree', this.bind(this.taskTwoPartThree));
+				this.engine.network.registerCommand('taskTwoPartFour', this.bind(this.taskTwoPartFour));
+				this.engine.network.registerCommand('taskTwoPartFive', this.bind(this.taskTwoPartFive));
 				this.engine.network.registerCommand('taskThree', this.bind(this.taskThree));
 				this.engine.network.registerCommand('taskFivePartOne', this.bind(this.taskFivePartOne));
 				this.engine.network.registerCommand('taskFivePartTwo', this.bind(this.taskFivePartTwo));
@@ -118,6 +123,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskTwentyFivePartTwo', this.bind(this.taskTwentyFivePartTwo));
 				this.engine.network.registerCommand('taskTwentySeven', this.bind(this.taskTwentySeven));
 				this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));
+				this.engine.network.registerCommand('taskStageTwo', this.bind(this.taskStageTwo));
 				this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
 				this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
 				this.engine.network.registerCommand('taskStageSix', this.bind(this.taskStageSix));
@@ -528,13 +534,46 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[2] )
 				{	
+					if( this.intTask[2] == -1 )
+					{
+						this.engine.network.send( 'taskTwoPartOne', 0, this.player );
+						this.strCurrentTask = 'Go To The Animal Shelter';
+					}
+					else if( this.intTask[2] == 0 )
+					{
+						this.engine.network.send( 'taskTwoPartTwo', 0, this.player );
+						this.strCurrentTask = 'Talk To The Receptionist';
+					}
+					else if( this.intTask[2] == 1 )
+					{
+						this.engine.network.send( 'taskTwoPartThree', 0, this.player );
+						this.strCurrentTask = 'The Dog Is Waiting Outside';
+					}
+					else if( this.intTask[2] == 2 )
+					{
+						this.engine.network.send( 'taskTwoPartFour', 0, this.player );
+						this.strCurrentTask = 'Walk To The Park';
+					}
+					else if( this.intTask[2] == 3 )
+					{
+						this.engine.network.send( 'taskTwoPartFive', 0, this.player );
+						this.strCurrentTask = 'Take The Dog Back To The Animal Shelter';
+					}
+					else if( this.intTask[2] == 4 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[2] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[2] = -1;
+					}
 				}
 				else if( this.output == this.taskName[3] )
 				{
 					if( this.intTask[3] == -1 )
 					{
 						this.engine.network.send( 'taskThree', 0, this.player );
-						this.strCurrentTask = 'Go to the Bus Shelter';
+						this.strCurrentTask = 'Go To The Bus Shelter';
 					}
 					else if( this.intTask[3] == 0 )
 					{
@@ -1217,6 +1256,24 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 							case DIRECTION_SW:
 								this.engine.entities.setAnimation(entity, 'vanSW');
 							break;		
+						}
+					break;
+					case 'whiteMDog':
+						// Entity is a person sprite
+						switch (entity.entity_direction)
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'whiteMDogNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'whiteMDogSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'whiteMDogNW');
+							break;						
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'whiteMDogSW');
+							break;			
 						}
 					break;					
 				}
