@@ -87,6 +87,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskTwoPartFour', this.bind(this.taskTwoPartFour));
 				this.engine.network.registerCommand('taskTwoPartFive', this.bind(this.taskTwoPartFive));
 				this.engine.network.registerCommand('taskThree', this.bind(this.taskThree));
+				this.engine.network.registerCommand('taskFourPartOne', this.bind(this.taskFourPartOne));
+				this.engine.network.registerCommand('taskFourPartTwo', this.bind(this.taskFourPartTwo));
 				this.engine.network.registerCommand('taskFivePartOne', this.bind(this.taskFivePartOne));
 				this.engine.network.registerCommand('taskFivePartTwo', this.bind(this.taskFivePartTwo));
 				this.engine.network.registerCommand('taskFivePartThree', this.bind(this.taskFivePartThree));
@@ -102,6 +104,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskTwelvePartOne', this.bind(this.taskTwelvePartOne));
 				this.engine.network.registerCommand('taskTwelvePartTwo', this.bind(this.taskTwelvePartTwo));
 				this.engine.network.registerCommand('taskTwelvePartThree', this.bind(this.taskTwelvePartThree));
+				this.engine.network.registerCommand('taskThirteenPartOne', this.bind(this.taskThirteenPartOne));
+				this.engine.network.registerCommand('taskThirteenPartTwo', this.bind(this.taskThirteenPartTwo));
 				this.engine.network.registerCommand('taskFourteenPartOne', this.bind(this.taskFourteenPartOne));
 				this.engine.network.registerCommand('taskFourteenPartTwo', this.bind(this.taskFourteenPartTwo));
 				this.engine.network.registerCommand('taskFourteenPartThree', this.bind(this.taskFourteenPartThree));
@@ -128,12 +132,14 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskStageOne', this.bind(this.taskStageOne));
 				this.engine.network.registerCommand('taskStageTwo', this.bind(this.taskStageTwo));
 				this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
+				this.engine.network.registerCommand('taskStageFour', this.bind(this.taskStageFour));
 				this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
 				this.engine.network.registerCommand('taskStageSix', this.bind(this.taskStageSix));
 				this.engine.network.registerCommand('taskStageSeven', this.bind(this.taskStageSeven));
 				this.engine.network.registerCommand('taskStageTen', this.bind(this.taskStageTen));
 				this.engine.network.registerCommand('taskStageEleven', this.bind(this.taskStageEleven));
 				this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));
+				this.engine.network.registerCommand('taskStageThirteen', this.bind(this.taskStageThirteen));
 				this.engine.network.registerCommand('taskStageFourteen', this.bind(this.taskStageFourteen));
 				this.engine.network.registerCommand('taskStageSeventeen', this.bind(this.taskStageSeventeen));
 				this.engine.network.registerCommand('taskStageEighteen', this.bind(this.taskStageEighteen));
@@ -607,6 +613,24 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[4] )
 				{	
+					if( this.intTask[4] == -1 )
+					{
+						this.engine.network.send( 'taskFourPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Charity Shop';
+					}
+					else if( this.intTask[4] == 0 )
+					{
+						this.engine.network.send( 'taskFourPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Counter';
+					}
+					else if( this.intTask[4] == 1 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[4] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[4] = -1;
+					}
 				}
 				else if( this.output == this.taskName[5] )
 				{	
@@ -756,7 +780,25 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					}
 				}
 				else if( this.output == this.taskName[13] )
-				{	
+				{
+					if( this.intTask[13] == -1 )
+					{
+						this.engine.network.send( 'taskThirteenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Meals On Wheels Depot';
+					}
+					else if( this.intTask[13] == 0 )
+					{
+						this.engine.network.send( 'taskThirteenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Cooker';
+					}
+					else if( this.intTask[13] == 1 )
+					{
+						this.strCurrentTask = 'Cooked';
+						this.taskList[13] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[13] = -1;
+					}	
 				}
 				else if( this.output == this.taskName[14] )
 				{	

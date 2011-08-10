@@ -300,7 +300,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'postInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'postMap',
-		});*/
+		});
 
 		// Animal Shelter Interior
 		for (var x = 23; x < 41; x+=1) {
@@ -325,7 +325,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'poundMap',
 		});
 
-		/*// Creche Interior
+		// Creche Interior
 		for (var x = -13; x < 5; x+=1) {
 			for (var y = 11; y < 29; y+=1) {
 				this.engine.entities.create({
