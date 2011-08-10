@@ -78,7 +78,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('driveBus', this.bind(this.driveBus));
 				this.engine.network.registerCommand('createTaskObjects', this.bind(this.createTaskObjects));
 				this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
-				this.engine.network.registerCommand('taskZero', this.bind(this.taskZero));
+				this.engine.network.registerCommand('taskZero', this.bind(this.taskZero));	
+				this.engine.network.registerCommand('taskOnePartOne', this.bind(this.taskOnePartOne));
+				this.engine.network.registerCommand('taskOnePartTwo', this.bind(this.taskOnePartTwo));
 				this.engine.network.registerCommand('taskTwoPartOne', this.bind(this.taskTwoPartOne));
 				this.engine.network.registerCommand('taskTwoPartTwo', this.bind(this.taskTwoPartTwo));
 				this.engine.network.registerCommand('taskTwoPartThree', this.bind(this.taskTwoPartThree));
@@ -123,6 +125,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskTwentyFivePartTwo', this.bind(this.taskTwentyFivePartTwo));
 				this.engine.network.registerCommand('taskTwentySeven', this.bind(this.taskTwentySeven));
 				this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));
+				this.engine.network.registerCommand('taskStageOne', this.bind(this.taskStageOne));
 				this.engine.network.registerCommand('taskStageTwo', this.bind(this.taskStageTwo));
 				this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
 				this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
@@ -531,6 +534,24 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.output == this.taskName[1] )
 				{						
+					if( this.intTask[1] == -1 )
+					{
+						this.engine.network.send( 'taskOnePartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Animal Shelter';
+					}
+					else if( this.intTask[1] == 0 )
+					{
+						this.engine.network.send( 'taskOnePartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Computer';
+					}
+					else if( this.intTask[1] == 1 )
+					{
+						this.strCurrentTask = 'Updated';
+						this.taskList[1] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[1] = -1;
+					}
 				}
 				else if( this.output == this.taskName[2] )
 				{	
