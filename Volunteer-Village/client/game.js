@@ -1058,7 +1058,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					// Meals on Wheels
 					if( ( x == 10 || x == 11 ) && ( y == 3 ) )
 					{
-						this.engine.network.send( 'moveAvatar', [13, 4] );
+						this.engine.network.send( 'moveAvatar', [11, 3] );
+					}
+					// Van
+					if( ( x >= 11 && x <= 13 ) && ( y >= 1 && y <= 3 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [12, 3] );
 					}
 					// Creche
 					else if( ( x == 2 || x == 3 ) && ( y == 17 || y == 18 ) )

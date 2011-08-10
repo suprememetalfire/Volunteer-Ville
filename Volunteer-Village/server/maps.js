@@ -243,6 +243,72 @@ maps = new IgeClass({
 			});
 
 			this.engine.maps.create({
+				map_id:'poundMap',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
+			this.engine.maps.create({
+				map_id:'mealsMap',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
+			this.engine.maps.create({
 				map_id:'libraryMap',
 				map_tilesize:60,
 				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
@@ -310,6 +376,39 @@ maps = new IgeClass({
 
 			this.engine.maps.create({
 				map_id:'bankMap',
+				map_tilesize:60,
+				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
+				map_dirty_width:60,
+				map_dirty_height:60,
+				map_render_mode:MAP_RENDER_MODE_ISOMETRIC,
+				map_render:true,
+				map_layers:[
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_BACKGROUNDS
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_TILES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE, //LAYER_AUTO_CULL + LAYER_AUTO_REQUEST,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_SPRITES
+					},
+					{
+						layer_auto_mode:LAYER_AUTO_NONE,
+						layer_type:LAYER_TYPE_CANVAS,
+						layer_entity_types: LAYER_UI
+					},
+				],
+				map_persist:PERSIST_DISABLED,
+			});
+
+			this.engine.maps.create({
+				map_id:'postMap',
 				map_tilesize:60,
 				map_dirty_mode:MAP_USE_DIRTY, // + MAP_DEBUG_DIRTY,
 				map_dirty_width:60,

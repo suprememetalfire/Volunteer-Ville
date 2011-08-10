@@ -10,7 +10,7 @@ entitiesInteriors = new IgeClass({
 	
 	// Create entities
 	load: function () {
-		// School Interior
+		/*// School Interior
 		for (var x = -13; x < 10; x+=1) {
 			for (var y = 4; y < 15; y+=1) {
 				this.engine.entities.create({
@@ -46,7 +46,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'schoolMap',
 		});	
 
-		/*// Restaurant Interior
+		// Restaurant Interior
 		for (var x = 24; x < 47; x+=1) {
 			for (var y = 2; y < 14; y+=1) {
 				this.engine.entities.create({
@@ -70,8 +70,8 @@ entitiesInteriors = new IgeClass({
 		});
 
 		// Charity Interior
-		for (var x = -1; x < 22; x+=1) {
-			for (var y = 7; y < 19; y+=1) {
+		for (var x = 10; x < 28; x+=1) {
+			for (var y = 2; y < 20; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -85,14 +85,37 @@ entitiesInteriors = new IgeClass({
 		}
 		this.engine.entities.create({
 			template_id: 'charityInterior',
-			entity_x: 15,
-			entity_y: 7,
+			entity_x: 11,
+			entity_y: 9,
 			entity_id: 'charityInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'charityMap',
+		});*/
+
+		// Meals On Wheels Interior
+		for (var x = 1; x < 13; x+=1) {
+			for (var y = -16; y < 8; y+=1) {
+				this.engine.entities.create({
+					template_id: 'tileBase',
+					entity_x:x,
+					entity_y:y,
+					entity_id: 'mealsBase' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'mealsMap',
+				});
+			}
+		}
+		this.engine.entities.create({
+			template_id: 'mealsInterior',
+			entity_x: 4,
+			entity_y: -7,
+			entity_id: 'mealsInterior',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'mealsMap',
 		});
 
-		// Old Folks Home Interior
+		/*// Old Folks Home Interior
 		for (var x = -14; x < 9; x+=1) {
 			for (var y = -9; y < 2; y+=1) {
 				this.engine.entities.create({
@@ -254,6 +277,52 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'bankInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'bankMap',
+		});
+
+		// Post Office Interior
+		for (var x = 24; x < 38; x+=1) {
+			for (var y = 5; y < 27; y+=1) {
+				this.engine.entities.create({
+					template_id: 'tileBase',
+					entity_x:x,
+					entity_y:y,
+					entity_id: 'postBase' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'postMap',
+				});
+			}
+		}
+		this.engine.entities.create({
+			template_id: 'postInterior',
+			entity_x:30,
+			entity_y:12,
+			entity_id: 'postInterior',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'postMap',
+		});
+
+		// Animal Shelter Interior
+		for (var x = 23; x < 41; x+=1) {
+			for (var y = 2; y < 20; y+=1) {
+				this.engine.entities.create({
+					template_id: 'tileBase',
+					entity_x:x,
+					entity_y:y,
+					entity_id: 'poundBase' + (x + '_' + y),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+					map_id: 'poundMap',
+				});
+			}
+		}
+		this.engine.entities.create({
+			template_id: 'poundInterior',
+			entity_x:29,
+			entity_y:9,
+			entity_id: 'poundInterior',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'poundMap',
 		});
 
 		// Creche Interior

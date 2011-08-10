@@ -140,12 +140,32 @@ entitiesTiles = new IgeClass({
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
 		});
-		// Post office
+		// Post Office
 		this.engine.entities.create({
 			template_id: 'tileBase',
 			entity_x:31,
 			entity_y:11,
 			entity_id: 'townBase' + (31 + '_' + 11),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+			map_id: 'townMap',
+		});
+		// Bank
+		this.engine.entities.create({
+			template_id: 'tileBase',
+			entity_x:34,
+			entity_y:10,
+			entity_id: 'townBase' + (34 + '_' + 10),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+			map_id: 'townMap',
+		});
+		// Animal Shelter
+		this.engine.entities.create({
+			template_id: 'tileBase',
+			entity_x:32,
+			entity_y:18,
+			entity_id: 'townBase' + (32 + '_' + 18),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -156,6 +176,36 @@ entitiesTiles = new IgeClass({
 			entity_x:32,
 			entity_y:27,
 			entity_id: 'townBase' + (32 + '_' + 27),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+			map_id: 'townMap',
+		});
+		// Meals
+		this.engine.entities.create({
+			template_id: 'tileBase',
+			entity_x:11,
+			entity_y:3,
+			entity_id: 'townBase' + (11 + '_' + 3),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+			map_id: 'townMap',
+		});
+		// Meals
+		this.engine.entities.create({
+			template_id: 'tileBase',
+			entity_x:12,
+			entity_y:3,
+			entity_id: 'townBase' + (12 + '_' + 3),
+			entity_locale: LOCALE_EVERYWHERE,
+			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
+			map_id: 'townMap',
+		});
+		// Meals
+		this.engine.entities.create({
+			template_id: 'tileBase',
+			entity_x:12,
+			entity_y:4,
+			entity_id: 'townBase' + (12 + '_' + 4),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',
@@ -176,16 +226,6 @@ entitiesTiles = new IgeClass({
 			entity_x:13,
 			entity_y:18,
 			entity_id: 'townBase' + (13 + '_' + 18),
-			entity_locale: LOCALE_EVERYWHERE,
-			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
-			map_id: 'townMap',
-		});
-		// Meals on Wheels
-		this.engine.entities.create({
-			template_id: 'tileBase',
-			entity_x:13,
-			entity_y:4,
-			entity_id: 'townBase' + (13 + '_' + 4),
 			entity_locale: LOCALE_EVERYWHERE,
 			asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 			map_id: 'townMap',

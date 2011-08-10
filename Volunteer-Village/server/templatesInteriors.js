@@ -38,6 +38,32 @@ templatesInteriors = new IgeClass({
 		});
 
 		this.engine.templates.create({
+			template_id: 'postInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-1100000,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'postInterior',
+			},
+		});
+
+		this.engine.templates.create({
+			template_id: 'poundInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-1100000,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'poundInterior',
+			},
+		});
+
+		this.engine.templates.create({
 			template_id: 'charityInterior',
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,
@@ -47,6 +73,19 @@ templatesInteriors = new IgeClass({
 				entity_z:-1100000,
 				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
 				asset_id: 'charityInterior',
+			},
+		});
+
+		this.engine.templates.create({
+			template_id: 'mealsInterior',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width:20,
+				entity_tile_height:16,
+				entity_z:-1100000,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'mealsInterior',
 			},
 		});
 

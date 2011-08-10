@@ -53,6 +53,48 @@ assetsInteriors = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "postInterior",
+			"asset_image_url" : "/Volunteer-Village/assets/interiors/postofficeInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			241, 
+			153 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+		
+		this.engine.assets.create({
+			"asset_id" : "poundInterior",
+			"asset_image_url" : "/Volunteer-Village/assets/interiors/poundInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			265, 
+			166 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "mealsInterior",
+			"asset_image_url" : "/Volunteer-Village/assets/interiors/mealsInterior.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			242, 
+			155 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.9
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "libraryInterior",
 			"asset_image_url" : "/Volunteer-Village/assets/interiors/libraryInterior.png",
 			"asset_sheet_enabled" : false,
