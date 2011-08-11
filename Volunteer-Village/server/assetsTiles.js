@@ -102,6 +102,39 @@ assetsTiles = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.7
 		});
+	
+		this.engine.assets.create({
+			"asset_id" : "taskIcon",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/taskIcon.png",
+			"asset_sheet_enabled" : true,
+			"asset_sheet_width" : 2,
+			"asset_sheet_height" : 1,
+			"asset_anchor_points" : [ 
+			[ 
+			25, 
+			25 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.7
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "exitIcon",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/exitIcon.png",
+			"asset_sheet_enabled" : true,
+			"asset_sheet_width" : 2,
+			"asset_sheet_height" : 1,
+			"asset_anchor_points" : [ 
+			[ 
+			25, 
+			25 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.7
+		});
+
 
 		this.engine.assets.create({
 			"asset_id" : "swing",

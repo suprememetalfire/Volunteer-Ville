@@ -127,6 +127,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskTwentyFourPartTwo', this.bind(this.taskTwentyFourPartTwo));
 				this.engine.network.registerCommand('taskTwentyFivePartOne', this.bind(this.taskTwentyFivePartOne));
 				this.engine.network.registerCommand('taskTwentyFivePartTwo', this.bind(this.taskTwentyFivePartTwo));
+				this.engine.network.registerCommand('taskTwentySix', this.bind(this.taskTwentySix));
 				this.engine.network.registerCommand('taskTwentySeven', this.bind(this.taskTwentySeven));
 				this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));
 				this.engine.network.registerCommand('taskStageOne', this.bind(this.taskStageOne));
@@ -149,6 +150,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskStageTwentyTwo', this.bind(this.taskStageTwentyTwo));
 				this.engine.network.registerCommand('taskStageTwentyFour', this.bind(this.taskStageTwentyFour));
 				this.engine.network.registerCommand('taskStageTwentyFive', this.bind(this.taskStageTwentyFive));
+				this.engine.network.registerCommand('taskStageTwentySix', this.bind(this.taskStageTwentySix));
 				this.engine.network.registerCommand('taskStageTwentySeven', this.bind(this.taskStageTwentySeven));
 
 				for( var i = 0; i < 28; i++ )
@@ -1017,7 +1019,20 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					}	
 				}
 				else if( this.output == this.taskName[26] )
-				{	
+				{
+					if( this.intTask[26] == -1 )
+					{
+						this.engine.network.send( 'taskTwentySix', 1, this.player );
+						this.strCurrentTask = 'Go To The Computer';
+					}
+					else if( this.intTask[26] == 0 )
+					{
+						this.strCurrentTask = 'Updated';
+						this.taskList[26] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[26] = -1;
+					}	
 				}
 				else if( this.output == this.taskName[27] )
 				{	
@@ -1033,6 +1048,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[27] = -1;
+					}
+				}
+			},
+
+			resetTasks: function()
+			{
+				for( var i = 0; i < 28; i++ )
+				{
+					if( this.output != this.taskName[i] )
+					{
+						this.intTask[i] = -1;
 					}
 				}
 			},
@@ -1129,7 +1155,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.out == 22 )
 				{
-					$( '#blank2' ).html( '<center>.' );
+					$( '#blank2' ).html( '<center>Go to the police station <br />and talk to crime victims <br />on the phone.' );
 				}
 				else if( this.out == 23 )
 				{
@@ -1145,7 +1171,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				}
 				else if( this.out == 26 )
 				{
-					$( '#blank2' ).html( '<center>.' );
+					$( '#blank2' ).html( '<center>Update the shelters <br />website with photos of animals looking for new homes.' );
 				}
 				else if( this.out == 27 )
 				{

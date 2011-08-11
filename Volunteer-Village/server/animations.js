@@ -166,6 +166,62 @@ animations = new IgeClass({
 		});
 
 		this.engine.animations.create({
+			animation_id: 'taskIcon',
+			animation_frame_from: 1,
+			animation_frame_to: 2,
+			animation_fps: 2,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create({
+			template_id: 'taskIcon',
+			template_contents: {
+				// Entity stuff
+				entity_type:ENTITY_TYPE_SPRITE,
+				entity_layer:LAYER_SPRITES,
+				entity_tile_width:1,
+				entity_tile_height:1,
+				entity_z:0,
+				// Animation stuff
+				animation_id: 'taskIcon',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame:1,
+				asset_id: 'taskIcon',
+				// Map stuff
+				//map_id: 'testMap3',
+			},
+		});
+
+		this.engine.animations.create({
+			animation_id: 'exitIcon',
+			animation_frame_from: 1,
+			animation_frame_to: 2,
+			animation_fps: 2,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create({
+			template_id: 'exitIcon',
+			template_contents: {
+				// Entity stuff
+				entity_type:ENTITY_TYPE_SPRITE,
+				entity_layer:LAYER_SPRITES,
+				entity_tile_width:1,
+				entity_tile_height:1,
+				entity_z:0,
+				// Animation stuff
+				animation_id: 'exitIcon',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame:1,
+				asset_id: 'exitIcon',
+				// Map stuff
+				//map_id: 'testMap3',
+			},
+		});
+
+		this.engine.animations.create({
 			animation_id: 'swing',
 			animation_frame_from: 1,
 			animation_frame_to: 8,

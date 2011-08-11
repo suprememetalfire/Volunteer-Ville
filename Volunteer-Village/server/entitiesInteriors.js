@@ -10,7 +10,7 @@ entitiesInteriors = new IgeClass({
 	
 	// Create entities
 	load: function () {
-		/*// School Interior
+		// School Interior
 		for (var x = -13; x < 10; x+=1) {
 			for (var y = 4; y < 15; y+=1) {
 				this.engine.entities.create({
@@ -36,7 +36,7 @@ entitiesInteriors = new IgeClass({
 					map_id: 'schoolMap',
 				});
 			}
-		}		
+		}				
 		this.engine.entities.create({
 			template_id: 'schoolInterior',
 			entity_x:-2,
@@ -90,7 +90,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'charityInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'charityMap',
-		});*/
+		});
 
 		// Meals On Wheels Interior
 		for (var x = 1; x < 13; x+=1) {
@@ -115,7 +115,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'mealsMap',
 		});
 
-		/*// Old Folks Home Interior
+		// Old Folks Home Interior
 		for (var x = -14; x < 9; x+=1) {
 			for (var y = -9; y < 2; y+=1) {
 				this.engine.entities.create({
@@ -451,7 +451,177 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'fireInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'fireMap',
-		});*/
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'schoolExit',
+				entity_x: 4,
+				entity_y: 25,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'schoolMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'restaurantExit',
+				entity_x: 24,
+				entity_y: 10,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'restaurantMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'museumExit',
+				entity_x: 17,
+				entity_y: 25,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'museumMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'oldFolksHomeexit',
+				entity_x: 3,
+				entity_y: 12,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'oldFolksHomeMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'stationExit',
+				entity_x: 14,
+				entity_y: 18,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'stationMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'libraryExit',
+				entity_x: 17,
+				entity_y: 10,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'libraryMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'crecheExit',
+				entity_x: 4,
+				entity_y: 18,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'crecheMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'shopExit',
+				entity_x: 26,
+				entity_y: 10,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'shopMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'hallExit',
+				entity_x: 10,
+				entity_y: 19,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'hallMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'centreExit',
+				entity_x: 10,
+				entity_y: 12,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'centreMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'fireExit',
+				entity_x: 33,
+				entity_y: 5,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'fireMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'bankExit',
+				entity_x: 35,
+				entity_y: 10,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'bankMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'postExit',
+				entity_x: 31,
+				entity_y: 12,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'postMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'hospitalExit',
+				entity_x: 33,
+				entity_y: 27,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'hospitalMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'charityExit',
+				entity_x: 26,
+				entity_y: 17,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'charityMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'poundExit',
+				entity_x: 32,
+				entity_y: 19,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'poundMap',
+		});
+		this.engine.entities.create({
+				template_id: 'exitIcon',
+				// Entity stuff
+				entity_id: 'mealsExit',
+				entity_x: 12,
+				entity_y: 3,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'mealsMap',
+		});
 	},	
 });
 }

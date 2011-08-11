@@ -128,6 +128,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('taskTwentyFourPartTwo', this.bind(this.taskTwentyFourPartTwo));
 		this.engine.network.registerCommand('taskTwentyFivePartOne', this.bind(this.taskTwentyFivePartOne));
 		this.engine.network.registerCommand('taskTwentyFivePartTwo', this.bind(this.taskTwentyFivePartTwo));
+		this.engine.network.registerCommand('taskTwentySix', this.bind(this.taskTwentySix));
 		this.engine.network.registerCommand('taskTwentySeven', this.bind(this.taskTwentySeven));
 		this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));	
 		this.engine.network.registerCommand('taskStageOne', this.bind(this.taskStageOne));
@@ -150,6 +151,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.engine.network.registerCommand('taskStageTwentyTwo', this.bind(this.taskStageTwentyTwo));	
 		this.engine.network.registerCommand('taskStageTwentyFour', this.bind(this.taskStageTwentyFour));
 		this.engine.network.registerCommand('taskStageTwentyFive', this.bind(this.taskStageTwentyFive));
+		this.engine.network.registerCommand('taskStageTwentySix', this.bind(this.taskStageTwentySix));
 		this.engine.network.registerCommand('taskStageTwentySeven', this.bind(this.taskStageTwentySeven));
 
 		this.update = setInterval(this.bind(this.updateWorld), 1000);		
@@ -294,6 +296,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				// Entity stuff
 				entity_id: 'swing',
 				entity_x:23,
+				entity_y:34,
+				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+				entity_persist:PERSIST_DISABLED,
+				map_id: 'townMap',
+			});
+
+			this.engine.entities.create({
+				template_id: 'taskIcon',
+				// Entity stuff
+				entity_id: 'taskIcon',
+				entity_x:27,
 				entity_y:34,
 				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 				entity_persist:PERSIST_DISABLED,
@@ -1088,6 +1101,19 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.engine.network.send( 'taskStageTwentyFive', 1, num );
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);
+		}
+	},
+	
+	taskTwentySix: function( val, client )
+	{
+		var entity = this.engine.entities.read( 'woman' + client.sessionId );
+		var num = client.sessionId;
+	
+		if( entity.map_id == 'centreMap' && ( entity.entity_x == 5 && entity.entity_y == 5 )  )
+		{
+			this.engine.network.send( 'taskStageTwentySix', 0, num );	
+			this.communityLevel += 10;
+			this.engine.network.send('sendUpdate',this.communityLevel);		
 		}
 	},
 
