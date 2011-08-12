@@ -300,17 +300,6 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 				entity_persist:PERSIST_DISABLED,
 				map_id: 'townMap',
-			});
-
-			this.engine.entities.create({
-				template_id: 'taskIcon',
-				// Entity stuff
-				entity_id: 'taskIcon',
-				entity_x:27,
-				entity_y:34,
-				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
-				entity_persist:PERSIST_DISABLED,
-				map_id: 'townMap',
 			});	
 	
 			this.entities.load();
@@ -855,7 +844,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'shopMap' )
 		{
-			this.createTaskObjects( 14 );
+			this.createTaskObjects( 14, num );
 			this.engine.network.send( 'taskStageFourteen', 0, num );
 		}
 	},
@@ -867,7 +856,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'shopMap' && ( entity.entity_x == 4 && entity.entity_y == -1 ) )
 		{
-			this.engine.entities.remove( 'bag' );
+			this.engine.entities.remove( 'bag' + num );
 			this.engine.network.send( 'taskStageFourteen', 1, num );
 		}
 	},
@@ -964,7 +953,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 	
 		if( entity.map_id == 'oldFolksHomeMap' )
 		{
-			this.createTaskObjects( 19 );
+			this.createTaskObjects( 19, num );
 			this.engine.network.send( 'taskStageNineteen', 0, num );			
 		}
 	},
@@ -976,7 +965,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'oldFolksHomeMap' && ( entity.entity_x == 0 && entity.entity_y == -8 ) )
 		{	
-			this.destroyTaskObjects( 'guitar' );
+			this.destroyTaskObjects( 'guitar' + num );
 			this.engine.network.send( 'taskStageNineteen', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -990,7 +979,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 	
 		if( entity.map_id == 'townMap' )
 		{
-			this.createTaskObjects( 20 );
+			this.createTaskObjects( 20, num );
 			this.engine.network.send( 'taskStageTwenty', 0, num );			
 		}
 	},
@@ -1002,7 +991,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'townMap' && ( entity.entity_x == 13 && entity.entity_y == 34 ) )
 		{	
-			this.destroyTaskObjects( 'guitar' );
+			this.destroyTaskObjects( 'guitar' + num );
 			this.engine.network.send( 'taskStageTwenty', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -1130,18 +1119,14 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}
 	},
 
-	createTaskObjects: function( num )
+	createTaskObjects: function( num, id )
 	{
-		//var client = this.engine.entities.read( 'woman' + player.sessionId );
-		//var temp = client.sessionId;
-//this.log(num);		
-
 		this.engine.entities.create
 		({
 			template_id: this.aryTaskObjects[num][0],
 			entity_x: this.aryTaskObjects[num][1],
 			entity_y: this.aryTaskObjects[num][2],
-			entity_id: this.aryTaskObjects[num][0],
+			entity_id: this.aryTaskObjects[num][0] + id,
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: this.aryTaskObjects[num][3],
 		});
