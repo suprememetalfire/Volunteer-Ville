@@ -41,6 +41,8 @@ var IgeGame = new IgeClass({
 	clicked: true,
 	communityLevel: 0,
 	aryTaskObjects: [],
+	aryTaskIcons: [],
+	boolTaskIcons: [],
 	
 	// Constructor
 	init: function (engine) {
@@ -162,10 +164,17 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		for( var i = 0; i < 28; i++ )
 		{
 			this.aryTaskObjects[i] = 0;
+			this.boolTaskIcons[i] = false;
+			this.aryTaskIcons[i] = 0;
 		}
 		this.aryTaskObjects[14] = [ 'bag', 4, -1, 'shopMap' ];
 		this.aryTaskObjects[19] = [ 'guitar', 0, -8, 'oldFolksHomeMap' ];
 		this.aryTaskObjects[20] = [ 'guitar', 13, 34, 'townMap' ];
+
+		this.aryTaskIcons[0] = [ 'taskIcon', -7, 4, 'schoolMap' ];	
+		this.aryTaskIcons[1] = [ 'taskIcon', 31, 13, 'poundMap' ];
+		this.aryTaskIcons[2] = [ 'taskIcon', 19, 32, 'townMap' ];
+	
 		
 		// Set an interval so that the serverReady method is called until ready
 		this.intervalReadyCheck = setInterval(this.bind(this.serverReady));
@@ -504,11 +513,19 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
+		if( this.boolTaskIcons[0] == false )
+		{
+			this.createTaskIcons( 0, num );
+			this.boolTaskIcons[0] = true;
+		}
+
 		if( entity.map_id == 'schoolMap' && ( entity.entity_x == -7 && entity.entity_y == 4 ) )
 		{
+			this.destroyTaskObjects( 'taskIcon' + num );
+			this.boolTaskIcons[0] = false;
 			this.engine.network.send( 'taskStageZero', 0, num );
 			this.communityLevel += 15;
-			this.engine.network.send('sendUpdate',this.communityLevel);
+			this.engine.network.send('sendUpdate',this.communityLevel);			
 		}
 	},
 		
@@ -519,6 +536,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'poundMap' )
 		{
+			this.createTaskIcons( 1, num );
+			this.boolTaskIcons[1] = true;
 			this.engine.network.send( 'taskStageOne', 0, num );
 		}
 	},
@@ -530,6 +549,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) )
 		{
+			this.destroyTaskObjects( 'taskIcon' + num );
+			this.boolTaskIcons[1] = false;
 			this.engine.network.send( 'taskStageOne', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -543,6 +564,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'poundMap' )
 		{
+			this.createTaskIcons( 1, num );
+			this.boolTaskIcons[1] = true;
 			this.engine.network.send( 'taskStageTwo', 0, num );
 		}
 	},
@@ -554,6 +577,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) )
 		{
+			this.destroyTaskObjects( 'taskIcon' + num );
+			this.boolTaskIcons[1] = false;
 			this.engine.network.send( 'taskStageTwo', 1, num );
 		}
 	},
@@ -564,7 +589,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		var num = client.sessionId;
 
 		if( entity.map_id == 'townMap' && ( entity.entity_x == 32 && entity.entity_y == 19 ) )
-		{			
+		{				
+			this.createTaskIcons( 2, num );
+			this.boolTaskIcons[2] = true;
 			this.driveBus( 3, client );
 			this.engine.network.send( 'taskStageTwo', 2, num );
 		}
@@ -577,6 +604,10 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'townMap' && ( entity.entity_x == 19 && entity.entity_y == 32 ) )
 		{
+			this.destroyTaskObjects( 'taskIcon' + num );
+			this.boolTaskIcons[2] = false;
+			this.createTaskIcons( 1, num );
+			this.boolTaskIcons[1] = true;
 			this.engine.network.send( 'taskStageTwo', 3, num );
 		}
 	},
@@ -588,6 +619,8 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) )
 		{
+			this.destroyTaskObjects( 'taskIcon' + num );
+			this.boolTaskIcons[1] = false;
 			this.engine.network.send( 'taskStageTwo', 4, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -1136,6 +1169,19 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 	{
 		var entity = this.engine.entities.read( value );
 		this.engine.entities.remove( entity );
+	},
+
+	createTaskIcons: function( num, id )
+	{
+		this.engine.entities.create
+		({
+			template_id: this.aryTaskIcons[num][0],
+			entity_x: this.aryTaskIcons[num][1],
+			entity_y: this.aryTaskIcons[num][2],
+			entity_id: this.aryTaskIcons[num][0] + id,
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: this.aryTaskIcons[num][3],
+		});
 	},
 
 	// Go inside/outside Buildings.

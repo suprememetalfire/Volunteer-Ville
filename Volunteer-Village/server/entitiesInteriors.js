@@ -10,7 +10,7 @@ entitiesInteriors = new IgeClass({
 	
 	// Create entities
 	load: function () {
-		// School Interior
+		/*// School Interior
 		for (var x = -13; x < 10; x+=1) {
 			for (var y = 4; y < 15; y+=1) {
 				this.engine.entities.create({
@@ -46,7 +46,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'schoolMap',
 		});	
 
-		/*// Restaurant Interior
+		// Restaurant Interior
 		for (var x = 24; x < 47; x+=1) {
 			for (var y = 2; y < 14; y+=1) {
 				this.engine.entities.create({
@@ -113,7 +113,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'mealsInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'mealsMap',
-		});*/
+		});
 
 		// Old Folks Home Interior
 		for (var x = -14; x < 9; x+=1) {
@@ -151,7 +151,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'oldFolksHomeMap',
 		});
 
-		/*// Police Station Interior
+		// Police Station Interior
 		for (var x = -8; x < 15; x+=1) {
 			for (var y = 16; y < 27; y+=1) {
 				this.engine.entities.create({
@@ -300,7 +300,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'postInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'postMap',
-		});
+		});*/
 
 		// Animal Shelter Interior
 		for (var x = 23; x < 41; x+=1) {
@@ -323,9 +323,9 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'poundInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'poundMap',
-		});*/
+		});
 
-		// Creche Interior
+		/*// Creche Interior
 		for (var x = -13; x < 5; x+=1) {
 			for (var y = 11; y < 29; y+=1) {
 				this.engine.entities.create({
@@ -384,7 +384,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'shopMap',
 		});
 
-		/*// Town Hall Interior
+		// Town Hall Interior
 		for (var x = 2; x < 20; x+=1) {
 			for (var y = 2; y < 20; y+=1) {
 				this.engine.entities.create({
