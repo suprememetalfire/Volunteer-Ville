@@ -127,32 +127,6 @@ templates = new IgeClass({
 			},
 		});
 
-		/*this.engine.templates.create({
-			template_id: 'lake',
-			template_contents: {
-				entity_type:ENTITY_TYPE_OBJECT,
-				entity_layer:LAYER_OBJECTS,
-				entity_tile_width:5,
-				entity_tile_height:5,
-				entity_z:0,
-				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
-				asset_id: 'lake',
-			},
-		});*/
-		
-		this.engine.templates.create({
-			template_id: 'tower2',
-			template_contents: {
-				entity_type:ENTITY_TYPE_OBJECT,
-				entity_layer:LAYER_OBJECTS,
-				entity_tile_width:3,
-				entity_tile_height:4,
-				entity_z:0,
-				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
-				asset_id: 'tower2Iso',
-			},
-		});
-
 		this.engine.templates.create({
 			template_id: 'oldfolkshome',
 			template_contents: {
@@ -293,19 +267,6 @@ templates = new IgeClass({
 				entity_z:0,
 				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
 				asset_id: 'fireStation',
-			},
-		});
-		
-		this.engine.templates.create({
-			template_id: 'stadium1',
-			template_contents: {
-				entity_type:ENTITY_TYPE_OBJECT,
-				entity_layer:LAYER_OBJECTS,
-				entity_tile_width:7,
-				entity_tile_height:6,
-				entity_z:0,
-				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
-				asset_id: 'stadium1Iso',
 			},
 		});
 

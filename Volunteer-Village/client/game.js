@@ -183,7 +183,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					{
 						sound_id: 'background',
 						sound_url: 'audio/background.mp3',
-						sound_volume: 5, // Set sound to full volume
+						sound_volume: 50, // Set sound to full volume
 						sound_auto_load: true, // Automatically load the sound data
 						sound_auto_play: true, // Don't automatically start playing the sound
 						sound_buffer: 5, // Buffer 5 seconds of audio before playing

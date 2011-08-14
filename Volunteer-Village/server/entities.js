@@ -186,24 +186,6 @@ entities = new IgeClass({
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'townMap',
 		});
-		
-		/*this.engine.entities.create({
-			template_id: 'tower2',
-			entity_x:14,
-			entity_y:1,
-			entity_id: 'tower111',
-			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
-			map_id: 'townMap',
-		});*/
-		
-		this.engine.entities.create({
-			template_id: 'stadium1',
-			entity_x: -10,
-			entity_y: 7,
-			entity_id: 'stadium-107',
-			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
-			map_id: 'townMap',
-		});
 
 		this.engine.entities.create({
 			template_id: 'pound',

@@ -1862,26 +1862,6 @@ entitiesTiles = new IgeClass({
 			entity_id: 'road' + ( 37 + '_' + -1 ),
 			asset_sheet_frame: 18,
 			map_id: 'townMap',
-		});
-
-		// Stadium
-		this.engine.entities.create
-		({
-			template_id: 'tileRoad',
-			entity_x: -3,
-			entity_y: 9,
-			entity_id: 'road' + ( -3 + '_' + 9 ),
-			asset_sheet_frame: 2,
-			map_id: 'townMap',
-		});
-		this.engine.entities.create
-		({
-			template_id: 'tileRoad',
-			entity_x: -3,
-			entity_y: 10,
-			entity_id: 'road' + ( -3 + '_' + 10 ),
-			asset_sheet_frame: 4,
-			map_id: 'townMap',
 		});		
 	},	
 });

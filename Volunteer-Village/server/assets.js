@@ -10,21 +10,7 @@ assets = new IgeClass({
 
 	// Create assets
 	load: function() {			
-		// Load all the assets that the game uses
-		this.engine.assets.create({
-			"asset_id" : "tower2Iso",
-			"asset_image_url" : "/Volunteer-Village/assets/buildings/tower2.png",
-			"asset_sheet_enabled" : false,
-			"asset_anchor_points" : [ 
-			[ 
-			228, 
-			293 ] ],
-			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
-			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 1.18
-		});
-			
+		// Load all the assets that the game uses			
 		this.engine.assets.create({
 			"asset_id" : "school",
 			"asset_image_url" : "/Volunteer-Village/assets/buildings/school.png",
@@ -37,20 +23,6 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.8
-		});		
-		
-		this.engine.assets.create({
-			"asset_id" : "stadium1Iso",
-			"asset_image_url" : "/Volunteer-Village/assets/buildings/stadium1.png",
-			"asset_sheet_enabled" : false,
-			"asset_anchor_points" : [ 
-			[ 
-			186, 
-			42 ] ],
-			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
-			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.92
 		});
 			
 		this.engine.assets.create({
