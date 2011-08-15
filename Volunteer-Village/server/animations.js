@@ -166,6 +166,34 @@ animations = new IgeClass({
 		});
 
 		this.engine.animations.create({
+			animation_id: 'wMTeach',
+			animation_frame_from: 1,
+			animation_frame_to: 5,
+			animation_fps: 5,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create({
+			template_id: 'wMTeach',
+			template_contents: {
+				// Entity stuff
+				entity_type:ENTITY_TYPE_SPRITE,
+				entity_layer:LAYER_SPRITES,
+				entity_tile_width:1,
+				entity_tile_height:1,
+				entity_z:0,
+				// Animation stuff
+				animation_id: 'wMTeach',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame:1,
+				asset_id: 'wMTeach',
+				// Map stuff
+				//map_id: 'testMap3',
+			},
+		});
+
+		this.engine.animations.create({
 			animation_id: 'taskIcon',
 			animation_frame_from: 1,
 			animation_frame_to: 2,

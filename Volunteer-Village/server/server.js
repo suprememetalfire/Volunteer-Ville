@@ -43,6 +43,7 @@ var IgeGame = new IgeClass({
 	aryTaskObjects: [],
 	aryTaskIcons: [],
 	boolTaskIcons: [],
+	intAnimationCounter: 10,
 	
 	// Constructor
 	init: function (engine) {
@@ -336,12 +337,12 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}
 	},
 	
-	updateWorld: function () {
-		//this.score++;
-		//this.vanDirectionChange();
-		
-
-		//this.moveVan();	
+	updateWorld: function () 
+	{
+		if( this.intAnimationCounter < 10 ) 
+		{
+			this.intAnimationCounter++;	
+		}
 	},
 
 	sendUpdate: function () {
@@ -536,13 +537,23 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 			this.boolTaskIcons[0] = true;
 		}
 
-		if( entity.map_id == 'schoolMap' && ( entity.entity_x == -7 && entity.entity_y == 4 ) )
+		if( entity.map_id == 'schoolMap' && ( entity.entity_x == -7 && entity.entity_y == 4 ) && this.intAnimationCounter == 10 )
 		{
-			this.destroyTaskObjects( 'taskIcon' + num );
+			this.destroyTaskObjects( 'taskIcon' + num );			
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'wMTeach', -7, 4, 'schoolMap');
+			this.intAnimationCounter = 0;
+		}
+		
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalkBig', -7, 4, 'schoolMap');
+			this.intAnimationCounter = 10;
 			this.boolTaskIcons[0] = false;
 			this.engine.network.send( 'taskStageZero', 0, num );
 			this.communityLevel += 15;
-			this.engine.network.send('sendUpdate',this.communityLevel);			
+			this.engine.network.send('sendUpdate',this.communityLevel);
 		}
 	},
 		
