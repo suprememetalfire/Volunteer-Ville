@@ -298,6 +298,21 @@ templates = new IgeClass({
 				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
 				asset_id: 'wMComputer',
 			},
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'wMHBed',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 2,
+				entity_tile_height: 2,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'wMHBed',
+			},
 		});				
 	},	
 });

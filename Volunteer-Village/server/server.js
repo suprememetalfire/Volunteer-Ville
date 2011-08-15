@@ -824,9 +824,19 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'townMap' && ( entity.entity_x == 39 && entity.entity_y == 19 ) )
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 39 && entity.entity_y == 19 ) && this.intAnimationCounter == 10 )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'wMRepairs', 39, 19, 'townMap');
+			this.intAnimationCounter = 0;
+		}
+
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalk', 39, 19, 'townMap');
+			this.intAnimationCounter = 10;
 			this.engine.network.send( 'taskStageSeven', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -850,9 +860,19 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'hospitalMap' && ( entity.entity_x == 19 && entity.entity_y == 32 ) )
+		if( entity.map_id == 'hospitalMap' && ( entity.entity_x == 19 && entity.entity_y == 32 ) && this.intAnimationCounter == 10 )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'wMHBed', 16, 29, 'hospitalMap');
+			this.intAnimationCounter = 0;
+		}
+
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalkBig', 19, 32, 'hospitalMap');
+			this.intAnimationCounter = 10;
 			this.engine.network.send( 'taskStageTen', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -1016,9 +1036,19 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'oldFolksHomeMap' && ( entity.entity_x == -6 && entity.entity_y == -7 ) )
+		if( entity.map_id == 'oldFolksHomeMap' && ( entity.entity_x == -6 && entity.entity_y == -7 ) && this.intAnimationCounter == 10 )
 		{	
 			this.destroyTaskObjects( 'taskIcon' + num );
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'wMHBed', -6, -7, 'oldFolksHomeMap');
+			this.intAnimationCounter = 0;
+		}
+
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalkBig', -6, -7, 'oldFolksHomeMap');
+			this.intAnimationCounter = 10;
 			this.engine.network.send( 'taskStageSeventeen', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);

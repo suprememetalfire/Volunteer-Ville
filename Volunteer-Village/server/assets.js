@@ -320,6 +320,20 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 1.2
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "wMHBed",
+			"asset_image_url" : "/Volunteer-Village/assets/people/wMHBed.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			42, 
+			37 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1.2
+		});
 	},	
 });	
 }

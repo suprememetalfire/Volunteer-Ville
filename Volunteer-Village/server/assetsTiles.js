@@ -232,7 +232,7 @@ assetsTiles = new IgeClass({
 
 		this.engine.assets.create({
 			"asset_id" : "wMCar",
-			"asset_image_url" : "/Volunteer-Village/assets/objects/wMCar.png",
+			"asset_image_url" : "/Volunteer-Village/assets/people/wMCar.png",
 			"asset_sheet_enabled" : true,
 			"asset_anchor_points" : [ 
 			[ 
@@ -244,6 +244,22 @@ assetsTiles = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale": 1.5
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "wMRepairs",
+			"asset_image_url" : "/Volunteer-Village/assets/people/wMRepairs.png",
+			"asset_sheet_enabled" : true,
+			"asset_anchor_points" : [ 
+			[ 
+			100, 
+			75 ] ],
+			"asset_sheet_width" : 3,
+			"asset_sheet_height" : 1,
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale": 1.0
 		});
 	},	
 });	
