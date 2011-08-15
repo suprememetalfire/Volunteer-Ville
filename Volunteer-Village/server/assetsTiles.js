@@ -215,19 +215,35 @@ assetsTiles = new IgeClass({
 		});
 
 		this.engine.assets.create({
-			"asset_id" : "van",
-			"asset_image_url" : "/Volunteer-Village/assets/objects/van.png",
+			"asset_id" : "miniBus",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/miniBus.png",
 			"asset_sheet_enabled" : true,
 			"asset_anchor_points" : [ 
 			[ 
-			125, 
-			180 ] ],
-			"asset_sheet_width" : 4,
-			"asset_sheet_height" : 1,
+			151, 
+			190 ] ],
+			"asset_sheet_width" : 1,
+			"asset_sheet_height" : 4,
 			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale": 0.9
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "wMCar",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/wMCar.png",
+			"asset_sheet_enabled" : true,
+			"asset_anchor_points" : [ 
+			[ 
+			100, 
+			75 ] ],
+			"asset_sheet_width" : 3,
+			"asset_sheet_height" : 1,
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale": 1.5
 		});
 	},	
 });	

@@ -276,7 +276,7 @@ animations = new IgeClass({
 		});
 
 		this.engine.animations.create({
-			animation_id: 'vanSW',
+			animation_id: 'miniBusNE',
 			animation_frame_from: 1,
 			animation_frame_to: 1,
 			animation_fps: 1,
@@ -284,7 +284,7 @@ animations = new IgeClass({
 		});
 
 		this.engine.animations.create({
-			animation_id: 'vanSE',
+			animation_id: 'miniBusNW',
 			animation_frame_from: 2,
 			animation_frame_to: 2,
 			animation_fps: 1,
@@ -292,7 +292,7 @@ animations = new IgeClass({
 		});
 
 		this.engine.animations.create({
-			animation_id: 'vanNE',
+			animation_id: 'miniBusSE',
 			animation_frame_from: 3,
 			animation_frame_to: 3,
 			animation_fps: 1,
@@ -300,7 +300,7 @@ animations = new IgeClass({
 		});
 
 		this.engine.animations.create({
-			animation_id: 'vanNW',
+			animation_id: 'miniBusSW',
 			animation_frame_from: 4,
 			animation_frame_to: 4,
 			animation_fps: 1,
@@ -308,20 +308,46 @@ animations = new IgeClass({
 		});
 
 		this.engine.templates.create({
-			template_id: 'van',
+			template_id: 'miniBus',
 			template_contents: {
 				// Entity stuff
 				entity_type:ENTITY_TYPE_SPRITE,
 				entity_layer:LAYER_SPRITES,
-				entity_tile_width:1,
-				entity_tile_height:1,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
 				entity_z:0,
 				// Animation stuff
-				animation_id: 'vanSE',
+				animation_id: 'miniBusSE',
 				animation_dirty: true,
 				// Asset stuff
 				asset_sheet_frame:1,
-				asset_id: 'van',
+				asset_id: 'miniBus',
+			},
+		});
+
+		this.engine.animations.create({
+			animation_id: 'wMCar',
+			animation_frame_from: 1,
+			animation_frame_to: 3,
+			animation_fps: 3,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create({
+			template_id: 'wMCar',
+			template_contents: {
+				// Entity stuff
+				entity_type:ENTITY_TYPE_SPRITE,
+				entity_layer:LAYER_SPRITES,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z:0,
+				// Animation stuff
+				animation_id: 'wMCar',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame:1,
+				asset_id: 'wMCar',
 			},
 		});
 

@@ -70,7 +70,7 @@ myTime: null,
 				
 				// Create some game specific network commands
 				this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));
-this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
+this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 
 				this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
 				this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
@@ -96,7 +96,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 				this.engine.network.registerCommand('taskSixPartOne', this.bind(this.taskSixPartOne));
 				this.engine.network.registerCommand('taskSixPartTwo', this.bind(this.taskSixPartTwo));
 				this.engine.network.registerCommand('taskSevenPartOne', this.bind(this.taskSevenPartOne));
-				this.engine.network.registerCommand('taskSixPartTwo', this.bind(this.taskSixPartTwo));
+				this.engine.network.registerCommand('taskSevenPartTwo', this.bind(this.taskSevenPartTwo));
 				this.engine.network.registerCommand('taskTenPartOne', this.bind(this.taskTenPartOne));
 				this.engine.network.registerCommand('taskTenPartTwo', this.bind(this.taskTenPartTwo));
 				this.engine.network.registerCommand('taskElevenPartOne', this.bind(this.taskElevenPartOne));
@@ -654,7 +654,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					else if( this.intTask[5] == 2 )
 					{
 						this.engine.network.send( 'taskFivePartFour', 1, this.player );
-						this.strCurrentTask = 'Return The Van';
+						this.strCurrentTask = 'Return The miniBus';
 					}
 					else if( this.intTask[5] == 3 )
 					{
@@ -875,7 +875,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					else if( this.intTask[18] == 2 )
 					{
 						this.engine.network.send( 'taskEighteenPartFour', 1, this.player );
-						this.strCurrentTask = 'Return The Van';
+						this.strCurrentTask = 'Return The miniBus';
 					}
 					else if( this.intTask[18] == 3 )
 					{
@@ -1188,7 +1188,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 					{
 						this.engine.network.send( 'moveAvatar', [11, 3] );
 					}
-					// Van
+					// miniBus
 					if( ( ( x >= 11 && x <= 13 ) && ( y >= 1 && y <= 2 ) )  || ( x == 13 && y == 3 ) )
 					{
 						this.engine.network.send( 'moveAvatar', [12, 3] );
@@ -1329,21 +1329,21 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 							break;		
 						}
 					break;
-					case 'van':
+					case 'miniBus':
 						// Entity is a person sprite
 						switch (entity.entity_direction) 
 						{					
 							case DIRECTION_NE:
-								this.engine.entities.setAnimation(entity, 'vanNE');
+								this.engine.entities.setAnimation(entity, 'miniBusNE');
 							break;								
 							case DIRECTION_SE:
-								this.engine.entities.setAnimation(entity, 'vanSE');
+								this.engine.entities.setAnimation(entity, 'miniBusSE');
 							break;
 							case DIRECTION_NW:
-								this.engine.entities.setAnimation(entity, 'vanNW');
+								this.engine.entities.setAnimation(entity, 'miniBusNW');
 							break;						
 							case DIRECTION_SW:
-								this.engine.entities.setAnimation(entity, 'vanSW');
+								this.engine.entities.setAnimation(entity, 'miniBusSW');
 							break;		
 						}
 					break;

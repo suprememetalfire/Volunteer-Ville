@@ -197,9 +197,9 @@ entities = new IgeClass({
 		});
 
 		this.engine.entities.create({
-			template_id: 'van',
+			template_id: 'miniBus',
 			// Entity stuff
-			entity_id: 'van',
+			entity_id: 'miniBus',
 			entity_x:1,
 			entity_y:13,
 			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,

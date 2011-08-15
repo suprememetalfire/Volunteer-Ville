@@ -67,7 +67,7 @@ var IgeGame = new IgeClass({
 		this.engine.assets.events.on('allAssetsLoaded', this.bind(this.serverReady));
 		this.engine.events.on('started', this.bind(this.serverStarted));
 
-this.engine.entities.events.on('vanDirectionChange', this.bind(this.vanDirectionChange));
+this.engine.entities.events.on('miniBusDirectionChange', this.bind(this.miniBusDirectionChange));
 		
 		// Create some game specific network commands
 		this.engine.network.registerCommand('avatarCreated', null);
@@ -75,7 +75,7 @@ this.engine.entities.events.on('vanDirectionChange', this.bind(this.vanDirection
 		this.engine.network.registerCommand('sendUpdate', this.bind(this.sendUpdate));
     
 		this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));	
-this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
+this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
 		this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
 		this.engine.network.registerCommand('updateCommunity', this.bind(this.updateCommunity));
@@ -180,7 +180,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		this.aryTaskIcons[5] = [ 'taskIcon', 12, 5, 'crecheMap' ];
 		this.aryTaskIcons[6] = [ 'taskIcon', 2, 20, 'townMap' ];
 		this.aryTaskIcons[7] = [ 'taskIcon', 8, 30, 'townMap' ];
-		this.aryTaskIcons[8] = [ 'taskIcon', 34, 5, 'townMap' ];
+		this.aryTaskIcons[8] = [ 'taskIcon', 33, 6, 'townMap' ];
 		this.aryTaskIcons[9] = [ 'taskIcon', 41, 19, 'townMap' ];
 		this.aryTaskIcons[10] = [ 'taskIcon', 39, 19, 'townMap' ];
 		this.aryTaskIcons[11] = [ 'taskIcon', 19, 32, 'hospitalMap' ];
@@ -514,7 +514,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 
 		if( intState == 1 )
 		{
-			this.createNewMapAvatar( player.sessionId, 'van', client.entity_x, client.entity_y, 'townMap' );
+			this.createNewMapAvatar( player.sessionId, 'miniBus', client.entity_x, client.entity_y, 'townMap' );
 		}
 		else if( intState == 2 )
 		{
@@ -574,9 +574,18 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) )
+		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) && this.intAnimationCounter == 10 )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'wMComputer', 31, 13, 'poundMap');
+			this.intAnimationCounter = 0;
+		}
+
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalkBig', 31, 13, 'poundMap');
 			this.engine.network.send( 'taskStageOne', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -771,9 +780,19 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'townMap' && ( entity.entity_x == 34 && entity.entity_y == 5 ) )
+		if( entity.map_id == 'townMap' && ( entity.entity_x == 33 && entity.entity_y == 6 ) && this.intAnimationCounter == 10 )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'wMCar', 33, 6, 'townMap');
+			this.intAnimationCounter = 0;
+		}
+
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalk', 33, 6, 'townMap');
+			this.intAnimationCounter = 10;
 			this.engine.network.send( 'taskStageSix', 1, num );
 			this.communityLevel += 15;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -795,7 +814,7 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
 			this.boolTaskIcons[7] = false;
-			this.createTaskIcons( 10, num );
+			this.createTaskIcons( 10, num );			
 			this.engine.network.send( 'taskStageSeven', 0, num );
 		}
 	},
@@ -1550,9 +1569,9 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}
 	},
 
-	moveVan: function()
+	moveminiBus: function()
 	{
-		/*var entity = this.engine.entities.read('van');
+		/*var entity = this.engine.entities.read('miniBus');
 
 		if (entity != null) {		
 			var map = entity.$local.$map;
@@ -1603,32 +1622,32 @@ this.engine.network.registerCommand('moveVan', this.bind(this.moveVan));
 		}*/
 	},
 
-	vanDirectionChange: function () 
+	miniBusDirectionChange: function () 
 	{
-		var entity = this.engine.entities.read('van');
+		var entity = this.engine.entities.read('miniBus');
 		switch (entity.template_id) 
 		{			
-			case 'van':
+			case 'miniBus':
 			// Entity is a person sprite
 			switch (entity.entity_direction) 
 			{							
 				case DIRECTION_NE:
-				this.engine.entities.setAnimation(entity, 'vanNE');
+				this.engine.entities.setAnimation(entity, 'miniBusNE');
 this.log('NE');
 				break;	
 							
 				case DIRECTION_SE:
-				this.engine.entities.setAnimation(entity, 'vanSE');
+				this.engine.entities.setAnimation(entity, 'miniBusSE');
 this.log('SE');
 				break;
 														
 				case DIRECTION_NW:
-				this.engine.entities.setAnimation(entity, 'vanNW');
+				this.engine.entities.setAnimation(entity, 'miniBusNW');
 this.log('NW');
 				break;						
 							
 				case DIRECTION_SW:
-				this.engine.entities.setAnimation(entity, 'vanSW');
+				this.engine.entities.setAnimation(entity, 'miniBusSW');
 this.log('SW');
 				break;		
 			}
