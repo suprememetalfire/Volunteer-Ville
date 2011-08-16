@@ -10,7 +10,7 @@ entitiesInteriors = new IgeClass({
 	
 	// Create entities
 	load: function () {
-		/*// School Interior
+		// School Interior
 		for (var x = -13; x < 10; x+=1) {
 			for (var y = 4; y < 15; y+=1) {
 				this.engine.entities.create({
@@ -46,7 +46,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'schoolMap',
 		});	
 
-		// Restaurant Interior
+		/*// Restaurant Interior
 		for (var x = 24; x < 47; x+=1) {
 			for (var y = 2; y < 14; y+=1) {
 				this.engine.entities.create({

@@ -509,184 +509,57 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 	// Create new avatar for switching maps.
 	driveBus: function( intState, player )
 	{
-		var client = this.engine.entities.read( 'woman' + player.sessionId );
-		this.engine.entities.remove( client );		
-
-		if( intState == 1 )
-		{
-			this.createNewMapAvatar( player.sessionId, 'miniBus', client.entity_x, client.entity_y, 'townMap' );
-		}
-		else if( intState == 2 )
-		{
-			this.createNewMapAvatar( player.sessionId, 'womanWalk', client.entity_x, client.entity_y, 'townMap' );
-		}
-		else if( intState == 3 )
-		{
-			this.createNewMapAvatar( player.sessionId, 'whiteMDog', client.entity_x, client.entity_y, 'townMap' );
-		}	
+		var _0x8c62=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x72\x65\x6D\x6F\x76\x65","\x6D\x69\x6E\x69\x42\x75\x73","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x74\x6F\x77\x6E\x4D\x61\x70","\x63\x72\x65\x61\x74\x65\x4E\x65\x77\x4D\x61\x70\x41\x76\x61\x74\x61\x72","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B","\x77\x68\x69\x74\x65\x4D\x44\x6F\x67"];var client=this[_0x8c62[4]][_0x8c62[3]][_0x8c62[2]](_0x8c62[0]+player[_0x8c62[1]]);this[_0x8c62[4]][_0x8c62[3]][_0x8c62[5]](client);if(intState==1){this[_0x8c62[10]](player[_0x8c62[1]],_0x8c62[6],client[_0x8c62[7]],client[_0x8c62[8]],_0x8c62[9]);} else {if(intState==2){this[_0x8c62[10]](player[_0x8c62[1]],_0x8c62[11],client[_0x8c62[7]],client[_0x8c62[8]],_0x8c62[9]);} else {if(intState==3){this[_0x8c62[10]](player[_0x8c62[1]],_0x8c62[12],client[_0x8c62[7]],client[_0x8c62[8]],_0x8c62[9]);} ;} ;} ;	
 	},
 
 	taskZero: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( this.boolTaskIcons[0] == false )
-		{
-			this.createTaskIcons( 0, num );
-			this.boolTaskIcons[0] = true;
-		}
-
-		if( entity.map_id == 'schoolMap' && ( entity.entity_x == -7 && entity.entity_y == 4 ) && this.intAnimationCounter == 10 )
-		{
-			this.destroyTaskObjects( 'taskIcon' + num );			
-			this.engine.entities.remove( entity );
-			this.createNewMapAvatar(num, 'wMTeach', -7, 4, 'schoolMap');
-			this.intAnimationCounter = 0;
-		}
-		
-		if( this.intAnimationCounter == 5 )
-		{
-			this.engine.entities.remove( entity );
-			this.createNewMapAvatar(num, 'womanWalkBig', -7, 4, 'schoolMap');
-			this.intAnimationCounter = 10;
-			this.boolTaskIcons[0] = false;
-			this.engine.network.send( 'taskStageZero', 0, num );
-			this.communityLevel += 15;
-			this.engine.network.send('sendUpdate',this.communityLevel);
-		}
+		var _0x339f=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x62\x6F\x6F\x6C\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x6D\x61\x70\x5F\x69\x64","\x73\x63\x68\x6F\x6F\x6C\x4D\x61\x70","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x69\x6E\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x43\x6F\x75\x6E\x74\x65\x72","\x74\x61\x73\x6B\x49\x63\x6F\x6E","\x64\x65\x73\x74\x72\x6F\x79\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x72\x65\x6D\x6F\x76\x65","\x77\x4D\x54\x65\x61\x63\x68","\x63\x72\x65\x61\x74\x65\x4E\x65\x77\x4D\x61\x70\x41\x76\x61\x74\x61\x72","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B\x42\x69\x67","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x5A\x65\x72\x6F","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B","\x63\x6F\x6D\x6D\x75\x6E\x69\x74\x79\x4C\x65\x76\x65\x6C","\x73\x65\x6E\x64\x55\x70\x64\x61\x74\x65"];var entity=this[_0x339f[4]][_0x339f[3]][_0x339f[2]](_0x339f[0]+client[_0x339f[1]]);var num=client[_0x339f[1]];if(this[_0x339f[5]][0]==false){this[_0x339f[6]](0,num);this[_0x339f[5]][0]=true;} ;if(entity[_0x339f[7]]==_0x339f[8]&&(entity[_0x339f[9]]==-7&&entity[_0x339f[10]]==4)&&this[_0x339f[11]]==10){this[_0x339f[13]](_0x339f[12]+num);this[_0x339f[4]][_0x339f[3]][_0x339f[14]](entity);this[_0x339f[16]](num,_0x339f[15],-7,4,_0x339f[8]);this[_0x339f[11]]=0;} ;if(this[_0x339f[11]]==5){this[_0x339f[4]][_0x339f[3]][_0x339f[14]](entity);this[_0x339f[16]](num,_0x339f[17],-7,4,_0x339f[8]);this[_0x339f[11]]=10;this[_0x339f[5]][0]=false;this[_0x339f[4]][_0x339f[20]][_0x339f[19]](_0x339f[18],0,num);this[_0x339f[21]]+=15;this[_0x339f[4]][_0x339f[20]][_0x339f[19]](_0x339f[22],this[_0x339f[21]]);} ;
 	},
 		
 	taskOnePartOne: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'poundMap' )
-		{
-			this.createTaskIcons( 1, num );
-			this.engine.network.send( 'taskStageOne', 0, num );
-		}
+		var _0xbb4f=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x70\x6F\x75\x6E\x64\x4D\x61\x70","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x4F\x6E\x65","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B"];var entity=this[_0xbb4f[4]][_0xbb4f[3]][_0xbb4f[2]](_0xbb4f[0]+client[_0xbb4f[1]]);var num=client[_0xbb4f[1]];if(entity[_0xbb4f[5]]==_0xbb4f[6]){this[_0xbb4f[7]](1,num);this[_0xbb4f[4]][_0xbb4f[10]][_0xbb4f[9]](_0xbb4f[8],0,num);} ;
 	},
 
 	taskOnePartTwo: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) && this.intAnimationCounter == 10 )
-		{
-			this.destroyTaskObjects( 'taskIcon' + num );
-			this.engine.entities.remove( entity );
-			this.createNewMapAvatar(num, 'wMComputer', 31, 13, 'poundMap');
-			this.intAnimationCounter = 0;
-		}
-
-		if( this.intAnimationCounter == 5 )
-		{
-			this.engine.entities.remove( entity );
-			this.createNewMapAvatar(num, 'womanWalkBig', 31, 13, 'poundMap');
-			this.engine.network.send( 'taskStageOne', 1, num );
-			this.communityLevel += 15;
-			this.engine.network.send('sendUpdate',this.communityLevel);
-		}
+		var _0x3a7b=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x70\x6F\x75\x6E\x64\x4D\x61\x70","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x69\x6E\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E\x43\x6F\x75\x6E\x74\x65\x72","\x74\x61\x73\x6B\x49\x63\x6F\x6E","\x64\x65\x73\x74\x72\x6F\x79\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x72\x65\x6D\x6F\x76\x65","\x77\x4D\x43\x6F\x6D\x70\x75\x74\x65\x72","\x63\x72\x65\x61\x74\x65\x4E\x65\x77\x4D\x61\x70\x41\x76\x61\x74\x61\x72","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B\x42\x69\x67","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x4F\x6E\x65","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B","\x63\x6F\x6D\x6D\x75\x6E\x69\x74\x79\x4C\x65\x76\x65\x6C","\x73\x65\x6E\x64\x55\x70\x64\x61\x74\x65"];var entity=this[_0x3a7b[4]][_0x3a7b[3]][_0x3a7b[2]](_0x3a7b[0]+client[_0x3a7b[1]]);var num=client[_0x3a7b[1]];if(entity[_0x3a7b[5]]==_0x3a7b[6]&&(entity[_0x3a7b[7]]==31&&entity[_0x3a7b[8]]==13)&&this[_0x3a7b[9]]==10){this[_0x3a7b[11]](_0x3a7b[10]+num);this[_0x3a7b[4]][_0x3a7b[3]][_0x3a7b[12]](entity);this[_0x3a7b[14]](num,_0x3a7b[13],31,13,_0x3a7b[6]);this[_0x3a7b[9]]=0;} ;if(this[_0x3a7b[9]]==5){this[_0x3a7b[4]][_0x3a7b[3]][_0x3a7b[12]](entity);this[_0x3a7b[14]](num,_0x3a7b[15],31,13,_0x3a7b[6]);this[_0x3a7b[4]][_0x3a7b[18]][_0x3a7b[17]](_0x3a7b[16],1,num);this[_0x3a7b[19]]+=15;this[_0x3a7b[4]][_0x3a7b[18]][_0x3a7b[17]](_0x3a7b[20],this[_0x3a7b[19]]);} ;
 	},
 
 	taskTwoPartOne: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'poundMap' )
-		{
-			this.createTaskIcons( 1, num );
-			this.engine.network.send( 'taskStageTwo', 0, num );
-		}
+		var _0x2eeb=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x70\x6F\x75\x6E\x64\x4D\x61\x70","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x6F","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B"];var entity=this[_0x2eeb[4]][_0x2eeb[3]][_0x2eeb[2]](_0x2eeb[0]+client[_0x2eeb[1]]);var num=client[_0x2eeb[1]];if(entity[_0x2eeb[5]]==_0x2eeb[6]){this[_0x2eeb[7]](1,num);this[_0x2eeb[4]][_0x2eeb[10]][_0x2eeb[9]](_0x2eeb[8],0,num);} ;
 	},
 
 	taskTwoPartTwo: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) )
-		{
-			this.destroyTaskObjects( 'taskIcon' + num );
-			this.engine.network.send( 'taskStageTwo', 1, num );
-		}
+		var _0xb02f=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x70\x6F\x75\x6E\x64\x4D\x61\x70","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x74\x61\x73\x6B\x49\x63\x6F\x6E","\x64\x65\x73\x74\x72\x6F\x79\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x6F","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B"];var entity=this[_0xb02f[4]][_0xb02f[3]][_0xb02f[2]](_0xb02f[0]+client[_0xb02f[1]]);var num=client[_0xb02f[1]];if(entity[_0xb02f[5]]==_0xb02f[6]&&(entity[_0xb02f[7]]==31&&entity[_0xb02f[8]]==13)){this[_0xb02f[10]](_0xb02f[9]+num);this[_0xb02f[4]][_0xb02f[13]][_0xb02f[12]](_0xb02f[11],1,num);} ;
 	},
 
 	taskTwoPartThree: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'townMap' && ( entity.entity_x == 32 && entity.entity_y == 19 ) )
-		{				
-			this.createTaskIcons( 2, num );
-			this.driveBus( 3, client );
-			this.engine.network.send( 'taskStageTwo', 2, num );
-		}
+		var _0xb69d=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x74\x6F\x77\x6E\x4D\x61\x70","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x64\x72\x69\x76\x65\x42\x75\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x6F","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B"];var entity=this[_0xb69d[4]][_0xb69d[3]][_0xb69d[2]](_0xb69d[0]+client[_0xb69d[1]]);var num=client[_0xb69d[1]];if(entity[_0xb69d[5]]==_0xb69d[6]&&(entity[_0xb69d[7]]==32&&entity[_0xb69d[8]]==19)){this[_0xb69d[9]](2,num);this[_0xb69d[10]](3,client);this[_0xb69d[4]][_0xb69d[13]][_0xb69d[12]](_0xb69d[11],2,num);} ;
 	},
 
 	taskTwoPartFour: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'townMap' && ( entity.entity_x == 19 && entity.entity_y == 32 ) )
-		{
-			this.destroyTaskObjects( 'taskIcon' + num );
-			this.createTaskIcons( 1, num );
-			this.engine.network.send( 'taskStageTwo', 3, num );
-		}
+		var _0xc607=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x74\x6F\x77\x6E\x4D\x61\x70","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x74\x61\x73\x6B\x49\x63\x6F\x6E","\x64\x65\x73\x74\x72\x6F\x79\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x6F","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B"];var entity=this[_0xc607[4]][_0xc607[3]][_0xc607[2]](_0xc607[0]+client[_0xc607[1]]);var num=client[_0xc607[1]];if(entity[_0xc607[5]]==_0xc607[6]&&(entity[_0xc607[7]]==19&&entity[_0xc607[8]]==32)){this[_0xc607[10]](_0xc607[9]+num);this[_0xc607[11]](1,num);this[_0xc607[4]][_0xc607[14]][_0xc607[13]](_0xc607[12],3,num);} ;
 	},
 
 	taskTwoPartFive: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'poundMap' && ( entity.entity_x == 31 && entity.entity_y == 13 ) )
-		{
-			this.destroyTaskObjects( 'taskIcon' + num );
-			this.engine.network.send( 'taskStageTwo', 4, num );
-			this.communityLevel += 15;
-			this.engine.network.send('sendUpdate',this.communityLevel);
-		}
+		var _0x31d9=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x70\x6F\x75\x6E\x64\x4D\x61\x70","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x74\x61\x73\x6B\x49\x63\x6F\x6E","\x64\x65\x73\x74\x72\x6F\x79\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x6F","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B","\x63\x6F\x6D\x6D\x75\x6E\x69\x74\x79\x4C\x65\x76\x65\x6C","\x73\x65\x6E\x64\x55\x70\x64\x61\x74\x65"];var entity=this[_0x31d9[4]][_0x31d9[3]][_0x31d9[2]](_0x31d9[0]+client[_0x31d9[1]]);var num=client[_0x31d9[1]];if(entity[_0x31d9[5]]==_0x31d9[6]&&(entity[_0x31d9[7]]==31&&entity[_0x31d9[8]]==13)){this[_0x31d9[10]](_0x31d9[9]+num);this[_0x31d9[4]][_0x31d9[13]][_0x31d9[12]](_0x31d9[11],4,num);this[_0x31d9[14]]+=15;this[_0x31d9[4]][_0x31d9[13]][_0x31d9[12]](_0x31d9[15],this[_0x31d9[14]]);} ;
 	},
 
 	taskThree: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( this.boolTaskIcons[3] == false )
-		{
-			this.createTaskIcons( 3, num );
-			this.boolTaskIcons[3] = true;
-		}
-
-		if( entity.map_id == 'townMap' && ( entity.entity_x == 5 && entity.entity_y == 5 ) )
-		{
-			this.destroyTaskObjects( 'taskIcon' + num );
-			this.boolTaskIcons[3] = false;
-			this.engine.network.send( 'taskStageThree', 0, num );
-			this.communityLevel += 15;
-			this.engine.network.send('sendUpdate',this.communityLevel);
-		}
+		var _0xb296=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x62\x6F\x6F\x6C\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x6D\x61\x70\x5F\x69\x64","\x74\x6F\x77\x6E\x4D\x61\x70","\x65\x6E\x74\x69\x74\x79\x5F\x78","\x65\x6E\x74\x69\x74\x79\x5F\x79","\x74\x61\x73\x6B\x49\x63\x6F\x6E","\x64\x65\x73\x74\x72\x6F\x79\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x68\x72\x65\x65","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B","\x63\x6F\x6D\x6D\x75\x6E\x69\x74\x79\x4C\x65\x76\x65\x6C","\x73\x65\x6E\x64\x55\x70\x64\x61\x74\x65"];var entity=this[_0xb296[4]][_0xb296[3]][_0xb296[2]](_0xb296[0]+client[_0xb296[1]]);var num=client[_0xb296[1]];if(this[_0xb296[5]][3]==false){this[_0xb296[6]](3,num);this[_0xb296[5]][3]=true;} ;if(entity[_0xb296[7]]==_0xb296[8]&&(entity[_0xb296[9]]==5&&entity[_0xb296[10]]==5)){this[_0xb296[12]](_0xb296[11]+num);this[_0xb296[5]][3]=false;this[_0xb296[4]][_0xb296[15]][_0xb296[14]](_0xb296[13],0,num);this[_0xb296[16]]+=15;this[_0xb296[4]][_0xb296[15]][_0xb296[14]](_0xb296[17],this[_0xb296[16]]);} ;
 	},
 
 	taskFourPartOne: function( val, client )
 	{
-		var entity = this.engine.entities.read( 'woman' + client.sessionId );
-		var num = client.sessionId;
-
-		if( entity.map_id == 'charityMap' )
-		{
-			this.createTaskIcons( 4, num );
-			this.engine.network.send( 'taskStageFour', 0, num );
-		}
+		var _0x3409=["\x77\x6F\x6D\x61\x6E","\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x72\x65\x61\x64","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x63\x68\x61\x72\x69\x74\x79\x4D\x61\x70","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x49\x63\x6F\x6E\x73","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x46\x6F\x75\x72","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B"];var entity=this[_0x3409[4]][_0x3409[3]][_0x3409[2]](_0x3409[0]+client[_0x3409[1]]);var num=client[_0x3409[1]];if(entity[_0x3409[5]]==_0x3409[6]){this[_0x3409[7]](4,num);this[_0x3409[4]][_0x3409[10]][_0x3409[9]](_0x3409[8],0,num);} ;
 	},
 
 	taskFourPartTwo: function( val, client )
@@ -1392,9 +1265,9 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		{
 			if( entity.entity_x == 23 && entity.entity_y == 5 )
 			{	
-				this.engine.entities.remove( entity);
+				/*this.engine.entities.remove( entity);
 				this.createNewMapAvatar(num, 'womanWalkBig', 24, 11, 'restaurantMap');
-				this.engine.network.send('changeViewMap', 'restaurantMap', num);
+				this.engine.network.send('changeViewMap', 'restaurantMap', num);*/
 			}
 			else if( entity.entity_x == 4 && entity.entity_y == 24 )
 			{	
