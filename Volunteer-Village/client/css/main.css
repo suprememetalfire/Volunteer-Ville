@@ -417,14 +417,6 @@ canvas
 	color:#000000;
 }
 
-#uiMenuButton_osd3 {
-	background-image:url(/Volunteer-Village/assets/ui/osd3.png);
-	z-index:11000;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:15px;
-	color:#000000;
-}
-
 .playerButton 
 {
 	width:250px;

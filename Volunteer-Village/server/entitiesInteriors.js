@@ -11,21 +11,21 @@ entitiesInteriors = new IgeClass({
 	// Create entities
 	load: function () {
 		// School Interior
-		for (var x = -13; x < 10; x+=1) {
-			for (var y = 4; y < 15; y+=1) {
+		for (var x = -10; x < 16; x+=1) {
+			for (var y = 5; y < 13; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
 					entity_y:y,
-					entity_id: 'schoolBase' + (x + '_' + y),
+					entity_id: 'schoolBase1' + (x + '_' + y),
 					entity_locale: LOCALE_EVERYWHERE,
 					asset_sheet_frame:(Math.ceil(Math.random() * 3)) + 1,
 					map_id: 'schoolMap',
 				});
 			}
 		}
-		for (var x = -1; x < 10; x+=1) {
-			for (var y = 14; y < 26; y+=1) {
+		for (var x = -1; x < 7; x+=1) {
+			for (var y = 13; y < 22; y+=1) {
 				this.engine.entities.create({
 					template_id: 'tileBase',
 					entity_x:x,
@@ -36,7 +36,7 @@ entitiesInteriors = new IgeClass({
 					map_id: 'schoolMap',
 				});
 			}
-		}				
+		}						
 		this.engine.entities.create({
 			template_id: 'schoolInterior',
 			entity_x:-2,
@@ -457,8 +457,8 @@ entitiesInteriors = new IgeClass({
 				template_id: 'exitIcon',
 				// Entity stuff
 				entity_id: 'schoolExit',
-				entity_x: 4,
-				entity_y: 25,
+				entity_x: 3,
+				entity_y: 21,
 				entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 				entity_persist:PERSIST_DISABLED,
 				map_id: 'schoolMap',

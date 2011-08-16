@@ -24,6 +24,20 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.8
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "site",
+			"asset_image_url" : "/Volunteer-Village/assets/buildings/site.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			167, 
+			113 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.87
+		});
 			
 		this.engine.assets.create({
 			"asset_id" : "restaurant",

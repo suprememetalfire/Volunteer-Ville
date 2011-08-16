@@ -1,6 +1,13 @@
-var _0x82e1=["\x69\x67\x65\x44\x65\x62\x75\x67","\x69\x67\x65\x44\x65\x62\x75\x67\x4C\x6F\x67","\x69\x67\x65\x44\x65\x62\x75\x67\x4C\x65\x76\x65\x6C","\x69\x6E\x66\x6F","\x77\x61\x72\x6E\x69\x6E\x67","\x65\x72\x72\x6F\x72","\x6C\x6F\x67","\x69\x67\x65\x44\x65\x62\x75\x67\x42\x72\x65\x61\x6B\x4F\x6E\x45\x72\x72\x6F\x72"];window[_0x82e1[0]]=true;window[_0x82e1[1]]=[];window[_0x82e1[2]]=[_0x82e1[3],_0x82e1[4],_0x82e1[5],_0x82e1[6]];window[_0x82e1[7]]=true;
+// Define some global debug variables
+window.igeDebug = true;
+window.igeDebugLog = [];
+window.igeDebugLevel = ['info', 'warning', 'error', 'log'];
+window.igeDebugBreakOnError = true;
 
-var _0x9afc=["\x69\x67\x65\x42\x6F\x6F\x74\x73\x74\x72\x61\x70","\x69\x67\x65","\x69\x67\x65\x47\x61\x6D\x65"];window[_0x9afc[0]]= new IgeBootstrap(onBoot);window[_0x9afc[1]]=null;window[_0x9afc[2]]=null;
+// Create the bootstrap instance and ask it to load our engine files
+window.igeBootstrap = new IgeBootstrap(onBoot);
+window.ige = null;
+window.igeGame = null;
 
 window.addEventListener('load', function () {
 	setTimeout(function () { window.igeBootstrap.process.apply(window.igeBootstrap); }, 200);
@@ -26,7 +33,6 @@ function onBoot () {
 			clicked: true,
 			musicOn: true,
 			player: null,
-myTime: null,
 			location: '',			
 			taskName: [],
 			taskList: [],
@@ -39,12 +45,135 @@ myTime: null,
 			display: true,
 			
 			init: function (engine) {
-				var _0x8356=["\x65\x6E\x67\x69\x6E\x65","\x73\x74\x61\x72\x74\x65\x64","\x65\x6E\x67\x69\x6E\x65\x52\x65\x61\x64\x79","\x62\x69\x6E\x64","\x6F\x6E","\x65\x76\x65\x6E\x74\x73","\x6E\x65\x74\x53\x65\x6E\x64\x53\x74\x61\x72\x74\x65\x64","\x61\x73\x73\x65\x74\x73","\x63\x6C\x69\x65\x6E\x74\x43\x6F\x6E\x6E\x65\x63\x74","\x6E\x65\x74\x77\x6F\x72\x6B","\x63\x6C\x69\x65\x6E\x74\x44\x69\x73\x63\x6F\x6E\x6E\x65\x63\x74","\x76\x69\x65\x77\x70\x6F\x72\x74\x41\x66\x74\x65\x72\x43\x72\x65\x61\x74\x65","\x76\x69\x65\x77\x70\x6F\x72\x74\x73","\x6D\x6F\x75\x73\x65\x64\x6F\x77\x6E","\x76\x69\x65\x77\x70\x6F\x72\x74\x4D\x6F\x75\x73\x65\x44\x6F\x77\x6E","\x6D\x6F\x75\x73\x65\x6D\x6F\x76\x65","\x76\x69\x65\x77\x70\x6F\x72\x74\x4D\x6F\x75\x73\x65\x4D\x6F\x76\x65","\x6D\x6F\x75\x73\x65\x75\x70","\x76\x69\x65\x77\x70\x6F\x72\x74\x4D\x6F\x75\x73\x65\x55\x70","\x6D\x6F\x75\x73\x65\x77\x68\x65\x65\x6C","\x76\x69\x65\x77\x70\x6F\x72\x74\x4D\x6F\x75\x73\x65\x57\x68\x65\x65\x6C","\x76\x69\x65\x77\x70\x6F\x72\x74\x41\x66\x74\x65\x72\x50\x61\x6E\x45\x6E\x64","\x64\x69\x72\x65\x63\x74\x69\x6F\x6E\x43\x68\x61\x6E\x67\x65","\x65\x6E\x74\x69\x74\x69\x65\x73","\x61\x76\x61\x74\x61\x72\x43\x72\x65\x61\x74\x65\x64","\x72\x65\x67\x69\x73\x74\x65\x72\x43\x6F\x6D\x6D\x61\x6E\x64","\x73\x65\x6E\x64\x55\x70\x64\x61\x74\x65","\x75\x70\x64\x61\x74\x65","\x75\x70\x64\x61\x74\x65\x57\x6F\x72\x6C\x64","\x6D\x6F\x76\x65\x41\x76\x61\x74\x61\x72","\x6D\x6F\x76\x65\x6D\x69\x6E\x69\x42\x75\x73","\x73\x77\x69\x74\x63\x68\x4D\x61\x70","\x63\x68\x61\x6E\x67\x65\x56\x69\x65\x77\x4D\x61\x70","\x75\x70\x64\x61\x74\x65\x43\x6F\x6D\x6D\x75\x6E\x69\x74\x79","\x64\x72\x69\x76\x65\x42\x75\x73","\x63\x72\x65\x61\x74\x65\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x64\x65\x73\x74\x72\x6F\x79\x54\x61\x73\x6B\x4F\x62\x6A\x65\x63\x74\x73","\x74\x61\x73\x6B\x5A\x65\x72\x6F","\x74\x61\x73\x6B\x4F\x6E\x65\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x4F\x6E\x65\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x46\x6F\x75\x72","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x46\x69\x76\x65","\x74\x61\x73\x6B\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x46\x6F\x75\x72\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x46\x6F\x75\x72\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x46\x6F\x75\x72","\x74\x61\x73\x6B\x53\x69\x78\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x53\x69\x78\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x45\x6C\x65\x76\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x45\x6C\x65\x76\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6C\x76\x65\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6C\x76\x65\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6C\x76\x65\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x54\x68\x69\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x68\x69\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x46\x6F\x75\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x46\x6F\x75\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x46\x6F\x75\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x46\x6F\x75\x72","\x74\x61\x73\x6B\x4E\x69\x6E\x65\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x4E\x69\x6E\x65\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x4F\x6E\x65\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x4F\x6E\x65\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x54\x77\x6F\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x54\x77\x6F\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x6F\x75\x72\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x6F\x75\x72\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x69\x76\x65\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x69\x76\x65\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x53\x69\x78","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x53\x65\x76\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x5A\x65\x72\x6F","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x4F\x6E\x65","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x6F","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x46\x6F\x75\x72","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x46\x69\x76\x65","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x53\x69\x78","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x53\x65\x76\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x45\x6C\x65\x76\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6C\x76\x65","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x68\x69\x72\x74\x65\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x46\x6F\x75\x72\x74\x65\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x53\x65\x76\x65\x6E\x74\x65\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x45\x69\x67\x68\x74\x65\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x4E\x69\x6E\x65\x74\x65\x65\x6E","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6E\x74\x79","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6E\x74\x79\x4F\x6E\x65","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6E\x74\x79\x54\x77\x6F","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6E\x74\x79\x46\x6F\x75\x72","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6E\x74\x79\x46\x69\x76\x65","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6E\x74\x79\x53\x69\x78","\x74\x61\x73\x6B\x53\x74\x61\x67\x65\x54\x77\x65\x6E\x74\x79\x53\x65\x76\x65\x6E","\x69\x6E\x74\x54\x61\x73\x6B","\x74\x61\x73\x6B\x4E\x61\x6D\x65","\x74\x61\x73\x6B\x4C\x69\x73\x74","\x74\x61\x73\x6B\x43\x6F\x6D\x70\x6C\x65\x74\x65\x64","\x3C\x62\x72\x3E\x3C\x2F\x62\x72\x3E\x3C\x62\x72\x3E\x3C\x2F\x62\x72\x3E\x20\x3C\x63\x65\x6E\x74\x65\x72\x3E","\x73\x63\x6F\x72\x65","\x68\x74\x6D\x6C","\x23\x75\x69\x4D\x65\x6E\x75\x42\x75\x74\x74\x6F\x6E\x5F\x6F\x73\x64","\x73\x65\x74\x48\x6F\x73\x74\x41\x6E\x64\x50\x6F\x72\x74","\x73\x74\x61\x72\x74"];this[_0x8356[0]]=engine;this[_0x8356[0]][_0x8356[5]][_0x8356[4]](_0x8356[1],this[_0x8356[3]](this[_0x8356[2]]));this[_0x8356[0]][_0x8356[7]][_0x8356[5]][_0x8356[4]](_0x8356[6],this[_0x8356[3]](this[_0x8356[6]]));this[_0x8356[0]][_0x8356[9]][_0x8356[5]][_0x8356[4]](_0x8356[8],this[_0x8356[3]](this[_0x8356[8]]));this[_0x8356[0]][_0x8356[9]][_0x8356[5]][_0x8356[4]](_0x8356[10],this[_0x8356[3]](this[_0x8356[10]]));this[_0x8356[0]][_0x8356[12]][_0x8356[5]][_0x8356[4]](_0x8356[11],this[_0x8356[3]](this[_0x8356[11]]));this[_0x8356[0]][_0x8356[12]][_0x8356[5]][_0x8356[4]](_0x8356[13],this[_0x8356[3]](this[_0x8356[14]]));this[_0x8356[0]][_0x8356[12]][_0x8356[5]][_0x8356[4]](_0x8356[15],this[_0x8356[3]](this[_0x8356[16]]));this[_0x8356[0]][_0x8356[12]][_0x8356[5]][_0x8356[4]](_0x8356[17],this[_0x8356[3]](this[_0x8356[18]]));this[_0x8356[0]][_0x8356[12]][_0x8356[5]][_0x8356[4]](_0x8356[19],this[_0x8356[3]](this[_0x8356[20]]));this[_0x8356[0]][_0x8356[12]][_0x8356[5]][_0x8356[4]](_0x8356[21],this[_0x8356[3]](this[_0x8356[21]]));this[_0x8356[0]][_0x8356[23]][_0x8356[5]][_0x8356[4]](_0x8356[22],this[_0x8356[3]](this[_0x8356[22]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[24],this[_0x8356[3]](this[_0x8356[24]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[26],this[_0x8356[3]](this[_0x8356[26]]));this[_0x8356[27]]=setInterval(this[_0x8356[3]](this[_0x8356[28]]),1000);this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[29],this[_0x8356[3]](this[_0x8356[29]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[30],this[_0x8356[3]](this[_0x8356[30]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[31],this[_0x8356[3]](this[_0x8356[31]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[32],this[_0x8356[3]](this[_0x8356[32]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[33],this[_0x8356[3]](this[_0x8356[33]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[34],this[_0x8356[3]](this[_0x8356[34]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[35],this[_0x8356[3]](this[_0x8356[35]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[36],this[_0x8356[3]](this[_0x8356[36]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[37],this[_0x8356[3]](this[_0x8356[37]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[38],this[_0x8356[3]](this[_0x8356[38]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[39],this[_0x8356[3]](this[_0x8356[39]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[40],this[_0x8356[3]](this[_0x8356[40]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[41],this[_0x8356[3]](this[_0x8356[41]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[42],this[_0x8356[3]](this[_0x8356[42]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[43],this[_0x8356[3]](this[_0x8356[43]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[44],this[_0x8356[3]](this[_0x8356[44]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[45],this[_0x8356[3]](this[_0x8356[45]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[46],this[_0x8356[3]](this[_0x8356[46]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[47],this[_0x8356[3]](this[_0x8356[47]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[48],this[_0x8356[3]](this[_0x8356[48]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[49],this[_0x8356[3]](this[_0x8356[49]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[50],this[_0x8356[3]](this[_0x8356[50]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[51],this[_0x8356[3]](this[_0x8356[51]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[52],this[_0x8356[3]](this[_0x8356[52]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[53],this[_0x8356[3]](this[_0x8356[53]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[54],this[_0x8356[3]](this[_0x8356[54]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[55],this[_0x8356[3]](this[_0x8356[55]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[56],this[_0x8356[3]](this[_0x8356[56]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[57],this[_0x8356[3]](this[_0x8356[57]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[58],this[_0x8356[3]](this[_0x8356[58]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[59],this[_0x8356[3]](this[_0x8356[59]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[60],this[_0x8356[3]](this[_0x8356[60]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[61],this[_0x8356[3]](this[_0x8356[61]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[62],this[_0x8356[3]](this[_0x8356[62]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[63],this[_0x8356[3]](this[_0x8356[63]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[64],this[_0x8356[3]](this[_0x8356[64]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[65],this[_0x8356[3]](this[_0x8356[65]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[66],this[_0x8356[3]](this[_0x8356[66]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[67],this[_0x8356[3]](this[_0x8356[67]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[68],this[_0x8356[3]](this[_0x8356[68]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[69],this[_0x8356[3]](this[_0x8356[69]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[70],this[_0x8356[3]](this[_0x8356[70]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[71],this[_0x8356[3]](this[_0x8356[71]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[72],this[_0x8356[3]](this[_0x8356[72]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[73],this[_0x8356[3]](this[_0x8356[73]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[74],this[_0x8356[3]](this[_0x8356[74]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[75],this[_0x8356[3]](this[_0x8356[75]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[76],this[_0x8356[3]](this[_0x8356[76]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[77],this[_0x8356[3]](this[_0x8356[77]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[78],this[_0x8356[3]](this[_0x8356[78]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[79],this[_0x8356[3]](this[_0x8356[79]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[80],this[_0x8356[3]](this[_0x8356[80]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[81],this[_0x8356[3]](this[_0x8356[81]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[82],this[_0x8356[3]](this[_0x8356[82]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[83],this[_0x8356[3]](this[_0x8356[83]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[84],this[_0x8356[3]](this[_0x8356[84]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[85],this[_0x8356[3]](this[_0x8356[85]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[86],this[_0x8356[3]](this[_0x8356[86]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[87],this[_0x8356[3]](this[_0x8356[87]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[88],this[_0x8356[3]](this[_0x8356[88]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[89],this[_0x8356[3]](this[_0x8356[89]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[90],this[_0x8356[3]](this[_0x8356[90]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[91],this[_0x8356[3]](this[_0x8356[91]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[92],this[_0x8356[3]](this[_0x8356[92]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[93],this[_0x8356[3]](this[_0x8356[93]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[94],this[_0x8356[3]](this[_0x8356[94]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[95],this[_0x8356[3]](this[_0x8356[95]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[96],this[_0x8356[3]](this[_0x8356[96]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[97],this[_0x8356[3]](this[_0x8356[97]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[98],this[_0x8356[3]](this[_0x8356[98]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[99],this[_0x8356[3]](this[_0x8356[99]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[100],this[_0x8356[3]](this[_0x8356[100]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[101],this[_0x8356[3]](this[_0x8356[101]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[102],this[_0x8356[3]](this[_0x8356[102]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[103],this[_0x8356[3]](this[_0x8356[103]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[104],this[_0x8356[3]](this[_0x8356[104]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[105],this[_0x8356[3]](this[_0x8356[105]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[106],this[_0x8356[3]](this[_0x8356[106]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[107],this[_0x8356[3]](this[_0x8356[107]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[108],this[_0x8356[3]](this[_0x8356[108]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[109],this[_0x8356[3]](this[_0x8356[109]]));this[_0x8356[0]][_0x8356[9]][_0x8356[25]](_0x8356[110],this[_0x8356[3]](this[_0x8356[110]]));for(var i=0;i<28;i++){this[_0x8356[111]][i]=-1;this[_0x8356[112]][i]=i;this[_0x8356[113]][i]=0;this[_0x8356[114]][i]=false;} ;$(_0x8356[118])[_0x8356[117]](_0x8356[115]+this[_0x8356[116]]);this[_0x8356[0]][_0x8356[9]][_0x8356[119]](null,8080);this[_0x8356[0]][_0x8356[9]][_0x8356[120]]();
+				this.engine = engine;
+				
+				// Setup engine event hooks
+				this.engine.events.on('started', this.bind(this.engineReady));
+				this.engine.assets.events.on('netSendStarted', this.bind(this.netSendStarted));
+				this.engine.network.events.on('clientConnect', this.bind(this.clientConnect));
+				this.engine.network.events.on('clientDisconnect', this.bind(this.clientDisconnect));
+				this.engine.viewports.events.on('viewportAfterCreate', this.bind(this.viewportAfterCreate));
+				this.engine.viewports.events.on('mousedown', this.bind(this.viewportMouseDown));
+				this.engine.viewports.events.on('mousemove', this.bind(this.viewportMouseMove));
+				this.engine.viewports.events.on('mouseup', this.bind(this.viewportMouseUp));
+				this.engine.viewports.events.on('mousewheel', this.bind(this.viewportMouseWheel));
+				this.engine.viewports.events.on('viewportAfterPanEnd', this.bind(this.viewportAfterPanEnd));
+				//this.engine.paths.events.on('pathComplete', this.bind(this.pathComplete));
+				this.engine.entities.events.on('directionChange', this.bind(this.directionChange));
+
+        			this.engine.network.registerCommand('avatarCreated', this.bind(this.avatarCreated));
+
+				this.engine.network.registerCommand('sendUpdate', this.bind(this.sendUpdate));
+
+				this.update = setInterval(this.bind(this.updateWorld), 1000); 
+				
+				// Create some game specific network commands
+				this.engine.network.registerCommand('moveAvatar', this.bind(this.moveAvatar));
+this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
+
+				this.engine.network.registerCommand('switchMap', this.bind(this.switchMap));
+				this.engine.network.registerCommand('changeViewMap', this.bind(this.changeViewMap));
+				this.engine.network.registerCommand('updateCommunity', this.bind(this.updateCommunity));
+				this.engine.network.registerCommand('driveBus', this.bind(this.driveBus));
+				this.engine.network.registerCommand('createTaskObjects', this.bind(this.createTaskObjects));
+				this.engine.network.registerCommand('destroyTaskObjects', this.bind(this.destroyTaskObjects));
+				this.engine.network.registerCommand('taskZeroPartOne', this.bind(this.taskZeroPartOne));	
+				this.engine.network.registerCommand('taskZeroPartTwo', this.bind(this.taskZeroPartTwo));	
+				this.engine.network.registerCommand('taskOnePartOne', this.bind(this.taskOnePartOne));
+				this.engine.network.registerCommand('taskOnePartTwo', this.bind(this.taskOnePartTwo));
+				this.engine.network.registerCommand('taskTwoPartOne', this.bind(this.taskTwoPartOne));
+				this.engine.network.registerCommand('taskTwoPartTwo', this.bind(this.taskTwoPartTwo));
+				this.engine.network.registerCommand('taskTwoPartThree', this.bind(this.taskTwoPartThree));
+				this.engine.network.registerCommand('taskTwoPartFour', this.bind(this.taskTwoPartFour));
+				this.engine.network.registerCommand('taskTwoPartFive', this.bind(this.taskTwoPartFive));
+				this.engine.network.registerCommand('taskThree', this.bind(this.taskThree));
+				this.engine.network.registerCommand('taskFourPartOne', this.bind(this.taskFourPartOne));
+				this.engine.network.registerCommand('taskFourPartTwo', this.bind(this.taskFourPartTwo));
+				this.engine.network.registerCommand('taskFivePartOne', this.bind(this.taskFivePartOne));
+				this.engine.network.registerCommand('taskFivePartTwo', this.bind(this.taskFivePartTwo));
+				this.engine.network.registerCommand('taskFivePartThree', this.bind(this.taskFivePartThree));
+				this.engine.network.registerCommand('taskFivePartFour', this.bind(this.taskFivePartFour));
+				this.engine.network.registerCommand('taskSixPartOne', this.bind(this.taskSixPartOne));
+				this.engine.network.registerCommand('taskSixPartTwo', this.bind(this.taskSixPartTwo));
+				this.engine.network.registerCommand('taskSevenPartOne', this.bind(this.taskSevenPartOne));
+				this.engine.network.registerCommand('taskSevenPartTwo', this.bind(this.taskSevenPartTwo));
+				this.engine.network.registerCommand('taskTenPartOne', this.bind(this.taskTenPartOne));
+				this.engine.network.registerCommand('taskTenPartTwo', this.bind(this.taskTenPartTwo));
+				this.engine.network.registerCommand('taskElevenPartOne', this.bind(this.taskElevenPartOne));
+				this.engine.network.registerCommand('taskElevenPartTwo', this.bind(this.taskElevenPartTwo));
+				this.engine.network.registerCommand('taskTwelvePartOne', this.bind(this.taskTwelvePartOne));
+				this.engine.network.registerCommand('taskTwelvePartTwo', this.bind(this.taskTwelvePartTwo));
+				this.engine.network.registerCommand('taskTwelvePartThree', this.bind(this.taskTwelvePartThree));
+				this.engine.network.registerCommand('taskThirteenPartOne', this.bind(this.taskThirteenPartOne));
+				this.engine.network.registerCommand('taskThirteenPartTwo', this.bind(this.taskThirteenPartTwo));
+				this.engine.network.registerCommand('taskFourteenPartOne', this.bind(this.taskFourteenPartOne));
+				this.engine.network.registerCommand('taskFourteenPartTwo', this.bind(this.taskFourteenPartTwo));
+				this.engine.network.registerCommand('taskFourteenPartThree', this.bind(this.taskFourteenPartThree));
+				this.engine.network.registerCommand('taskSeventeenPartOne', this.bind(this.taskSeventeenPartOne));
+				this.engine.network.registerCommand('taskSeventeenPartTwo', this.bind(this.taskSeventeenPartTwo));
+				this.engine.network.registerCommand('taskEighteenPartOne', this.bind(this.taskEighteenPartOne));
+				this.engine.network.registerCommand('taskEighteenPartTwo', this.bind(this.taskEighteenPartTwo));
+				this.engine.network.registerCommand('taskEighteenPartThree', this.bind(this.taskEighteenPartThree));
+				this.engine.network.registerCommand('taskEighteenPartFour', this.bind(this.taskEighteenPartFour));
+				this.engine.network.registerCommand('taskNineteenPartOne', this.bind(this.taskNineteenPartOne));
+				this.engine.network.registerCommand('taskNineteenPartTwo', this.bind(this.taskNineteenPartTwo));
+				this.engine.network.registerCommand('taskTwentyPartOne', this.bind(this.taskTwentyPartOne));
+				this.engine.network.registerCommand('taskTwentyPartTwo', this.bind(this.taskTwentyPartTwo));
+				this.engine.network.registerCommand('taskTwentyOnePartOne', this.bind(this.taskTwentyOnePartOne));
+				this.engine.network.registerCommand('taskTwentyOnePartTwo', this.bind(this.taskTwentyOnePartTwo));
+				this.engine.network.registerCommand('taskTwentyTwoPartOne', this.bind(this.taskTwentyTwoPartOne));
+				this.engine.network.registerCommand('taskTwentyTwoPartTwo', this.bind(this.taskTwentyTwoPartTwo));
+				this.engine.network.registerCommand('taskTwentyFourPartOne', this.bind(this.taskTwentyFourPartOne));
+				this.engine.network.registerCommand('taskTwentyFourPartTwo', this.bind(this.taskTwentyFourPartTwo));
+				this.engine.network.registerCommand('taskTwentyFivePartOne', this.bind(this.taskTwentyFivePartOne));
+				this.engine.network.registerCommand('taskTwentyFivePartTwo', this.bind(this.taskTwentyFivePartTwo));
+				this.engine.network.registerCommand('taskTwentySix', this.bind(this.taskTwentySix));
+				this.engine.network.registerCommand('taskTwentySevenPartOne', this.bind(this.taskTwentySevenPartOne));
+				this.engine.network.registerCommand('taskTwentySevenPartTwo', this.bind(this.taskTwentySevenPartTwo));
+				this.engine.network.registerCommand('taskStageZero', this.bind(this.taskStageZero));
+				this.engine.network.registerCommand('taskStageOne', this.bind(this.taskStageOne));
+				this.engine.network.registerCommand('taskStageTwo', this.bind(this.taskStageTwo));
+				this.engine.network.registerCommand('taskStageThree', this.bind(this.taskStageThree));
+				this.engine.network.registerCommand('taskStageFour', this.bind(this.taskStageFour));
+				this.engine.network.registerCommand('taskStageFive', this.bind(this.taskStageFive));
+				this.engine.network.registerCommand('taskStageSix', this.bind(this.taskStageSix));
+				this.engine.network.registerCommand('taskStageSeven', this.bind(this.taskStageSeven));
+				this.engine.network.registerCommand('taskStageTen', this.bind(this.taskStageTen));
+				this.engine.network.registerCommand('taskStageEleven', this.bind(this.taskStageEleven));
+				this.engine.network.registerCommand('taskStageTwelve', this.bind(this.taskStageTwelve));
+				this.engine.network.registerCommand('taskStageThirteen', this.bind(this.taskStageThirteen));
+				this.engine.network.registerCommand('taskStageFourteen', this.bind(this.taskStageFourteen));
+				this.engine.network.registerCommand('taskStageSeventeen', this.bind(this.taskStageSeventeen));
+				this.engine.network.registerCommand('taskStageEighteen', this.bind(this.taskStageEighteen));
+				this.engine.network.registerCommand('taskStageNineteen', this.bind(this.taskStageNineteen));
+				this.engine.network.registerCommand('taskStageTwenty', this.bind(this.taskStageTwenty));
+				this.engine.network.registerCommand('taskStageTwentyOne', this.bind(this.taskStageTwentyOne));
+				this.engine.network.registerCommand('taskStageTwentyTwo', this.bind(this.taskStageTwentyTwo));
+				this.engine.network.registerCommand('taskStageTwentyFour', this.bind(this.taskStageTwentyFour));
+				this.engine.network.registerCommand('taskStageTwentyFive', this.bind(this.taskStageTwentyFive));
+				this.engine.network.registerCommand('taskStageTwentySix', this.bind(this.taskStageTwentySix));
+				this.engine.network.registerCommand('taskStageTwentySeven', this.bind(this.taskStageTwentySeven));
+
+				for( var i = 0; i < 28; i++ )
+				{
+					this.intTask[i] = -1;
+					this.taskName[i] = i;
+					this.taskList[i] = 0;
+					this.taskCompleted[i] = false;
+				}
+
+				$('#uiMenuButton_osd').html('<br></br><br></br> <center>' + this.score);
+				
+				// Setup the network to the server
+				this.engine.network.setHostAndPort(null, 8080);
+				this.engine.network.start();
 			},
 			
 			// What to do when the engine is ready to use
 			engineReady: function () {
-				var _0x51be=["\x6E\x65\x74\x53\x79\x6E\x63\x53\x74\x61\x72\x74","\x74\x69\x6D\x65","\x65\x6E\x67\x69\x6E\x65","\x63\x68\x65\x63\x6B\x46\x6F\x72\x53\x6F\x75\x6E\x64"];this[_0x51be[2]][_0x51be[1]][_0x51be[0]](30000);this[_0x51be[3]]();
+				// Start a sync test and schedule it to automatically do another one every so often (currently 30 seconds)
+				this.engine.time.netSyncStart(30000);
+				this.checkForSound();
 			},
 
 			/*checkForSound: function () {
@@ -85,11 +214,11 @@ myTime: null,
 			},
 			
 			clientConnect: function (sessionId) {
-				var _0xd517=["\x50\x6C\x61\x79\x65\x72\x20\x63\x6F\x6E\x6E\x65\x63\x74\x65\x64\x20\x77\x69\x74\x68\x20\x73\x65\x73\x73\x69\x6F\x6E\x3A","\x6C\x6F\x67"];console[_0xd517[1]](_0xd517[0],sessionId);
+				console.log('Player connected with session:', sessionId);
 			},
 			
 			clientDisconnect: function (sessionId) {
-				var _0x6475=["\x50\x6C\x61\x79\x65\x72\x20\x64\x69\x73\x63\x6F\x6E\x6E\x65\x63\x74\x65\x64\x20\x77\x69\x74\x68\x20\x73\x65\x73\x73\x69\x6F\x6E\x3A\x20","\x6C\x6F\x67"];console[_0x6475[1]](_0x6475[0]+sessionId);
+				console.log('Player disconnected with session: ' + sessionId);
 			},
 
 			switchMusic: function ()
@@ -108,22 +237,32 @@ myTime: null,
 
 			sendUpdate: function( data ) 
 			{
-				var _0x9b16=["\x73\x63\x6F\x72\x65","\x3C\x62\x72\x3E\x3C\x2F\x62\x72\x3E\x3C\x62\x72\x3E\x3C\x2F\x62\x72\x3E\x20\x3C\x63\x65\x6E\x74\x65\x72\x3E","\x68\x74\x6D\x6C","\x23\x75\x69\x4D\x65\x6E\x75\x42\x75\x74\x74\x6F\x6E\x5F\x6F\x73\x64"];this[_0x9b16[0]]=data;$(_0x9b16[3])[_0x9b16[2]](_0x9b16[1]+this[_0x9b16[0]]);
-			},
-
-			gameTime: function()
-			{
-				this.myTime += 60;
+				this.score = data;
+				$( '#uiMenuButton_osd' ).html( '<br></br><br></br> <center>' + this.score );
 			},
 
 			updateWorld: function () 
 			{
-				var _0xb197=["\x6F\x73\x64\x4F\x6E\x65","\x74\x61\x73\x6B\x73","\x67\x61\x6D\x65\x54\x69\x6D\x65","\x3C\x62\x72\x3E\x3C\x2F\x62\x72\x3E\x20\x3C\x63\x65\x6E\x74\x65\x72\x3E","\x6D\x79\x54\x69\x6D\x65","\x3C\x62\x72\x3E\x3C\x2F\x62\x72\x3E","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x68\x74\x6D\x6C","\x23\x75\x69\x4D\x65\x6E\x75\x42\x75\x74\x74\x6F\x6E\x5F\x6F\x73\x64\x33","\x63\x6F\x75\x6E\x74\x65\x72","\x73\x74\x72\x43\x75\x72\x72\x65\x6E\x74\x54\x61\x73\x6B","","\x73\x77\x69\x74\x63\x68\x4D\x61\x70","\x73\x63\x6F\x72\x65","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B","\x65\x6E\x67\x69\x6E\x65"];this[_0xb197[0]]();this[_0xb197[1]]();this[_0xb197[2]]();$(_0xb197[8])[_0xb197[7]](_0xb197[3]+this[_0xb197[4]]+_0xb197[5]+this[_0xb197[6]]);if(this[_0xb197[9]]<=10){this[_0xb197[9]]++;} ;if(this[_0xb197[9]]>=5&&this[_0xb197[9]]<10){this[_0xb197[10]]=_0xb197[11];} ;this[_0xb197[16]][_0xb197[15]][_0xb197[14]](_0xb197[12],this[_0xb197[13]]);
+				this.osdOne();
+
+				this.tasks();					
+
+				if( this.counter <= 10 )
+				{
+					this.counter++;
+				}
+
+				if( this.counter >= 5 && this.counter < 10 )
+				{
+					this.strCurrentTask = '';
+				}			
+
+				this.engine.network.send( 'switchMap', this.score );
 			},
 
 			osdOne: function()
 			{
-				var _0x191e=["\x3C\x62\x72\x3E\x3C\x2F\x62\x72\x3E\x20\x3C\x63\x65\x6E\x74\x65\x72\x3E","\x73\x74\x72\x43\x75\x72\x72\x65\x6E\x74\x54\x61\x73\x6B","\x68\x74\x6D\x6C","\x23\x75\x69\x4D\x65\x6E\x75\x42\x75\x74\x74\x6F\x6E\x5F\x6F\x73\x64\x31"];$(_0x191e[3])[_0x191e[2]](_0x191e[0]+this[_0x191e[1]]);
+				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask );
 			},
 
 			guide: function (clientX, clientY)
@@ -143,167 +282,1007 @@ myTime: null,
 			},
 
 			changeViewMap: function(mapname, num)
-			{var _0x42d7=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x6D\x61\x69\x6E\x56\x70","\x62\x79\x49\x64","\x76\x69\x65\x77\x70\x6F\x72\x74\x73","\x65\x6E\x67\x69\x6E\x65","\x73\x65\x74\x4D\x61\x70","\x6D\x61\x69\x6E\x43\x61\x6D","\x63\x61\x6D\x65\x72\x61\x73"];if(this[_0x42d7[1]][_0x42d7[0]]==num){this[_0x42d7[5]][_0x42d7[4]][_0x42d7[6]](this[_0x42d7[5]][_0x42d7[4]][_0x42d7[3]][_0x42d7[2]],mapname);var cameraP=this[_0x42d7[5]][_0x42d7[8]][_0x42d7[3]][_0x42d7[7]];} ;
+			{
+				if( this.player.sessionId == num )
+				{
+					this.engine.viewports.setMap(this.engine.viewports.byId['mainVp'], mapname);	
+					var cameraP = this.engine.cameras.byId['mainCam'];
+					//this.engine.cameras.lookAt(this.cameraP, this.player.entity_x, this.player.entity_y);
+					//this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], this.player.sessionId);
+				}
 			},
 			
 			taskStageZero: function( value, num )
 			{
-				var _0x16d7=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x16d7[1]][_0x16d7[0]]==num){this[_0x16d7[2]][0]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[0] = value;
+				}
 			},
 
 			taskStageOne: function( value, num )
 			{
-				var _0x62e0=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x62e0[1]][_0x62e0[0]]==num){this[_0x62e0[2]][1]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[1] = value;
+				}
 			},
 
 			taskStageTwo: function( value, num )
 			{
-				var _0x112c=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x112c[1]][_0x112c[0]]==num){this[_0x112c[2]][2]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[2] = value;
+				}
 			},
 
 			taskStageThree: function( value, num )
 			{
-				var _0xb3e3=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0xb3e3[1]][_0xb3e3[0]]==num){this[_0xb3e3[2]][3]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[3] = value;
+				}
 			},
 
 			taskStageFour: function( value, num )
 			{
-				var _0x445a=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x445a[1]][_0x445a[0]]==num){this[_0x445a[2]][4]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[4] = value;
+				}
 			},
 
 			taskStageFive: function( value, num )
 			{
-				var _0x2a26=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x2a26[1]][_0x2a26[0]]==num){this[_0x2a26[2]][5]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[5] = value;
+				}
 			},
 
 			taskStageSix: function( value, num )
 			{
-				var _0x1304=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x1304[1]][_0x1304[0]]==num){this[_0x1304[2]][6]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[6] = value;
+				}
 			},
 
 			taskStageSeven: function( value, num )
 			{
-				var _0x30c0=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x30c0[1]][_0x30c0[0]]==num){this[_0x30c0[2]][7]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[7] = value;
+				}
 			},
 
 			taskStageEight: function( value, num )
 			{
-				var _0xc5ff=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0xc5ff[1]][_0xc5ff[0]]==num){this[_0xc5ff[2]][8]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[8] = value;
+				}
 			},
 
 			taskStageNine: function( value, num )
 			{
-				var _0x97ca=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x97ca[1]][_0x97ca[0]]==num){this[_0x97ca[2]][9]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[9] = value;
+				}
 			},
 		
 			taskStageTen: function( value, num )
 			{
-				var _0x5658=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x5658[1]][_0x5658[0]]==num){this[_0x5658[2]][10]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[10] = value;
+				}
 			},
 
 			taskStageEleven: function( value, num )
 			{
-				var _0xe2fc=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0xe2fc[1]][_0xe2fc[0]]==num){this[_0xe2fc[2]][11]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[11] = value;
+				}
 			},
 
 			taskStageTwelve: function( value, num )
 			{
-				var _0xe27e=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0xe27e[1]][_0xe27e[0]]==num){this[_0xe27e[2]][12]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[12] = value;
+				}
 			},
 
 			taskStageThirteen: function( value, num )
 			{
-				var _0x9be3=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x9be3[1]][_0x9be3[0]]==num){this[_0x9be3[2]][13]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[13] = value;
+				}
 			},
 
 			taskStageFourteen: function( value, num )
 			{
-				var _0x7d0d=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x7d0d[1]][_0x7d0d[0]]==num){this[_0x7d0d[2]][14]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[14] = value;
+				}
 			},
 
 			taskStageFifteen: function( value, num )
 			{
-				var _0x626d=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x626d[1]][_0x626d[0]]==num){this[_0x626d[2]][15]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[15] = value;
+				}
 			},
 
 			taskStageSixteen: function( value, num )
 			{
-				var _0x911c=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x911c[1]][_0x911c[0]]==num){this[_0x911c[2]][16]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[16] = value;
+				}
 			},
 
 			taskStageSeventeen: function( value, num )
 			{
-				var _0xbfa7=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0xbfa7[1]][_0xbfa7[0]]==num){this[_0xbfa7[2]][17]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[17] = value;
+				}
 			},
 
 			taskStageEighteen: function( value, num )
 			{
-				var _0x5aee=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x5aee[1]][_0x5aee[0]]==num){this[_0x5aee[2]][18]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[18] = value;
+				}
 			},
 
 			taskStageNineteen: function( value, num )
 			{
-				var _0x9de1=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x9de1[1]][_0x9de1[0]]==num){this[_0x9de1[2]][19]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[19] = value;
+				}
 			},
 
 			taskStageTwenty: function( value, num )
 			{
-				var _0xee08=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0xee08[1]][_0xee08[0]]==num){this[_0xee08[2]][20]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[20] = value;
+				}
 			},
 
 			taskStageTwentyOne: function( value, num )
 			{
-				var _0x377c=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x377c[1]][_0x377c[0]]==num){this[_0x377c[2]][21]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[21] = value;
+				}
 			},
 
 			taskStageTwentyTwo: function( value, num )
 			{
-				var _0x5218=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x5218[1]][_0x5218[0]]==num){this[_0x5218[2]][22]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[22] = value;
+				}
 			},
 
 			taskStageTwentyThree: function( value, num )
 			{
-				var _0x263d=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x263d[1]][_0x263d[0]]==num){this[_0x263d[2]][23]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[23] = value;
+				}
 			},
 
 			taskStageTwentyFour: function( value, num )
 			{
-				var _0x4cbb=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x4cbb[1]][_0x4cbb[0]]==num){this[_0x4cbb[2]][24]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[24] = value;
+				}
 			},
 
 			taskStageTwentyFive: function( value, num )
 			{
-				var _0x737e=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x737e[1]][_0x737e[0]]==num){this[_0x737e[2]][25]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[25] = value;
+				}
 			},
 
 			taskStageTwentySix: function( value, num )
 			{
-				var _0x5e6c=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x5e6c[1]][_0x5e6c[0]]==num){this[_0x5e6c[2]][26]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[26] = value;
+				}
 			},
 
 			taskStageTwentySeven: function( value, num )
 			{
-				var _0x8942=["\x73\x65\x73\x73\x69\x6F\x6E\x49\x64","\x70\x6C\x61\x79\x65\x72","\x69\x6E\x74\x54\x61\x73\x6B"];if(this[_0x8942[1]][_0x8942[0]]==num){this[_0x8942[2]][27]=value;} ;
+				if( this.player.sessionId == num )
+				{
+					this.intTask[27] = value;
+				}
 			},
 
 			tasks: function()
 			{
-				var _0xc175=["\x6F\x75\x74\x70\x75\x74","\x74\x61\x73\x6B\x4E\x61\x6D\x65","\x69\x6E\x74\x54\x61\x73\x6B","\x74\x61\x73\x6B\x5A\x65\x72\x6F","\x70\x6C\x61\x79\x65\x72","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B","\x65\x6E\x67\x69\x6E\x65","\x73\x74\x72\x43\x75\x72\x72\x65\x6E\x74\x54\x61\x73\x6B","\x42\x61\x63\x6B\x20\x54\x6F\x20\x53\x63\x68\x6F\x6F\x6C","\x59\x6F\x75\x76\x65\x20\x4A\x75\x73\x74\x20\x42\x65\x65\x6E\x20\x53\x63\x68\x6F\x6F\x6C\x65\x64","\x74\x61\x73\x6B\x4C\x69\x73\x74","\x63\x6F\x75\x6E\x74\x65\x72","\x74\x61\x73\x6B\x4F\x6E\x65\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x41\x6E\x69\x6D\x61\x6C\x20\x53\x68\x65\x6C\x74\x65\x72","\x74\x61\x73\x6B\x4F\x6E\x65\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x43\x6F\x6D\x70\x75\x74\x65\x72","\x55\x70\x64\x61\x74\x65\x64","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x54\x77\x6F","\x54\x61\x6C\x6B\x20\x54\x6F\x20\x54\x68\x65\x20\x52\x65\x63\x65\x70\x74\x69\x6F\x6E\x69\x73\x74","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x54\x68\x65\x20\x44\x6F\x67\x20\x49\x73\x20\x57\x61\x69\x74\x69\x6E\x67\x20\x4F\x75\x74\x73\x69\x64\x65","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x46\x6F\x75\x72","\x57\x61\x6C\x6B\x20\x54\x6F\x20\x54\x68\x65\x20\x50\x61\x72\x6B","\x74\x61\x73\x6B\x54\x77\x6F\x50\x61\x72\x74\x46\x69\x76\x65","\x54\x61\x6B\x65\x20\x54\x68\x65\x20\x44\x6F\x67\x20\x42\x61\x63\x6B\x20\x54\x6F\x20\x54\x68\x65\x20\x41\x6E\x69\x6D\x61\x6C\x20\x53\x68\x65\x6C\x74\x65\x72","\x44\x6F\x6E\x65","\x74\x61\x73\x6B\x54\x68\x72\x65\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x42\x75\x73\x20\x53\x68\x65\x6C\x74\x65\x72","\x74\x61\x73\x6B\x46\x6F\x75\x72\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x43\x68\x61\x72\x69\x74\x79\x20\x53\x68\x6F\x70","\x74\x61\x73\x6B\x46\x6F\x75\x72\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x43\x6F\x75\x6E\x74\x65\x72","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x43\x72\x65\x63\x68\x65","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x54\x77\x6F","\x41\x6C\x6C\x20\x41\x62\x6F\x61\x72\x64","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x44\x72\x69\x76\x65\x20\x54\x6F\x20\x54\x68\x65\x20\x50\x61\x72\x6B","\x74\x61\x73\x6B\x46\x69\x76\x65\x50\x61\x72\x74\x46\x6F\x75\x72","\x52\x65\x74\x75\x72\x6E\x20\x54\x68\x65\x20\x6D\x69\x6E\x69\x42\x75\x73","\x74\x61\x73\x6B\x53\x69\x78\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x46\x69\x72\x65\x20\x53\x74\x61\x74\x69\x6F\x6E","\x74\x61\x73\x6B\x53\x69\x78\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x4F\x75\x74\x73\x69\x64\x65","\x57\x61\x73\x68\x65\x64","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x4E\x75\x6D\x62\x65\x72\x20\x4F\x6E\x65\x2C\x20\x48\x65\x6C\x70\x69\x6E\x67\x20\x48\x61\x6E\x64\x20\x4C\x61\x6E\x65","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x46\x69\x78\x20\x54\x68\x65\x20\x52\x6F\x6F\x66","\x46\x69\x78\x65\x64","\x74\x61\x73\x6B\x54\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x48\x6F\x73\x70\x69\x74\x61\x6C","\x74\x61\x73\x6B\x54\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x54\x61\x6C\x6B\x20\x54\x6F\x20\x41\x20\x50\x61\x74\x69\x65\x6E\x74","\x54\x61\x6C\x6B\x69\x6E\x67","\x74\x61\x73\x6B\x45\x6C\x65\x76\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x45\x6C\x65\x76\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x4B\x69\x64\x73","\x43\x6C\x6F\x77\x6E\x69\x6E\x67\x20\x41\x72\x6F\x75\x6E\x64","\x74\x61\x73\x6B\x54\x77\x65\x6C\x76\x65\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x44\x65\x70\x6F\x74","\x74\x61\x73\x6B\x54\x77\x65\x6C\x76\x65\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x74\x6F\x20\x48\x6F\x75\x73\x65","\x74\x61\x73\x6B\x54\x77\x65\x6C\x76\x65\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x52\x65\x74\x75\x72\x6E\x20\x74\x6F\x20\x44\x65\x70\x6F\x74","\x74\x61\x73\x6B\x54\x68\x69\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x4D\x65\x61\x6C\x73\x20\x4F\x6E\x20\x57\x68\x65\x65\x6C\x73\x20\x44\x65\x70\x6F\x74","\x74\x61\x73\x6B\x54\x68\x69\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x43\x6F\x6F\x6B\x65\x72","\x43\x6F\x6F\x6B\x65\x64","\x74\x61\x73\x6B\x46\x6F\x75\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x53\x68\x6F\x70\x70\x69\x6E\x67\x20\x43\x65\x6E\x74\x72\x65","\x74\x61\x73\x6B\x46\x6F\x75\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x50\x69\x63\x6B\x75\x70\x20\x47\x72\x6F\x63\x65\x72\x69\x65\x73","\x74\x61\x73\x6B\x46\x6F\x75\x72\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x52\x65\x74\x75\x72\x6E\x20\x54\x6F\x20\x54\x68\x65\x20\x44\x65\x70\x6F\x74","\x44\x65\x6C\x69\x76\x65\x72\x65\x64","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x4F\x6C\x64\x20\x46\x6F\x6C\x6B\x73\x20\x48\x6F\x6D\x65","\x74\x61\x73\x6B\x53\x65\x76\x65\x6E\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x68\x72\x65\x65","\x74\x61\x73\x6B\x45\x69\x67\x68\x74\x65\x65\x6E\x50\x61\x72\x74\x46\x6F\x75\x72","\x74\x61\x73\x6B\x4E\x69\x6E\x65\x74\x65\x65\x6E\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x74\x6F\x20\x74\x68\x65\x20\x4F\x6C\x64\x20\x46\x6F\x6C\x6B\x73\x20\x48\x6F\x6D\x65","\x74\x61\x73\x6B\x4E\x69\x6E\x65\x74\x65\x65\x6E\x50\x61\x72\x74\x54\x77\x6F","\x50\x69\x63\x6B\x75\x70\x20\x54\x68\x65\x20\x47\x75\x69\x74\x61\x72","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x50\x61\x72\x6B","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x50\x61\x72\x74\x54\x77\x6F","\x50\x69\x63\x6B\x75\x70\x20\x54\x68\x65\x20\x4C\x69\x74\x74\x65\x72","\x47\x6F\x6F\x64\x20\x57\x6F\x72\x6B","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x4F\x6E\x65\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x50\x6F\x6C\x69\x63\x65\x20\x53\x74\x61\x74\x69\x6F\x6E","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x4F\x6E\x65\x50\x61\x72\x74\x54\x77\x6F","\x53\x70\x65\x61\x6B\x20\x54\x6F\x20\x54\x68\x65\x20\x47\x61\x72\x64\x61\x20\x61\x74\x20\x52\x65\x63\x65\x70\x74\x69\x6F\x6E","\x47\x6F\x6F\x64\x20\x54\x6F\x20\x47\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x54\x77\x6F\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x54\x77\x6F\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x44\x65\x73\x6B","\x43\x61\x6C\x6C","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x6F\x75\x72\x50\x61\x72\x74\x4F\x6E\x65","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x53\x63\x68\x6F\x6F\x6C","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x6F\x75\x72\x50\x61\x72\x74\x54\x77\x6F","\x47\x6F\x20\x54\x6F\x20\x54\x68\x65\x20\x42\x6C\x61\x63\x6B\x62\x6F\x61\x72\x64","\x41\x72\x74","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x69\x76\x65\x50\x61\x72\x74\x4F\x6E\x65","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x46\x69\x76\x65\x50\x61\x72\x74\x54\x77\x6F","\x45\x6E\x76\x69\x72\x6F","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x53\x69\x78","\x74\x61\x73\x6B\x54\x77\x65\x6E\x74\x79\x53\x65\x76\x65\x6E"];if(this[_0xc175[0]]==this[_0xc175[1]][0]){if(this[_0xc175[2]][0]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[3],0,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[9];} else {if(this[_0xc175[2]][0]==0){this[_0xc175[8]]=_0xc175[10];this[_0xc175[11]][0]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][0]=-1;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][1]){if(this[_0xc175[2]][1]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[13],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[14];} else {if(this[_0xc175[2]][1]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[15],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[16];} else {if(this[_0xc175[2]][1]==1){this[_0xc175[8]]=_0xc175[17];this[_0xc175[11]][1]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][1]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][2]){if(this[_0xc175[2]][2]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[18],0,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[14];} else {if(this[_0xc175[2]][2]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[19],0,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[20];} else {if(this[_0xc175[2]][2]==1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[21],0,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[22];} else {if(this[_0xc175[2]][2]==2){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[23],0,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[24];} else {if(this[_0xc175[2]][2]==3){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[25],0,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[26];} else {if(this[_0xc175[2]][2]==4){this[_0xc175[8]]=_0xc175[27];this[_0xc175[11]][2]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][2]=-1;} ;} ;} ;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][3]){if(this[_0xc175[2]][3]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[28],0,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[29];} else {if(this[_0xc175[2]][3]==0){this[_0xc175[8]]=_0xc175[27];this[_0xc175[11]][3]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][3]=-1;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][4]){if(this[_0xc175[2]][4]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[30],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[31];} else {if(this[_0xc175[2]][4]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[32],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[33];} else {if(this[_0xc175[2]][4]==1){this[_0xc175[8]]=_0xc175[27];this[_0xc175[11]][4]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][4]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][5]){if(this[_0xc175[2]][5]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[34],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[35];} else {if(this[_0xc175[2]][5]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[36],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[37];} else {if(this[_0xc175[2]][5]==1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[38],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[39];} else {if(this[_0xc175[2]][5]==2){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[40],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[41];} else {if(this[_0xc175[2]][5]==3){this[_0xc175[8]]=_0xc175[27];this[_0xc175[11]][5]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][5]=-1;} ;} ;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][6]){if(this[_0xc175[2]][6]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[42],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[43];} else {if(this[_0xc175[2]][6]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[44],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[45];} else {if(this[_0xc175[2]][6]==1){this[_0xc175[8]]=_0xc175[46];this[_0xc175[11]][6]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][6]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][7]){if(this[_0xc175[2]][7]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[47],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[48];} else {if(this[_0xc175[2]][7]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[49],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[50];} else {if(this[_0xc175[2]][7]==1){this[_0xc175[8]]=_0xc175[51];this[_0xc175[11]][7]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][7]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][8]){} else {if(this[_0xc175[0]]==this[_0xc175[1]][9]){} else {if(this[_0xc175[0]]==this[_0xc175[1]][10]){if(this[_0xc175[2]][10]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[52],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[53];} else {if(this[_0xc175[2]][10]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[54],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[55];} else {if(this[_0xc175[2]][10]==1){this[_0xc175[8]]=_0xc175[56];this[_0xc175[11]][10]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][10]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][11]){if(this[_0xc175[2]][11]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[57],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[53];} else {if(this[_0xc175[2]][11]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[58],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[59];} else {if(this[_0xc175[2]][11]==1){this[_0xc175[8]]=_0xc175[60];this[_0xc175[11]][11]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][11]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][12]){if(this[_0xc175[2]][12]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[61],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[62];} else {if(this[_0xc175[2]][12]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[63],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[64];} else {if(this[_0xc175[2]][12]==1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[65],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[66];} else {if(this[_0xc175[2]][12]==2){this[_0xc175[8]]=_0xc175[27];this[_0xc175[11]][12]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][12]=-1;} ;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][13]){if(this[_0xc175[2]][13]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[67],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[68];} else {if(this[_0xc175[2]][13]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[69],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[70];} else {if(this[_0xc175[2]][13]==1){this[_0xc175[8]]=_0xc175[71];this[_0xc175[11]][13]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][13]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][14]){if(this[_0xc175[2]][14]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[72],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[73];} else {if(this[_0xc175[2]][14]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[74],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[75];} else {if(this[_0xc175[2]][14]==1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[76],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[77];} else {if(this[_0xc175[2]][14]==2){this[_0xc175[8]]=_0xc175[78];this[_0xc175[11]][14]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][14]=-1;} ;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][15]){} else {if(this[_0xc175[0]]==this[_0xc175[1]][16]){} else {if(this[_0xc175[0]]==this[_0xc175[1]][17]){if(this[_0xc175[2]][17]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[79],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[80];} else {if(this[_0xc175[2]][17]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[81],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[55];} else {if(this[_0xc175[2]][17]==1){this[_0xc175[8]]=_0xc175[56];this[_0xc175[11]][17]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][17]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][18]){if(this[_0xc175[2]][18]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[82],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[80];} else {if(this[_0xc175[2]][18]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[83],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[37];} else {if(this[_0xc175[2]][18]==1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[84],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[39];} else {if(this[_0xc175[2]][18]==2){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[85],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[41];} else {if(this[_0xc175[2]][18]==3){this[_0xc175[8]]=_0xc175[27];this[_0xc175[11]][18]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][18]=-1;} ;} ;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][19]){if(this[_0xc175[2]][19]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[86],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[87];} else {if(this[_0xc175[2]][19]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[88],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[89];} else {if(this[_0xc175[2]][19]==1){this[_0xc175[8]]=_0xc175[27];this[_0xc175[11]][19]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][19]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][20]){if(this[_0xc175[2]][20]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[90],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[91];} else {if(this[_0xc175[2]][20]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[92],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[93];} else {if(this[_0xc175[2]][20]==1){this[_0xc175[8]]=_0xc175[94];this[_0xc175[11]][20]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][20]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][21]){if(this[_0xc175[11]][21]==0){if(this[_0xc175[2]][21]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[95],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[96];} else {if(this[_0xc175[2]][21]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[97],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[98];} else {if(this[_0xc175[2]][21]==1){this[_0xc175[8]]=_0xc175[99];this[_0xc175[11]][21]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][21]=-1;} ;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][22]){if(this[_0xc175[2]][22]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[100],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[96];} else {if(this[_0xc175[2]][22]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[101],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[102];} else {if(this[_0xc175[2]][22]==1){this[_0xc175[8]]=_0xc175[103];this[_0xc175[11]][22]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][22]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][23]){} else {if(this[_0xc175[0]]==this[_0xc175[1]][24]){if(this[_0xc175[2]][24]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[104],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[105];} else {if(this[_0xc175[2]][24]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[106],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[107];} else {if(this[_0xc175[2]][24]==1){this[_0xc175[8]]=_0xc175[108];this[_0xc175[11]][24]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][24]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][25]){if(this[_0xc175[2]][25]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[109],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[105];} else {if(this[_0xc175[2]][25]==0){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[110],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[107];} else {if(this[_0xc175[2]][25]==1){this[_0xc175[8]]=_0xc175[111];this[_0xc175[11]][25]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][25]=-1;} ;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][26]){if(this[_0xc175[2]][26]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[112],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[16];} else {if(this[_0xc175[2]][26]==0){this[_0xc175[8]]=_0xc175[17];this[_0xc175[11]][26]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][26]=-1;} ;} ;} else {if(this[_0xc175[0]]==this[_0xc175[1]][27]){if(this[_0xc175[2]][27]==-1){this[_0xc175[7]][_0xc175[6]][_0xc175[5]](_0xc175[113],1,this[_0xc175[4]]);this[_0xc175[8]]=_0xc175[16];} else {if(this[_0xc175[2]][27]==0){this[_0xc175[8]]=_0xc175[17];this[_0xc175[11]][27]+=1;this[_0xc175[0]]=-1;this[_0xc175[12]]=0;this[_0xc175[2]][27]=-1;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;
+				if( this.output == this.taskName[0] )
+				{	
+					if( this.intTask[0] == -1 )
+					{
+						this.engine.network.send( 'taskZeroPartOne', 0, this.player );
+						this.strCurrentTask = 'Go To The School';
+					}
+					else if( this.intTask[0] == 0 )
+					{
+						this.engine.network.send( 'taskZeroPartTwo', 0, this.player );
+						this.strCurrentTask = 'Go To The Blackboard In The Classroom';
+					}
+					else if( this.intTask[0] == 1 )
+					{
+						this.strCurrentTask = 'Youve Just Been Schooled';
+						this.taskList[0] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[0] = -1;
+					}			
+				}
+				else if( this.output == this.taskName[1] )
+				{						
+					if( this.intTask[1] == -1 )
+					{
+						this.engine.network.send( 'taskOnePartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Animal Shelter';
+					}
+					else if( this.intTask[1] == 0 )
+					{
+						this.engine.network.send( 'taskOnePartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Computer';
+					}
+					else if( this.intTask[1] == 1 )
+					{
+						this.strCurrentTask = 'Updated';
+						this.taskList[1] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[1] = -1;
+					}
+				}
+				else if( this.output == this.taskName[2] )
+				{	
+					if( this.intTask[2] == -1 )
+					{
+						this.engine.network.send( 'taskTwoPartOne', 0, this.player );
+						this.strCurrentTask = 'Go To The Animal Shelter';
+					}
+					else if( this.intTask[2] == 0 )
+					{
+						this.engine.network.send( 'taskTwoPartTwo', 0, this.player );
+						this.strCurrentTask = 'Talk To The Receptionist';
+					}
+					else if( this.intTask[2] == 1 )
+					{
+						this.engine.network.send( 'taskTwoPartThree', 0, this.player );
+						this.strCurrentTask = 'The Dog Is Waiting Outside';
+					}
+					else if( this.intTask[2] == 2 )
+					{
+						this.engine.network.send( 'taskTwoPartFour', 0, this.player );
+						this.strCurrentTask = 'Walk To The Park';
+					}
+					else if( this.intTask[2] == 3 )
+					{
+						this.engine.network.send( 'taskTwoPartFive', 0, this.player );
+						this.strCurrentTask = 'Take The Dog Back To The Animal Shelter';
+					}
+					else if( this.intTask[2] == 4 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[2] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[2] = -1;
+					}
+				}
+				else if( this.output == this.taskName[3] )
+				{
+					if( this.intTask[3] == -1 )
+					{
+						this.engine.network.send( 'taskThree', 0, this.player );
+						this.strCurrentTask = 'Go To The Bus Shelter';
+					}
+					else if( this.intTask[3] == 0 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[3] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[3] = -1;
+					}
+				}
+				else if( this.output == this.taskName[4] )
+				{	
+					if( this.intTask[4] == -1 )
+					{
+						this.engine.network.send( 'taskFourPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Charity Shop';
+					}
+					else if( this.intTask[4] == 0 )
+					{
+						this.engine.network.send( 'taskFourPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Counter';
+					}
+					else if( this.intTask[4] == 1 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[4] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[4] = -1;
+					}
+				}
+				else if( this.output == this.taskName[5] )
+				{	
+					if( this.intTask[5] == -1 )
+					{
+						this.engine.network.send( 'taskFivePartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Creche';
+					}
+					else if( this.intTask[5] == 0 )
+					{
+						this.engine.network.send( 'taskFivePartTwo', 1, this.player );
+						this.strCurrentTask = 'All Aboard';
+					}
+					else if( this.intTask[5] == 1 )
+					{
+						this.engine.network.send( 'taskFivePartThree', 1, this.player );
+						this.strCurrentTask = 'Drive To The Park';
+					}
+					else if( this.intTask[5] == 2 )
+					{
+						this.engine.network.send( 'taskFivePartFour', 1, this.player );
+						this.strCurrentTask = 'Return The miniBus';
+					}
+					else if( this.intTask[5] == 3 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[5] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[5] = -1;
+					}
+				}
+				else if( this.output == this.taskName[6] )
+				{
+					if( this.intTask[6] == -1 )
+					{
+						this.engine.network.send( 'taskSixPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Fire Station';
+					}
+					else if( this.intTask[6] == 0 )
+					{
+						this.engine.network.send( 'taskSixPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go Outside';
+					}
+					else if( this.intTask[6] == 1 )
+					{
+						this.strCurrentTask = 'Washed';
+						this.taskList[6] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[6] = -1;
+					}
+				}
+				else if( this.output == this.taskName[7] )
+				{	
+					if( this.intTask[7] == -1 )
+					{
+						this.engine.network.send( 'taskSevenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To Number One, Helping Hand Lane';
+					}
+					else if( this.intTask[7] == 0 )
+					{
+						this.engine.network.send( 'taskSevenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Fix The Roof';
+					}
+					else if( this.intTask[7] == 1 )
+					{
+						this.strCurrentTask = 'Fixed';
+						this.taskList[7] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[7] = -1;
+					}
+				game}
+				else if( this.output == this.taskName[8] )
+				{	
+				}
+				else if( this.output == this.taskName[9] )
+				{	
+				}
+				else if( this.output == this.taskName[10] )
+				{	
+					if( this.intTask[10] == -1 )
+					{
+						this.engine.network.send( 'taskTenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Hospital';
+					}
+					else if( this.intTask[10] == 0 )
+					{
+						this.engine.network.send( 'taskTenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Talk To A Patient';
+					}
+					else if( this.intTask[10] == 1 )
+					{
+						this.strCurrentTask = 'Talking';
+						this.taskList[10] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[10] = -1;
+					}
+				}
+				else if( this.output == this.taskName[11] )
+				{	
+					if( this.intTask[11] == -1 )
+					{
+						this.engine.network.send( 'taskElevenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Hospital';
+					}
+					else if( this.intTask[11] == 0 )
+					{
+						this.engine.network.send( 'taskElevenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Kids';
+					}
+					else if( this.intTask[11] == 1 )
+					{
+						this.strCurrentTask = 'Clowning Around';
+						this.taskList[11] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[11] = -1;
+					}
+				}
+				else if( this.output == this.taskName[12] )
+				{	
+					if( this.intTask[12] == -1 )
+					{
+						this.engine.network.send( 'taskTwelvePartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Depot';
+					}
+					else if( this.intTask[12] == 0 )
+					{
+						this.engine.network.send( 'taskTwelvePartTwo', 1, this.player );
+						this.strCurrentTask = 'Go to House';
+					}
+					else if( this.intTask[12] == 1 )
+					{
+						this.engine.network.send( 'taskTwelvePartThree', 1, this.player );
+						this.strCurrentTask = 'Return to Depot';
+					}
+					else if( this.intTask[12] == 2 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[12] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[12] = -1;
+					}
+				}
+				else if( this.output == this.taskName[13] )
+				{
+					if( this.intTask[13] == -1 )
+					{
+						this.engine.network.send( 'taskThirteenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Meals On Wheels Depot';
+					}
+					else if( this.intTask[13] == 0 )
+					{
+						this.engine.network.send( 'taskThirteenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Cooker';
+					}
+					else if( this.intTask[13] == 1 )
+					{
+						this.strCurrentTask = 'Cooked';
+						this.taskList[13] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[13] = -1;
+					}	
+				}
+				else if( this.output == this.taskName[14] )
+				{	
+					if( this.intTask[14] == -1 )
+					{
+						this.engine.network.send( 'taskFourteenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Shopping Centre';
+					}
+					else if( this.intTask[14] == 0 )
+					{
+						this.engine.network.send( 'taskFourteenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Pickup Groceries';
+					}
+					else if( this.intTask[14] == 1 )
+					{
+						this.engine.network.send( 'taskFourteenPartThree', 1, this.player );
+						this.strCurrentTask = 'Return To The Depot';
+					}
+					else if( this.intTask[14] == 2 )
+					{
+						this.strCurrentTask = 'Delivered';
+						this.taskList[14] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[14] = -1;
+					}
+				}
+				else if( this.output == this.taskName[15] )
+				{	
+				}
+				else if( this.output == this.taskName[16] )
+				{	
+				}
+				else if( this.output == this.taskName[17] )
+				{
+					if( this.intTask[17] == -1 )
+					{
+						this.engine.network.send( 'taskSeventeenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Old Folks Home';
+					}
+					else if( this.intTask[17] == 0 )
+					{
+						this.engine.network.send( 'taskSeventeenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Talk To A Patient';
+					}
+					else if( this.intTask[17] == 1 )
+					{
+						this.strCurrentTask = 'Talking';
+						this.taskList[17] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[17] = -1;
+					}	
+				}
+				else if( this.output == this.taskName[18] )
+				{	
+					if( this.intTask[18] == -1 )
+					{
+						this.engine.network.send( 'taskEighteenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Old Folks Home';
+					}
+					else if( this.intTask[18] == 0 )
+					{
+						this.engine.network.send( 'taskEighteenPartTwo', 1, this.player );
+						this.strCurrentTask = 'All Aboard';
+					}
+					else if( this.intTask[18] == 1 )
+					{
+						this.engine.network.send( 'taskEighteenPartThree', 1, this.player );
+						this.strCurrentTask = 'Drive To The Park';
+					}
+					else if( this.intTask[18] == 2 )
+					{
+						this.engine.network.send( 'taskEighteenPartFour', 1, this.player );
+						this.strCurrentTask = 'Return The miniBus';
+					}
+					else if( this.intTask[18] == 3 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[18] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[18] = -1;
+					}
+				}
+				else if( this.output == this.taskName[19] )
+				{	
+					if( this.intTask[19] == -1 )
+					{
+						this.engine.network.send( 'taskNineteenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go to the Old Folks Home';
+					}
+					else if( this.intTask[19] == 0 )
+					{
+						this.engine.network.send( 'taskNineteenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Pickup The Guitar';
+					}
+					else if( this.intTask[19] == 1 )
+					{
+						this.strCurrentTask = 'Done';
+						this.taskList[19] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[19] = -1;
+					}
+				}
+				else if( this.output == this.taskName[20] )
+				{	
+					if( this.intTask[20] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Park';
+					}
+					else if( this.intTask[20] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyPartTwo', 1, this.player );
+						this.strCurrentTask = 'Pickup The Litter';
+					}
+					else if( this.intTask[20] == 1 )
+					{
+						this.strCurrentTask = 'Good Work';
+						this.taskList[20] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[20] = -1;
+					}
+				}
+				else if( this.output == this.taskName[21] )
+				{
+					if( this.taskList[21] == 0 )
+					{
+						if( this.intTask[21] == -1 )
+						{
+							this.engine.network.send( 'taskTwentyOnePartOne', 1, this.player );
+							this.strCurrentTask = 'Go To The Police Station';
+						}
+						else if( this.intTask[21] == 0 )
+						{
+							this.engine.network.send( 'taskTwentyOnePartTwo', 1, this.player );
+							this.strCurrentTask = 'Speak To The Garda at Reception';
+						}
+						else if( this.intTask[21] == 1 )
+						{
+							this.strCurrentTask = 'Good To Go';
+							this.taskList[21] += 1;
+							this.output = -1;
+							this.counter = 0;
+							this.intTask[21] = -1;
+						}	
+					}
+				}
+				else if( this.output == this.taskName[22] )
+				{
+					if( this.intTask[22] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyTwoPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Police Station';
+					}
+					else if( this.intTask[22] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyTwoPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Desk';
+					}
+					else if( this.intTask[22] == 1 )
+					{
+						this.strCurrentTask = 'Call';
+						this.taskList[22] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[22] = -1;
+					}	
+				}
+				else if( this.output == this.taskName[23] )
+				{	
+				}
+				else if( this.output == this.taskName[24] )
+				{	
+					if( this.intTask[24] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyFourPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The School';
+					}
+					else if( this.intTask[24] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyFourPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Blackboard In The Art Room';
+					}
+					else if( this.intTask[24] == 1 )
+					{
+						this.strCurrentTask = 'Art';
+						this.taskList[24] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[24] = -1;
+					}
+				}
+				else if( this.output == this.taskName[25] )
+				{
+					if( this.intTask[25] == -1 )
+					{
+						this.engine.network.send( 'taskTwentyFivePartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The School';
+					}
+					else if( this.intTask[25] == 0 )
+					{
+						this.engine.network.send( 'taskTwentyFivePartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Blackboard In The Classroom';
+					}
+					else if( this.intTask[25] == 1 )
+					{
+						this.strCurrentTask = 'Enviro';
+						this.taskList[25] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[25] = -1;
+					}	
+				}
+				else if( this.output == this.taskName[26] )
+				{
+					if( this.intTask[26] == -1 )
+					{
+						this.engine.network.send( 'taskTwentySix', 1, this.player );
+						this.strCurrentTask = 'Go To The Computer';
+					}
+					else if( this.intTask[26] == 0 )
+					{
+						this.strCurrentTask = 'Updated';
+						this.taskList[26] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[26] = -1;
+					}	
+				}
+				else if( this.output == this.taskName[27] )
+				{	
+					if( this.intTask[27] == -1 )
+					{
+						this.engine.network.send( 'taskTwentySevenPartOne', 1, this.player );
+						this.strCurrentTask = 'Go To The Volunteer Centre';
+					}
+					if( this.intTask[27] == 0 )
+					{
+						this.engine.network.send( 'taskTwentySevenPartTwo', 1, this.player );
+						this.strCurrentTask = 'Go To The Computer';
+					}
+					else if( this.intTask[27] == 1 )
+					{
+						this.strCurrentTask = 'Updated';
+						this.taskList[27] += 1;
+						this.output = -1;
+						this.counter = 0;
+						this.intTask[27] = -1;
+					}
+				}
 			},
 
 			resetTasks: function()
 			{
-				var _0x83d3=["\x6F\x75\x74\x70\x75\x74","\x74\x61\x73\x6B\x4E\x61\x6D\x65","\x69\x6E\x74\x54\x61\x73\x6B"];for(var i=0;i<28;i++){if(this[_0x83d3[0]]!=this[_0x83d3[1]][i]){this[_0x83d3[2]][i]=-1;} ;} ;
+				for( var i = 0; i < 28; i++ )
+				{
+					if( this.output != this.taskName[i] )
+					{
+						this.intTask[i] = -1;
+					}
+				}
 			},
 
 			outputTasks: function()
 			{
-				var _0xc1ad=["\x6F\x75\x74","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x54\x65\x61\x63\x68\x20\x73\x74\x75\x64\x65\x6E\x74\x73\x20\x61\x62\x6F\x75\x74\x20\x61\x6E\x69\x6D\x61\x6C\x20\x77\x65\x6C\x66\x61\x72\x65\x20\x61\x6E\x64\x20\x63\x61\x72\x65\x2E","\x68\x74\x6D\x6C","\x23\x62\x6C\x61\x6E\x6B\x32","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x55\x70\x64\x61\x74\x65\x20\x74\x68\x65\x20\x73\x68\x65\x6C\x74\x65\x72\x73\x20\x3C\x62\x72\x20\x2F\x3E\x77\x65\x62\x73\x69\x74\x65\x20\x77\x69\x74\x68\x20\x70\x68\x6F\x74\x6F\x73\x20\x6F\x66\x20\x61\x6E\x69\x6D\x61\x6C\x73\x20\x6C\x6F\x6F\x6B\x69\x6E\x67\x20\x66\x6F\x72\x20\x6E\x65\x77\x20\x68\x6F\x6D\x65\x73\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x54\x61\x6B\x65\x20\x61\x62\x61\x6E\x64\x6F\x6E\x65\x64\x20\x64\x6F\x67\x73\x20\x6F\x6E\x20\x3C\x62\x72\x20\x2F\x3E\x20\x77\x61\x6C\x6B\x73\x20\x61\x72\x6F\x75\x6E\x64\x20\x74\x6F\x77\x6E\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x47\x69\x76\x65\x20\x74\x6F\x75\x72\x69\x73\x74\x73\x20\x69\x6E\x66\x6F\x72\x6D\x61\x74\x69\x6F\x6E\x20\x3C\x62\x72\x20\x2F\x3E\x20\x61\x62\x6F\x75\x74\x20\x74\x68\x65\x20\x74\x6F\x77\x6E\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x57\x6F\x72\x6B\x20\x69\x6E\x20\x74\x68\x65\x20\x63\x68\x61\x72\x69\x74\x79\x20\x73\x68\x6F\x70\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x44\x72\x69\x76\x65\x20\x74\x68\x65\x20\x63\x68\x69\x6C\x64\x72\x65\x6E\x20\x74\x6F\x20\x74\x68\x65\x20\x70\x61\x72\x6B\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x57\x61\x73\x68\x20\x63\x61\x72\x73\x20\x66\x6F\x72\x20\x63\x68\x61\x72\x69\x74\x79\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x52\x65\x70\x61\x69\x72\x20\x70\x65\x6F\x70\x6C\x65\x73\x20\x68\x6F\x6D\x65\x73\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x4D\x61\x69\x6E\x74\x61\x69\x6E\x20\x61\x20\x66\x6F\x72\x75\x6D\x20\x66\x6F\x72\x20\x3C\x62\x72\x20\x2F\x3E\x69\x73\x6F\x6C\x61\x74\x65\x64\x20\x70\x65\x6F\x70\x6C\x65\x20\x66\x72\x6F\x6D\x20\x3C\x62\x72\x2F\x3E\x68\x6F\x6D\x65\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x43\x6C\x65\x61\x6E\x20\x75\x70\x20\x74\x68\x65\x20\x74\x6F\x77\x6E\x20\x66\x6F\x72\x20\x3C\x62\x72\x20\x2F\x3E\x74\x68\x65\x20\x54\x69\x64\x79\x20\x54\x6F\x77\x6E\x73\x20\x3C\x62\x72\x2F\x3E\x63\x6F\x6D\x70\x65\x74\x69\x74\x69\x6F\x6E\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x53\x70\x65\x6E\x64\x20\x74\x69\x6D\x65\x20\x74\x61\x6C\x6B\x69\x6E\x67\x20\x77\x69\x74\x68\x20\x3C\x62\x72\x20\x2F\x3E\x6C\x6F\x6E\x67\x2D\x74\x65\x72\x6D\x20\x70\x61\x74\x69\x65\x6E\x74\x73\x20\x69\x6E\x20\x68\x6F\x73\x70\x69\x74\x61\x6C\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x44\x72\x65\x73\x73\x20\x75\x70\x20\x61\x73\x20\x61\x20\x63\x6C\x6F\x77\x6E\x20\x61\x6E\x64\x20\x3C\x62\x72\x20\x2F\x3E\x70\x75\x74\x20\x6F\x6E\x20\x61\x20\x73\x68\x6F\x77\x20\x69\x6E\x20\x74\x68\x65\x3C\x62\x72\x20\x2F\x3E\x20\x43\x68\x69\x6C\x64\x72\x65\x6E\x73\x20\x57\x61\x72\x64\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x44\x65\x6C\x69\x76\x65\x72\x20\x6D\x65\x61\x6C\x73\x20\x74\x6F\x20\x70\x65\x6F\x70\x6C\x65\x3C\x62\x72\x20\x2F\x3E\x20\x69\x6E\x20\x74\x68\x65\x69\x72\x20\x68\x6F\x6D\x65\x73\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x48\x65\x6C\x70\x20\x63\x6F\x6F\x6B\x20\x6D\x65\x61\x6C\x73\x20\x66\x6F\x72\x20\x74\x68\x65\x20\x3C\x62\x72\x20\x2F\x3E\x4D\x65\x61\x6C\x73\x20\x6F\x6E\x20\x57\x68\x65\x65\x6C\x73\x20\x67\x72\x6F\x75\x70\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x50\x69\x63\x6B\x20\x75\x70\x20\x67\x72\x6F\x63\x65\x72\x69\x65\x73\x20\x66\x6F\x72\x20\x74\x68\x65\x3C\x2F\x62\x72\x3E\x20\x63\x6F\x6F\x6B\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x50\x72\x6F\x76\x69\x64\x65\x20\x69\x6E\x66\x6F\x72\x6D\x61\x74\x69\x6F\x6E\x20\x74\x6F\x20\x76\x69\x73\x69\x74\x6F\x72\x73\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x48\x65\x6C\x70\x20\x6F\x75\x74\x20\x61\x73\x20\x61\x20\x74\x6F\x75\x72\x20\x67\x75\x69\x64\x65\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x53\x70\x65\x6E\x64\x20\x74\x69\x6D\x65\x20\x74\x61\x6C\x6B\x69\x6E\x67\x20\x77\x69\x74\x68\x20\x3C\x62\x72\x20\x2F\x3E\x72\x65\x73\x69\x64\x65\x6E\x74\x73\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x44\x72\x69\x76\x65\x20\x74\x68\x65\x20\x72\x65\x73\x69\x64\x65\x6E\x74\x73\x20\x74\x6F\x20\x74\x68\x65\x20\x70\x61\x72\x6B\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x50\x65\x72\x66\x72\x6F\x6D\x20\x66\x6F\x72\x20\x74\x68\x65\x20\x72\x65\x73\x69\x64\x65\x6E\x74\x73\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x50\x69\x63\x6B\x20\x75\x70\x20\x6C\x69\x74\x74\x65\x72\x20\x61\x72\x6F\x75\x6E\x64\x20\x74\x68\x65\x20\x70\x61\x72\x6B\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x47\x6F\x20\x74\x6F\x20\x74\x68\x65\x20\x70\x6F\x6C\x69\x63\x65\x20\x73\x74\x61\x74\x69\x6F\x6E\x20\x3C\x62\x72\x20\x2F\x3E\x74\x6F\x20\x62\x65\x20\x76\x65\x74\x74\x65\x64\x20\x66\x6F\x72\x20\x76\x6F\x6C\x75\x6E\x74\x65\x65\x72\x20\x77\x6F\x72\x6B\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x47\x6F\x20\x74\x6F\x20\x74\x68\x65\x20\x70\x6F\x6C\x69\x63\x65\x20\x73\x74\x61\x74\x69\x6F\x6E\x20\x3C\x62\x72\x20\x2F\x3E\x61\x6E\x64\x20\x74\x61\x6C\x6B\x20\x74\x6F\x20\x63\x72\x69\x6D\x65\x20\x76\x69\x63\x74\x69\x6D\x73\x20\x3C\x62\x72\x20\x2F\x3E\x6F\x6E\x20\x74\x68\x65\x20\x70\x68\x6F\x6E\x65\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x54\x65\x61\x63\x68\x20\x61\x20\x63\x6C\x61\x73\x73\x20\x6F\x6E\x20\x3C\x62\x72\x20\x2F\x3E\x68\x65\x61\x6C\x74\x68\x79\x20\x65\x61\x74\x69\x6E\x67\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x54\x65\x61\x63\x68\x20\x61\x72\x74\x20\x74\x6F\x20\x73\x74\x75\x64\x65\x6E\x74\x73\x20\x3C\x62\x72\x20\x2F\x3E\x69\x6E\x20\x74\x68\x65\x20\x41\x66\x74\x65\x72\x73\x63\x68\x6F\x6F\x6C\x20\x43\x6C\x75\x62\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x47\x69\x76\x65\x20\x61\x20\x74\x61\x6C\x6B\x20\x74\x6F\x20\x73\x74\x75\x64\x65\x6E\x74\x73\x20\x3C\x62\x72\x20\x2F\x3E\x61\x62\x6F\x75\x74\x20\x65\x6E\x76\x69\x72\x6F\x6D\x65\x6E\x74\x61\x6C\x20\x3C\x62\x72\x20\x2F\x3E\x69\x73\x73\x75\x65\x73\x2E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x55\x70\x64\x61\x74\x65\x2F\x6D\x61\x69\x6E\x74\x61\x69\x6E\x20\x74\x68\x65\x20\x3C\x62\x72\x20\x2F\x3E\x63\x65\x6E\x74\x72\x65\x73\x20\x77\x65\x62\x73\x69\x74\x65\x20\x61\x6E\x64\x20\x3C\x62\x72\x20\x2F\x3E\x66\x61\x63\x65\x62\x6F\x6F\x6B\x20\x70\x61\x67\x65\x2E"];if(this[_0xc1ad[0]]==0){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[1]);} else {if(this[_0xc1ad[0]]==1){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[4]);} else {if(this[_0xc1ad[0]]==2){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[5]);} else {if(this[_0xc1ad[0]]==3){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[6]);} else {if(this[_0xc1ad[0]]==4){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[7]);} else {if(this[_0xc1ad[0]]==5){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[8]);} else {if(this[_0xc1ad[0]]==6){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[9]);} else {if(this[_0xc1ad[0]]==7){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[10]);} else {if(this[_0xc1ad[0]]==8){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[11]);} else {if(this[_0xc1ad[0]]==9){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[12]);} else {if(this[_0xc1ad[0]]==10){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[13]);} else {if(this[_0xc1ad[0]]==11){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[14]);} else {if(this[_0xc1ad[0]]==12){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[15]);} else {if(this[_0xc1ad[0]]==13){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[16]);} else {if(this[_0xc1ad[0]]==14){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[17]);} else {if(this[_0xc1ad[0]]==15){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[18]);} else {if(this[_0xc1ad[0]]==16){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[19]);} else {if(this[_0xc1ad[0]]==17){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[20]);} else {if(this[_0xc1ad[0]]==18){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[21]);} else {if(this[_0xc1ad[0]]==19){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[22]);} else {if(this[_0xc1ad[0]]==20){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[23]);} else {if(this[_0xc1ad[0]]==21){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[24]);} else {if(this[_0xc1ad[0]]==22){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[25]);} else {if(this[_0xc1ad[0]]==23){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[26]);} else {if(this[_0xc1ad[0]]==24){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[27]);} else {if(this[_0xc1ad[0]]==25){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[28]);} else {if(this[_0xc1ad[0]]==26){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[4]);} else {if(this[_0xc1ad[0]]==27){$(_0xc1ad[3])[_0xc1ad[2]](_0xc1ad[29]);} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;				
+				if( this.out == 0 )
+				{
+					$( '#blank2' ).html(  '<center>Teach students about animal welfare and care.' );
+				}
+				else if( this.out == 1 )
+				{
+					$( '#blank2' ).html(  '<center>Update the shelters <br />website with photos of animals looking for new homes.' );
+				}
+				else if( this.out == 2 )
+				{
+					$( '#blank2' ).html( '<center>Take abandoned dogs on <br /> walks around town.' );
+				}
+				else if( this.out == 3 )
+				{
+					$( '#blank2' ).html( '<center>Give tourists information <br /> about the town.' );
+				}
+				else if( this.out == 4 )
+				{
+					$( '#blank2' ).html( '<center>Work in the charity shop.' );
+				}
+				else if( this.out == 5 )
+				{
+					$( '#blank2' ).html( '<center>Drive the children to the park.' );
+				}
+				else if( this.out == 6 )
+				{
+					$( '#blank2' ).html( '<center>Wash cars for charity.' );
+				}
+				else if( this.out == 7 )
+				{
+					$( '#blank2' ).html( '<center>Repair peoples homes.' );
+				}
+				else if( this.out == 8 )
+				{
+					$( '#blank2' ).html( '<center>Maintain a forum for <br />isolated people from <br/>home.' );
+				}
+				else if( this.out == 9 )
+				{
+					$( '#blank2' ).html( '<center>Clean up the town for <br />the Tidy Towns <br/>competition.' );
+				}				
+				else if( this.out == 10 )
+				{
+					$( '#blank2' ).html( '<center>Spend time talking with <br />long-term patients in hospital.' );
+				}
+				else if( this.out == 11 )
+				{
+					$( '#blank2' ).html( '<center>Dress up as a clown and <br />put on a show in the<br /> Childrens Ward.' );
+				}
+				else if( this.out == 12 )
+				{
+					$( '#blank2' ).html( '<center>Deliver meals to people<br /> in their homes.' );
+				}
+				else if( this.out == 13 )
+				{
+					$( '#blank2' ).html( '<center>Help cook meals for the <br />Meals on Wheels group.' );
+				}
+				else if( this.out == 14 )
+				{
+					$( '#blank2' ).html( '<center>Pick up groceries for the</br> cook.' );
+				}
+				else if( this.out == 15 )
+				{
+					$( '#blank2' ).html( '<center>Provide information to visitors.' );
+				}
+				else if( this.out == 16 )
+				{
+					$( '#blank2' ).html( '<center>Help out as a tour guide.' );
+				}
+				else if( this.out == 17 )
+				{
+					$( '#blank2' ).html( '<center>Spend time talking with <br />residents.' );
+				}
+				else if( this.out == 18 )
+				{
+					$( '#blank2' ).html( '<center>Drive the residents to the park.' );
+				}
+				else if( this.out == 19 )
+				{
+					$( '#blank2' ).html( '<center>Perfrom for the residents.' );
+				}
+				else if( this.out == 20 )
+				{
+					$( '#blank2' ).html( '<center>Pick up litter around the park.' );
+				}
+				else if( this.out == 21 )
+				{
+					$( '#blank2' ).html( '<center>Go to the police station <br />to be vetted for volunteer work.' );
+				}
+				else if( this.out == 22 )
+				{
+					$( '#blank2' ).html( '<center>Go to the police station <br />and talk to crime victims <br />on the phone.' );
+				}
+				else if( this.out == 23 )
+				{
+					$( '#blank2' ).html( '<center>Teach a class on <br />healthy eating.' );
+				}
+				else if( this.out == 24 )
+				{
+					$( '#blank2' ).html( '<center>Teach art to students <br />in the Afterschool Club.' );
+				}
+				else if( this.out == 25 )
+				{
+					$( '#blank2' ).html( '<center>Give a talk to students <br />about enviromental <br />issues.' );
+				}
+				else if( this.out == 26 )
+				{
+					$( '#blank2' ).html( '<center>Update the shelters <br />website with photos of animals looking for new homes.' );
+				}
+				else if( this.out == 27 )
+				{
+					$( '#blank2' ).html( '<center>Update/maintain the <br />centres website and <br />facebook page.' );
+				}				
 			},
 
 			// Click on the door. Walk to the building.
 			clickMove: function( x, y )
-			{var _0x7754=["\x6D\x6F\x76\x65\x41\x76\x61\x74\x61\x72","\x73\x65\x6E\x64","\x6E\x65\x74\x77\x6F\x72\x6B","\x65\x6E\x67\x69\x6E\x65","\x6D\x61\x70\x5F\x69\x64","\x70\x6C\x61\x79\x65\x72","\x6F\x6C\x64\x46\x6F\x6C\x6B\x73\x48\x6F\x6D\x65\x4D\x61\x70"];if((x==10||x==11)&&(y==3)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[11,3]);} ;if(((x>=11&&x<=13)&&(y>=1&&y<=2))||(x==13&&y==3)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[12,3]);} else {if((x==2||x==3)&&(y==17||y==18)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[3,18]);} else {if((x==3)&&(y==23||y==24)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[4,24]);} else {if((x==2)&&(y==10)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[3,11]);} else {if((x==9||x==10)&&(y==18)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[10,18]);} else {if((x==9||x==10)&&(y==11)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[10,11]);} else {if((x==12||x==13)&&(y==18)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[13,18]);} else {if((x==15)&&(y==9)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[16,10]);} else {if((x==13)&&(y==24||y==25)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[13,18]);} else {if((x==31||x==32)&&(y==26)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[32,27]);} else {if((x==25&&y==17)||(x==24&&y==16)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[25,17]);} else {if((x==25)&&(y==9||y==10)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[25,10]);} else {if((x==30||x==31)&&(y==11)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[31,11]);} else {if((x==32&&(y==3||y==4))||(x==33&&y==4)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[33,4]);} else {this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[x,y]);} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;} ;if((x==40||x==41)&&(y==17||y==18)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[41,19]);} ;if((x==44||x==45)&&(y==17||y==18)){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[45,20]);} ;if(this[_0x7754[5]][_0x7754[4]]==_0x7754[6]&&((x>=-2&&x<=1)&&(y>=2&&y<=4))){this[_0x7754[3]][_0x7754[2]][_0x7754[1]](_0x7754[0],[-1,5]);} ;
+			{
+				
+					// Meals on Wheels
+					if( ( x == 10 || x == 11 ) && ( y == 3 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [11, 3] );
+					}
+					// miniBus
+					if( ( ( x >= 11 && x <= 13 ) && ( y >= 1 && y <= 2 ) )  || ( x == 13 && y == 3 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [12, 3] );
+					}
+					// Creche
+					else if( ( x == 2 || x == 3 ) && ( y == 17 || y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [3, 18] );
+					}
+					// School
+					else if( ( x == 3 ) && ( y == 23 || y == 24 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [4, 24] );
+					}
+					// Old Folks Home
+					else if( ( x == 2 ) && ( y == 10 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [3, 11] );
+					}
+					// Town Hall
+					else if( ( x == 9 || x == 10 ) && ( y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [10, 18] );
+					}
+					// Volunteer Centre
+					else if( ( x == 9 || x == 10 ) && ( y == 11 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [10, 11] );
+					}
+					// Police Station
+					else if( ( x == 12 || x == 13 ) && ( y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [13, 18] );
+					}
+					// Library
+					else if( ( x == 15 ) && ( y == 9 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [16, 10] );
+					}
+					// Museum
+					else if( ( x == 13 ) && ( y == 24 || y == 25 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [13, 18] );
+					}
+					// Hospital
+					else if( ( x == 31 || x == 32 ) && ( y == 26 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [32, 27] );
+					}
+					// Charity Shop
+					else if( ( x == 25 && y == 17 ) || ( x == 24 && y == 16 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [25, 17] );
+					}
+					// Shopping centre
+					else if( ( x == 25 ) && ( y == 9 || y == 10 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [25, 10] );
+					}
+					// Post Office
+					else if( ( x == 30 || x == 31 ) && ( y == 11 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [31, 11] );
+					}
+					// Fire Station
+					else if( ( x == 32 && ( y == 3 || y == 4 ) ) || ( x == 33 && y == 4 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [33, 4] );
+					}
+					// Footpaths & Roads
+					else
+					{
+						this.engine.network.send( 'moveAvatar', [x, y] );
+					}
+	
+					// Houses
+					if( ( x == 40 || x == 41 ) && ( y == 17 || y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [41, 19] );
+					}
+					if( ( x == 44 || x == 45 ) && ( y == 17 || y == 18 ) )
+					{
+						this.engine.network.send( 'moveAvatar', [45, 20] );
+					}
+				
+				
+				if( this.player.map_id == 'oldFolksHomeMap' && ( ( x >= -2 && x <= 1 ) && ( y >= 2 && y <= 4 ) ) )
+				{
+					this.engine.network.send( 'moveAvatar', [-1,5] );
+				}
 			},
 
 			// Switch player avatar between person and bus.
@@ -312,45 +1291,182 @@ myTime: null,
 			},
 
 			directionChange: function (entity) {
-				var _0x6125=["\x70\x6C\x61\x79\x65\x72","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B\x4E\x45","\x73\x65\x74\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E","\x65\x6E\x74\x69\x74\x69\x65\x73","\x65\x6E\x67\x69\x6E\x65","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B\x53\x45","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B\x4E\x57","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B\x53\x57","\x65\x6E\x74\x69\x74\x79\x5F\x64\x69\x72\x65\x63\x74\x69\x6F\x6E","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B","\x77\x6F\x6D\x61\x6E\x57\x61\x6C\x6B\x42\x69\x67","\x6D\x69\x6E\x69\x42\x75\x73\x4E\x45","\x6D\x69\x6E\x69\x42\x75\x73\x53\x45","\x6D\x69\x6E\x69\x42\x75\x73\x4E\x57","\x6D\x69\x6E\x69\x42\x75\x73\x53\x57","\x6D\x69\x6E\x69\x42\x75\x73","\x77\x68\x69\x74\x65\x4D\x44\x6F\x67\x4E\x45","\x77\x68\x69\x74\x65\x4D\x44\x6F\x67\x53\x45","\x77\x68\x69\x74\x65\x4D\x44\x6F\x67\x4E\x57","\x77\x68\x69\x74\x65\x4D\x44\x6F\x67\x53\x57","\x77\x68\x69\x74\x65\x4D\x44\x6F\x67","\x74\x65\x6D\x70\x6C\x61\x74\x65\x5F\x69\x64"];if(this[_0x6125[0]]==null){this[_0x6125[0]]=entity;} ;switch(entity[_0x6125[21]]){case _0x6125[9]:switch(entity[_0x6125[8]]){case DIRECTION_NE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[1]);break ;;case DIRECTION_SE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[5]);break ;;case DIRECTION_NW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[6]);break ;;case DIRECTION_SW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[7]);break ;;} ;break ;;case _0x6125[10]:switch(entity[_0x6125[8]]){case DIRECTION_NE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[1]);break ;;case DIRECTION_SE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[5]);break ;;case DIRECTION_NW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[6]);break ;;case DIRECTION_SW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[7]);break ;;} ;break ;;case _0x6125[15]:switch(entity[_0x6125[8]]){case DIRECTION_NE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[11]);break ;;case DIRECTION_SE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[12]);break ;;case DIRECTION_NW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[13]);break ;;case DIRECTION_SW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[14]);break ;;} ;break ;;case _0x6125[20]:switch(entity[_0x6125[8]]){case DIRECTION_NE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[16]);break ;;case DIRECTION_SE:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[17]);break ;;case DIRECTION_NW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[18]);break ;;case DIRECTION_SW:this[_0x6125[4]][_0x6125[3]][_0x6125[2]](entity,_0x6125[19]);break ;;} ;break ;;} ;
+				if( this.player == null )
+				{
+					this.player = entity;
+				}
+
+				switch (entity.template_id) {
+					case 'womanWalk':
+						// Entity is a person sprite
+						switch (entity.entity_direction)
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'womanWalkNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'womanWalkSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'womanWalkNW');
+							break;						
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'womanWalkSW');
+							break;			
+						}
+					break;	
+					case 'womanWalkBig':
+						// Entity is a person sprite
+						switch (entity.entity_direction) 
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'womanWalkNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'womanWalkSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'womanWalkNW');
+							break;						
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'womanWalkSW');
+							break;		
+						}
+					break;
+					case 'miniBus':
+						// Entity is a person sprite
+						switch (entity.entity_direction) 
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'miniBusNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'miniBusSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'miniBusNW');
+							break;						
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'miniBusSW');
+							break;		
+						}
+					break;
+					case 'whiteMDog':
+						// Entity is a person sprite
+						switch (entity.entity_direction)
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'whiteMDogNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'whiteMDogSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'whiteMDogNW');
+							break;						
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'whiteMDogSW');
+							break;			
+						}
+					break;					
+				}
 			},
 			
 			viewportMouseDown: function (event) {				
-				var _0xc3aa=["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x72\x65\x74\x75\x72\x6E\x56\x61\x6C\x75\x65","\x70\x61\x67\x65\x58","\x70\x61\x67\x65\x59","\x62\x75\x74\x74\x6F\x6E","\x6D\x6F\x75\x73\x65\x44\x6F\x77\x6E\x42\x75\x74\x74\x6F\x6E","\x24\x6C\x6F\x63\x61\x6C","\x76\x69\x65\x77\x70\x6F\x72\x74","\x70\x61\x6E\x53\x74\x61\x72\x74","\x76\x69\x65\x77\x70\x6F\x72\x74\x73","\x65\x6E\x67\x69\x6E\x65"];event[_0xc3aa[0]]?event[_0xc3aa[0]]():event[_0xc3aa[1]]=false;var clientX=event[_0xc3aa[2]];var clientY=event[_0xc3aa[3]];if(event[_0xc3aa[4]]==2){event[_0xc3aa[7]][_0xc3aa[6]][_0xc3aa[5]]=2;this[_0xc3aa[10]][_0xc3aa[9]][_0xc3aa[8]](event[_0xc3aa[7]],clientX,clientY);} ;					
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				var clientX = event.pageX; // - elementOffset.left;
+				var clientY = event.pageY; // - elementOffset.top;
+				
+				if (event.button == 2) {
+					event.viewport.$local.mouseDownButton = 2;
+					this.engine.viewports.panStart(event.viewport, clientX, clientY);
+				}					
 			},
 			
 			viewportMouseMove: function (event) {				
-				var _0x4d8c=["\x6F\x66\x66\x73\x65\x74","\x23","\x76\x69\x65\x77\x70\x6F\x72\x74\x5F\x69\x64","\x76\x69\x65\x77\x70\x6F\x72\x74","\x70\x61\x67\x65\x58","\x6C\x65\x66\x74","\x70\x61\x67\x65\x59","\x74\x6F\x70","\x6D\x61\x70\x5F\x72\x65\x6E\x64\x65\x72\x5F\x6D\x6F\x64\x65","\x6D\x61\x70","\x73\x63\x72\x65\x65\x6E\x54\x6F\x4D\x61\x70","\x72\x65\x6E\x64\x65\x72\x65\x72","\x65\x6E\x67\x69\x6E\x65","\x2C\x20","\x68\x74\x6D\x6C","\x23\x69\x67\x65\x43\x6F\x72\x64\x44\x69\x76","\x6D\x6F\x75\x73\x65\x44\x6F\x77\x6E\x42\x75\x74\x74\x6F\x6E","\x24\x6C\x6F\x63\x61\x6C","\x70\x61\x6E\x54\x6F","\x76\x69\x65\x77\x70\x6F\x72\x74\x73","\x67\x75\x69\x64\x65"];var elementOffset=$(_0x4d8c[1]+event[_0x4d8c[3]][_0x4d8c[2]])[_0x4d8c[0]]();var clientX=event[_0x4d8c[4]]-elementOffset[_0x4d8c[5]];var clientY=event[_0x4d8c[6]]-elementOffset[_0x4d8c[7]];var tileCords=this[_0x4d8c[12]][_0x4d8c[11]][_0x4d8c[10]][event[_0x4d8c[9]][_0x4d8c[8]]](clientX,clientY,event[_0x4d8c[3]]);$(_0x4d8c[15])[_0x4d8c[14]](tileCords[0]+_0x4d8c[13]+tileCords[1]);if(event[_0x4d8c[3]][_0x4d8c[17]][_0x4d8c[16]]==2){this[_0x4d8c[12]][_0x4d8c[19]][_0x4d8c[18]](event[_0x4d8c[3]],clientX,clientY);} ;this[_0x4d8c[20]](tileCords[0],tileCords[1]);	
+				var elementOffset = $('#' + event.viewport.viewport_id).offset();
+				
+				var clientX = event.pageX - elementOffset.left;
+				var clientY = event.pageY - elementOffset.top;
+				
+				var tileCords = this.engine.renderer.screenToMap[event.map.map_render_mode](clientX, clientY, event.viewport);
+
+				$('#igeCordDiv').html(tileCords[0] + ', ' + tileCords[1]);			
+				
+				if (event.viewport.$local.mouseDownButton == 2) {
+					this.engine.viewports.panTo(event.viewport, clientX, clientY);
+				}
+
+				this.guide(tileCords[0], tileCords[1]);		
 			},
 			
 			viewportMouseUp: function (event) {				
-				var _0x9010=["\x70\x61\x67\x65\x58","\x70\x61\x67\x65\x59","\x62\x75\x74\x74\x6F\x6E","\x76\x69\x65\x77\x70\x6F\x72\x74","\x6D\x61\x70\x5F\x72\x65\x6E\x64\x65\x72\x5F\x6D\x6F\x64\x65","\x6D\x61\x70","\x73\x63\x72\x65\x65\x6E\x54\x6F\x4D\x61\x70","\x72\x65\x6E\x64\x65\x72\x65\x72","\x65\x6E\x67\x69\x6E\x65","\x53\x65\x6E\x64\x69\x6E\x67\x20\x6E\x65\x77\x20\x61\x76\x61\x74\x61\x72\x20\x6D\x6F\x76\x65\x20\x63\x6F\x6D\x6D\x61\x6E\x64\x2E\x2E\x2E","\x6C\x6F\x67","\x63\x6C\x69\x63\x6B\x4D\x6F\x76\x65","\x70\x61\x6E\x45\x6E\x64","\x76\x69\x65\x77\x70\x6F\x72\x74\x73","\x6D\x6F\x75\x73\x65\x44\x6F\x77\x6E\x42\x75\x74\x74\x6F\x6E","\x24\x6C\x6F\x63\x61\x6C"];var clientX=event[_0x9010[0]];var clientY=event[_0x9010[1]];if(event[_0x9010[2]]==0){var tileCords=this[_0x9010[8]][_0x9010[7]][_0x9010[6]][event[_0x9010[5]][_0x9010[4]]](clientX,clientY,event[_0x9010[3]]);this[_0x9010[10]](_0x9010[9]);this[_0x9010[11]](tileCords[0],tileCords[1]);} ;if(event[_0x9010[2]]==2){this[_0x9010[8]][_0x9010[13]][_0x9010[12]](event[_0x9010[3]],clientX,clientY);event[_0x9010[3]][_0x9010[15]][_0x9010[14]]=null;} ;		
+				var clientX = event.pageX; // - elementOffset.left;
+				var clientY = event.pageY; // - elementOffset.top;
+							
+				if (event.button == 0) {
+					// Tell the server we want our avatar to move to a new position
+					var tileCords = this.engine.renderer.screenToMap[event.map.map_render_mode](clientX, clientY, event.viewport);
+					this.log('Sending new avatar move command...');
+					
+					this.clickMove( tileCords[0], tileCords[1] );
+				}
+				
+				if (event.button == 2) {
+					this.engine.viewports.panEnd(event.viewport, clientX, clientY);
+					event.viewport.$local.mouseDownButton = null;
+				}		
 			},
 			
 			viewportMouseWheel: function (event) {
-				var _0x5ffc=["\x70\x61\x67\x65\x58","\x70\x61\x67\x65\x59","\x76\x69\x65\x77\x70\x6F\x72\x74","\x6D\x61\x70\x5F\x72\x65\x6E\x64\x65\x72\x5F\x6D\x6F\x64\x65","\x6D\x61\x70","\x73\x63\x72\x65\x65\x6E\x54\x6F\x4D\x61\x70","\x72\x65\x6E\x64\x65\x72\x65\x72","\x65\x6E\x67\x69\x6E\x65"];var clientX=event[_0x5ffc[0]];var clientY=event[_0x5ffc[1]];var tileCords=this[_0x5ffc[7]][_0x5ffc[6]][_0x5ffc[5]][event[_0x5ffc[4]][_0x5ffc[3]]](clientX,clientY,event[_0x5ffc[2]]);
+				
+				var clientX = event.pageX; // - elementOffset.left;
+				var clientY = event.pageY; // - elementOffset.top;
+				
+				var tileCords = this.engine.renderer.screenToMap[event.map.map_render_mode](clientX, clientY, event.viewport);
+				/*var camera = event.viewport.$local.$camera;
+				
+				if (event.wheelDeltaY > 0) {
+					var newScale = ((camera.camera_scale + 0.20) * 100) / 100;
+					if (newScale > 4.0) { newScale = 4.0; }
+					this.engine.cameras.setScale(camera, newScale);
+				}
+				
+				if (event.wheelDeltaY < 0) {
+					var newScale = ((camera.camera_scale - 0.20) * 100) / 100;
+					if (newScale < 0.2) { newScale = 0.2; }
+					this.engine.cameras.setScale(camera, newScale);
+				}*/
 			},
 			
 			startSim: function () {
-				var _0xb019=["\x73\x74\x61\x72\x74\x53\x69\x6D\x75\x6C\x61\x74\x69\x6F\x6E","\x72\x65\x71\x75\x65\x73\x74","\x6E\x65\x74\x77\x6F\x72\x6B","\x65\x6E\x67\x69\x6E\x65"];this[_0xb019[3]][_0xb019[2]][_0xb019[1]](_0xb019[0]);
+				// The start simulation button was clicked on the main menu so switch to the mapView screen
+				this.engine.network.request('startSimulation');
 			},
 
 			avatarCreated: function (avatarId) {
-				var _0x7513=["\x54\x72\x61\x63\x6B\x69\x6E\x67\x20\x70\x6C\x61\x79\x65\x72\x27\x73\x20\x61\x76\x61\x74\x61\x72","\x6C\x6F\x67","\x6D\x61\x69\x6E\x43\x61\x6D","\x62\x79\x49\x64","\x63\x61\x6D\x65\x72\x61\x73","\x65\x6E\x67\x69\x6E\x65","\x74\x72\x61\x63\x6B\x54\x61\x72\x67\x65\x74"];console[_0x7513[1]](_0x7513[0]);this[_0x7513[5]][_0x7513[4]][_0x7513[6]](this[_0x7513[5]][_0x7513[4]][_0x7513[3]][_0x7513[2]],avatarId);
+				console.log('Tracking player\'s avatar');
+				// Call "trackTarget" indicating which camera will follow the entity.
+				this.engine.cameras.trackTarget(this.engine.cameras.byId['mainCam'], avatarId);
 			},
 				
 			viewportAfterCreate: function (viewport) {				
 			},
 			
-			viewportAfterPanEnd: function (viewport) {				
+			viewportAfterPanEnd: function (viewport) {
+				// A viewport pan has just ended so lets ask the server to update its copy of the viewport
+				// and send us back any new entities that we need to be able to see				
 			},
 			
 			bindGameNetworkEvents: function () {
-				var _0x7993=["\x42\x69\x6E\x64\x69\x6E\x67\x20\x47\x61\x6D\x65\x20\x4E\x65\x74\x77\x6F\x72\x6B\x20\x65\x76\x65\x6E\x74\x73","\x6C\x6F\x67"];console[_0x7993[1]](_0x7993[0]);
+				console.log('Binding Game Network events');
 			},
 			
 		});
 		
-		var _0x5718=["\x64\x65\x66\x61\x75\x6C\x74\x43\x6F\x6E\x74\x65\x78\x74","\x32\x64"];ige= new IgeEngine();ige[_0x5718[0]]=_0x5718[1];igeGame= new IgeGame(ige);	
+		// Create the engine instance, network settings and then connect!
+		ige = new IgeEngine();
+		ige.defaultContext = '2d'; // Set default canvas context
+		igeGame = new IgeGame(ige);	
 	}	
 }

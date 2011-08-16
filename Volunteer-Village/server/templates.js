@@ -24,6 +24,19 @@ templates = new IgeClass({
 		});
 
 		this.engine.templates.create({
+			template_id: 'site',
+			template_contents: {
+				entity_type:ENTITY_TYPE_OBJECT,
+				entity_layer:LAYER_OBJECTS,
+				entity_tile_width: 5,
+				entity_tile_height: 5,
+				entity_z:-1,
+				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
+				asset_id: 'site',
+			},
+		});
+
+		this.engine.templates.create({
 			template_id: 'schoolInterior',
 			template_contents: {
 				entity_type:ENTITY_TYPE_OBJECT,

@@ -20,6 +20,15 @@ entities = new IgeClass({
 		});
 
 		this.engine.entities.create({
+			template_id: 'site',
+			entity_x: 21,
+			entity_y: 23,
+			entity_id: 'site2123',
+			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
+			map_id: 'townMap',
+		});
+
+		this.engine.entities.create({
 			template_id: 'centre',
 			entity_x:10,
 			entity_y:9,

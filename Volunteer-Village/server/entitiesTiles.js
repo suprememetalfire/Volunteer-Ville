@@ -13,7 +13,39 @@ entitiesTiles = new IgeClass({
 		// Create some grass
 		for( var x = 9; x < 26; x += 1 )
 		{
-			for( var y = 32; y < 43; y += 1 )
+			for( var y = 32; y < 37; y += 1 )
+			{
+				this.engine.entities.create
+				({
+					template_id: 'tileBase',
+					entity_x: x,
+					entity_y: y,
+					entity_id: 'townBase' + ( x + '_' + y ),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame: ( Math.ceil( Math.random() * 3 ) ) + 1,
+					map_id: 'townMap',
+				});
+			}
+		}
+		for( var x = 9; x < 12; x += 1 )
+		{
+			for( var y = 37; y < 43; y += 1 )
+			{
+				this.engine.entities.create
+				({
+					template_id: 'tileBase',
+					entity_x: x,
+					entity_y: y,
+					entity_id: 'townBase' + ( x + '_' + y ),
+					entity_locale: LOCALE_EVERYWHERE,
+					asset_sheet_frame: ( Math.ceil( Math.random() * 3 ) ) + 1,
+					map_id: 'townMap',
+				});
+			}
+		}
+		for( var x = 17; x < 26; x += 1 )
+		{
+			for( var y = 37; y < 43; y += 1 )
 			{
 				this.engine.entities.create
 				({
