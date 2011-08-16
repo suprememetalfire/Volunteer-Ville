@@ -334,6 +334,20 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 1.2
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "wMPhone",
+			"asset_image_url" : "/Volunteer-Village/assets/people/wMPhone.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			50, 
+			50 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 1.3
+		});
 	},	
 });	
 }
