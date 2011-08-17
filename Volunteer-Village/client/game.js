@@ -43,6 +43,7 @@ function onBoot () {
 			counter: 10,
 			intTask: [],
 			display: true,
+			badgeScore: 0,
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -534,6 +535,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Youve Just Been Schooled';
 						this.taskList[0] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[0] = -1;
@@ -555,6 +557,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Updated';
 						this.taskList[1] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[1] = -1;
@@ -591,6 +594,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Done';
 						this.taskList[2] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[2] = -1;
@@ -607,6 +611,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Done';
 						this.taskList[3] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[3] = -1;
@@ -628,6 +633,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Done';
 						this.taskList[4] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[4] = -1;
@@ -659,6 +665,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Done';
 						this.taskList[5] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[5] = -1;
@@ -701,11 +708,12 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Fixed';
 						this.taskList[7] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[7] = -1;
 					}
-				game}
+				}
 				else if( this.output == this.taskName[8] )
 				{	
 				}
@@ -728,6 +736,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Talking';
 						this.taskList[10] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[10] = -1;
@@ -749,6 +758,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Clowning Around';
 						this.taskList[11] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[11] = -1;
@@ -775,6 +785,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Done';
 						this.taskList[12] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[12] = -1;
@@ -796,6 +807,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Cooked';
 						this.taskList[13] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[13] = -1;
@@ -822,6 +834,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Delivered';
 						this.taskList[14] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[14] = -1;
@@ -849,6 +862,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Talking';
 						this.taskList[17] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[17] = -1;
@@ -880,6 +894,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Done';
 						this.taskList[18] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[18] = -1;
@@ -901,6 +916,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Done';
 						this.taskList[19] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[19] = -1;
@@ -922,6 +938,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Good Work';
 						this.taskList[20] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[20] = -1;
@@ -945,6 +962,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						{
 							this.strCurrentTask = 'Good To Go';
 							this.taskList[21] += 1;
+							this.badgeScore ++;
 							this.output = -1;
 							this.counter = 0;
 							this.intTask[21] = -1;
@@ -967,6 +985,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Call';
 						this.taskList[22] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[22] = -1;
@@ -991,6 +1010,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Art';
 						this.taskList[24] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[24] = -1;
@@ -1012,6 +1032,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Enviro';
 						this.taskList[25] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[25] = -1;
@@ -1028,6 +1049,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Updated';
 						this.taskList[26] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[26] = -1;
@@ -1049,6 +1071,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					{
 						this.strCurrentTask = 'Updated';
 						this.taskList[27] += 1;
+						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[27] = -1;

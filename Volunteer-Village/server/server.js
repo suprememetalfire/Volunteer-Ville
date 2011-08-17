@@ -1329,10 +1329,15 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 	{
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
-		
-		if( entity.map_id == 'centreMap' )
+
+		if( this.boolTaskIcons[27] == false )
 		{
 			this.createTaskIcons( 20, num );
+			this.boolTaskIcons[27] = true;
+		}
+		
+		if( entity.map_id == 'centreMap' )
+		{			
 			this.engine.network.send( 'taskStageTwentySeven', 0, num );
 		}
 	},
@@ -1345,6 +1350,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		if( entity.map_id == 'centreMap' && ( entity.entity_x == 5 && entity.entity_y == 5 ) && this.intAnimationCounter == 10  )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
+			this.boolTaskIcons[26] = false;
 			this.engine.entities.remove( entity );
 			this.createNewMapAvatar(num, 'wMPhone', 5, 5, 'centreMap');
 			this.intAnimationCounter = 0;

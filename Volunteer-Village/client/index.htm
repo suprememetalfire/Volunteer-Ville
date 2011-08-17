@@ -22,16 +22,45 @@
 			<div id="uiLogo"></div>
 			<div id="uiMenuButton_menu" class="uiMenuButton" onclick="click();"></div>
 			<div id="uiMenuButton_music" class="uiMenuButton" onclick="igeGame.switchMusic();"></div>
-			<div id="uiMenuButton_badges" class="uiMenuButton" onclick="showBadges();"></div>
+			<div id="uiMenuButton_badges" class="uiMenuButton" onclick="showBadges(); revealBadges();"></div>
 			<div id="uiMenuButton_osd" class="uiMenuButtonC"></div>
 			<div id="uiMenuButton_osd1" class="uiMenuButtonCT"></div>
 		</div>
 
+		<div id="igeBadgesDiv">
+			<div id="uiBadgeOne" class="badgeIcon"></div>
+			<div id="uiBadgeTwo" class="badgeIcon"></div>
+			<div id="uiBadgeThree" class="badgeIcon"></div>
+			<div id="uiBadgeFour" class="badgeIcon"></div>
+			<div id="uiBadgeFive" class="badgeIcon"></div>
+			<div id="uiBadgeSix" class="badgeIcon"></div>
+			<div id="uiBadgeSeven" class="badgeIcon"></div>
+			<div id="uiBadgeEight" class="badgeIcon"></div>
+			<div id="uiBadgeNine" class="badgeIcon"></div>
+			<div id="uiBadgeTen" class="badgeIcon"></div>
+			<div id="uiBadgeEleven" class="badgeIcon"></div>
+			<div id="uiBadgeTwelve" class="badgeIcon"></div>
+			<div id="uiBadgeThirteen" class="badgeIcon"></div>
+			<div id="uiBadgeFourteen" class="badgeIcon"></div>
+			<div id="uiBadgeFifteen" class="badgeIcon"></div>
+			<div id="uiBadgeSixteen" class="badgeIcon"></div>
+			<div id="uiBadgeSeventeen" class="badgeIcon"></div>
+			<div id="uiBadgeEighteen" class="badgeIcon"></div>
+			<div id="uiBadgeNineteen" class="badgeIcon"></div>
+			<div id="uiBadgeTwenty" class="badgeIcon"></div>
+			<div id="uiBadgeTwentyOne" class="badgeIcon"></div>
+			<div id="uiBadgeTwentyTwo" class="badgeIcon"></div>
+			<div id="uiBadgeTwentyThree" class="badgeIcon"></div>
+			<div id="uiBadgeTwentyFour" class="badgeIcon"></div>
+			<div id="uiBadgeTwentyFive" class="badgeIcon"></div>
+			<div id="uiBadgeTwentySix" class="badgeIcon"></div>
+			<div id="uiBadgeTwentySeven" class="badgeIcon"></div>
+			<div id="uiBadgeTwentyEight" class="badgeIcon"></div>
+			<div id="uiBadgeTwentyNine" class="badgeIcon"></div>					
+		</div>
+
 		<div id="igeLogDiv"></div>
 		<div id="igeCordDiv"></div>
-		<div id="igeStatsBDiv">
-			<div id="uiMenuButton_badges" class="uiMenuButtonT" onclick="showBadges();"></div>
-		</div>
 		<div id="igePlayerDiv">
 			<div id="playerOne" class="playerButton" onclick="showBadges();"></div>
 			<div id="playerTwo" class="playerButton" onclick="click();"></div>
@@ -176,61 +205,128 @@
 			<div id="blank2" class="blank2"></div>
 			<div id="acceptButton" class="acceptButton" onclick="igeGame.output = igeGame.out; igeGame.display = true; igeGame.resetTasks(); click();"></div>
 		</div>
-		<div id="igeBadgesDiv"></div>
+			
+		
 		<div id="contain"></div>
 	
 		<script type="text/javascript">
 			var clicked = false;
 			var show = false;
+			/*var badgeList = new Array();
+
+			badgeList[0] = 'uiBadgeOne';
+			badgeList[1] = 'uiBadgeTwo';
+			badgeList[2] = 'uiBadgeThree';
+			badgeList[3] = 'uiBadgeFour';
+			badgeList[4] = 'uiBadgeFive';
+			badgeList[5] = 'uiBadgeSix';
+			badgeList[6] = 'uiBadgeSeven';
+			badgeList[7] = 'uiBadgeEight';
+			badgeList[8] = 'uiBadgeNine';
+			badgeList[9] = 'uiBadgeTen';
+			badgeList[10] = 'uiBadgeEleven';
+			badgeList[11] = 'uiBadgeTwelve';
+			badgeList[12] = 'uiBadgeThirteen';
+			badgeList[13] = 'uiBadgeFourteen';
+			badgeList[14] = 'uiBadgeFifteen';
+			badgeList[15] = 'uiBadgeSixteen';
+			badgeList[16] = 'uiBadgeSeventeen';
+			badgeList[17] = 'uiBadgeEighteen';
+			badgeList[18] = 'uiBadgeNineteen';
+			badgeList[19] = 'uiBadgeTwenty';
+			badgeList[20] = 'uiBadgeTwentyOne';
+			badgeList[21] = 'uiBadgeTwentyTwo';
+			badgeList[22] = 'uiBadgeTwentyThree';
+			badgeList[23] = 'uiBadgeTwentyFour';
+			badgeList[24] = 'uiBadgeTwentyFive';
+			badgeList[25] = 'uiBadgeTwentySix';
+			badgeList[26] = 'uiBadgeTwentySeven';
+			badgeList[27] = 'uiBadgeTwentyEight';
+			badgeList[28] = 'uiBadgeTwentyNine';*/
 		
 			document.getElementById("igeBadgesDiv").style.visibility="hidden";
 			document.getElementById("igePlayerDiv").style.visibility="hidden";
 			document.getElementById("igeQuestLog").style.visibility="hidden";
 			document.getElementById("igeQuestLog2").style.visibility="hidden";
-			document.getElementById("igeStatsBDiv").style.visibility="hidden";
+
+/*			document.getElementById("uiBadgeOne").style.visibility="hidden";
+			document.getElementById("uiBadgeTwo").style.visibility="hidden";
+			document.getElementById("uiBadgeThree").style.visibility="hidden";
+			document.getElementById("uiBadgeFour").style.visibility="hidden";	
+		*/
+			function click()
+			{
+				if( clicked )
+				{
+					changeVisibility();
+					clicked = false;
+				}
+				else
+				{
+					resetElement();
+					clicked = true;
+				}
+			}
+			
+			function changeVisibility()
+			{
+				//document.getElementById("igePlayerDiv").style.visibility="hidden";
+				document.getElementById("igeQuestLog").style.visibility="hidden";
+				document.getElementById("igeQuestLog2").style.visibility="hidden";
+			}
+			function resetElement()
+			{
+				//document.getElementById("igePlayerDiv").style.visibility="visible";
+				document.getElementById("igeQuestLog").style.visibility="visible";
+				document.getElementById("igeQuestLog2").style.visibility="visible";
+			}
 		
-				function click()
+			function showBadges()
+			{
+				if( show )
 				{
-					if( clicked )
+					document.getElementById("igeBadgesDiv").style.visibility="hidden";
+					show = false;
+				}
+				else
+				{
+					document.getElementById("igeBadgesDiv").style.visibility="visible";
+					show = true;
+				}
+			}
+			
+			function revealBadges()
+			{
+				/*for( var i = 0; i < 28; i++ )
+				{
+					if( igeGame.taskList[i] == 0 )
 					{
-						changeVisibility();
-						clicked = false;
+						document.getElementById(badgeList[i]).style.visibility="hidden";
 					}
 					else
 					{
-						resetElement();
-						clicked = true;
+						document.getElementById(badgeList[i]).style.visibility="visible";
 					}
-				}
-			
-				function changeVisibility()
+				}*/
+
+				if( ( igeGame.taskList[10] + igeGame.taskList[17] >= 5 ) && show )
 				{
-					//document.getElementById("igeStatsBDiv").style.visibility="hidden";
-					//document.getElementById("igePlayerDiv").style.visibility="hidden";
-					document.getElementById("igeQuestLog").style.visibility="hidden";
-					document.getElementById("igeQuestLog2").style.visibility="hidden";
+					document.getElementById("uiBadgeTwo").style.visibility="visible";
 				}
-				function resetElement()
+				else
 				{
-					//document.getElementById("igeStatsBDiv").style.visibility="visible";
-					//document.getElementById("igePlayerDiv").style.visibility="visible";
-					document.getElementById("igeQuestLog").style.visibility="visible";
-					document.getElementById("igeQuestLog2").style.visibility="visible";
+					document.getElementById("uiBadgeTwo").style.visibility="hidden";
 				}
-			
-				function showBadges()
+
+				if( igeGame.taskList[27] >= 5 && show )
 				{
-					if( show )
-					{
-						document.getElementById("igeBadgesDiv").style.visibility="hidden";
-						show = false;
-					}
-					else
-					{
-						document.getElementById("igeBadgesDiv").style.visibility="visible";
-						show = true;
-					}
+					document.getElementById("uiBadgeOne").style.visibility="visible";
 				}
+				else
+				{
+					document.getElementById("uiBadgeOne").style.visibility="hidden";
+				}
+			}
 		</script>
 	</body>
 </html>

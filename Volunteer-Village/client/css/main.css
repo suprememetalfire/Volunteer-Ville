@@ -448,123 +448,137 @@ canvas
 	background-image:url(/Volunteer-Village/assets/ui/uiButton_delet.png);
 }
 
-#Badge1
+#uiBadgeOne
 {
-	background-image:url(/Volunteer-Village/assets/ui/VigilantVolunteer.png);
+	background-image:url(/Volunteer-Village/assets/ui/vigilantVolunteer.png);
 }
-#Badge2
+#uiBadgeTwo
 {
 	background-image:url(/Volunteer-Village/assets/ui/Befriender.png);
 }
-#Badge3
+#uiBadgeThree
 {
 	background-image:url(/Volunteer-Village/assets/ui/Squeaky.png);
 }
-#Badge4
+#uiBadgeFour
 {
 	background-image:url(/Volunteer-Village/assets/ui/OldFolksHomie.png);
 }
-#Badge5
+#uiBadgeFive
 {
 	background-image:url(/Volunteer-Village/assets/ui/HomeSweetHomie.png);
 }
-#Badge6
+#uiBadgeSix
 {
 	background-image:url(/Volunteer-Village/assets/ui/ComputerWhizz.png);
 }
-#Badge7
+#uiBadgeSeven
 {
 	background-image:url(/Volunteer-Village/assets/ui/Clown.png);
 }
-#Badge8
+#uiBadgeEight
 {
 	background-image:url(/Volunteer-Village/assets/ui/RockOn.png);
 }
-#Badge9
+#uiBadgeNine
 {
 	background-image:url(/Volunteer-Village/assets/ui/BusDriver.png);
 }
-#Badge10
+#uiBadgeTen
 {
 	background-image:url(/Volunteer-Village/assets/ui/Handy.png);
 }
-#Badge11
+#uiBadgeEleven
 {
 	background-image:url(/Volunteer-Village/assets/ui/LitterPatrol.png);
 }
-#Badge12
+#uiBadgeTwelve
 {
 	background-image:url(/Volunteer-Village/assets/ui/Delivery.png);
 }
-#Badge13
+#uiBadgeThirteen
 {
 	background-image:url(/Volunteer-Village/assets/ui/RegardsToTheChef.png);
 }
-#Badge14
+#uiBadgeFourteen
 {
 	background-image:url(/Volunteer-Village/assets/ui/WereOutOf.png);
 }
-#Badge15
+#uiBadgeFifteen
 {
-	background-image:url(/Volunteer-Village/assets/ui/Artitste.png);
+	background-image:url(/Volunteer-Village/assets/ui/Artiste.png);
 }
-#Badge16
+#uiBadgeSixteen
 {
 	background-image:url(/Volunteer-Village/assets/ui/Enviromentalist.png);
 }
-#Badge17
+#uiBadgeSeventeen
 {
 	background-image:url(/Volunteer-Village/assets/ui/WalkTheDog.png);
 }
-#Badge18
+#uiBadgeEighteen
 {
 	background-image:url(/Volunteer-Village/assets/ui/TheTeacher.png);
 }
-#Badge19
+#uiBadgeNineteen
 {
 	background-image:url(/Volunteer-Village/assets/ui/FiveTimes.png);
 }
-#Badge20
+#uiBadgeTwenty
 {
 	background-image:url(/Volunteer-Village/assets/ui/TenTimes.png);
 }
-#Badge21
+#uiBadgeTwentyOne
 {
 	background-image:url(/Volunteer-Village/assets/ui/FiftyTimes.png);
 }
-#Badge22
+#uiBadgeTwentyTwo
 {
 	background-image:url(/Volunteer-Village/assets/ui/OneHundredTimes.png);
 }
-#Badge23
+#uiBadgeTwentyThree
 {
 	background-image:url(/Volunteer-Village/assets/ui/GardaClearance.png);
 }
-#Badge24
+#uiBadgeTwentyFour
 {
 	background-image:url(/Volunteer-Village/assets/ui/School.png);
 }
-#Badge25
+#uiBadgeTwentyFive
 {
 	background-image:url(/Volunteer-Village/assets/ui/Volunteer.png);
 }
-#Badge26
+#uiBadgeTwentySix
 {
 	background-image:url(/Volunteer-Village/assets/ui/CommunitySpirit.png);
 }
-#Badge27
+#uiBadgeTwentySeven
 {
 	background-image:url(/Volunteer-Village/assets/ui/AcrossTheBoard.png);
 }
-#Badge28
+#uiBadgeTwentyEight
 {
 	background-image:url(/Volunteer-Village/assets/ui/HelpingHand.png);
 }
-#Badge29
+#uiBadgeTwentyNine
 {
 	background-image:url(/Volunteer-Village/assets/ui/FreeWheeling.png);
 }
 
+.badgeIcon
+{
+	width:40px;
+	height:40px;	
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float: left
+}
+
+.badgeIcon_sep 
+{
+	width:30px;
+}
 
 #igeLogDiv {
 	position:absolute;
@@ -622,8 +636,8 @@ canvas
 #igeBadgesDiv {
 	position:absolute;
 	background-image:url(/Volunteer-Village/assets/ui/badgesScreen.png);
-	left:50%;
-	top:0px;
+	left:25%;
+	top:50px;
 	width:400px;
 	height:600px;
 	z-index:11000;
@@ -643,6 +657,7 @@ canvas
 	height: 599px;
 	z-index:110000;
 	overflow: auto;
+	cursor:pointer;
 }
 #igeQuestLog2
 {
