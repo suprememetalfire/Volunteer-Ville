@@ -25,7 +25,7 @@ igeConfig = {
 	///////////////////////////////////////////////////////////////////////////////////////
 	// Server Configuration
 	///////////////////////////////////////////////////////////////////////////////////////
-	version:'0.1.0', // Server version - client must match to connect and authorise
+	version:'0.1.3', // Server version - client must match to connect and authorise
 	mode:'debug', // Server mode - either 'debug' or 'release'. In debug mode, client scripts are not obfuscated.
 	dir_root:'/ige', // The root folder where the IGE is located
 	//dir_root:'/Users/robevans/isogenic/final', // The root folder where the IGE is located

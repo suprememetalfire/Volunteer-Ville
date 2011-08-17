@@ -448,6 +448,124 @@ canvas
 	background-image:url(/Volunteer-Village/assets/ui/uiButton_delet.png);
 }
 
+#Badge1
+{
+	background-image:url(/Volunteer-Village/assets/ui/VigilantVolunteer.png);
+}
+#Badge2
+{
+	background-image:url(/Volunteer-Village/assets/ui/Befriender.png);
+}
+#Badge3
+{
+	background-image:url(/Volunteer-Village/assets/ui/Squeaky.png);
+}
+#Badge4
+{
+	background-image:url(/Volunteer-Village/assets/ui/OldFolksHomie.png);
+}
+#Badge5
+{
+	background-image:url(/Volunteer-Village/assets/ui/HomeSweetHomie.png);
+}
+#Badge6
+{
+	background-image:url(/Volunteer-Village/assets/ui/ComputerWhizz.png);
+}
+#Badge7
+{
+	background-image:url(/Volunteer-Village/assets/ui/Clown.png);
+}
+#Badge8
+{
+	background-image:url(/Volunteer-Village/assets/ui/RockOn.png);
+}
+#Badge9
+{
+	background-image:url(/Volunteer-Village/assets/ui/BusDriver.png);
+}
+#Badge10
+{
+	background-image:url(/Volunteer-Village/assets/ui/Handy.png);
+}
+#Badge11
+{
+	background-image:url(/Volunteer-Village/assets/ui/LitterPatrol.png);
+}
+#Badge12
+{
+	background-image:url(/Volunteer-Village/assets/ui/Delivery.png);
+}
+#Badge13
+{
+	background-image:url(/Volunteer-Village/assets/ui/RegardsToTheChef.png);
+}
+#Badge14
+{
+	background-image:url(/Volunteer-Village/assets/ui/WereOutOf.png);
+}
+#Badge15
+{
+	background-image:url(/Volunteer-Village/assets/ui/Artitste.png);
+}
+#Badge16
+{
+	background-image:url(/Volunteer-Village/assets/ui/Enviromentalist.png);
+}
+#Badge17
+{
+	background-image:url(/Volunteer-Village/assets/ui/WalkTheDog.png);
+}
+#Badge18
+{
+	background-image:url(/Volunteer-Village/assets/ui/TheTeacher.png);
+}
+#Badge19
+{
+	background-image:url(/Volunteer-Village/assets/ui/FiveTimes.png);
+}
+#Badge20
+{
+	background-image:url(/Volunteer-Village/assets/ui/TenTimes.png);
+}
+#Badge21
+{
+	background-image:url(/Volunteer-Village/assets/ui/FiftyTimes.png);
+}
+#Badge22
+{
+	background-image:url(/Volunteer-Village/assets/ui/OneHundredTimes.png);
+}
+#Badge23
+{
+	background-image:url(/Volunteer-Village/assets/ui/GardaClearance.png);
+}
+#Badge24
+{
+	background-image:url(/Volunteer-Village/assets/ui/School.png);
+}
+#Badge25
+{
+	background-image:url(/Volunteer-Village/assets/ui/Volunteer.png);
+}
+#Badge26
+{
+	background-image:url(/Volunteer-Village/assets/ui/CommunitySpirit.png);
+}
+#Badge27
+{
+	background-image:url(/Volunteer-Village/assets/ui/AcrossTheBoard.png);
+}
+#Badge28
+{
+	background-image:url(/Volunteer-Village/assets/ui/HelpingHand.png);
+}
+#Badge29
+{
+	background-image:url(/Volunteer-Village/assets/ui/FreeWheeling.png);
+}
+
+
 #igeLogDiv {
 	position:absolute;
 	right:10px;
@@ -506,8 +624,8 @@ canvas
 	background-image:url(/Volunteer-Village/assets/ui/badgesScreen.png);
 	left:50%;
 	top:0px;
-	width:150px;
-	height:400px;
+	width:400px;
+	height:600px;
 	z-index:11000;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:20px;
