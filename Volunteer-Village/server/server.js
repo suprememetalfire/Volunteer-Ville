@@ -164,15 +164,14 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		// Start the server engine
 		this.engine.start(igeConfig);
 
-		for( var i = 0; i < 28; i++ )
+		for( var i = 0; i < 6; i++ )
 		{
-			this.aryTaskObjects[i] = 0;
 			this.boolTaskIcons[i] = false;
-			this.aryTaskIcons[i] = 0;
 		}
-		this.aryTaskObjects[14] = [ 'bag', 4, -1, 'shopMap' ];
-		this.aryTaskObjects[19] = [ 'guitar', 0, -8, 'oldFolksHomeMap' ];
-		this.aryTaskObjects[20] = [ 'bag', 13, 34, 'townMap' ];
+
+		this.aryTaskObjects[0] = [ 'bag', 4, -1, 'shopMap' ];
+		this.aryTaskObjects[1] = [ 'guitar', 0, -8, 'oldFolksHomeMap' ];
+		this.aryTaskObjects[2] = [ 'bag', 13, 34, 'townMap' ];
 
 		this.aryTaskIcons[0] = [ 'taskIcon', -7, 5, 'schoolMap' ];	
 		this.aryTaskIcons[1] = [ 'taskIcon', 31, 13, 'poundMap' ];
@@ -669,16 +668,16 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( this.boolTaskIcons[3] == false )
+		if( this.boolTaskIcons[0] == false )
 		{
 			this.createTaskIcons( 3, num );
-			this.boolTaskIcons[3] = true;
+			this.boolTaskIcons[0] = true;
 		}
 
 		if( entity.map_id == 'townMap' && ( entity.entity_x == 5 && entity.entity_y == 5 ) )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
-			this.boolTaskIcons[3] = false;
+			this.boolTaskIcons[0] = false;
 			this.engine.network.send( 'taskStageThree', 0, num );
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -716,10 +715,10 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		/*if( this.boolTaskIcons[5] == false )
+		/*if( this.boolTaskIcons[1] == false )
 		{
 			this.createTaskIcons( 5, num );
-			this.boolTaskIcons[5] = true;
+			this.boolTaskIcons[1] = true;
 		}*/
 
 		if( entity.map_id == 'crecheMap' )
@@ -812,16 +811,16 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( this.boolTaskIcons[7] == false )
+		if( this.boolTaskIcons[2] == false )
 		{
 			this.createTaskIcons( 9, num );
-			this.boolTaskIcons[7] = true;
+			this.boolTaskIcons[2] = true;
 		}
 
 		if( entity.map_id == 'townMap' && ( entity.entity_x == 41 && entity.entity_y == 19 )  )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
-			this.boolTaskIcons[7] = false;
+			this.boolTaskIcons[2] = false;
 			this.createTaskIcons( 10, num );			
 			this.engine.network.send( 'taskStageSeven', 0, num );
 		}
@@ -918,16 +917,16 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( this.boolTaskIcons[12] == false )
+		if( this.boolTaskIcons[3] == false )
 		{
 			this.createTaskIcons( 13, num );
-			this.boolTaskIcons[12] = true;
+			this.boolTaskIcons[3] = true;
 		}
 
 		if( entity.map_id == 'townMap' && ( entity.entity_x == 12 && entity.entity_y == 3 ) )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
-			this.boolTaskIcons[12] = false;
+			this.boolTaskIcons[3] = false;
 			this.createTaskIcons( 14, num );
 			this.driveBus( 1, client );
 			this.engine.network.send( 'taskStageTwelve', 0, num );
@@ -995,7 +994,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 
 		if( entity.map_id == 'shopMap' )
 		{
-			this.createTaskObjects( 14, num );
+			this.createTaskObjects( 0, num );
 			this.engine.network.send( 'taskStageFourteen', 0, num );
 		}
 	},
@@ -1124,7 +1123,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 	
 		if( entity.map_id == 'oldFolksHomeMap' )
 		{
-			this.createTaskObjects( 19, num );
+			this.createTaskObjects( 1, num );
 			this.engine.network.send( 'taskStageNineteen', 0, num );			
 		}
 	},
@@ -1150,7 +1149,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 	
 		if( entity.map_id == 'townMap' )
 		{
-			this.createTaskObjects( 20, num );
+			this.createTaskObjects( 2, num );
 			this.engine.network.send( 'taskStageTwenty', 0, num );			
 		}
 	},
@@ -1309,16 +1308,16 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( this.boolTaskIcons[26] == false )
+		if( this.boolTaskIcons[4] == false )
 		{
 			this.createTaskIcons( 20, num );
-			this.boolTaskIcons[26] = true;
+			this.boolTaskIcons[4] = true;
 		}
 	
 		if( entity.map_id == 'centreMap' && ( entity.entity_x == 5 && entity.entity_y == 5 )  )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
-			this.boolTaskIcons[26] = false;
+			this.boolTaskIcons[4] = false;
 			this.engine.network.send( 'taskStageTwentySix', 0, num );	
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);		
@@ -1330,10 +1329,10 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( this.boolTaskIcons[27] == false )
+		if( this.boolTaskIcons[5] == false )
 		{
 			this.createTaskIcons( 20, num );
-			this.boolTaskIcons[27] = true;
+			this.boolTaskIcons[5] = true;
 		}
 		
 		if( entity.map_id == 'centreMap' )
@@ -1350,7 +1349,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		if( entity.map_id == 'centreMap' && ( entity.entity_x == 5 && entity.entity_y == 5 ) && this.intAnimationCounter == 10  )
 		{
 			this.destroyTaskObjects( 'taskIcon' + num );
-			this.boolTaskIcons[26] = false;
+			this.boolTaskIcons[4] = false;
 			this.engine.entities.remove( entity );
 			this.createNewMapAvatar(num, 'wMPhone', 5, 5, 'centreMap');
 			this.intAnimationCounter = 0;

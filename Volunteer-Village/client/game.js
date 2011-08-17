@@ -44,6 +44,8 @@ function onBoot () {
 			intTask: [],
 			display: true,
 			badgeScore: 0,
+			boolAllTasks: false,
+			soundCounter: 0,			
 			
 			init: function (engine) {
 				this.engine = engine;
@@ -177,7 +179,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 				this.checkForSound();
 			},
 
-			/*checkForSound: function () {
+			checkForSound: function () {
 				if ( this.engine.sound != null && this.engine.sound.ready() )
 				{
 					// Create a new sound and play it
@@ -205,7 +207,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 				{
 					setTimeout( this.bind( this.checkForSound ), 100 );
 				}
-			},*/
+			},
 			
 			// Called before the server starts sending large amounts of data
 			netSendStarted: function (collection, count) {
@@ -245,12 +247,19 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 			updateWorld: function () 
 			{
 				this.osdOne();
+this.guide();
 
 				this.tasks();					
 
 				if( this.counter <= 10 )
 				{
 					this.counter++;
+				}
+
+				if( this.soundCounter == 129 )
+				{
+					this.engine.sound.play( 'background' );
+					this.soundCounter = 0;
 				}
 
 				if( this.counter >= 5 && this.counter < 10 )
@@ -263,7 +272,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 
 			osdOne: function()
 			{
-				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask );
+				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask + this.location );
 			},
 
 			guide: function (clientX, clientY)
@@ -539,9 +548,10 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[0] = -1;
+						this.taskCompleted[0] = true;
 					}			
 				}
-				else if( this.output == this.taskName[1] )
+				/*else if( this.output == this.taskName[1] )
 				{						
 					if( this.intTask[1] == -1 )
 					{
@@ -562,7 +572,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.counter = 0;
 						this.intTask[1] = -1;
 					}
-				}
+				}*/
 				else if( this.output == this.taskName[2] )
 				{	
 					if( this.intTask[2] == -1 )
@@ -598,9 +608,10 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[2] = -1;
+						this.taskCompleted[2] = true;
 					}
 				}
-				else if( this.output == this.taskName[3] )
+				/*else if( this.output == this.taskName[3] )
 				{
 					if( this.intTask[3] == -1 )
 					{
@@ -638,7 +649,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.counter = 0;
 						this.intTask[4] = -1;
 					}
-				}
+				}*/
 				else if( this.output == this.taskName[5] )
 				{	
 					if( this.intTask[5] == -1 )
@@ -659,16 +670,17 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					else if( this.intTask[5] == 2 )
 					{
 						this.engine.network.send( 'taskFivePartFour', 1, this.player );
-						this.strCurrentTask = 'Return The miniBus';
+						this.strCurrentTask = 'Return The MiniBus';
 					}
 					else if( this.intTask[5] == 3 )
 					{
-						this.strCurrentTask = 'Done';
+						this.strCurrentTask = 'Good Job';
 						this.taskList[5] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[5] = -1;
+						this.taskCompleted[5] = true;
 					}
 				}
 				else if( this.output == this.taskName[6] )
@@ -690,6 +702,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[6] = -1;
+						this.taskCompleted[6] = true;
 					}
 				}
 				else if( this.output == this.taskName[7] )
@@ -702,7 +715,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					else if( this.intTask[7] == 0 )
 					{
 						this.engine.network.send( 'taskSevenPartTwo', 1, this.player );
-						this.strCurrentTask = 'Fix The Roof';
+						this.strCurrentTask = 'Fix The Meter Box';
 					}
 					else if( this.intTask[7] == 1 )
 					{
@@ -712,14 +725,15 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[7] = -1;
+						this.taskCompleted[7] = true;
 					}
 				}
-				else if( this.output == this.taskName[8] )
+				/*else if( this.output == this.taskName[8] )
 				{	
 				}
 				else if( this.output == this.taskName[9] )
 				{	
-				}
+				}*/
 				else if( this.output == this.taskName[10] )
 				{	
 					if( this.intTask[10] == -1 )
@@ -734,12 +748,13 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[10] == 1 )
 					{
-						this.strCurrentTask = 'Talking';
+						this.strCurrentTask = 'Thank You';
 						this.taskList[10] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[10] = -1;
+						this.taskCompleted[10] = true;
 					}
 				}
 				else if( this.output == this.taskName[11] )
@@ -762,6 +777,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[11] = -1;
+						this.taskCompleted[11] = true;
 					}
 				}
 				else if( this.output == this.taskName[12] )
@@ -769,12 +785,12 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					if( this.intTask[12] == -1 )
 					{
 						this.engine.network.send( 'taskTwelvePartOne', 1, this.player );
-						this.strCurrentTask = 'Go To The Depot';
+						this.strCurrentTask = 'Go To The Meals On Wheels Depot';
 					}
 					else if( this.intTask[12] == 0 )
 					{
 						this.engine.network.send( 'taskTwelvePartTwo', 1, this.player );
-						this.strCurrentTask = 'Go to House';
+						this.strCurrentTask = 'Go To Number Two, Helping Hand Lane';
 					}
 					else if( this.intTask[12] == 1 )
 					{
@@ -783,12 +799,13 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[12] == 2 )
 					{
-						this.strCurrentTask = 'Done';
+						this.strCurrentTask = 'Delivered';
 						this.taskList[12] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[12] = -1;
+						this.taskCompleted[12] = true;
 					}
 				}
 				else if( this.output == this.taskName[13] )
@@ -805,12 +822,13 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[13] == 1 )
 					{
-						this.strCurrentTask = 'Cooked';
+						this.strCurrentTask = 'Bon Apetit';
 						this.taskList[13] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[13] = -1;
+						this.taskCompleted[13] = true;
 					}	
 				}
 				else if( this.output == this.taskName[14] )
@@ -823,7 +841,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					else if( this.intTask[14] == 0 )
 					{
 						this.engine.network.send( 'taskFourteenPartTwo', 1, this.player );
-						this.strCurrentTask = 'Pickup Groceries';
+						this.strCurrentTask = 'Pickup The Groceries';
 					}
 					else if( this.intTask[14] == 1 )
 					{
@@ -838,14 +856,15 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[14] = -1;
+						this.taskCompleted[14] = true;
 					}
 				}
-				else if( this.output == this.taskName[15] )
+				/*else if( this.output == this.taskName[15] )
 				{	
 				}
 				else if( this.output == this.taskName[16] )
 				{	
-				}
+				}*/
 				else if( this.output == this.taskName[17] )
 				{
 					if( this.intTask[17] == -1 )
@@ -860,12 +879,13 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[17] == 1 )
 					{
-						this.strCurrentTask = 'Talking';
+						this.strCurrentTask = 'Thank You';
 						this.taskList[17] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[17] = -1;
+						this.taskCompleted[17] = true;
 					}	
 				}
 				else if( this.output == this.taskName[18] )
@@ -888,16 +908,17 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					else if( this.intTask[18] == 2 )
 					{
 						this.engine.network.send( 'taskEighteenPartFour', 1, this.player );
-						this.strCurrentTask = 'Return The miniBus';
+						this.strCurrentTask = 'Return The MiniBus';
 					}
 					else if( this.intTask[18] == 3 )
 					{
-						this.strCurrentTask = 'Done';
+						this.strCurrentTask = 'Good Job';
 						this.taskList[18] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[18] = -1;
+						this.taskCompleted[18] = true;
 					}
 				}
 				else if( this.output == this.taskName[19] )
@@ -905,7 +926,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					if( this.intTask[19] == -1 )
 					{
 						this.engine.network.send( 'taskNineteenPartOne', 1, this.player );
-						this.strCurrentTask = 'Go to the Old Folks Home';
+						this.strCurrentTask = 'Go To The Old Folks Home';
 					}
 					else if( this.intTask[19] == 0 )
 					{
@@ -914,12 +935,13 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[19] == 1 )
 					{
-						this.strCurrentTask = 'Done';
+						this.strCurrentTask = 'Sounds Good';
 						this.taskList[19] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[19] = -1;
+						this.taskCompleted[19] = true;
 					}
 				}
 				else if( this.output == this.taskName[20] )
@@ -942,6 +964,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[20] = -1;
+						this.taskCompleted[20] = true;
 					}
 				}
 				else if( this.output == this.taskName[21] )
@@ -956,16 +979,17 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						else if( this.intTask[21] == 0 )
 						{
 							this.engine.network.send( 'taskTwentyOnePartTwo', 1, this.player );
-							this.strCurrentTask = 'Speak To The Garda at Reception';
+							this.strCurrentTask = 'Speak To The Garda At The Reception Desk';
 						}
 						else if( this.intTask[21] == 1 )
 						{
-							this.strCurrentTask = 'Good To Go';
+							this.strCurrentTask = 'You Are Good To Go';
 							this.taskList[21] += 1;
 							this.badgeScore ++;
 							this.output = -1;
 							this.counter = 0;
 							this.intTask[21] = -1;
+							this.taskCompleted[21] = true;
 						}	
 					}
 				}
@@ -983,17 +1007,18 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[22] == 1 )
 					{
-						this.strCurrentTask = 'Call';
+						this.strCurrentTask = 'Thank You';
 						this.taskList[22] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[22] = -1;
+						this.taskCompleted[22] = true;
 					}	
 				}
-				else if( this.output == this.taskName[23] )
+				/*else if( this.output == this.taskName[23] )
 				{	
-				}
+				}*/
 				else if( this.output == this.taskName[24] )
 				{	
 					if( this.intTask[24] == -1 )
@@ -1008,12 +1033,13 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[24] == 1 )
 					{
-						this.strCurrentTask = 'Art';
+						this.strCurrentTask = 'Drawing Around';
 						this.taskList[24] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[24] = -1;
+						this.taskCompleted[24] = true;
 					}
 				}
 				else if( this.output == this.taskName[25] )
@@ -1030,15 +1056,16 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 					}
 					else if( this.intTask[25] == 1 )
 					{
-						this.strCurrentTask = 'Enviro';
+						this.strCurrentTask = 'Back To The Ice Age';
 						this.taskList[25] += 1;
 						this.badgeScore ++;
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[25] = -1;
+						this.taskCompleted[25] = true;
 					}	
 				}
-				else if( this.output == this.taskName[26] )
+				/*else if( this.output == this.taskName[26] )
 				{
 					if( this.intTask[26] == -1 )
 					{
@@ -1054,7 +1081,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.counter = 0;
 						this.intTask[26] = -1;
 					}	
-				}
+				}*/
 				else if( this.output == this.taskName[27] )
 				{	
 					if( this.intTask[27] == -1 )
@@ -1075,7 +1102,18 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						this.output = -1;
 						this.counter = 0;
 						this.intTask[27] = -1;
+						this.taskCompleted[27] = true;
 					}
+				}
+			},
+
+			allTasks: function()
+			{
+				if( this.taskCompleted[0] && this.taskCompleted[2] && this.taskCompleted[5] && this.taskCompleted[6] && this.taskCompleted[7] && this.taskCompleted[10] && this.taskCompleted[11] &&
+                                    this.taskCompleted[12] && this.taskCompleted[13] && this.taskCompleted[14] && this.taskCompleted[17] && this.taskCompleted[18] && this.taskCompleted[19] && this.taskCompleted[22] &&
+			            this.taskCompleted[24] && this.taskCompleted[25] && this.taskCompleted[27] )
+				{
+					this.boolAllTasks = true;
 				}
 			},
 
