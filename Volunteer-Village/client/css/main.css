@@ -301,7 +301,7 @@ canvas
 
 #uiBar {
 	width:100%;
-	height:100px;
+	height:120px;
 	background:url(/Volunteer-Village/assets/backgrounds/uiBar.png) repeat-x;
 	position:absolute;
 	left:0px;
@@ -379,8 +379,16 @@ canvas
 }
 
 .uiMenuButtonGT {
-	width:117px;
-	height:60px;
+	width:220px;
+	height:120px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
+.uiMenuButtonGG {
+	width:280px;
+	height:120px;
 	z-index:11000;
 	display:block;
 	float:left;
@@ -415,6 +423,34 @@ canvas
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:15px;
 	color:#000000;
+}
+
+#uiMenuButton_osd2 {
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
+}
+
+#uiMenuButton_osd3 {
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
+}
+
+#igeBadgesDiv {
+	position:absolute;
+	background-image:url(/Volunteer-Village/assets/ui/badgesScreen.png);
+	left:40%;
+	top:0px;
+	width:490px;
+	height:120px;
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	color:#000000;
+	padding:0px;
 }
 
 .playerButton 
@@ -631,20 +667,6 @@ canvas
 	width:1000px;
 	height:442px;
 	z-index:11000;
-}
-
-#igeBadgesDiv {
-	position:absolute;
-	background-image:url(/Volunteer-Village/assets/ui/badgesScreen.png);
-	left:25%;
-	top:50px;
-	width:400px;
-	height:600px;
-	z-index:11000;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:20px;
-	color:#000000;
-	padding:0px;
 }
 
 #igeQuestLog

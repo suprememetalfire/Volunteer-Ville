@@ -44,7 +44,7 @@ function onBoot () {
 			intTask: [],
 			display: true,
 			badgeScore: 0,
-			boolAllTasks: false,
+			boolAllTasks: true,
 			soundCounter: 0,			
 			
 			init: function (engine) {
@@ -228,10 +228,12 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 			{
 				if( this.musicOn )
 				{
+					this.engine.sound.pause( this.engine.sound.byId['background'] );
 					this.musicOn = false;
 				}
 				else
 				{
+					this.engine.sound.play( this.engine.sound.byId['background'] );
 					this.musicOn = true;
 				}
 			},
@@ -247,26 +249,20 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 				this.osdOne();
 this.guide();
 
-				this.tasks();	
-
-				if( this.musicOn )
-				{
-					this.engine.sound.play( this.engine.sound.byId['background'] );
-				}
-				else
-				{
-					this.engine.sound.pause( this.engine.sound.byId['background'] );
-				}				
+				this.tasks();				
 
 				if( this.counter <= 10 )
 				{
 					this.counter++;
 				}
 
-				if( this.soundCounter == 129 )
+				if( this.musicOn )
 				{
-					this.engine.sound.play( this.engine.sound.byId['background'] );
-					this.soundCounter = 0;
+					if( this.soundCounter == 129 )
+					{
+						this.engine.sound.play( this.engine.sound.byId['background'] );
+						this.soundCounter = 0;
+					}
 				}
 
 				this.soundCounter++;
@@ -279,9 +275,149 @@ this.guide();
 				this.engine.network.send( 'switchMap', this.score );
 			},
 
-			osdOne: function()
+			bOne: function()
 			{
-				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask + this.location );
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 5 Jobs At The Volunteer Centre' );
+			},
+
+			bTwo: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 5 Befriending Jobs' );
+			},
+
+			bThree: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 5 Jobs At The Fire Station' );
+			},
+
+			bFour: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 5 Jobs At The Old Folks Home' );
+			},
+
+			bFive: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 5 Jobs At The Houses' );
+			},
+
+			bSix: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Maintain The Website Task At The Volunteer Centre' );
+			},
+
+			bSeven: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Clowning Around Task At The Hospital' );
+			},
+
+			bEight: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Musician Task At The Old Folks Home' );
+			},
+
+			bNine: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Mini-Bus2 Task At The Old Folks Home' );
+			},
+
+			bTen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Handyman Task At The Houses' );
+			},
+
+			bEleven: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Clean Up On Aisle 7 Task At The Park' );
+			},
+
+			bTwelve: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Delivery Service Task At The Meals On Wheels Depot' );
+			},
+
+			bThirteen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Home Cooking Task At The Meals On Wheels Depot' );
+			},
+
+			bFourteen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Window Shopping Task At The Meals On Wheels Depot' );
+			},
+
+			bFifteen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Art Attack Task At The School' );
+			},
+
+			bSixteen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Environmental Protection Task At The School' );
+			},
+
+			bSeventeen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Taking The Dog For A Walk Task At The Animal Shelter' );
+			},
+
+			bEighteen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Back To School Task At The Animal Shelter' );
+			},
+
+			bNineteen: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed Any 5 Jobs' );
+			},
+
+			bTwenty: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed Any 10 Jobs' );
+			},
+
+			bTwentyOne: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed Any 50 Jobs' );
+			},
+
+			bTwentyTwo: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed Any 100 Jobs' );
+			},
+
+			bTwentyThree: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Garda Vetting Task At The Police Station' );
+			},
+
+			bTwentyFour: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 10 Jobs At The School' );
+			},
+
+			bTwentyFive: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed Your First Task' );
+			},
+				
+			bTwentySix: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Raised The Community Level By' );
+			},
+
+			bTwentySeven: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Complete Each Job Once' );
+			},
+
+			bTwentyEight: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed The Crime Line Task At The Police Station' );
+			},
+
+			bTwentyNine: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 10 Tasks At The Meals On Wheels Depot' );
 			},
 
 			guide: function (clientX, clientY)
