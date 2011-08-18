@@ -44,7 +44,7 @@ function onBoot () {
 			intTask: [],
 			display: true,
 			badgeScore: 0,
-			boolAllTasks: true,
+			boolAllTasks: false,
 			soundCounter: 0,			
 			
 			init: function (engine) {
