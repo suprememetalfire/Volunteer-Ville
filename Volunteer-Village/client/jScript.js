@@ -14,9 +14,9 @@
 			
 	function changeVisibility()
 	{
-		//document.getElementById("igePlayerDiv").style.visibility="visible";
-		document.getElementById("igeQuestLog").style.visibility="visible";
-		document.getElementById("igeQuestLog2").style.visibility="visible";
+		//document.getElementById("igePlayerDiv").style.visibility="hidden";
+		document.getElementById("igeQuestLog").style.visibility="hidden";
+		document.getElementById("igeQuestLog2").style.visibility="hidden";
 	}
 
 	function resetElement()
@@ -30,8 +30,8 @@
 	{
 		if( show )
 		{
-			document.getElementById("igeBadgesDiv").style.visibility="visible";
-			document.getElementById("uiMenuButton_osd2").style.visibility="visible";
+			document.getElementById("igeBadgesDiv").style.visibility="hidden";
+			document.getElementById("uiMenuButton_osd2").style.visibility="hidden";
 			show = false;
 		}
 		else
@@ -50,7 +50,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeEighteen").style.visibility="visible";
+			document.getElementById("uiBadgeEighteen").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[2] >= 1 && show )
@@ -59,7 +59,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeSeventeen").style.visibility="visible";
+			document.getElementById("uiBadgeSeventeen").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[18] >= 1 && show )
@@ -68,7 +68,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeNine").style.visibility="visible";
+			document.getElementById("uiBadgeNine").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[6] >= 5 && show )
@@ -77,7 +77,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeThree").style.visibility="visible";
+			document.getElementById("uiBadgeThree").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[7] >= 5 && show )
@@ -87,8 +87,8 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeFive").style.visibility="visible";
-			document.getElementById("uiBadgeTen").style.visibility="visible";
+			document.getElementById("uiBadgeFive").style.visibility="hidden";
+			document.getElementById("uiBadgeTen").style.visibility="hidden";
 		}				
 
 		if( ( igeGame.taskList[10] + igeGame.taskList[17] >= 5 ) && show )
@@ -97,7 +97,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwo").style.visibility="visible";
+			document.getElementById("uiBadgeTwo").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[11] >= 1 && show )
@@ -106,7 +106,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeSeven").style.visibility="visible";
+			document.getElementById("uiBadgeSeven").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[12] >= 1 && show )
@@ -115,7 +115,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwelve").style.visibility="visible";
+			document.getElementById("uiBadgeTwelve").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[12] + igeGame.taskList[13] + igeGame.taskList[14] >= 10 && show )
@@ -124,7 +124,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentyNine").style.visibility="visible";
+			document.getElementById("uiBadgeTwentyNine").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[13] >= 1 && show )
@@ -133,7 +133,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeThirteen").style.visibility="visible";
+			document.getElementById("uiBadgeThirteen").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[14] >= 1 && show )
@@ -142,7 +142,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeFourteen").style.visibility="visible";
+			document.getElementById("uiBadgeFourteen").style.visibility="hidden";
 		}
 
 		if( ( igeGame.taskList[17] + igeGame.taskList[18] + igeGame.taskList[19] >= 5 ) && show )
@@ -151,7 +151,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeFour").style.visibility="visible";
+			document.getElementById("uiBadgeFour").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[19] >= 1 && show )
@@ -160,7 +160,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeEight").style.visibility="visible";
+			document.getElementById("uiBadgeEight").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[20] >= 1 && show )
@@ -169,7 +169,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeEleven").style.visibility="visible";
+			document.getElementById("uiBadgeEleven").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[21] >= 1 && show )
@@ -179,8 +179,8 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentyThree").style.visibility="visible";
-			document.getElementById("uiBadgeTwentyFive").style.visibility="visible";
+			document.getElementById("uiBadgeTwentyThree").style.visibility="hidden";
+			document.getElementById("uiBadgeTwentyFive").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[22] >= 1 && show )
@@ -189,7 +189,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentyEight").style.visibility="visible";
+			document.getElementById("uiBadgeTwentyEight").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[24] >= 1 && show )
@@ -198,7 +198,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeFifteen").style.visibility="visible";
+			document.getElementById("uiBadgeFifteen").style.visibility="hidden";
 		}
 	
 		if( igeGame.taskList[24] + igeGame.taskList[25] >= 10 && show )
@@ -207,7 +207,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentyFour").style.visibility="visible";
+			document.getElementById("uiBadgeTwentyFour").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[25] >= 1 && show )
@@ -216,7 +216,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeSixteen").style.visibility="visible";
+			document.getElementById("uiBadgeSixteen").style.visibility="hidden";
 		}
 
 		if( igeGame.taskList[27] >= 5 && show )
@@ -225,7 +225,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeOne").style.visibility="visible";
+			document.getElementById("uiBadgeOne").style.visibility="hidden";
 		}
 	
 		if( igeGame.taskList[27] >= 1 && show )
@@ -234,7 +234,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeSix").style.visibility="visible";
+			document.getElementById("uiBadgeSix").style.visibility="hidden";
 		}
 
 		if( igeGame.badgeScore >= 5 && show )
@@ -243,7 +243,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeNineteen").style.visibility="visible";
+			document.getElementById("uiBadgeNineteen").style.visibility="hidden";
 		}
 
 		if( igeGame.badgeScore >= 10 && show )
@@ -252,7 +252,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwenty").style.visibility="visible";
+			document.getElementById("uiBadgeTwenty").style.visibility="hidden";
 		}
 		
 		if( igeGame.badgeScore >= 50 && show )
@@ -261,7 +261,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentyOne").style.visibility="visible";
+			document.getElementById("uiBadgeTwentyOne").style.visibility="hidden";
 		}
 
 		if( igeGame.badgeScore >= 100 && show )
@@ -270,7 +270,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentyTwo").style.visibility="visible";
+			document.getElementById("uiBadgeTwentyTwo").style.visibility="hidden";
 		}
 
 		if( igeGame.community >= 100 && show )
@@ -279,7 +279,7 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentySix").style.visibility="visible";
+			document.getElementById("uiBadgeTwentySix").style.visibility="hidden";
 		}
 
 		if( igeGame.boolAllTasks && show )
@@ -288,6 +288,6 @@
 		}
 		else
 		{
-			document.getElementById("uiBadgeTwentySeven").style.visibility="visible";
+			document.getElementById("uiBadgeTwentySeven").style.visibility="hidden";
 		}
 	}

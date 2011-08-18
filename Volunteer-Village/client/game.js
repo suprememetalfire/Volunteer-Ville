@@ -275,6 +275,11 @@ this.guide();
 				this.engine.network.send( 'switchMap', this.score );
 			},
 
+			badgeClear: function()
+			{
+				$( '#uiMenuButton_osd2' ).html( '' );
+			},
+
 			bOne: function()
 			{
 				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 5 Jobs At The Volunteer Centre' );
@@ -405,6 +410,7 @@ this.guide();
 				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Raised The Community Level By' );
 			},
 
+
 			bTwentySeven: function()
 			{
 				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Complete Each Job Once' );
@@ -418,6 +424,11 @@ this.guide();
 			bTwentyNine: function()
 			{
 				$( '#uiMenuButton_osd2' ).html( '<br></br><br></br> <right>Completed 10 Tasks At The Meals On Wheels Depot' );
+			},
+
+			osdOne: function()
+			{
+				$( '#uiMenuButton_osd1' ).html( '<br></br> <center>' + this.strCurrentTask + this.location );
 			},
 
 			guide: function (clientX, clientY)
