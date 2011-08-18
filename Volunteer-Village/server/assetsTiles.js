@@ -277,6 +277,38 @@ assetsTiles = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale": 1.0
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "guitar",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/guitar.png",
+			"asset_sheet_enabled" : true,
+			"asset_anchor_points" : [ 
+			[ 
+			25, 
+			25 ] ],
+			"asset_sheet_width" : 2,
+			"asset_sheet_height" : 1,
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale": 1.0
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "clown",
+			"asset_image_url" : "/Volunteer-Village/assets/people/clown.png",
+			"asset_sheet_enabled" : true,
+			"asset_anchor_points" : [ 
+			[ 
+			25, 
+			45 ] ],
+			"asset_sheet_width" : 8,
+			"asset_sheet_height" : 1,
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale": 1.0
+		});
 	},	
 });	
 }

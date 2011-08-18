@@ -308,20 +308,6 @@ assets = new IgeClass({
 		});
 
 		this.engine.assets.create({
-			"asset_id" : "guitar",
-			"asset_image_url" : "/Volunteer-Village/assets/objects/guitar.png",
-			"asset_sheet_enabled" : false,
-			"asset_anchor_points" : [ 
-			[ 
-			11.5, 
-			25 ] ],
-			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
-			"asset_locale" : LOCALE_EVERYWHERE,
-			"asset_persist" : PERSIST_DISABLED,
-			"asset_scale" : 0.5
-		});
-
-		this.engine.assets.create({
 			"asset_id" : "wMComputer",
 			"asset_image_url" : "/Volunteer-Village/assets/people/wMComputer.png",
 			"asset_sheet_enabled" : false,
@@ -361,6 +347,20 @@ assets = new IgeClass({
 			"asset_locale" : LOCALE_EVERYWHERE,
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 1.3
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "kids",
+			"asset_image_url" : "/Volunteer-Village/assets/people/kids.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			23.5, 
+			33.5 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
 		});
 	},	
 });	

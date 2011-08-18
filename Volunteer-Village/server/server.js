@@ -172,6 +172,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		this.aryTaskObjects[0] = [ 'bag', 4, -1, 'shopMap' ];
 		this.aryTaskObjects[1] = [ 'guitar', 0, -8, 'oldFolksHomeMap' ];
 		this.aryTaskObjects[2] = [ 'bag', 13, 34, 'townMap' ];
+		this.aryTaskObjects[3] = [ 'kids', 13, 34, 'hospitalMap' ];
 
 		this.aryTaskIcons[0] = [ 'taskIcon', -7, 5, 'schoolMap' ];	
 		this.aryTaskIcons[1] = [ 'taskIcon', 31, 13, 'poundMap' ];
@@ -903,9 +904,19 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'hospitalMap' && ( entity.entity_x == 25 && entity.entity_y == 23 ) )
+		if( entity.map_id == 'hospitalMap' && ( entity.entity_x == 25 && entity.entity_y == 23 ) && this.intAnimationCounter == 10 )
 		{	
 			this.destroyTaskObjects( 'taskIcon' + num );
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'clown', 25, 23, 'hospitalMap');
+			this.intAnimationCounter = 0;
+		}
+
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalkBig', 25, 23, 'hospitalMap');
+			this.intAnimationCounter = 10;
 			this.engine.network.send( 'taskStageEleven', 1, num );
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -1133,7 +1144,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'oldFolksHomeMap' && ( entity.entity_x == 0 && entity.entity_y == -8 ) )
+		if( entity.map_id == 'oldFolksHomeMap' && ( entity.entity_x == 0 && ( entity.entity_y == -8 || entity.entity_y == -7 ) ) )
 		{	
 			this.destroyTaskObjects( 'guitar' + num );
 			this.engine.network.send( 'taskStageNineteen', 1, num );

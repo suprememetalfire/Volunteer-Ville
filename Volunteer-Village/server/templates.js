@@ -285,21 +285,6 @@ templates = new IgeClass({
 
 		this.engine.templates.create
 		({
-			template_id: 'guitar',
-			template_contents: 
-			{
-				entity_type: ENTITY_TYPE_OBJECT,
-				entity_layer: LAYER_OBJECTS,
-				entity_tile_width: 1,
-				entity_tile_height: 1,
-				entity_z: 0,
-				entity_tile_block: ENTITY_TB_BLOCK_CHECK,
-				asset_id: 'guitar',
-			},
-		});
-
-		this.engine.templates.create
-		({
 			template_id: 'wMComputer',
 			template_contents: 
 			{
@@ -340,6 +325,21 @@ templates = new IgeClass({
 				entity_z: 0,
 				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
 				asset_id: 'wMPhone',
+			},
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'kids',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'kids',
 			},
 		});				
 	},	

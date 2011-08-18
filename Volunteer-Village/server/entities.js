@@ -215,6 +215,18 @@ entities = new IgeClass({
 			entity_persist:PERSIST_DISABLED,
 			//session_id: sessionId,
 			map_id: 'townMap',
+		});
+
+		this.engine.entities.create({
+			template_id: 'kids',
+			// Entity stuff
+			entity_id: 'kids',
+			entity_x:23,
+			entity_y:23,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			//session_id: sessionId,
+			map_id: 'hospitalMap',
 		});								
 	},	
 });

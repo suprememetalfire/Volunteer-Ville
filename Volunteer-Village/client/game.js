@@ -190,7 +190,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 						sound_volume: 50, // Set sound to full volume
 						sound_auto_load: true, // Automatically load the sound data
 						sound_auto_play: true, // Don't automatically start playing the sound
-						sound_buffer: 5, // Buffer 5 seconds of audio before playing
+						sound_buffer: 0, // Buffer 5 seconds of audio before playing
 						sound_multi_play: false, // We don't want to play multiple copies over the top of each other
 						sound_type: SOUND_TYPE_TRACK, // It's a track
 					},
@@ -226,16 +226,14 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 
 			switchMusic: function ()
 			{
-				/*if( this.musicOn )
+				if( this.musicOn )
 				{
-					this.engine.sound.play( 'gardens' );
 					this.musicOn = false;
 				}
 				else
 				{
-					this.engine.sound.pause( 'gardens' );
 					this.musicOn = true;
-				}*/
+				}
 			},
 
 			sendUpdate: function( data ) 
@@ -249,7 +247,16 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 				this.osdOne();
 this.guide();
 
-				this.tasks();					
+				this.tasks();	
+
+				if( this.musicOn )
+				{
+					this.engine.sound.play( this.engine.sound.byId['background'] );
+				}
+				else
+				{
+					this.engine.sound.pause( this.engine.sound.byId['background'] );
+				}				
 
 				if( this.counter <= 10 )
 				{
@@ -258,9 +265,11 @@ this.guide();
 
 				if( this.soundCounter == 129 )
 				{
-					this.engine.sound.play( 'background' );
+					this.engine.sound.play( this.engine.sound.byId['background'] );
 					this.soundCounter = 0;
 				}
+
+				this.soundCounter++;
 
 				if( this.counter >= 5 && this.counter < 10 )
 				{

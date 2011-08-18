@@ -460,6 +460,64 @@ animations = new IgeClass({
 				asset_id: 'lake',
 			},
 		});
+
+		this.engine.animations.create
+		({
+			animation_id: 'guitar',
+			animation_frame_from: 1,
+			animation_frame_to: 2,
+			animation_fps: 2,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'guitar',
+			template_contents: 
+			{
+				// Entity stuff
+				entity_type: ENTITY_TYPE_SPRITE,
+				entity_layer: LAYER_SPRITES,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				// Animation stuff
+				animation_id: 'guitar',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame: 1,
+				asset_id: 'guitar',
+			},
+		});
+
+		this.engine.animations.create
+		({
+			animation_id: 'clown',
+			animation_frame_from: 1,
+			animation_frame_to: 8,
+			animation_fps: 8,
+			animation_loop: true,
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'clown',
+			template_contents: 
+			{
+				// Entity stuff
+				entity_type: ENTITY_TYPE_SPRITE,
+				entity_layer: LAYER_SPRITES,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				// Animation stuff
+				animation_id: 'clown',
+				animation_dirty: true,
+				// Asset stuff
+				asset_sheet_frame: 1,
+				asset_id: 'clown',
+			},
+		});
 	},
 });
 }
