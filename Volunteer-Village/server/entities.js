@@ -227,6 +227,78 @@ entities = new IgeClass({
 			entity_persist:PERSIST_DISABLED,
 			//session_id: sessionId,
 			map_id: 'hospitalMap',
+		});
+
+		this.engine.entities.create({
+			template_id: 'doctor',
+			// Entity stuff
+			entity_id: 'doctor',
+			entity_x:22,
+			entity_y:35,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			//session_id: sessionId,
+			map_id: 'hospitalMap',
+		});
+
+		this.engine.entities.create({
+			template_id: 'curator',
+			// Entity stuff
+			entity_id: 'curator',
+			entity_x:13,
+			entity_y:21,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			//session_id: sessionId,
+			map_id: 'museumMap',
+		});
+
+		this.engine.entities.create({
+			template_id: 'fireman',
+			// Entity stuff
+			entity_id: 'fireman',
+			entity_x:35,
+			entity_y:-5,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			//session_id: sessionId,
+			map_id: 'fireMap',
+		});
+
+		this.engine.entities.create({
+			template_id: 'nurse',
+			// Entity stuff
+			entity_id: 'nurse',
+			entity_x:20,
+			entity_y:26,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			//session_id: sessionId,
+			map_id: 'hospitalMap',
+		});
+
+		this.engine.entities.create({
+			template_id: 'policeman',
+			// Entity stuff
+			entity_id: 'policeman',
+			entity_x:0,
+			entity_y:21,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			//session_id: sessionId,
+			map_id: 'stationMap',
+		});
+			
+		this.engine.entities.create({
+			template_id: 'volunteer',
+			// Entity stuff
+			entity_id: 'volunteer',
+			entity_x:10,
+			entity_y:-4,
+			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
+			entity_persist:PERSIST_DISABLED,
+			//session_id: sessionId,
+			map_id: 'centreMap',
 		});								
 	},	
 });

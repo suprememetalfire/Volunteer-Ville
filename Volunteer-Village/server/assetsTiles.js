@@ -231,6 +231,22 @@ assetsTiles = new IgeClass({
 		});
 
 		this.engine.assets.create({
+			"asset_id" : "mealsVan",
+			"asset_image_url" : "/Volunteer-Village/assets/objects/mealsVan.png",
+			"asset_sheet_enabled" : true,
+			"asset_anchor_points" : [ 
+			[ 
+			125, 
+			125 ] ],
+			"asset_sheet_width" : 1,
+			"asset_sheet_height" : 4,
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale": 0.9
+		});
+
+		this.engine.assets.create({
 			"asset_id" : "wMCar",
 			"asset_image_url" : "/Volunteer-Village/assets/people/wMCar.png",
 			"asset_sheet_enabled" : true,

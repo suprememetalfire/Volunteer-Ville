@@ -1409,7 +1409,7 @@ this.guide();
 					{
 						this.engine.network.send( 'moveAvatar', [11, 3] );
 					}
-					// miniBus
+					// Van
 					if( ( ( x >= 11 && x <= 13 ) && ( y >= 1 && y <= 2 ) )  || ( x == 13 && y == 3 ) )
 					{
 						this.engine.network.send( 'moveAvatar', [12, 3] );
@@ -1452,7 +1452,7 @@ this.guide();
 					// Museum
 					else if( ( x == 13 ) && ( y == 24 || y == 25 ) )
 					{
-						this.engine.network.send( 'moveAvatar', [13, 18] );
+						this.engine.network.send( 'moveAvatar', [16, 25] );
 					}
 					// Hospital
 					else if( ( x == 31 || x == 32 ) && ( y == 26 ) )
@@ -1565,6 +1565,24 @@ this.guide();
 							break;						
 							case DIRECTION_SW:
 								this.engine.entities.setAnimation(entity, 'miniBusSW');
+							break;		
+						}
+					break;
+					case 'mealsVan':
+						// Entity is a person sprite
+						switch (entity.entity_direction) 
+						{					
+							case DIRECTION_NE:
+								this.engine.entities.setAnimation(entity, 'mealsVanNE');
+							break;								
+							case DIRECTION_SE:
+								this.engine.entities.setAnimation(entity, 'mealsVanSE');
+							break;
+							case DIRECTION_NW:
+								this.engine.entities.setAnimation(entity, 'mealsVanNW');
+							break;						
+							case DIRECTION_SW:
+								this.engine.entities.setAnimation(entity, 'mealsVanSW');
 							break;		
 						}
 					break;

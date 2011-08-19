@@ -362,6 +362,90 @@ assets = new IgeClass({
 			"asset_persist" : PERSIST_DISABLED,
 			"asset_scale" : 0.8
 		});
+
+		this.engine.assets.create({
+			"asset_id" : "doctor",
+			"asset_image_url" : "/Volunteer-Village/assets/people/doctor.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			47, 
+			31 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "curator",
+			"asset_image_url" : "/Volunteer-Village/assets/people/curator.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			47, 
+			31 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "fireman",
+			"asset_image_url" : "/Volunteer-Village/assets/people/fireman.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			47, 
+			31 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "nurse",
+			"asset_image_url" : "/Volunteer-Village/assets/people/nurse.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			47, 
+			31 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "policeman",
+			"asset_image_url" : "/Volunteer-Village/assets/people/policeman.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			47, 
+			31 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
+		});
+
+		this.engine.assets.create({
+			"asset_id" : "volunteer",
+			"asset_image_url" : "/Volunteer-Village/assets/people/volunteer.png",
+			"asset_sheet_enabled" : false,
+			"asset_anchor_points" : [ 
+			[ 
+			47, 
+			31 ] ],
+			"asset_render_mode" : ASSET_RENDER_MODE_ISOMETRIC,
+			"asset_locale" : LOCALE_EVERYWHERE,
+			"asset_persist" : PERSIST_DISABLED,
+			"asset_scale" : 0.8
+		});
 	},	
 });	
 }

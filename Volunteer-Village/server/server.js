@@ -527,6 +527,10 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		{
 			this.createNewMapAvatar( player.sessionId, 'whiteMDog', client.entity_x, client.entity_y, 'townMap' );
 		}
+		if( intState == 4 )
+		{
+			this.createNewMapAvatar( player.sessionId, 'mealsVan', client.entity_x, client.entity_y, 'townMap' );
+		}
 	},
 
 	taskZeroPartOne: function( val, client )
@@ -939,7 +943,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 			this.destroyTaskObjects( 'taskIcon' + num );
 			this.boolTaskIcons[3] = false;
 			this.createTaskIcons( 14, num );
-			this.driveBus( 1, client );
+			this.driveBus( 4, client );
 			this.engine.network.send( 'taskStageTwelve', 0, num );
 		}
 	},

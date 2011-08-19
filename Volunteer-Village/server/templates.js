@@ -341,6 +341,96 @@ templates = new IgeClass({
 				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
 				asset_id: 'kids',
 			},
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'doctor',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'doctor',
+			},
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'curator',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'curator',
+			},
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'fireman',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'fireman',
+			},
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'nurse',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'nurse',
+			},
+		});
+
+		this.engine.templates.create
+		({
+			template_id: 'policeman',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'policeman',
+			},
+		});
+		
+		this.engine.templates.create
+		({
+			template_id: 'volunteer',
+			template_contents: 
+			{
+				entity_type: ENTITY_TYPE_OBJECT,
+				entity_layer: LAYER_OBJECTS,
+				entity_tile_width: 1,
+				entity_tile_height: 1,
+				entity_z: 0,
+				entity_tile_block: ENTITY_TB_NOBLOCK_NOCHECK,
+				asset_id: 'volunteer',
+			},
 		});				
 	},	
 });
