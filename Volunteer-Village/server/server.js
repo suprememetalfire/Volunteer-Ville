@@ -548,7 +548,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 
 		if( entity.map_id == 'schoolMap' && ( entity.entity_x == -7 && entity.entity_y == 5 ) && this.intAnimationCounter == 10 )
 		{
-			this.destroyTaskObjects( 'taskIcon' + num );			
+			this.destroyTaskObjects( 'taskIcon0' + num );			
 			this.engine.entities.remove( entity );
 			this.createNewMapAvatar(num, 'wMTeach', -7, 5, 'schoolMap');
 			this.intAnimationCounter = 0;
@@ -1144,9 +1144,19 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var entity = this.engine.entities.read( 'woman' + client.sessionId );
 		var num = client.sessionId;
 
-		if( entity.map_id == 'oldFolksHomeMap' && ( entity.entity_x == 0 && ( entity.entity_y == -8 || entity.entity_y == -7 ) ) )
+		if( entity.map_id == 'oldFolksHomeMap' && ( entity.entity_x == 0 && ( entity.entity_y == -8 || entity.entity_y == -7 ) ) && this.intAnimationCounter == 10 ) 
 		{	
 			this.destroyTaskObjects( 'guitar' + num );
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'wMGuitar', 0, -7, 'oldFolksHomeMap');
+			this.intAnimationCounter = 0;
+		}
+
+		if( this.intAnimationCounter == 5 )
+		{
+			this.engine.entities.remove( entity );
+			this.createNewMapAvatar(num, 'womanWalkBig', 0, -7, 'oldFolksHomeMap');
+			this.intAnimationCounter = 10;
 			this.engine.network.send( 'taskStageNineteen', 1, num );
 			this.communityLevel += 10;
 			this.engine.network.send('sendUpdate',this.communityLevel);
@@ -1358,9 +1368,8 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		var num = client.sessionId;
 
 		if( entity.map_id == 'centreMap' && ( entity.entity_x == 5 && entity.entity_y == 5 ) && this.intAnimationCounter == 10  )
-		{
-			this.destroyTaskObjects( 'taskIcon' + num );
-			this.boolTaskIcons[4] = false;
+		{			
+			this.destroyTaskObjects( 'taskIcon' + num );			
 			this.engine.entities.remove( entity );
 			this.createNewMapAvatar(num, 'wMPhone', 5, 5, 'centreMap');
 			this.intAnimationCounter = 0;
@@ -1370,6 +1379,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 		{
 			this.engine.entities.remove( entity );
 			this.createNewMapAvatar(num, 'womanWalkBig', 5, 5, 'centreMap');
+			this.boolTaskIcons[5] = false;
 			this.intAnimationCounter = 10;
 			this.engine.network.send( 'taskStageTwentySeven', 1, num );	
 			this.communityLevel += 5;
