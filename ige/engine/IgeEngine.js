@@ -105,27 +105,62 @@ IgeEngine = new IgeClass({
 		
 	},
 	
-	/* CEXCLUDE */
-	/* loadModule - Load a module into the engine. The path argument determines the
+	/** loadModule - Load a module into the engine. The path argument determines the
 	server-side path of the module and the url is given to connecting clients to allow
 	them to load the module. If path is omitted, the module will not be loaded server-
-	side. If url is omitted, the module will not be loaded client-side. */
+	side. If url is omitted, the module will not be loaded client-side. {
+		category:"method",
+		engine_ver:"0.1.3",
+		arguments: [{
+			type:"object",
+			name:"modName",
+			desc:"The name of the module class you are loading.",
+		}, {
+			type:"object",
+			name:"path",
+			desc:"The server-side path for Node.js to access and load the module's main script. Can be null if no server-side access is required for the module.",
+		}, {
+			type:"object",
+			name:"url",
+			desc:"The client-side path for clients to access and load the module's main script. Can be null if no client-side access is required for the module.",
+			flags:"optional",
+		}],
+	} **/
 	loadModule: function (modName, path, url) {
 		this._moduleList = this._moduleList || [];
 		this._moduleList.push([modName, path, url]);
-		if (path != null) {
-			this._moduleCount++;
-			this.log('Loading module "' + modName + '" from path: ' + path);
-			require(path);
-			this.log('Init module "' + modName + '" from path: ' + path);
-			eval('module_' + this._moduleCount + new Date().getTime() + ' = new ' + modName + '(this);');
-		}
-		if (url != null) {
-			this._moduleListClientData.push([modName, url]);
-			this.log('Module added to client load queue with url: ' + url);
+		
+		if (this.isServer) {
+			if (path != null) {
+				this._moduleCount++;
+				this.log('Loading module "' + modName + '" from path: ' + path);
+				require(path);
+				this.log('Init module "' + modName + '" from path: ' + path);
+				eval('module_' + this._moduleCount + new Date().getTime() + ' = new ' + modName + '(this);');
+				this.setModuleLoaded(modName);
+			}
+			if (url != null) {
+				this._moduleListClientData.push([modName, url]);
+				this.log('Module added to client load queue with url: ' + url);
+			}
+		} else {
+			// We're client-side so just load the client-side module into the engine
+			this._loadModule([[modName, url]]);
 		}
 	},
 	
+	/* CEXCLUDE */
+	/** _sendClientModuleList - Sends a network message to the specified client detailing
+	all client-side modules that the server wants the client to load. {
+		category:"method",
+		engine_ver:"0.1.3",
+		flags:"server",
+		arguments: [{
+			type:"object",
+			name:"client",
+			desc:"The socket.io client object to send the data to.",
+		}],
+	} **/
 	_sendClientModuleList: function (client) {
 		if (this.isServer) {
 			// Check if we've got any modules to send
@@ -136,6 +171,16 @@ IgeEngine = new IgeClass({
 	},
 	/* CEXCLUDE */
 	
+	/** _loadModule - Called when a network message is received by a client to load client-
+	side module scripts. {
+		category:"method",
+		engine_ver:"0.1.3",
+		arguments: [{
+			type:"array",
+			name:"data",
+			desc:"A multi-dimensional array of module data.",
+		}],
+	} **/
 	_loadModule: function (data) {
 		// Load the module code
 		this._moduleCount++;
@@ -144,19 +189,56 @@ IgeEngine = new IgeClass({
 			for (var i = 0; i < data.length; i++) {
 				// Ask the bootstrap class to require this module file and fire the callback
 				// method we're supplying when the file is loaded.
+				this.events.emit('loadingModule', [data[0], data[1]]);
 				this.log('Asking bootstrap to load module file for ' + data[i][1]);
+				console.log("Boot busy: " + igeBootstrap.busy, "Boot queue: " + igeBootstrap.queue.length);
 				igeBootstrap.require(data[i][1], data[i][0], this.bind(function (fileData) {
 					if (fileData[1]) {
 						// We were passed the name of the class created by this module
 						// so create a new instance of the class now. Many modules can
 						// simply add themselves to the engine which is passed to the
 						// module's init as an argument in the call below.
+						this.setModuleLoaded(fileData[0]);
+						this.log('Bootstrap Loaded Module: ' + fileData[0]);
 						eval('module_' + this._moduleCount + new Date().getTime() + ' = new ' + fileData[1] + '(this);');
+						this.events.emit('moduleLoaded', [fileData[0], fileData[1]]);
 					}
 				}));
 			}
 			igeBootstrap.process();
 		}
+	},
+	
+	/** setModuleLoaded - Set the module's status to loaded. {
+		category:"method",
+		engine_ver:"0.2.0",
+		arguments: [{
+			type:"string",
+			name:"moduleName",
+			desc:"The name of the module to set as loaded.",
+		}],
+	} **/
+	setModuleLoaded: function (moduleName) {
+		this._loadedModules = this._loadedModules || [];
+		this._loadedModules[moduleName] = true;
+	},
+	
+	/** isModuleLoaded - Check if a module has loaded. {
+		category:"method",
+		engine_ver:"0.2.0",
+		return: {
+			type:"bool",
+			desc:"Returns true if the module has been loaded or false otherwise.",
+		},
+		arguments: [{
+			type:"string",
+			name:"moduleName",
+			desc:"The name of the module to check.",
+		}],
+	} **/
+	isModuleLoaded: function (moduleName) {
+		this._loadedModules = this._loadedModules || [];
+		return this._loadedModules[moduleName] || false;
 	},
 	
 	setSlave: function () {

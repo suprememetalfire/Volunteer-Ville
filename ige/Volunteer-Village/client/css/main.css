@@ -1,0 +1,722 @@
+body
+{
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	//height:100%;
+}
+
+canvas
+{
+	image-rendering:optimizeSpeed;
+}
+
+#contain {
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+#floating_logo
+{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	width:200px;
+	height:125px;
+	background-image:url(../assets/ui/logo.png);
+	z-index:1000;
+	display:none;
+}
+
+canvas
+{
+	image-rendering:optimizeSpeed;
+}
+
+#mainViewport
+{
+	background-color:#333;
+	cursor:pointer;
+	/*border:1px #666 dashed;*/
+}
+
+#mainViewport div, mainViewport canvas
+{
+	cursor:pointer;
+}
+
+#viewport1
+{
+	background-color:##0000FF;
+	cursor:pointer;
+	/*border:1px #666 dashed;*/
+}
+/*
+#viewport2
+{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	background-color:#efefef;
+	border:1px #ccc dashed;
+	cursor:pointer;
+}
+*/
+#viewport2
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-325px;
+	margin-top:-175px;
+	background-color:#efefef;
+	border:1px #ccc dashed;
+	cursor:pointer;
+}
+
+#viewport3
+{
+	position:absolute;
+	left:10px;
+	bottom:280px;
+	background-color:#000;
+	border:1px #fff dashed;
+	cursor:pointer;
+}
+
+#viewport4
+{
+	position:absolute;
+	left:10px;
+	bottom:540px;
+	background-color:#000;
+	border:1px #fff dashed;
+	cursor:pointer;
+}	
+
+#igeFpsGraph
+{
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	border:1px #666 dashed;
+	padding-top:10px;
+	background-color:#FFF;
+}
+
+#cords
+{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	width:550px;
+	height:15px;
+	background-image:url(../assets/ui/panelBack.jpg);
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	padding:5px 5px 5px 10px;
+	color:#000;
+	text-shadow:#555 0px 0px 1px;
+	border:1px #999 solid;
+	z-index:10;
+	border-radius:10px;
+	display:none;
+}
+
+#fpsText
+{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	width:210px;
+	height:30px;
+	background-image:url(../assets/ui/panelBack.jpg);
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	padding:5px 5px 5px 10px;
+	color:#000;
+	border:1px #999 solid;
+	z-index:10;
+	display:none;
+	text-shadow:#555 0px 0px 1px;
+	border-radius:15px;
+}
+
+#controls
+{
+	position:absolute;
+	right:10px;
+	top:10px;
+	width:100px;
+	z-index:10;
+	text-align:right;
+	display:none;
+}
+
+#viewport1_temp
+{
+	position:absolute;
+	left:100px;
+	top:100px;
+}
+
+#chatWindow
+{
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:352px;
+	height:245px;
+	border:1px #666 dashed;
+	z-index:100;
+	background-color:#333;
+	display:none;
+}
+
+#chatWindow_log
+{
+	position:relative;
+	left:5px;
+	top:5px;
+	width:340px;
+	height:200px;
+	overflow:auto;
+	border:1px #666 solid;
+	background-color:#FFF;
+}
+
+#chatWindow_log p
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	margin-left:5px;
+	margin-top:2px;
+	margin-bottom:2px;
+	margin-right:5px;
+}
+
+#chatWindow_controls
+{
+	position:relative;
+	top:10px;
+	left:4px;
+}
+
+#loginBox
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:400px;
+	height:400px;
+	margin-left:-200px;
+	margin-top:-200px;
+	background-image:url(../assets/ui/login.png);
+	z-index:200;
+}
+
+#loginBox_form
+{
+	position:relative;
+	top:150px;
+	left:10px;
+}
+
+#loginBox_usernameLabel
+{
+	position:relative;
+	left:35px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#FFF;
+	margin-bottom:2px;
+}
+
+#loginBox_username
+{
+	position:relative;
+	left:35px;
+	width:308px;
+	height:30px;
+	margin-bottom:10px;
+	font-size:20px;
+}
+
+#loginBox_passwordLabel
+{
+	position:relative;
+	left:35px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	color:#FFF;
+	margin-bottom:2px;
+}
+
+#loginBox_password
+{
+	position:relative;
+	left:35px;
+	width:308px;
+	height:30px;
+	font-size:20px;
+	clear:both;
+}
+
+#loginBox_login
+{
+	position:relative;
+	top:44px;
+	right:44px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	height:30px;
+	color:#000;
+	clear:both;
+}
+
+#loginBox_status
+{
+	position:relative;
+	top:150px;
+	left:10px;
+	display:none;
+}
+
+#loginBox_statusLabel
+{
+	top:10px;
+	position:relative;
+	left:35px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	margin-bottom:2px;
+	text-align:center;
+	width:310px;
+}
+
+#uiBar {
+	width:100%;
+	height:120px;
+	background:url(/Volunteer-Village/assets/backgrounds/uiBar.png) repeat-x;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:11000;
+}
+
+#uiLogo {
+	background-image:url(/Volunteer-Village/assets/ui/logo.png);
+	display:block;
+	width:117px;
+   	height:45px;
+	z-index:11000;
+	margin-top:10px;
+	margin-left:10px;
+	float:left;
+}
+
+.uiMenu {
+	background:url(/Volunteer-Village/assets/backgrounds/uiMenu.png) repeat-x;
+	position:absolute;
+	max-width:700px;
+	z-index:29000;
+	display:block;
+	top:-200px;
+	left:350px;
+}
+
+.uiMenu img {
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	cursor:pointer;
+	float:left;
+	height:30px;
+}
+
+.uiMenu img:hover {
+	background:#FFC;
+}
+
+.uiMenuButton {
+	width:64px;
+	height:64px;
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float:left;
+}
+
+.uiMenuButtonT {
+	width:200px;
+	height:200px;
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float:left;
+}
+
+.uiMenuButtonC {
+	width:200px;
+	height:85px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
+.uiMenuButtonCT {
+	width:230px;
+	height:100px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
+.uiMenuButtonGT {
+	width:220px;
+	height:120px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
+.uiMenuButtonGG {
+	width:280px;
+	height:120px;
+	z-index:11000;
+	display:block;
+	float:left;
+}
+
+.uiMenu_sep {
+	width:30px;
+}
+
+#uiMenuButton_menu {
+	background-image:url(/Volunteer-Village/assets/ui/uiButton_menu.png);
+}
+#uiMenuButton_music {
+	background-image:url(/Volunteer-Village/assets/ui/uiButton_music.png);
+}
+
+#uiMenuButton_badges {
+	background-image:url(/Volunteer-Village/assets/ui/uiButton_badges.png);
+}
+
+#uiMenuButton_osd {
+	background-image:url(/Volunteer-Village/assets/ui/osd.png);
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
+}
+	
+#uiMenuButton_osd1 {
+	background-image:url(/Volunteer-Village/assets/ui/osd1.png);
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
+}
+
+#uiMenuButton_osd2 {
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
+}
+
+#uiMenuButton_osd3 {
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#000000;
+}
+
+#igeBadgesDiv {
+	position:absolute;
+	background-image:url(/Volunteer-Village/assets/ui/badgesScreen.png);
+	left:40%;
+	top:0px;
+	width:490px;
+	height:120px;
+	z-index:11000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	color:#000000;
+	padding:0px;
+}
+
+.playerButton 
+{
+	width:250px;
+	height:435px;
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float:left;
+}
+.playerButton_sep 
+{
+	width:30px;
+}
+
+#playerOne
+{
+	background-image:url(/Volunteer-Village/assets/ui/uiButton_delet.png);
+}
+#playerTwo 
+{
+	background-image:url(/Volunteer-Village/assets/ui/uiButton_delet.png);
+}
+#playerThree 
+{
+	background-image:url(/Volunteer-Village/assets/ui/uiButton_delet.png);
+}
+#playerFour 
+{
+	background-image:url(/Volunteer-Village/assets/ui/uiButton_delet.png);
+}
+
+#uiBadgeOne
+{
+	background-image:url(/Volunteer-Village/assets/ui/vigilantVolunteer.png);
+}
+#uiBadgeTwo
+{
+	background-image:url(/Volunteer-Village/assets/ui/Befriender.png);
+}
+#uiBadgeThree
+{
+	background-image:url(/Volunteer-Village/assets/ui/Squeaky.png);
+}
+#uiBadgeFour
+{
+	background-image:url(/Volunteer-Village/assets/ui/OldFolksHomie.png);
+}
+#uiBadgeFive
+{
+	background-image:url(/Volunteer-Village/assets/ui/HomeSweetHomie.png);
+}
+#uiBadgeSix
+{
+	background-image:url(/Volunteer-Village/assets/ui/ComputerWhizz.png);
+}
+#uiBadgeSeven
+{
+	background-image:url(/Volunteer-Village/assets/ui/Clown.png);
+}
+#uiBadgeEight
+{
+	background-image:url(/Volunteer-Village/assets/ui/RockOn.png);
+}
+#uiBadgeNine
+{
+	background-image:url(/Volunteer-Village/assets/ui/BusDriver.png);
+}
+#uiBadgeTen
+{
+	background-image:url(/Volunteer-Village/assets/ui/Handy.png);
+}
+#uiBadgeEleven
+{
+	background-image:url(/Volunteer-Village/assets/ui/LitterPatrol.png);
+}
+#uiBadgeTwelve
+{
+	background-image:url(/Volunteer-Village/assets/ui/Delivery.png);
+}
+#uiBadgeThirteen
+{
+	background-image:url(/Volunteer-Village/assets/ui/RegardsToTheChef.png);
+}
+#uiBadgeFourteen
+{
+	background-image:url(/Volunteer-Village/assets/ui/WereOutOf.png);
+}
+#uiBadgeFifteen
+{
+	background-image:url(/Volunteer-Village/assets/ui/Artiste.png);
+}
+#uiBadgeSixteen
+{
+	background-image:url(/Volunteer-Village/assets/ui/Enviromentalist.png);
+}
+#uiBadgeSeventeen
+{
+	background-image:url(/Volunteer-Village/assets/ui/WalkTheDog.png);
+}
+#uiBadgeEighteen
+{
+	background-image:url(/Volunteer-Village/assets/ui/TheTeacher.png);
+}
+#uiBadgeNineteen
+{
+	background-image:url(/Volunteer-Village/assets/ui/FiveTimes.png);
+}
+#uiBadgeTwenty
+{
+	background-image:url(/Volunteer-Village/assets/ui/TenTimes.png);
+}
+#uiBadgeTwentyOne
+{
+	background-image:url(/Volunteer-Village/assets/ui/FiftyTimes.png);
+}
+#uiBadgeTwentyTwo
+{
+	background-image:url(/Volunteer-Village/assets/ui/OneHundredTimes.png);
+}
+#uiBadgeTwentyThree
+{
+	background-image:url(/Volunteer-Village/assets/ui/GardaClearance.png);
+}
+#uiBadgeTwentyFour
+{
+	background-image:url(/Volunteer-Village/assets/ui/School.png);
+}
+#uiBadgeTwentyFive
+{
+	background-image:url(/Volunteer-Village/assets/ui/Volunteer.png);
+}
+#uiBadgeTwentySix
+{
+	background-image:url(/Volunteer-Village/assets/ui/CommunitySpirit.png);
+}
+#uiBadgeTwentySeven
+{
+	background-image:url(/Volunteer-Village/assets/ui/AcrossTheBoard.png);
+}
+#uiBadgeTwentyEight
+{
+	background-image:url(/Volunteer-Village/assets/ui/HelpingHand.png);
+}
+#uiBadgeTwentyNine
+{
+	background-image:url(/Volunteer-Village/assets/ui/FreeWheeling.png);
+}
+
+.badgeIcon
+{
+	width:40px;
+	height:40px;	
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+	float: left
+}
+
+.badgeIcon_sep 
+{
+	width:30px;
+}
+
+#igeLogDiv {
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	width:400px;
+	z-index:110000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	color:#FFF;
+	background-color:#333;
+	border:1px solid #666;
+	padding:10px;
+}
+
+#igeCordDiv {
+	position:absolute;
+	right:465px;
+	bottom:10px;
+	width:300px;
+	z-index:110000;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	color:#FFF;
+	background-color:#333;
+	border:1px solid #666;
+	padding:10px;
+}
+
+#igeStatsBDiv {
+	position:absolute;
+	background-image:url(/Volunteer-Village/assets/ui/osd2.png);
+	right:0px;
+	bottom:0px;
+	width:700px;
+	height:250px;
+	z-index:11000;
+
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+	color:#000000;
+	padding:0px;
+}
+
+#igePlayerDiv {
+	position:absolute;
+	background-image:url(/Volunteer-Village/assets/ui/playerSelection.png);
+	left:25%;
+	top:25%;
+	width:1000px;
+	height:442px;
+	z-index:11000;
+}
+
+#igeQuestLog
+{
+	position:absolute;
+	background-image:url(/Volunteer-Village/assets/ui/taskBackground.png);
+	left:5px;
+	top: 105px;
+	width:385px;
+	height: 599px;
+	z-index:110000;
+	overflow: auto;
+	cursor:pointer;
+}
+#igeQuestLog2
+{
+	position:absolute;
+	background-image:url(/Volunteer-Village/assets/ui/taskBackground2.png);
+	left:390px;
+	top: 105px;
+	width:300px;
+	height: 599px;
+	z-index:110000;
+	overflow: auto;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+}
+
+#blank2
+{
+	background-image:url(/Volunteer-Village/assets/ui/blank2.png);	
+}
+.blank2
+{
+	width:287px;
+	height: 529px;
+	z-index:110000;
+	display:block;
+	border: 5px dotted transparent;
+}
+
+#acceptButton
+{
+	background-image:url(/Volunteer-Village/assets/ui/acceptButton.png);
+}
+.acceptButton 
+{
+	width:300px;
+	height:50px;	
+	z-index:11000;
+	display:block;
+	cursor:pointer;
+}

@@ -1,0 +1,368 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'socket.io' ]
+info using npm@1.0.3
+info using node@v0.4.5
+verbose config file /root/.npmrc
+verbose config file /usr/local/etc/npmrc
+silly testEngine { name: 'mongodb',
+silly testEngine   description: 'A node.js driver for MongoDB',
+silly testEngine   version: '0.9.4',
+silly testEngine   author: 
+silly testEngine    { name: 'Christian Amor Kvalheim',
+silly testEngine      email: 'christkv@gmail.com' },
+silly testEngine   contributors: 
+silly testEngine    [ { name: 'Nathan White', email: 'nw@nwhite.net' },
+silly testEngine      { name: 'Adam Wiggins', email: 'adam@heroku.com' },
+silly testEngine      { name: 'Ian Millington',
+silly testEngine        email: 'idmillington@googlemail.com' },
+silly testEngine      { name: 'Aaron Heckmann',
+silly testEngine        email: 'aaron.heckmann+github@gmail.com' },
+silly testEngine      { name: 'Ciaran Jessup', email: 'ciaranj@gmail.com' },
+silly testEngine      { name: 'Christoph Pojer' },
+silly testEngine      { name: 'Erik Abele' },
+silly testEngine      { name: 'Henrik Johansson',
+silly testEngine        email: 'dahankzter@gmail.com' } ],
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/christkv/node-mongodb-native.git' },
+silly testEngine   bugs: 
+silly testEngine    { email: 'node-mongodb-native@googlegroups.com',
+silly testEngine      url: 'http://github.com/christkv/node-mongodb-native/issues' },
+silly testEngine   os: [ 'linux', 'darwin', 'freebsd' ],
+silly testEngine   main: './lib/mongodb/index',
+silly testEngine   directories: { lib: './lib/mongodb' },
+silly testEngine   engines: { node: '>=0.4.0' },
+silly testEngine   scripts: { install: 'bash ./install.sh' },
+silly testEngine   licenses: 
+silly testEngine    [ { type: 'Apache License, Version 2.0',
+silly testEngine        url: 'http://www.apache.org/licenses/LICENSE-2.0' } ],
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'mongodb@0.9.4',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /ige/node_modules/mongodb/package.json
+verbose loadDefaults mongodb@0.9.4
+silly testEngine { name: 'uglify-js',
+silly testEngine   author: 
+silly testEngine    { name: 'Mihai Bazon',
+silly testEngine      email: 'mihai.bazon@gmail.com',
+silly testEngine      url: 'http://mihai.bazon.net/blog' },
+silly testEngine   version: '1.0.1',
+silly testEngine   main: './uglify-js.js',
+silly testEngine   bin: { uglifyjs: './bin/uglifyjs' },
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git@github.com:mishoo/UglifyJS.git' },
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'uglify-js@1.0.1',
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /ige/node_modules/uglify-js/package.json
+verbose loadDefaults uglify-js@1.0.1
+silly testEngine { name: 'node-static',
+silly testEngine   description: 'simple, compliant file streaming module for node',
+silly testEngine   url: 'http://github.com/cloudhead/node-static',
+silly testEngine   keywords: [ 'http', 'static', 'file', 'server' ],
+silly testEngine   author: 
+silly testEngine    { name: 'Alexis Sellier',
+silly testEngine      email: 'self@cloudhead.net' },
+silly testEngine   contributors: [],
+silly testEngine   licenses: [ 'MIT' ],
+silly testEngine   dependencies: {},
+silly testEngine   lib: 'lib',
+silly testEngine   main: './lib/node-static',
+silly testEngine   version: '0.5.5',
+silly testEngine   directories: { test: './test' },
+silly testEngine   engines: { node: '>= 0.4.1' },
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'node-static@0.5.5',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /ige/node_modules/node-static/package.json
+verbose loadDefaults node-static@0.5.5
+silly testEngine { name: 'imagemagick',
+silly testEngine   description: 'A wrapper around the imagemagick cli',
+silly testEngine   version: '0.1.2',
+silly testEngine   author: { name: 'Rasmus Andersson' },
+silly testEngine   licenses: [ { type: 'MIT' } ],
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/rsms/node-imagemagick.git' },
+silly testEngine   engine: [ 'node >=0.1.90' ],
+silly testEngine   main: 'imagemagick',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'imagemagick@0.1.2',
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /ige/node_modules/imagemagick/package.json
+verbose loadDefaults imagemagick@0.1.2
+verbose has wscript [ undefined,
+verbose has wscript   { file: '/ige/node_modules/canvas/package.json',
+verbose has wscript     contributors: false,
+verbose has wscript     serverjs: false,
+verbose has wscript     wscript: true } ]
+silly testEngine { name: 'canvas',
+silly testEngine   description: 'Canvas graphics API backed by Cairo',
+silly testEngine   version: '0.5.4',
+silly testEngine   author: { name: 'TJ Holowaychuk', email: 'tj@learnboost.com' },
+silly testEngine   keywords: [ 'canvas', 'graphic', 'graphics', 'pixman', 'cairo' ],
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/learnboost/node-canvas.git' },
+silly testEngine   scripts: { preinstall: 'node-waf configure build' },
+silly testEngine   engines: { node: '0.4.x' },
+silly testEngine   main: './lib/canvas.js',
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'canvas@0.5.4',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /ige/node_modules/canvas/package.json
+verbose loadDefaults canvas@0.5.4
+verbose into /ige [ 'socket.io' ]
+verbose cache add [ 'socket.io', null ]
+info addNamed [ 'socket.io', '' ]
+verbose addNamed [ null, '' ]
+verbose GET socket.io
+verbose raw, before any munging socket.io
+verbose url resolving [ 'http://registry.npmjs.org/', './socket.io' ]
+verbose url resolved http://registry.npmjs.org/socket.io
+verbose url parsed { protocol: 'http:',
+verbose url parsed   slashes: true,
+verbose url parsed   host: 'registry.npmjs.org',
+verbose url parsed   hostname: 'registry.npmjs.org',
+verbose url parsed   pathname: '/socket.io',
+verbose url parsed   href: 'http://registry.npmjs.org/socket.io' }
+verbose etag "EYFLME7KKJNERDNRJ8J49ZXLY"
+verbose response http://registry.npmjs.org/socket.io
+silly chunk {"_id":"socket.io","_rev":"77-91e2aed771f2e67b7cd93e2a1d36ba50","name":"socket.io","description":"Real-time apps made cross-browser & easy with a WebSocket-like API","dist-tags":{"latest":"0.7.7"},"versions":{"0.3.8":{"name":"socket.io","description":"Sockets for the rest of us.","version":"0.3.8","author":{"name":"LearnBoost"},"license":[{"type":"MIT","url":"http://github.com/LearnBoost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/LearnBoost/Socket.IO-node.git"},"engine":["node >=0.1.90"],"directories":{"lib":"./lib/socket.io"},"_id":"socket.io@0.3.8","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.7-2","_nodeVersion":"v0.3.1-pre","dist":{"tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.3.8.tgz"}},"0.4.0":{"name":"socket.io","description":"Sockets for the rest of us.","version":"0.4.0","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/LearnBoost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/LearnBoost/Socket.IO-node.git"},"engine":["node >=0.1.90"],"directories":{"lib":"./lib/socket.io"},"_id":"socket.io@0.4.0","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.7-2","_nodeVersion":"v0.3.1-pre","dist":{"tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.4.0.tgz"}},"0.4.1":{"name":"socket.io","description":"Sockets for the rest of us.","version":"0.4.1","a
+silly chunk uthor":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/LearnBoost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/LearnBoost/Socket.IO-node.git"},"engine":["node >=0.1.90"],"main":"./lib/socket.io","directories":{"lib":"./lib"},"_id":"socket.io@0.4.1","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.7-2","_nodeVersion":"v0.3.1-pre","dist":{"tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.4.1.tgz"}},"0.5.1":{"name":"socket.io","description":"Sockets for the rest of us.","version":"0.5.1","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/LearnBoost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/LearnBoost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.5.1","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.7-2","_nodeVersion":"v0.3.1-pre","dist":{"tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.5.1.tgz"},"directories":{}},"0.5.3":{"name":"socket.io","description":"Sockets for the rest of us.","version":"0.5.3","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/LearnBoost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/LearnBoost/Socket.IO-node.git"},"engine":["node >=0.1.98"],"main":"./","_id":
+silly chunk "socket.io@0.5.3","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.7-2","_nodeVersion":"v0.3.1-pre","dist":{"tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.5.3.tgz"},"directories":{}},"0.6.0":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.0","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.0","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.7-2","_nodeVersion":"v0.3.1-pre","dist":{"tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.0.tgz"},"directories":{}},"0.6.1":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.1","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.1","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.7-2","_nodeVersion":"v0.3.1-pre","dist":{"tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.1.tgz"},"directories":{}},"0.6.3":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.3","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.3","engines":{"node":"*"},"_nodeSupported":true,"_npmVersion":"0.2.12-1","_nodeVersion":"v0.2.5","dist":{"shasum":"eb4c98fdaa69d7da6e901e23b8d82f58a79624cf","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.3.tgz"},"directories":{}},"0.6.4":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.4","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.4","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.13-3","_nodeVersion":"v0.2.6","dist":{"shasum":"2f2a3b2e39b228067f0fed87517f894620fac6eb","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.4.tgz"},"directories":{}},"0.6.5":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.5","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/S
+silly chunk ocket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.5","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.13-3","_nodeVersion":"v0.2.6","dist":{"shasum":"bbaacc301960c2542bc2c050e53ae096149e3c9f","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.5.tgz"},"directories":{}},"0.6.6":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.6","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.6","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.13-3","_nodeVersion":"v0.2.6","dist":{"shasum":"47142c3afb665c737ffd3fb7cae3d39775590f62","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.6.tgz"},"directories":{}},"0.6.7":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.7","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.10
+silly chunk 2"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.7","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.13-3","_nodeVersion":"v0.2.6","dist":{"shasum":"5061b461e4a2334982d053ffe35adb7712c8513f","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.7.tgz"},"directories":{}},"0.6.8":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.8","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.8","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.13-3","_nodeVersion":"v0.2.6","dist":{"shasum":"868352e60fdb7aeb757cce564a72c8af58a0e14d","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.8.tgz"},"directories":{}},"0.6.9":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.9","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.9","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.17","_nodeVersion":"v0.3.8","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"f83f2943ddab8a91087cecd4ef3a8a93e42f21c6","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.9.tgz"}},"0.6.10":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.10","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.10","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.17","_nodeVersion":"v0.4.0-pre","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"90ca370b5fe14c7810420664a1dc9c5883dc8731","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.10.tgz"}},"0.6.11":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.11","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.11","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.18","_nodeVersion":"v0.2.6","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"77afe3106dc77e99abf67e7974626adc77716ba5","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.11.tgz"}},"0.6.12":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.12","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.12","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.18","_nodeVersion":"v0.2.6","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"cb5092255e64e8ffed07a3aef0da5353f14e5c4d","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.12.tgz"}},"0.6.14":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.14","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.14","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.18","_nodeVersion":"v0.2.6","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":
+silly chunk true,"dist":{"shasum":"73651a3c152b94fb0b353dee31364e6a0b58738b","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.14.tgz"}},"0.6.15":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.15","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.15","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.18","_nodeVersion":"v0.2.6","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"d5eb26ebdba5811bf448e8e6db935527aa4f1bf9","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.15.tgz"}},"0.6.16":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.16","author":{"name":"LearnBoost"},"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"http://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.16","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.2.18","_nodeVersion":"v0.2.6","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"fb4d8e053f6d7376e4561d46949fd21dc210a894","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.16.tgz"}},"0.6.17":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.17","author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"}],"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"git://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.17","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.3.18","_nodeVersion":"v0.4.3","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"ca9a480df1e61d84d555e98e299ab51674ced90a","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.17.tgz"}},"0.6.18":{"name":"socket.io","description":"The cross-browser WebSocket","version":"0.6.18","author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"}],"licenses":[{"type":"MIT","url":"http://github.com/learnboost/Socket.IO-node/raw/master/README.md"}],"repository":{"type":"git","url":"git://github.com/learnboost/Socket.IO-node.git"},"engine":["node >=0.1.102"],"main":"./index","scripts":{"test":"make test"},"_id":"socket.io@0.6.18","engines":{"node":"*"},"_engineSupported":true,"_npmVersion":"0.3.18","_nodeVersion":"v0.4.7","directories":{"lib":"./lib"},"files":[""],"_defaultsLoaded":true,"dist":{"shasum":"066dce544eebd9536a61fe08ff44e2e3bbfd8211","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.6.18.tgz"}},"0.7.0":{"name":"socket.io","version":"0.7.0","description":"Realtime apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.0","policyfile":">= 0.0.3"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.0","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.7","_defaultsLoaded":true,"dist":{"shasum":"b1b4cff4efce41f909892c580ea4c8c89a0dd0ad","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.0.tgz"},"scripts":{},"directories":{}},"0.7.1":{"name":"socket.io","version":"0.7.1","description":"Realtime apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.0","policyfile":">= 0.0.3"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.1","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.7","_defaultsLoaded":true,"dist":{"shasum":"fad218869c04b56e345693ac975bf8381e1b603d","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.1.tgz"},"scripts":{},"directories":{}},"0.7.2":{"name":"socket.io","version":"0.7.2","description":"Realtime apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.
+silly chunk com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.2","policyfile":">= 0.0.3"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.2","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.7","_defaultsLoaded":true,"dist":{"shasum":"4e86f1de0e9c5107a487d9350dd4b598647ed907","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.2.tgz"},"scripts":{},"directories":{}},"0.7.3":{"name":"socket.io","version":"0.7.3","description":"Realtime apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.3","policyfile":"0.0.3","redis":"0.6.0"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.3","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.9","_defaultsLoaded":true,"dist":{"shasum":"c1dea6c8830067fcf604db670472ce31011ae69d","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.3.tgz"},"scripts":{},"directories":{}},"0.7.4":{"name":"socket.io","version":"0.7.4","description":"Realtime apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.3","policyfile":"0.0.3","redis":"0.6.0"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.4","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.9","_defaultsLoaded":true,"dist":{"shasum":"7432632a02cba5c79934a6026070e43785fe7ccf","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.4.tgz"},"scripts":{},"directories":{}},"0.7.5":{"name":"socket.io","version":"0.7.5","description":"Realtime apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.3","policyfile":"0.0.3","redis":"0.6.0"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.5","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.9","_defaultsLoaded":true,"dist":{"shasum":"878895677715b9979dc9527816475f223182fce0","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.5.tgz"},"scripts":{},"directories":{}},"0.7.6":{"name":"socket.io","version":"0.7.6","description":"Realtime apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.3","policyfile":"0.0.3","redis":"0.6.0"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main"
+silly chunk :"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.6","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.9","_defaultsLoaded":true,"dist":{"shasum":"fef3bfd02951b2b06950f7c8e6912641abb2834f","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.6.tgz"},"scripts":{},"directories":{}},"0.7.7":{"name":"socket.io","version":"0.7.7","description":"Real-time apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.4","policyfile":"0.0.3","redis":"0.6.0"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.7","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.9","_defaultsLoaded":true,"dist":{"shasum":"88124c9a5c26236de770c64fad6db9e12ba41bd8","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.7.tgz"},"scripts":{},"directories":{}}},"maintainers":[{"name":"rauchg","email":"rauchg@gmail.com"}],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"time":{"0.3.8":"2010-12-24T04:53:35.445Z","0.4.0":"2010-12-24T04:53:35.445Z","0.4.1":"2010-12-24T04:53:35.445Z","0.5.1":"2010-12-24T04:53:35.445Z","0.5.3":"2010-12-24T04:53:35.445Z","0.6.0":"2010-12-24T04:53:35.445Z","0.6.1":"2010-12-24T04:53:35.445Z","0.6.3":"2010-12-24T04:53:35.445Z","0.6.4":"2011-01-05T19:21:49.262Z","0.6.5":"2011-01-10T00:57:07.799Z","0.6.6":"2011-01-10T02:18:05.953Z","0.6.7":"2011-01-10T03:24:38.957Z","0.6.8":"2011-01-10T09:50:51.893Z","0.6.9":"2011-02-06T18:09:35.988Z","0.6.10":"2011-02-10T02:45:11.455Z","0.6.11":"2011-02-15T23:43:46.550Z","0.6.12":"2011-02-18T22:41:12.582Z","0.6.14":"2011-02-22T19:09:51.602Z","0.6.15":"2011-02-23T19:21:05.674Z","0.6.16":"2011-03-04T17:06:13.647Z","0.6.17":"2011-03-30T18:46:55.259Z","0.6.18":"2011-05-16T20:12:30.360Z","0.7.0":"2011-06-21T12:51:08.919Z","0.7.1":"2011-06-22T00:05:30.677Z","0.7.2":"2011-06-22T07:16:35.955Z","0.7.3":"2011-06-30T13:38:19.811Z","0.7.4":"2011-06-30T15:49:04.609Z","0.7.5":"2011-06-30T15:57:56.551Z","0.7.6":"2011-06-30T18:32:37.394Z","0.7.7":"2011-07-12T08:06:08.902Z"}}
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.1.0 (Erlang OTP/R14B03)',
+silly get cb     etag: '"5NB73WMBIOGRTQ8M71GY0G907"',
+silly get cb     date: 'Tue, 19 Jul 2011 02:03:25 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '24353' } ]
+verbose GET socket.io/0.7.7
+verbose raw, before any munging socket.io/0.7.7
+verbose url resolving [ 'http://registry.npmjs.org/', './socket.io/0.7.7' ]
+verbose url resolved http://registry.npmjs.org/socket.io/0.7.7
+verbose url parsed { protocol: 'http:',
+verbose url parsed   slashes: true,
+verbose url parsed   host: 'registry.npmjs.org',
+verbose url parsed   hostname: 'registry.npmjs.org',
+verbose url parsed   pathname: '/socket.io/0.7.7',
+verbose url parsed   href: 'http://registry.npmjs.org/socket.io/0.7.7' }
+verbose response http://registry.npmjs.org/socket.io/0.7.7
+silly chunk {"name":"socket.io","version":"0.7.7","description":"Real-time apps made cross-browser & easy with a WebSocket-like API","homepage":"http://socket.io","keywords":["websocket","socket","realtime","socket.io","comet","ajax"],"author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"contributors":[{"name":"Guillermo Rauch","email":"rauchg@gmail.com"},{"name":"Arnout Kazemier","email":"info@3rd-eden.com"},{"name":"Vladimir Dronnikov","email":"dronnikov@gmail.com"}],"repository":{"type":"git","url":"git://github.com/LearnBoost/Socket.IO-node.git"},"dependencies":{"socket.io-client":"0.7.4","policyfile":"0.0.3","redis":"0.6.0"},"devDependencies":{"expresso":"0.7.7","should":"0.0.4"},"main":"index","engines":{"node":">= 0.4.0"},"_id":"socket.io@0.7.7","_engineSupported":true,"_npmVersion":"1.0.8","_nodeVersion":"v0.4.9","_defaultsLoaded":true,"dist":{"shasum":"88124c9a5c26236de770c64fad6db9e12ba41bd8","tarball":"http://registry.npmjs.org/socket.io/-/socket.io-0.7.7.tgz"},"scripts":{},"directories":{}}
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.1.0 (Erlang OTP/R14B03)',
+silly get cb     etag: '"5NB73WMBIOGRTQ8M71GY0G907"',
+silly get cb     date: 'Tue, 19 Jul 2011 02:03:26 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '1023' } ]
+verbose bin dist [ '0.4-ares1.7.4-ev4.4-openssl0.9.8o-v83.1.8.8-linux-2.6.32-5-686',
+verbose bin dist   { shasum: '88124c9a5c26236de770c64fad6db9e12ba41bd8',
+verbose bin dist     tarball: 'http://registry.npmjs.org/socket.io/-/socket.io-0.7.7.tgz' } ]
+verbose addRemoteTarball [ 'http://registry.npmjs.org/socket.io/-/socket.io-0.7.7.tgz',
+verbose addRemoteTarball   '88124c9a5c26236de770c64fad6db9e12ba41bd8' ]
+verbose mkdir done: /tmp/npm-1311041006159/1311041006160-0.2593985984567553 755
+info fetch http://registry.npmjs.org/socket.io/-/socket.io-0.7.7.tgz
+verbose fetch to /tmp/npm-1311041006159/1311041006160-0.2593985984567553/tmp.tgz
+silly updated sha bytes 40960
+silly updated sha bytes 17672
+info shasum 88124c9a5c26236de770c64fad6db9e12ba41bd8
+info shasum /tmp/npm-1311041006159/1311041006160-0.2593985984567553/tmp.tgz
+verbose mkdir done: /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm 755
+verbose unpack_ uid, gid [ 0, 0 ]
+verbose unpackTarget /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package
+silly gunzTarPerm modes [ '755', '644' ]
+verbose success gzip "--decompress" "--stdout" "/tmp/npm-1311041006159/1311041006160-0.2593985984567553/tmp.tgz"
+verbose success tar "-mvxpf" "-" "--no-same-owner" "-C" "/tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm"
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/Readme.md
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/TODO
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/.gitignore
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/Makefile
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/.npmignore
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/package.json
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/index.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/History.md
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/store.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/socket.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/util.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/logger.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/parser.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transport.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/namespace.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/manager.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/socket.io.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/stores/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/stores/memory.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/jsonp-polling.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/htmlfile.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/http.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/http-polling.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/xhr-polling.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/index.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib-cov/transports/websocket.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/bison/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/bison/README.md
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/bison/tests.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/bison/.gitignore
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/bison/LICENSE
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/bison/package.json
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/node_modules/bison/bison.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/store.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/socket.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/util.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/logger.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/parser.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transport.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/namespace.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/manager.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/socket.io.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/stores/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/stores/redis.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/stores/memory.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/jsonp-polling.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/htmlfile.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/http.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/http-polling.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/xhr-polling.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/index.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/websocket.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/lib/transports/flashsocket.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/layout.jade
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/index.jade
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/app.js
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/package.json
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/public/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/public/js/
+silly asyncMap in gTP /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package/new-old/public/js/main.js
+verbose gunzed /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package
+verbose rm'ed /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package
+verbose renamed [ '/tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/___package.npm/package',
+verbose renamed   '/tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package' ]
+silly testEngine { name: 'socket.io',
+silly testEngine   version: '0.7.7',
+silly testEngine   description: 'Real-time apps made cross-browser & easy with a WebSocket-like API',
+silly testEngine   homepage: 'http://socket.io',
+silly testEngine   keywords: 
+silly testEngine    [ 'websocket',
+silly testEngine      'socket',
+silly testEngine      'realtime',
+silly testEngine      'socket.io',
+silly testEngine      'comet',
+silly testEngine      'ajax' ],
+silly testEngine   author: 
+silly testEngine    { name: 'Guillermo Rauch',
+silly testEngine      email: 'guillermo@learnboost.com' },
+silly testEngine   contributors: 
+silly testEngine    [ { name: 'Guillermo Rauch', email: 'rauchg@gmail.com' },
+silly testEngine      { name: 'Arnout Kazemier',
+silly testEngine        email: 'info@3rd-eden.com' },
+silly testEngine      { name: 'Vladimir Dronnikov',
+silly testEngine        email: 'dronnikov@gmail.com' } ],
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/LearnBoost/Socket.IO-node.git' },
+silly testEngine   dependencies: 
+silly testEngine    { 'socket.io-client': '0.7.4',
+silly testEngine      policyfile: '0.0.3',
+silly testEngine      redis: '0.6.0' },
+silly testEngine   devDependencies: { expresso: '0.7.7', should: '0.0.4' },
+silly testEngine   main: 'index',
+silly testEngine   engines: { node: '>= 0.4.0' },
+silly testEngine   _id: 'socket.io@0.7.7',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package' }
+verbose caching /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package/package.json
+verbose loadDefaults socket.io@0.7.7
+verbose tarball contents [ 'package' ]
+verbose from cache /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package/package.json
+verbose pack /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package /root/.npm/socket.io/0.7.7/package.tgz
+verbose from cache /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package/package.json
+silly testEngine { name: 'socket.io-website',
+silly testEngine   version: '0.0.1',
+silly testEngine   dependencies: { express: '2.3.11', jade: '0.12.1', stylus: '0.13.3' },
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'socket.io-website@0.0.1',
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package/new-old' }
+verbose caching /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package/new-old/package.json
+verbose loadDefaults socket.io-website@0.0.1
+silly testEngine { name: 'bison',
+silly testEngine   version: '1.1.1',
+silly testEngine   description: 'Size optimized binary encoding for JavaScript.',
+silly testEngine   homepage: 'https://github.com/BonsaiDen/BiSON.js',
+silly testEngine   author: 
+silly testEngine    { name: 'Ivo Wetzel',
+silly testEngine      email: 'ivo.wetzel@googlemail.com' },
+silly testEngine   keywords: [ 'encoder', 'binary' ],
+silly testEngine   engines: { node: '>=0.1.9' },
+silly testEngine   main: 'bison',
+silly testEngine   repository: 
+silly testEngine    { type: 'git',
+silly testEngine      url: 'git://github.com/BonsaiDen/BiSON.js.git' },
+silly testEngine   licenses: 
+silly testEngine    [ { type: 'MIT',
+silly testEngine        url: 'http://github.com/BonsaiDen/BiSON.js/raw/master/LICENSE' } ],
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'bison@1.1.1',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.3',
+silly testEngine   _nodeVersion: 'v0.4.5',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package/node_modules/bison' }
+verbose caching /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package/node_modules/bison/package.json
+verbose loadDefaults bison@1.1.1
+ERR! Could not create /root/.npm/socket.io/0.7.7/package.tgz
+ERR! Failed creating the tarball.
+ERR! couldn't pack /tmp/npm-1311041006159/1311041006160-0.2593985984567553/contents/package to /root/.npm/socket.io/0.7.7/package.tgz
+ERR! Error: EINVAL, Invalid argument '/root/.npm/socket.io/0.7.7'
+ERR! Report this *entire* log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 2.6.32-5-686
+ERR! command "node" "/usr/local/bin/npm" "install" "socket.io"
+verbose exit [ 22, true ]
