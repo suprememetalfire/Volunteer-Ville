@@ -233,8 +233,8 @@ entities = new IgeClass({
 			template_id: 'doctor',
 			// Entity stuff
 			entity_id: 'doctor',
-			entity_x:22,
-			entity_y:35,
+			entity_x:21,
+			entity_y:34,
 			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 			entity_persist:PERSIST_DISABLED,
 			//session_id: sessionId,

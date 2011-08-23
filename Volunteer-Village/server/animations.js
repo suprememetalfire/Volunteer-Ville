@@ -85,10 +85,10 @@ animations = new IgeClass({
 				entity_tile_height:1,
 				entity_z:0,
 				// Animation stuff
-				animation_id: 'womanWalkSE',
+				animation_id: 'womanWalkSW',
 				animation_dirty: true,
 				// Asset stuff
-				asset_sheet_frame:1,
+				asset_sheet_frame:10,
 				asset_id: 'woman_sheet2',
 				// Map stuff
 				//map_id: 'testMap3',
@@ -105,10 +105,10 @@ animations = new IgeClass({
 				entity_tile_height:1,
 				entity_z:0,
 				// Animation stuff
-				animation_id: 'womanWalkSE',
+				animation_id: 'womanWalkSW',
 				animation_dirty: true,
 				// Asset stuff
-				asset_sheet_frame:1,
+				asset_sheet_frame:10,
 				asset_id: 'woman_sheetBig',
 			},
 		});

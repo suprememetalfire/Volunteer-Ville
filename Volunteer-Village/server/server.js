@@ -333,7 +333,7 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 			});	
 	
 			this.entities.load();
-			this.entitiesInteriors.load();
+			//this.entitiesInteriors.load();
 			this.entitiesTiles.load();
 
 			this.log('+++++++++++++++++++ All data loaded and ready - Engine online +++++++++++++++++++');						
@@ -469,8 +469,8 @@ this.engine.network.registerCommand('moveminiBus', this.bind(this.moveminiBus));
 			template_id: 'womanWalkBig',
 			// Entity stuff
 			entity_id: 'woman' + sessionId,
-			entity_x: 9,
-			entity_y: -4,
+			entity_x: 8,
+			entity_y: -1,
 			entity_locale:LOCALE_EVERYWHERE + LOCALE_DB,
 			entity_persist:PERSIST_DISABLED,
 			session_id: sessionId,

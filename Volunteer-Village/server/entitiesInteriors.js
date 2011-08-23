@@ -10,7 +10,7 @@ entitiesInteriors = new IgeClass({
 	
 	// Create entities
 	load: function () {
-		/*// School Interior
+		// School Interior
 		for (var x = -10; x < 16; x+=1) {
 			for (var y = 5; y < 13; y+=1) {
 				this.engine.entities.create({
@@ -113,7 +113,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'mealsInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'mealsMap',
-		});*/
+		});
 
 		// Old Folks Home Interior
 		for (var x = -14; x < 9; x+=1) {
@@ -210,7 +210,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'museumMap',
 		});
 
-		/*// Library Interior
+		// Library Interior
 		for (var x = 1; x < 18; x+=1) {
 			for (var y = 4; y < 21; y+=1) {
 				this.engine.entities.create({
@@ -231,7 +231,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'libraryInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'libraryMap',
-		});*/
+		});
 
 		// Hospital Interior
 		for (var x = 17; x < 35; x+=1) {
@@ -256,7 +256,7 @@ entitiesInteriors = new IgeClass({
 			map_id: 'hospitalMap',
 		});
 
-		/*// Bank Interior
+		// Bank Interior
 		for (var x = 24; x < 36; x+=1) {
 			for (var y = 1; y < 24; y+=1) {
 				this.engine.entities.create({
@@ -405,7 +405,7 @@ entitiesInteriors = new IgeClass({
 			entity_id: 'hallInterior',
 			entity_locale: LOCALE_EVERYWHERE + LOCALE_DB,
 			map_id: 'hallMap',
-		});*/
+		});
 
 		// Volunteer Centre Interior
 		for (var x = 4; x < 21; x+=1) {
